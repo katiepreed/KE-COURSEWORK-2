@@ -1,0 +1,168 @@
+@prefix ont: <http://ontologeez/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ont:Artwork a rdfs:Class .
+
+<http://ontologeez/artwork/Black_Stork_in_a_Landscape_454011> a ont:Artwork ;
+    ont:belongsToGalleryID "464" ;
+    ont:creationFinishedDate 1805 ;
+    ont:hasDescription "Opaque watercolor on European paper" ;
+    ont:hasObjectId 454011 ;
+    ont:hasTitle "Black Stork in a Landscape" ;
+    ont:isObjectType "Illustrated single work" ;
+    ont:medium "watercolor" ;
+    ont:originatedInCity "probably Lucknow" ;
+    ont:originatedInCountry "India" ;
+    ont:startOfCreation 1755 .
+
+<http://ontologeez/artwork/Collage_with_Pressed_Poppy_486946> a ont:Artwork ;
+    ont:artistBirthDate "1942" ;
+    ont:artistNationality "American" ;
+    ont:createdByArtist "Joe Brainard" ;
+    ont:creationFinishedDate 1976 ;
+    ont:hasDescription "Cut and pasted printed papers, flower petal and opaque watercolor, graphite and ink on paper" ;
+    ont:hasObjectId 486946 ;
+    ont:hasTitle "Collage with Pressed Poppy" ;
+    ont:isObjectType "Drawing" ;
+    ont:medium "ink",
+        "watercolor" ;
+    ont:startOfCreation 1976 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Cotton_Tree_Flowers_717767> a ont:Artwork ;
+    ont:belongsToGalleryID "464" ;
+    ont:creationFinishedDate 1830 ;
+    ont:hasDescription "Ink and watercolor on paper" ;
+    ont:hasObjectId 717767 ;
+    ont:hasTitle "Cotton Tree Flowers" ;
+    ont:isObjectType "Illustrated single work" ;
+    ont:medium "ink",
+        "watercolor" ;
+    ont:originatedInCity "Calcutta" ;
+    ont:originatedInCountry "India" ;
+    ont:startOfCreation 1775 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Flowers_359297> a ont:Artwork ;
+    ont:artistBirthDate "1882" ;
+    ont:artistNationality "American" ;
+    ont:createdByArtist "Rockwell Kent" ;
+    ont:creationFinishedDate 1955 ;
+    ont:hasDescription "Gouache" ;
+    ont:hasObjectId 359297 ;
+    ont:hasTitle "Flowers" ;
+    ont:isObjectType "Drawing" ;
+    ont:startOfCreation 1945 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Greeting_Card_827165> a ont:Artwork ;
+    ont:artistBirthDate "1782" ;
+    ont:artistNationality "Austrian" ;
+    ont:createdByArtist "Johannes Endletzberger" ;
+    ont:creationFinishedDate 1845 ;
+    ont:hasDescription "Golden embossed paper border, embossed paper embellishments, clay-like flowers, engraved motto on white card stock, pale blue chiffon fabric, and watercolor" ;
+    ont:hasObjectId 827165 ;
+    ont:hasTitle "Greeting Card" ;
+    ont:isObjectType "Valentine" ;
+    ont:medium "clay",
+        "metal",
+        "watercolor" ;
+    ont:startOfCreation 1835 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Still_Life_with_Apples_and_a_Pot_of_Primroses_435882> a ont:Artwork ;
+    ont:artistBirthDate "1839" ;
+    ont:artistNationality "French" ;
+    ont:belongsToGalleryID "826" ;
+    ont:createdByArtist "Paul Cézanne" ;
+    ont:creationFinishedDate 1895 ;
+    ont:hasDescription "Oil on canvas" ;
+    ont:hasObjectId 435882 ;
+    ont:hasTitle "Still Life with Apples and a Pot of Primroses" ;
+    ont:isObjectType "Painting" ;
+    ont:medium "oil" ;
+    ont:startOfCreation 1885 .
+
+<http://ontologeez/artwork/Still_Life_with_Flowers_and_Prickly_Pears_441104> a ont:Artwork ;
+    ont:artistBirthDate "1841" ;
+    ont:artistNationality "French" ;
+    ont:belongsToGalleryID "824" ;
+    ont:createdByArtist "Auguste Renoir" ;
+    ont:creationFinishedDate 1890 ;
+    ont:hasDescription "Oil on canvas" ;
+    ont:hasObjectId 441104 ;
+    ont:hasTitle "Still Life with Flowers and Prickly Pears" ;
+    ont:isObjectType "Painting" ;
+    ont:medium "oil" ;
+    ont:startOfCreation 1880 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Studies_for_EuropeanStyle_Portrait_Miniatures_and_a_Damsel_Arranging_Flowers_456128> a ont:Artwork ;
+    ont:belongsToGalleryID "464" ;
+    ont:creationFinishedDate 1895 ;
+    ont:hasDescription "Ink and watercolor on paper" ;
+    ont:hasObjectId 456128 ;
+    ont:hasTitle "Studies for European-Style Portrait Miniatures and a Damsel Arranging Flowers" ;
+    ont:isObjectType "Illustrated single work" ;
+    ont:medium "ink",
+        "watercolor" ;
+    ont:originatedInCountry "India" ;
+    ont:startOfCreation 1855 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Tughra__of_Sultan_Sleiman_the_Magnificent_449534> a ont:Artwork ;
+    ont:belongsToGalleryID "460" ;
+    ont:creationFinishedDate 1585 ;
+    ont:hasDescription "Ink, opaque watercolor, and gold on paper" ;
+    ont:hasObjectId 449534 ;
+    ont:hasTitle "Tughra (Insignia) of Sultan Süleiman the Magnificent (r. 1520–66)" ;
+    ont:isObjectType "Tughra" ;
+    ont:medium "ink",
+        "metal",
+        "watercolor" ;
+    ont:originatedInCity "Istanbul" ;
+    ont:originatedInCountry "Turkey" ;
+    ont:startOfCreation 1530 .
+
+<http://ontologeez/artwork/Valentine_486943> a ont:Artwork ;
+    ont:artistBirthDate "1942" ;
+    ont:artistNationality "American" ;
+    ont:createdByArtist "Joe Brainard" ;
+    ont:creationFinishedDate 1976 ;
+    ont:hasDescription "Cut and torn pasted papers, printed papers, metallic papers, flower petals with opaque watercolor, colored pencil, graphite and blue ballpoint on paper" ;
+    ont:hasObjectId 486943 ;
+    ont:hasTitle "Valentine" ;
+    ont:isObjectType "Drawing" ;
+    ont:medium "metal",
+        "watercolor" ;
+    ont:startOfCreation 1976 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Valentine_with_temple_putto_and_German_poetry_827185> a ont:Artwork ;
+    ont:artistBirthDate "1782" ;
+    ont:artistNationality "Austrian" ;
+    ont:createdByArtist "Johannes Endletzberger" ;
+    ont:creationFinishedDate 1845 ;
+    ont:hasDescription "Golden embossed paper border, embossed paper embellishments, clay-like flowers, beige chiffon fabric, gold paper die-cut, nacre (mother-of-pearl), silver paper, watercolor." ;
+    ont:hasObjectId 827185 ;
+    ont:hasTitle "Valentine with temple, putto, and German poetry" ;
+    ont:isObjectType "Valentine" ;
+    ont:medium "clay",
+        "metal",
+        "watercolor" ;
+    ont:startOfCreation 1835 ;
+    ont:theme "nature" .
+
+<http://ontologeez/artwork/Watercolor_1668> a ont:Artwork ;
+    ont:createdByArtist "Eugene B. Cunningham" ;
+    ont:creationFinishedDate 1882 ;
+    ont:hasCulture "American, Shaker" ;
+    ont:hasDescription "Ink and watercolor on paper" ;
+    ont:hasObjectId 1668 ;
+    ont:hasTitle "Watercolor" ;
+    ont:isObjectType "Watercolor" ;
+    ont:medium "ink",
+        "watercolor" ;
+    ont:startOfCreation 1882 .
+
