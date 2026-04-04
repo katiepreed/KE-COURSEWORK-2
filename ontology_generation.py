@@ -27,17 +27,9 @@ g.add((CRM.E39_Actor, RDFS.label, Literal("Actor")))
 g.add((CRM.E21_Person, RDF.type, OWL.Class))
 g.add((CRM.E21_Person, RDFS.label, Literal("Person")))
 g.add((CRM.E21_Person, RDFS.subClassOf, CRM.E39_Actor))
-g.add((CRM.E21_Person, OWL.equivalentClass, SCHEMA.Person))
 
 g.add((CRM.E53_Place, RDF.type, OWL.Class))
 g.add((CRM.E53_Place, RDFS.label, Literal("Place")))
-
-g.add((CRM.E57_Material, RDF.type, OWL.Class))
-g.add((CRM.E57_Material, RDFS.label, Literal("Material")))
-
-g.add((CRM.E55_Type, RDF.type, OWL.Class))
-g.add((CRM.E55_Type, RDFS.label, Literal("Type")))
-
 
 ###############################################################################
 
@@ -47,47 +39,28 @@ g.add((CRM.E55_Type, RDFS.label, Literal("Type")))
 
 g.add((SCHEMA.Painting, RDF.type, OWL.Class))
 g.add((SCHEMA.Painting, RDFS.label, Literal("Painting")))
-# g.add((SCHEMA.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+g.add((SCHEMA.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
 g.add((SCHEMA.Sculpture, RDF.type, OWL.Class))
 g.add((SCHEMA.Sculpture, RDFS.label, Literal("Sculpture"))) # with known artist
-# g.add((SCHEMA.Sculpture, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+g.add((SCHEMA.Sculpture, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 # g.add((SCHEMA.Sculpture, RDFS.comment, Literal("Any sculpture that has a known artist is included here.")))
 
 g.add((SCHEMA.Museum, RDF.type, OWL.Class))
 g.add((SCHEMA.Museum, RDFS.label, Literal("Museum")))
-# g.add((SCHEMA.Museum, OWL.equivalentClass, MYONT.Museum))
 
+# only one equivalence statement is necessary
 g.add((SCHEMA.Person, RDF.type, OWL.Class))
-g.add((SCHEMA.Person, RDFS.label, Literal("Person")))
-
-g.add((SCHEMA.Organization, RDF.type, OWL.Class))
-g.add((SCHEMA.Organization, RDFS.label, Literal("Organization")))
+g.add((SCHEMA.Person, OWL.equivalentClass, CRM.E21_Person))
+g.add((SCHEMA.Person, RDFS.subClassOf, CRM.E39_Actor))
 
 ################################################################################
 
 ################################ Custom Classes ###############################
 
-g.add((MYONT.Painting, RDF.type, OWL.Class))
-g.add((MYONT.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
-g.add((MYONT.Painting, RDFS.label, Literal("Painting")))
-g.add((MYONT.Painting, OWL.equivalentClass, SCHEMA.Painting))
-
-g.add((MYONT.Sculpture, RDF.type, OWL.Class))
-g.add((MYONT.Sculpture, RDFS.subClassOf, CRM.E22_Human_Made_Object))
-g.add((MYONT.Sculpture, RDFS.label, Literal("Sculpture")))
-g.add((MYONT.Sculpture, OWL.equivalentClass, SCHEMA.Sculpture))
-
 g.add((MYONT.Artist, RDF.type, OWL.Class))
 g.add((MYONT.Artist, RDFS.label, Literal("Artist")))
 g.add((MYONT.Artist, RDFS.subClassOf, CRM.E21_Person))
-# g.add((MYONT.Artist, RDFS.subClassOf, SCHEMA.Person))
-
-g.add((MYONT.Museum, RDF.type, OWL.Class))
-g.add((MYONT.Museum, RDFS.label, Literal("Museum")))
-g.add((MYONT.Museum, RDFS.subClassOf, CRM.E39_Actor))
-g.add((MYONT.Museum, RDFS.subClassOf, SCHEMA.Organization))
-g.add((MYONT.Museum, OWL.equivalentClass, SCHEMA.Museum))
 
 g.add((MYONT.Artifact, RDF.type, OWL.Class))
 g.add((MYONT.Artifact, RDFS.label, Literal("Artifact"))) # when artist is not known - the thing is more discovered
@@ -119,11 +92,9 @@ g.add((MYONT.Figurine, RDFS.subClassOf, MYONT.Artifact))
 
 g.add((MYONT.Medium, RDF.type, OWL.Class))
 g.add((MYONT.Medium, RDFS.label, Literal("Medium")))
-g.add((MYONT.Medium, RDFS.subClassOf, CRM.E57_Material))
 
 g.add((MYONT.Theme, RDF.type, OWL.Class))
 g.add((MYONT.Theme, RDFS.label, Literal("Theme")))
-g.add((MYONT.Theme, RDFS.subClassOf, CRM.E55_Type))
 
 g.add((MYONT.NatureTheme, RDF.type, OWL.Class))
 g.add((MYONT.NatureTheme, RDFS.label, Literal("Nature theme")))
@@ -143,7 +114,6 @@ g.add((MYONT.MythologicalTheme, RDFS.subClassOf, MYONT.Theme))
 
 g.add((MYONT.Department, RDF.type, OWL.Class))
 g.add((MYONT.Department, RDFS.label, Literal("Department")))
-g.add((MYONT.Department, RDFS.subClassOf, SCHEMA.Organization)) # to be justified in report
 
 g.add((MYONT.City, RDF.type, OWL.Class))
 g.add((MYONT.City, RDFS.label, Literal("City")))
@@ -167,8 +137,9 @@ g.add((SCHEMA.name, RDFS.range, XSD.string))
 # g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
 # g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
 
-# g.add((SCHEMA.material, RDF.type, OWL.ObjectProperty))
-# g.add((SCHEMA.material, RDFS.range, MYONT.Medium))
+g.add((SCHEMA.material, RDF.type, OWL.ObjectProperty))
+g.add((SCHEMA.material, RDFS.domain, CRM.E22_Human_Made_Object))
+g.add((SCHEMA.material, RDFS.range, MYONT.Medium))
 g.add((SCHEMA.material, OWL.equivalentProperty, MYONT.inMedium))
 
 g.add((SCHEMA.dateCreated, RDF.type, OWL.DatatypeProperty))
@@ -223,9 +194,16 @@ g.add((CRM.P108i_was_produced_by, RDF.type, OWL.ObjectProperty))
 g.add((CRM.P108i_was_produced_by, RDFS.domain, CRM.E22_Human_Made_Object))
 g.add((CRM.P108i_was_produced_by, RDFS.range, MYONT.Artist))
 
-g.add((CRM.P46_composed_of, RDF.type, OWL.ObjectProperty))
-g.add((CRM.P46_composed_of, RDFS.domain, MYONT.Museum))
-g.add((CRM.P46_composed_of, RDFS.range, MYONT.Department))
+g.add((MYONT.hasDepartment, RDF.type, OWL.ObjectProperty))
+g.add((MYONT.hasDepartment, RDFS.label, Literal("has department")))
+g.add((MYONT.hasDepartment, RDFS.domain, SCHEMA.Museum))
+g.add((MYONT.hasDepartment, RDFS.range, MYONT.Department))
+g.add((MYONT.hasDepartment, OWL.inverseOf, MYONT.isDepartmentOf))
+
+g.add((MYONT.isDepartmentOf, RDF.type, OWL.ObjectProperty))
+g.add((MYONT.isDepartmentOf, RDFS.label, Literal("is department of")))
+g.add((MYONT.isDepartmentOf, RDFS.domain, MYONT.Department))
+g.add((MYONT.isDepartmentOf, RDFS.range, SCHEMA.Museum))
 
 ###############################################################################
 
@@ -271,12 +249,12 @@ g.add((MYONT.displayedIn, RDFS.range, MYONT.Department))
 g.add((MYONT.displayedBy, RDF.type, OWL.ObjectProperty))
 g.add((MYONT.displayedBy, RDFS.label, Literal("displayed by")))
 g.add((MYONT.displayedBy, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.displayedBy, RDFS.range, MYONT.Museum))
+g.add((MYONT.displayedBy, RDFS.range, SCHEMA.Museum))
 g.add((MYONT.displayedBy, OWL.inverseOf, MYONT.displays))
 
 g.add((MYONT.displays, RDF.type, OWL.ObjectProperty))
 g.add((MYONT.displays, RDFS.label, Literal("displays")))
-g.add((MYONT.displays, RDFS.domain, MYONT.Museum))
+g.add((MYONT.displays, RDFS.domain, SCHEMA.Museum))
 g.add((MYONT.displays, RDFS.range, CRM.E22_Human_Made_Object))
 
 g.add((MYONT.hasCreated, RDF.type, OWL.ObjectProperty))

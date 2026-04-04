@@ -1,0 +1,266 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix myont: <https://example.org/custom#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+crm:P102_has_title a owl:DatatypeProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:name .
+
+crm:P45_consists_of a owl:ObjectProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Medium ;
+    rdfs:subPropertyOf myont:inMedium .
+
+myont:AnimalTheme a owl:Class ;
+    rdfs:label "Animal theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:Ceramic a owl:Class ;
+    rdfs:label "Ceramic" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:City a owl:Class ;
+    rdfs:label "City" ;
+    rdfs:subClassOf crm:E53_Place .
+
+myont:Country a owl:Class ;
+    rdfs:label "Country" ;
+    rdfs:subClassOf crm:E53_Place .
+
+myont:Figurine a owl:Class ;
+    rdfs:label "Figurine" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:Jewellery a owl:Class ;
+    rdfs:label "Jewellery" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:MythologicalTheme a owl:Class ;
+    rdfs:label "Mythological theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:NatureTheme a owl:Class ;
+    rdfs:label "Nature theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:Region a owl:Class ;
+    rdfs:label "Region" ;
+    rdfs:subClassOf crm:E53_Place .
+
+myont:ReligiousTheme a owl:Class ;
+    rdfs:label "Religious theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:Scroll a owl:Class ;
+    rdfs:label "Scroll" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:Statue a owl:Class ;
+    rdfs:label "Statue" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:Vase a owl:Class ;
+    rdfs:label "Vase" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:bornOn a owl:DatatypeProperty ;
+    rdfs:label "born on" ;
+    rdfs:domain crm:E21_Person ;
+    rdfs:range xsd:date .
+
+myont:createdBy a owl:ObjectProperty ;
+    rdfs:label "created by" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Artist ;
+    rdfs:subPropertyOf crm:P108i_was_produced_by,
+        schema:creator ;
+    owl:inverseOf myont:hasCreated .
+
+myont:diedOn a owl:DatatypeProperty ;
+    rdfs:label "died on" ;
+    rdfs:domain crm:E21_Person ;
+    rdfs:range xsd:date .
+
+myont:discoveredIn a owl:ObjectProperty ;
+    rdfs:label "discovered in" ;
+    rdfs:domain myont:Artifact ;
+    rdfs:range crm:E53_Place .
+
+myont:displayedBy a owl:ObjectProperty ;
+    rdfs:label "displayed by" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range schema:Museum ;
+    owl:inverseOf myont:displays .
+
+myont:displayedIn a owl:ObjectProperty ;
+    rdfs:label "displayed in" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Department .
+
+myont:endDate a owl:DatatypeProperty ;
+    rdfs:label "ended in" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:date .
+
+myont:hasCulture a owl:DatatypeProperty ;
+    rdfs:label "culture" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:string .
+
+myont:hasDepartment a owl:ObjectProperty ;
+    rdfs:label "has department" ;
+    rdfs:domain schema:Museum ;
+    rdfs:range myont:Department ;
+    owl:inverseOf myont:isDepartmentOf .
+
+myont:hasDepartmentId a owl:DatatypeProperty ;
+    rdfs:label "department id" ;
+    rdfs:domain myont:Department ;
+    rdfs:range xsd:integer .
+
+myont:hasNationality a owl:DatatypeProperty ;
+    rdfs:label "nationality" ;
+    rdfs:domain crm:E21_Person ;
+    rdfs:range xsd:string .
+
+myont:hasObjectId a owl:DatatypeProperty ;
+    rdfs:label "object id" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:integer .
+
+myont:hasPeriod a owl:DatatypeProperty ;
+    rdfs:label "period" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:string .
+
+myont:hasTheme a owl:ObjectProperty ;
+    rdfs:label "Theme" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Theme ;
+    owl:inverseOf myont:isThemeOf .
+
+myont:mediumDescription a owl:DatatypeProperty ;
+    rdfs:label "Labeled Medium" ;
+    rdfs:domain myont:Medium ;
+    rdfs:range xsd:string .
+
+myont:startDate a owl:DatatypeProperty ;
+    rdfs:label "started in" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:date .
+
+myont:themeDescription a owl:DatatypeProperty ;
+    rdfs:label "Labeled Theme" ;
+    rdfs:domain myont:Theme ;
+    rdfs:range xsd:string .
+
+schema:Painting a owl:Class ;
+    rdfs:label "Painting" ;
+    rdfs:subClassOf crm:E22_Human_Made_Object .
+
+schema:Person rdfs:subClassOf crm:E39_Actor ;
+    owl:equivalentClass crm:E21_Person .
+
+schema:Sculpture a owl:Class ;
+    rdfs:label "Sculpture" ;
+    rdfs:subClassOf crm:E22_Human_Made_Object .
+
+schema:dateCreated a owl:DatatypeProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:date .
+
+schema:displayLocation a owl:ObjectProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range crm:E53_Place ;
+    owl:equivalentProperty crm:P55_has_current_location .
+
+schema:locationCreated a owl:ObjectProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range crm:E53_Place .
+
+schema:material a owl:ObjectProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Medium ;
+    owl:equivalentProperty myont:inMedium .
+
+crm:P108i_was_produced_by a owl:ObjectProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Artist .
+
+crm:P55_has_current_location a owl:ObjectProperty ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range crm:E53_Place .
+
+myont:displays a owl:ObjectProperty ;
+    rdfs:label "displays" ;
+    rdfs:domain schema:Museum ;
+    rdfs:range crm:E22_Human_Made_Object .
+
+myont:hasCreated a owl:ObjectProperty ;
+    rdfs:label "has created" ;
+    rdfs:domain myont:Artist ;
+    rdfs:range crm:E22_Human_Made_Object .
+
+myont:isDepartmentOf a owl:ObjectProperty ;
+    rdfs:label "is department of" ;
+    rdfs:domain myont:Department ;
+    rdfs:range schema:Museum .
+
+myont:isMediumOf a owl:ObjectProperty ;
+    rdfs:label "is medium of" ;
+    rdfs:domain myont:Medium ;
+    rdfs:range crm:E22_Human_Made_Object .
+
+myont:isThemeOf a owl:ObjectProperty ;
+    rdfs:label "is theme of" ;
+    rdfs:domain myont:Theme ;
+    rdfs:range crm:E22_Human_Made_Object .
+
+schema:creator a owl:ObjectProperty .
+
+schema:name a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+crm:E39_Actor a owl:Class ;
+    rdfs:label "Actor" .
+
+myont:inMedium a owl:ObjectProperty ;
+    rdfs:label "Medium" ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Medium ;
+    owl:inverseOf myont:isMediumOf .
+
+myont:Artist a owl:Class ;
+    rdfs:label "Artist" ;
+    rdfs:subClassOf crm:E21_Person .
+
+myont:Department a owl:Class ;
+    rdfs:label "Department" .
+
+schema:Museum a owl:Class ;
+    rdfs:label "Museum" .
+
+crm:E21_Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf crm:E39_Actor .
+
+myont:Medium a owl:Class ;
+    rdfs:label "Medium" .
+
+crm:E53_Place a owl:Class ;
+    rdfs:label "Place" .
+
+myont:Artifact a owl:Class ;
+    rdfs:label "Artifact" ;
+    rdfs:subClassOf crm:E22_Human_Made_Object .
+
+myont:Theme a owl:Class ;
+    rdfs:label "Theme" .
+
+crm:E22_Human_Made_Object a owl:Class ;
+    rdfs:label "Human Made Object" .
+
