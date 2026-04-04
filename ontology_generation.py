@@ -131,12 +131,13 @@ g.add((MYONT.Country, RDFS.subClassOf, CRM.E53_Place))
 
 g.add((SCHEMA.name, RDF.type, OWL.DatatypeProperty))
 g.add((SCHEMA.name, RDFS.range, XSD.string))
-# g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
-# g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
+# g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
+# g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
+
 
 g.add((SCHEMA.dateCreated, RDF.type, OWL.DatatypeProperty))
 g.add((SCHEMA.dateCreated, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((SCHEMA.dateCreated, RDFS.range, XSD.integer)) # use this format for dates in data preprocessing
+g.add((SCHEMA.dateCreated, RDFS.range, XSD.string)) # use this format for dates in data preprocessing
 
 #--------------------------------------------------------------------------------
 
@@ -249,12 +250,12 @@ g.add((MYONT.discoveredIn, RDFS.range, CRM.E53_Place))
 g.add((MYONT.startDate, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.startDate, RDFS.label, Literal("started in")))
 g.add((MYONT.startDate, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.startDate, RDFS.range, XSD.integer))
+g.add((MYONT.startDate, RDFS.range, XSD.string))
 
 g.add((MYONT.endDate, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.endDate, RDFS.label, Literal("artwork finished in")))
 g.add((MYONT.endDate, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.endDate, RDFS.range, XSD.integer))
+g.add((MYONT.endDate, RDFS.range, XSD.string))
 
 g.add((MYONT.hasCulture, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.hasCulture, RDFS.label, Literal("culture")))
@@ -265,11 +266,6 @@ g.add((MYONT.mediumDescription, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.mediumDescription, RDFS.label, Literal("Labeled Medium")))
 g.add((MYONT.mediumDescription, RDFS.domain, CRM.E22_Human_Made_Object))
 g.add((MYONT.mediumDescription, RDFS.range, XSD.string))
-
-g.add((MYONT.themeDescription, RDF.type, OWL.DatatypeProperty))
-g.add((MYONT.themeDescription, RDFS.label, Literal("Labeled Theme")))
-g.add((MYONT.themeDescription, RDFS.domain, MYONT.Theme))
-g.add((MYONT.themeDescription, RDFS.range, XSD.string))
 
 g.add((MYONT.hasNationality, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.hasNationality, RDFS.label, Literal("nationality")))
@@ -294,12 +290,12 @@ g.add((MYONT.hasDepartmentId, RDFS.range, XSD.integer))
 g.add((MYONT.bornOn, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.bornOn, RDFS.label, Literal("born in")))
 g.add((MYONT.bornOn, RDFS.domain, CRM.E21_Person))
-g.add((MYONT.bornOn, RDFS.range, XSD.integer))
+g.add((MYONT.bornOn, RDFS.range, XSD.string))
 
 g.add((MYONT.diedOn, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.diedOn, RDFS.label, Literal("died in")))
 g.add((MYONT.diedOn, RDFS.domain, CRM.E21_Person))
-g.add((MYONT.diedOn, RDFS.range, XSD.integer))
+g.add((MYONT.diedOn, RDFS.range, XSD.string))
 
 ###############################################################################
 

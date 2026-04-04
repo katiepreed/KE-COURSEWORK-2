@@ -96,8 +96,23 @@ data = get_data("jewelry", 20, dept_lookup)
 data = get_data("scroll", 20, dept_lookup)
 data = get_data("statue", 20, dept_lookup)
 data = get_data("vase", 20, dept_lookup)
+
+data = get_data("cat", 20, dept_lookup)
+data = get_data("dog", 20, dept_lookup)
+data = get_data("horse", 20, dept_lookup)
+data = get_data("myth", 20, dept_lookup)
+data = get_data("allegory", 20, dept_lookup)
+data = get_data("flower", 20, dept_lookup)
+data = get_data("tree", 20, dept_lookup)
+data = get_data("plant", 20, dept_lookup)
+data = get_data("god", 20, dept_lookup)
+data = get_data("biblical", 20, dept_lookup)
+
+data = get_data("van gogh", 20, dept_lookup)
+data = get_data("monet", 20, dept_lookup)
 """
-data = get_data("painting", 20, dept_lookup)
+
+data = get_data("monet", 20, dept_lookup)
 
 if os.path.exists("data.json") and os.path.getsize("data.json") > 0:
     with open("data.json", "r") as f:

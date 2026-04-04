@@ -1,5 +1,14 @@
 """
-TODO: convert the dates from integers into XSD.date datatype
+TODO: convert the dates from integers into XSD.date datatype in this file and ontology creation file
+
+Properties to think about: 
+- SCHEMA.creator
+- CRM.P102_has_title
+- MYONT.createdBy
+- MYONT.hasCreated
+- MYONT.discoveredIn
+
+Deal with unidentified artist
 """
 import json
 import re
@@ -94,6 +103,7 @@ def assign_themes(title, medium, object_name, tags):
             g.add((theme_uri, RDF.type, object_class))
             g.add((theme_uri, SCHEMA.name, Literal(name.lower())))
             g.add((subject, MYONT.hasTheme, theme_uri))
+            g.add((theme_uri, MYONT.isThemeOf, subject))
 
 with open("data.json", "r") as f:
     data = json.load(f)
@@ -107,6 +117,11 @@ seen_cities = {}
 seen_regions = {}
 seen_mediums = {}
 
+# all artworks in the MET are displayed in new york
+new_york = MYONT["New_york"]
+g.add((new_york, RDF.type, MYONT.City))
+seen_cities[new_york] = True
+    
 for item in data:
     obj_id       = item.get("object_id")
     title        = item.get("title") or ""
@@ -141,6 +156,9 @@ for item in data:
     if not rdf_class:
         continue
 
+    g.add((subject, SCHEMA.displayLocation, new_york))
+    g.add((new_york, SCHEMA.name, Literal("new york")))
+    
     # assign object to a class
     g.add((subject, RDF.type, rdf_class))
 
@@ -148,7 +166,7 @@ for item in data:
     g.add((subject, SCHEMA.name, Literal(title.lower())))
 
     if object_date:
-        g.add((subject, SCHEMA.dateCreated, Literal(object_date)))
+        g.add((subject, SCHEMA.dateCreated, Literal(str(object_date))))
 
     if culture:
         g.add((subject, MYONT.hasCulture, Literal(culture.lower())))
@@ -157,10 +175,10 @@ for item in data:
         g.add((subject, MYONT.hasPeriod, Literal(period.lower())))
 
     if begin_date:
-        g.add((subject, MYONT.startDate, Literal(begin_date)))
+        g.add((subject, MYONT.startDate, Literal(str(begin_date))))
 
     if end_date:
-        g.add((subject, MYONT.endDate, Literal(end_date)))
+        g.add((subject, MYONT.endDate, Literal(str(end_date))))
 
     if medium:
         g.add((subject, MYONT.mediumDescription, Literal(medium.lower())))
@@ -179,10 +197,10 @@ for item in data:
                 g.add((artist_uri, MYONT.hasNationality, Literal(artist_nat.lower())))
 
             if artist_begin:
-                g.add((artist_uri, MYONT.bornOn, Literal(artist_begin)))
+                g.add((artist_uri, MYONT.bornOn, Literal(str(artist_begin))))
 
             if artist_end:
-                g.add((artist_uri, MYONT.diedOn, Literal(artist_end)))
+                g.add((artist_uri, MYONT.diedOn, Literal(str(artist_end))))
 
         g.add((subject, MYONT.createdBy, artist_uri))
 
@@ -211,11 +229,13 @@ for item in data:
             seen_museums[museum_id] = True
             g.add((museum_uri, RDF.type, SCHEMA.Museum))
             g.add((museum_uri, SCHEMA.name, Literal(repository.lower())))
+            g.add((museum_uri, MYONT.displays, subject))
 
         if department:
             dept_id = createTitle(department)
             dept_uri = MYONT[dept_id]
             g.add((museum_uri, MYONT.hasDepartment, dept_uri))
+            g.add((dept_uri, MYONT.isDepartmentOf, museum_uri))
 
         g.add((subject, MYONT.displayedBy, museum_uri))
 
@@ -240,6 +260,7 @@ for item in data:
             g.add((city_uri, SCHEMA.name, Literal(city.lower())))
 
         g.add((subject, SCHEMA.locationCreated, city_uri))
+        
 
     if region:
         region_id = createTitle(region)
