@@ -64,7 +64,6 @@ OBJECT_TYPE_MAP = {
 Not every object in our ontology needs to map to a theme.
 """
 THEME_MAP = {
-    "animal": MYONT.AnimalTheme,
     "cat": MYONT.AnimalTheme,
     "dog":  MYONT.AnimalTheme,
     "bird":  MYONT.AnimalTheme,

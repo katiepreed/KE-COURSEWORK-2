@@ -22,43 +22,17 @@ myont:Bathsheba_at_her_bath_435894 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "bathsheba at her bath" .
 
-myont:Bottle_with_lotus_scroll_42477 a myont:Ceramic ;
+myont:Bona_sforza__queen_of_poland_193658 a myont:Jewellery ;
+    myont:createdBy myont:Giovanni_jacopo_caraglio ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1333" ;
-    myont:hasCulture "china" ;
-    myont:hasObjectId 42477 ;
-    myont:hasPeriod "yuan dynasty (1271–1368)" ;
-    myont:mediumDescription "porcelain with incised decoration under celadon glaze (jingdezhen qingbai ware)" ;
-    myont:startDate "1267" ;
-    schema:dateCreated "late 13th–early 14th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "bottle with lotus scroll" .
-
-myont:Bottle_with_peony_scroll_49216 a myont:Ceramic ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1366" ;
-    myont:hasCulture "china" ;
-    myont:hasObjectId 49216 ;
-    myont:hasPeriod "yuan dynasty (1271–1368)" ;
-    myont:mediumDescription "porcelain painted with cobalt blue under a transparent glaze (jingdezhen ware)" ;
-    myont:startDate "1334" ;
-    schema:dateCreated "mid-14th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "bottle with peony scroll" .
-
-myont:Bridge_over_a_pond_of_water_lilies_437127 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
     myont:endDate "1899" ;
-    myont:hasObjectId 437127 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1899" ;
-    schema:dateCreated "1899" ;
+    myont:hasObjectId 193658 ;
+    myont:mediumDescription "sardonyx, with inlaid gold and silver details; mounted in 19th century frame as a pendant in gold, with enamel, pearl and ruby" ;
+    myont:startDate "1525" ;
+    schema:dateCreated "cameo ca. 1530–40, frame 19th century" ;
     schema:displayLocation myont:New_york ;
-    schema:name "bridge over a pond of water lilies" .
+    schema:name "bona sforza (1493–1557), queen of poland" .
 
 myont:Bronze_statue_of_an_aristocratic_boy_248891 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -72,19 +46,6 @@ myont:Bronze_statue_of_an_aristocratic_boy_248891 a myont:Statue ;
     schema:dateCreated "27 BCE–14 CE" ;
     schema:displayLocation myont:New_york ;
     schema:name "bronze statue of an aristocratic boy" .
-
-myont:Bronze_statue_of_eros_sleeping_254502 a myont:Statue ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Greek_and_roman_art ;
-    myont:endDate "-100" ;
-    myont:hasCulture "greek" ;
-    myont:hasObjectId 254502 ;
-    myont:hasPeriod "hellenistic" ;
-    myont:mediumDescription "bronze" ;
-    myont:startDate "-299" ;
-    schema:dateCreated "3rd–2nd century BCE" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "bronze statue of eros sleeping" .
 
 myont:Bronze_statue_of_the_emperor_trebonianus_gallus_247117 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -110,30 +71,6 @@ myont:Brooch_209285 a myont:Jewellery ;
     schema:dateCreated "19th century" ;
     schema:displayLocation myont:New_york ;
     schema:name "brooch (part of a set)" .
-
-myont:Camille_monet__in_the_garden_at_argenteuil_438005 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1876" ;
-    myont:hasObjectId 438005 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1876" ;
-    schema:dateCreated "1876" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "camille monet (1847–1879) in the garden at argenteuil" .
-
-myont:Camille_monet__on_a_garden_bench_438003 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1873" ;
-    myont:hasObjectId 438003 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1873" ;
-    schema:dateCreated "1873" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "camille monet (1847–1879) on a garden bench" .
 
 myont:Ceramic_35955 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -224,18 +161,6 @@ myont:Corridor_in_the_asylum_336327 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "corridor in the asylum" .
 
-myont:Cypresses_437980 a schema:Painting ;
-    myont:createdBy myont:Vincent_van_gogh ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1889" ;
-    myont:hasObjectId 437980 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1889" ;
-    schema:dateCreated "1889" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "cypresses" .
-
 myont:Disk_brooch_465818 a myont:Jewellery ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Medieval_art ;
@@ -247,18 +172,6 @@ myont:Disk_brooch_465818 a myont:Jewellery ;
     schema:dateCreated "second half 7th century" ;
     schema:displayLocation myont:New_york ;
     schema:name "disk brooch" .
-
-myont:Display_dish_with_a_cavalier_and_portrait_medallions_671528 a myont:Ceramic ;
-    myont:createdBy myont:Ralph_toft ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1677" ;
-    myont:hasObjectId 671528 ;
-    myont:mediumDescription "slip-decorated earthenware" ;
-    myont:startDate "1677" ;
-    schema:dateCreated "1677" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "display dish with a cavalier and portrait medallions" .
 
 myont:Esther_scroll_and_case_926689 a myont:Scroll ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -450,18 +363,6 @@ myont:Figurine_327136 a schema:Sculpture ;
     schema:locationCreated myont:Syria ;
     schema:name "figurine" .
 
-myont:Figurine_43252 a myont:Figurine ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1795" ;
-    myont:hasCulture "china" ;
-    myont:hasObjectId 43252 ;
-    myont:hasPeriod "qing dynasty (1644–1911), qianlong period (1736–95)" ;
-    myont:mediumDescription "jade" ;
-    myont:startDate "1736" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "figurine" .
-
 myont:Figurine_447354 a myont:Figurine ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Islamic_art ;
@@ -486,7 +387,7 @@ myont:Figurine_454117 a myont:Figurine ;
     schema:locationCreated myont:Egypt ;
     schema:name "figurine" .
 
-myont:Figurine_568197 a myont:Figurine ;
+myont:Figurine_568197 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "364" ;
@@ -499,7 +400,7 @@ myont:Figurine_568197 a myont:Figurine ;
     schema:locationCreated myont:Egypt ;
     schema:name "figurine" .
 
-myont:Figurine_568199 a myont:Figurine ;
+myont:Figurine_568199 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "364" ;
@@ -540,18 +441,6 @@ myont:Figurine_of_a_seated_woman_547202 a myont:Figurine ;
     schema:locationCreated myont:Northern_upper_egypt ;
     schema:name "figurine of a seated woman" .
 
-myont:First_steps_after_millet_436526 a schema:Painting ;
-    myont:createdBy myont:Vincent_van_gogh ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1890" ;
-    myont:hasObjectId 436526 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1890" ;
-    schema:dateCreated "1890" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "first steps, after millet" .
-
 myont:Ganymede_jewelry_256975 a myont:Jewellery ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Greek_and_roman_art ;
@@ -564,18 +453,6 @@ myont:Ganymede_jewelry_256975 a myont:Jewellery ;
     schema:dateCreated "ca. 330–300 BCE" ;
     schema:displayLocation myont:New_york ;
     schema:name "ganymede jewelry" .
-
-myont:Garden_at_sainteadresse_437133 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1867" ;
-    myont:hasObjectId 437133 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1867" ;
-    schema:dateCreated "1867" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "garden at sainte-adresse" .
 
 myont:Gilded_minai_ceramic_451434 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -628,19 +505,6 @@ myont:Haystacks_437122 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "haystacks (effect of snow and sun)" .
 
-myont:Heart_of_the_andes_10481 a schema:Painting ;
-    myont:createdBy myont:Frederic_edwin_church ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1859" ;
-    myont:hasCulture "american" ;
-    myont:hasObjectId 10481 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1859" ;
-    schema:dateCreated "1859" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "heart of the andes" .
-
 myont:Hooded_wall_clock_with_calendar_205602 a myont:Jewellery ;
     myont:createdBy myont:Ahasuerus_i_fromanteel ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -653,17 +517,18 @@ myont:Hooded_wall_clock_with_calendar_205602 a myont:Jewellery ;
     schema:displayLocation myont:New_york ;
     schema:name "hooded wall clock with calendar" .
 
-myont:Houses_on_the_achterzaan_459107 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
+myont:Jeweled_bracelet_464077 a myont:Jewellery ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Robert_lehman_collection ;
-    myont:endDate "1871" ;
-    myont:hasObjectId 459107 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1871" ;
-    schema:dateCreated "1871" ;
+    myont:displayedInDepartment myont:Medieval_art ;
+    myont:endDate "699" ;
+    myont:hasCulture "byzantine" ;
+    myont:hasObjectId 464077 ;
+    myont:mediumDescription "gold, silver, pearl, amethyst, sapphire, opal, glass, quartz, emerald plasma" ;
+    myont:startDate "500" ;
+    schema:dateCreated "500–700" ;
     schema:displayLocation myont:New_york ;
-    schema:name "houses on the achterzaan" .
+    schema:locationCreated myont:Probably_constantinople ;
+    schema:name "jeweled bracelet (one of pair)" .
 
 myont:Jewelry_323060 a myont:Jewellery ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -780,17 +645,19 @@ myont:Kneeling_statue_of_yuny_544741 a myont:Statue ;
         myont:Middle_egypt ;
     schema:name "kneeling statue of yuny" .
 
-myont:La_grenouillre_437135 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
+myont:Lamp_wick_holder_555851 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1869" ;
-    myont:hasObjectId 437135 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1869" ;
-    schema:dateCreated "1869" ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1640" ;
+    myont:hasObjectId 555851 ;
+    myont:hasPeriod "middle kingdom" ;
+    myont:mediumDescription "limestone, pottery" ;
+    myont:startDate "-2030" ;
+    schema:dateCreated "ca. 2030–1640 B.C." ;
     schema:displayLocation myont:New_york ;
-    schema:name "la grenouillère" .
+    schema:locationCreated myont:Egypt,
+        myont:Fayum_entrance_area ;
+    schema:name "lamp wick holder" .
 
 myont:Large_kneeling_statue_of_hatshepsut_544448 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -817,19 +684,6 @@ myont:Larlsienne_madame_josephmichel_ginoux_436529 a schema:Painting ;
     schema:dateCreated "1888–89" ;
     schema:displayLocation myont:New_york ;
     schema:name "l'arlésienne: madame joseph-michel ginoux (marie julien, 1848–1911)" .
-
-myont:Limestone_statue_of_aphrodite_holding_winged_eros_242017 a schema:Sculpture ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Greek_and_roman_art ;
-    myont:endDate "-300" ;
-    myont:hasCulture "cypriot" ;
-    myont:hasObjectId 242017 ;
-    myont:hasPeriod "classical" ;
-    myont:mediumDescription "limestone" ;
-    myont:startDate "-330" ;
-    schema:dateCreated "late 4th century BCE" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "limestone statue of aphrodite holding winged eros" .
 
 myont:Madame_roulin_and_her_baby_459123 a schema:Painting ;
     myont:createdBy myont:Vincent_van_gogh ;
@@ -868,19 +722,6 @@ myont:Marble_portrait_bust_of_a_woman_with_a_scroll_468716 a schema:Sculpture ;
     schema:locationCreated myont:Constantinople ;
     schema:name "marble portrait bust of a woman with a scroll" .
 
-myont:Marble_statue_of_a_lion_248140 a schema:Sculpture ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Greek_and_roman_art ;
-    myont:endDate "-390" ;
-    myont:hasCulture "greek" ;
-    myont:hasObjectId 248140 ;
-    myont:hasPeriod "classical" ;
-    myont:mediumDescription "marble, parian 2" ;
-    myont:startDate "-400" ;
-    schema:dateCreated "ca. 400–390 BCE" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "marble statue of a lion" .
-
 myont:Marble_statue_of_a_wounded_amazon_253373 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Greek_and_roman_art ;
@@ -906,33 +747,6 @@ myont:Marble_statue_of_a_wounded_warrior_251929 a schema:Sculpture ;
     schema:dateCreated "ca. 138–181 CE" ;
     schema:displayLocation myont:New_york ;
     schema:name "marble statue of a wounded warrior" .
-
-myont:Morning_on_the_seine_near_giverny_437125 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1897" ;
-    myont:hasObjectId 437125 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1897" ;
-    schema:dateCreated "1897" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "morning on the seine near giverny" .
-
-myont:Nkishi_310453 a schema:Sculpture ;
-    myont:createdBy myont:Songye_artist_and_nganga ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
-    myont:endDate "1950" ;
-    myont:hasCulture "songye peoples" ;
-    myont:hasObjectId 310453 ;
-    myont:mediumDescription "wood, copper, brass, iron, fiber, snakeskin, leather, fur, feathers, mud, resin" ;
-    myont:startDate "1800" ;
-    schema:dateCreated "19th–first half of 20th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Democratic_republic_of_the_congo,
-        myont:Lomami_river_region ;
-    schema:name "nkishi (community power figure)" .
 
 myont:Orpheus_198764 a schema:Sculpture ;
     myont:createdBy myont:Cristoforo_stati ;
@@ -1087,20 +901,6 @@ myont:Painting_490190 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "painting" .
 
-myont:Painting_51776 a schema:Painting ;
-    myont:createdBy myont:Bi_chang ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1899" ;
-    myont:hasCulture "china" ;
-    myont:hasObjectId 51776 ;
-    myont:hasPeriod "qing dynasty (1644–1911)" ;
-    myont:mediumDescription "album with ten leaves (eight paintings and two title leaves); ink and color on paper" ;
-    myont:startDate "1700" ;
-    schema:dateCreated "18th–19th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "painting" .
-
 myont:Painting_51867 a schema:Painting ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Asian_art ;
@@ -1138,20 +938,6 @@ myont:Painting_53750 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "painting" .
 
-myont:Painting_57329 a schema:Painting ;
-    myont:createdBy myont:Shibata_zeshin ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1891" ;
-    myont:hasCulture "japan" ;
-    myont:hasObjectId 57329 ;
-    myont:hasPeriod "meiji period (1868–1912)" ;
-    myont:mediumDescription "album of seventeen sketches; watercolor on paper; mounted on natural silk" ;
-    myont:startDate "1807" ;
-    schema:dateCreated "19th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "painting" .
-
 myont:Paracas_ceramic_trumpet_768802 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Musical_instruments ;
@@ -1177,41 +963,37 @@ myont:Peasant_woman_cooking_by_a_fireplace_436531 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "peasant woman cooking by a fireplace" .
 
-myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247 a myont:Jewellery ;
+myont:Plate_13527 a myont:Ceramic ;
+    myont:createdBy myont:Bruno_geyer_austrian_active_late_19th_century_to_early_20th_century ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Medieval_art ;
-    myont:endDate "1399" ;
-    myont:hasCulture "byzantine" ;
-    myont:hasObjectId 477247 ;
-    myont:mediumDescription "chalcedony cameo; gold mount with pearls, emeralds, garnets, sapphires, and a sardonyx intaglio" ;
-    myont:startDate "1075" ;
-    schema:dateCreated "late 1000s–1100s (cameo); 1100s–1300s (mount)" ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1905" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 13527 ;
+    myont:mediumDescription "porcelain" ;
+    myont:startDate "1904" ;
+    schema:dateCreated "1904–5" ;
     schema:displayLocation myont:New_york ;
-    schema:name "pendant brooch with cameo of enthroned virgin and child and christ pantokrator" .
+    schema:locationCreated myont:Midatlantic,
+        myont:Trenton,
+        myont:United_states ;
+    schema:name "plate" .
 
-myont:Pendant_with_a_triton_riding_a_unicornlike_sea_creature_207258 a myont:Jewellery ;
-    myont:createdBy myont:Reinhold_vasters ;
+myont:Presentation_vase_6779 a myont:Vase ;
+    myont:createdBy myont:Thomas_fletcher ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1900" ;
-    myont:hasObjectId 207258 ;
-    myont:mediumDescription "baroque pearl mounted with enameled gold set with pearls, emeralds and rubies and with pendent pearls" ;
-    myont:startDate "1865" ;
-    schema:dateCreated "ca. 1870–95" ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1825" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 6779 ;
+    myont:mediumDescription "silver" ;
+    myont:startDate "1825" ;
+    schema:dateCreated "1825" ;
     schema:displayLocation myont:New_york ;
-    schema:name "pendant with a triton riding a unicorn-like sea creature" .
-
-myont:Poppy_fields_near_argenteuil_438004 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1875" ;
-    myont:hasObjectId 438004 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1875" ;
-    schema:dateCreated "1875" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "poppy fields near argenteuil" .
+    schema:locationCreated myont:Midatlantic,
+        myont:Philadelphia,
+        myont:United_states ;
+    schema:name "presentation vase" .
 
 myont:Presentation_vase_9173 a myont:Vase ;
     myont:createdBy myont:New_england_glass_company ;
@@ -1229,19 +1011,7 @@ myont:Presentation_vase_9173 a myont:Vase ;
         myont:United_states ;
     schema:name "presentation vase" .
 
-myont:Roses_436534 a schema:Painting ;
-    myont:createdBy myont:Vincent_van_gogh ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1890" ;
-    myont:hasObjectId 436534 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1890" ;
-    schema:dateCreated "1890" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "roses" .
-
-myont:Scarab_scroll_572914 a myont:Scroll ;
+myont:Scarab_scroll_572914 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "-1640" ;
@@ -1344,6 +1114,17 @@ myont:Scroll_763943 a schema:Painting ;
     schema:dateCreated "ca. 20th century" ;
     schema:displayLocation myont:New_york ;
     schema:locationCreated myont:Iran ;
+    schema:name "scroll" .
+
+myont:Scroll_889279 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Islamic_art ;
+    myont:endDate "1899" ;
+    myont:hasObjectId 889279 ;
+    myont:mediumDescription "ink, gold, and opaque watercolor on animal skin, within a leather case" ;
+    myont:startDate "1600" ;
+    schema:dateCreated "17th–19th century" ;
+    schema:displayLocation myont:New_york ;
     schema:name "scroll" .
 
 myont:Sculpture_394727 a schema:Sculpture ;
@@ -1511,20 +1292,6 @@ myont:Shoes_436533 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "shoes" .
 
-myont:Six_jewel_rivers_53427 a schema:Painting ;
-    myont:createdBy myont:Sakai_ho ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1849" ;
-    myont:hasCulture "japan" ;
-    myont:hasObjectId 53427 ;
-    myont:hasPeriod "edo period (1615–1868)" ;
-    myont:mediumDescription "six handscrolls; ink, color, and gold on silk" ;
-    myont:startDate "1829" ;
-    schema:dateCreated "ca. 1839" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "six jewel rivers" .
-
 myont:Statue_of_kneeling_captive_543869 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
@@ -1576,17 +1343,16 @@ myont:Talismanic_scroll_452893 a myont:Scroll ;
     schema:locationCreated myont:Egypt ;
     schema:name "talismanic scroll" .
 
-myont:The_bodmer_oak_fontainebleau_forest_437131 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
+myont:Tankard_205198 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1865" ;
-    myont:hasObjectId 437131 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1865" ;
-    schema:dateCreated "1865" ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1585" ;
+    myont:hasObjectId 205198 ;
+    myont:mediumDescription "gilded silver, stoneware" ;
+    myont:startDate "1575" ;
+    schema:dateCreated "ca. 1580" ;
     schema:displayLocation myont:New_york ;
-    schema:name "the bodmer oak, fontainebleau forest" .
+    schema:name "tankard (one of a pair)" .
 
 myont:The_manneporte_438823 a schema:Painting ;
     myont:createdBy myont:Claude_monet ;
@@ -1600,18 +1366,6 @@ myont:The_manneporte_438823 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "the manneporte (etretat)" .
 
-myont:The_monet_family_in_their_garden_at_argenteuil_436965 a schema:Painting ;
-    myont:createdBy myont:Edouard_manet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1874" ;
-    myont:hasObjectId 436965 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1874" ;
-    schema:dateCreated "1874" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "the monet family in their garden at argenteuil" .
-
 myont:The_potato_peeler_438722 a schema:Painting ;
     myont:createdBy myont:Vincent_van_gogh ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -1623,18 +1377,6 @@ myont:The_potato_peeler_438722 a schema:Painting ;
     schema:dateCreated "1885" ;
     schema:displayLocation myont:New_york ;
     schema:name "the potato peeler (reverse: self-portrait with a straw hat)" .
-
-myont:The_son_of_moses_circumcised_336778 a schema:Painting ;
-    myont:createdBy myont:Anonymous_french_17th_century ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Drawings_and_prints ;
-    myont:endDate "1699" ;
-    myont:hasObjectId 336778 ;
-    myont:mediumDescription "red chalk, brush and red, brown, and gray wash, heightened with white" ;
-    myont:startDate "1600" ;
-    schema:dateCreated "17th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "the son of moses circumcised" .
 
 myont:The_stroller_438006 a schema:Painting ;
     myont:createdBy myont:Claude_monet ;
@@ -1648,63 +1390,7 @@ myont:The_stroller_438006 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "the stroller (suzanne hoschedé, later mrs. theodore earl butler, 1868–1899)" .
 
-myont:The_valley_of_the_nervia_437118 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1884" ;
-    myont:hasObjectId 437118 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1884" ;
-    schema:dateCreated "1884" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "the valley of the nervia" .
-
-myont:Van_gogh_632941 a schema:Sculpture ;
-    myont:createdBy myont:Bert_l_long_jr ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Modern_and_contemporary_art ;
-    myont:endDate "1987" ;
-    myont:hasObjectId 632941 ;
-    myont:mediumDescription "acrylic on canvas, wood, modeling paste, glass, candleholders, bread, preserved brain, stone organizer with brush, silk rose, money, and keys" ;
-    myont:startDate "1987" ;
-    schema:dateCreated "1987" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "van gogh" .
-
-myont:Vase_14318 a myont:Vase ;
-    myont:createdBy myont:Thomas_tucker ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1838" ;
-    myont:hasCulture "american" ;
-    myont:hasObjectId 14318 ;
-    myont:mediumDescription "porcelain" ;
-    myont:startDate "1828" ;
-    schema:dateCreated "1828–38" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Midatlantic,
-        myont:Philadelphia,
-        myont:United_states ;
-    schema:name "vase" .
-
-myont:Vase_16589 a myont:Vase ;
-    myont:createdBy myont:Marc_schoelcher ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1820" ;
-    myont:hasCulture "french" ;
-    myont:hasObjectId 16589 ;
-    myont:mediumDescription "porcelain" ;
-    myont:startDate "1815" ;
-    schema:dateCreated "ca. 1815–20" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:France,
-        myont:Paris,
-        myont:ledefrance ;
-    schema:name "vase" .
-
-myont:Vase_19948 a myont:Vase ;
+myont:Vase_19948 a myont:Ceramic ;
     myont:createdBy myont:Maija_grotell ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:The_american_wing ;
@@ -1720,7 +1406,7 @@ myont:Vase_19948 a myont:Vase ;
         myont:United_states ;
     schema:name "vase" .
 
-myont:Vase_20201 a myont:Vase ;
+myont:Vase_20201 a myont:Ceramic ;
     myont:createdBy myont:Ceramic_art_company_trenton_new_jersey ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:The_american_wing ;
@@ -1733,22 +1419,6 @@ myont:Vase_20201 a myont:Vase ;
     schema:displayLocation myont:New_york ;
     schema:locationCreated myont:Midatlantic_united_states,
         myont:Trenton,
-        myont:United_states ;
-    schema:name "vase" .
-
-myont:Vase_21355 a myont:Vase ;
-    myont:createdBy myont:Tucker_factory ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1836" ;
-    myont:hasCulture "american" ;
-    myont:hasObjectId 21355 ;
-    myont:mediumDescription "porcelain, brass" ;
-    myont:startDate "1828" ;
-    schema:dateCreated "1828–36" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Midatlantic,
-        myont:Philadelphia,
         myont:United_states ;
     schema:name "vase" .
 
@@ -1870,56 +1540,6 @@ myont:Venus_and_cupid_436918 a schema:Painting ;
     schema:dateCreated "1520s" ;
     schema:displayLocation myont:New_york ;
     schema:name "venus and cupid" .
-
-myont:Water_lilies_437137 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1919" ;
-    myont:hasObjectId 437137 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1916" ;
-    schema:dateCreated "1916–19" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "water lilies" .
-
-myont:Water_lilies_438008 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1919" ;
-    myont:hasObjectId 438008 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1919" ;
-    schema:dateCreated "1919" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "water lilies" .
-
-myont:Wheat_field_with_cypresses_436535 a schema:Painting ;
-    myont:createdBy myont:Vincent_van_gogh ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1889" ;
-    myont:hasObjectId 436535 ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1889" ;
-    schema:dateCreated "1889" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "wheat field with cypresses" .
-
-myont:Zen_master_with_meditation_staff_and_chinesestyle_landscapes_78057 a schema:Painting ;
-    myont:createdBy myont:Unkoku_teki ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1644" ;
-    myont:hasCulture "japan" ;
-    myont:hasObjectId 78057 ;
-    myont:hasPeriod "edo period (1615–1868)" ;
-    myont:mediumDescription "set of three hanging scrolls; ink on paper" ;
-    myont:startDate "1626" ;
-    schema:dateCreated "probably late 1620s–1644" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "zen master with meditation staff, and chinese-style landscapes" .
 
 myont:bornOn a owl:DatatypeProperty ;
     rdfs:label "born in" ;
@@ -2081,19 +1701,6 @@ myont:Aidoneus_offering_persephone_the_pomegranate_from_the_myth_of_demeter_and_
     schema:displayLocation myont:New_york ;
     schema:name "aidoneus offering persephone the pomegranate, from \"the myth of demeter and persephone\"" .
 
-myont:Allegory_341160 a schema:Painting ;
-    myont:createdBy myont:Orazio_samacchini ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Drawings_and_prints ;
-    myont:endDate "1577" ;
-    myont:hasObjectId 341160 ;
-    myont:hasTheme myont:Allegory ;
-    myont:mediumDescription "pen and ink over red chalk" ;
-    myont:startDate "1532" ;
-    schema:dateCreated "1532–77" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "allegory" .
-
 myont:Allegory_389989 a schema:Painting ;
     myont:createdBy myont:Anonymous_italian_venetian_18th_century ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -2158,19 +1765,6 @@ myont:Allegory_of_autumn_732553 a schema:Sculpture ;
     schema:displayLocation myont:New_york ;
     schema:name "allegory of autumn (bacchus)" .
 
-myont:Allegory_of_music_436836 a schema:Painting ;
-    myont:createdBy myont:Laurent_de_la_hyre ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1649" ;
-    myont:hasObjectId 436836 ;
-    myont:hasTheme myont:Allegory ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1649" ;
-    schema:dateCreated "1649" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "allegory of music" .
-
 myont:Allen_tucker a myont:Artist ;
     myont:bornOn "1866" ;
     myont:diedOn "1939" ;
@@ -2231,18 +1825,33 @@ myont:Bob_thompson a myont:Artist ;
     myont:hasNationality "american" ;
     schema:name "bob thompson" .
 
-myont:Bottle_with_birds_and_peony_scroll_37557 a myont:Ceramic ;
+myont:Bottle_with_lotus_scroll_42477 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1499" ;
-    myont:hasCulture "vietnam" ;
-    myont:hasObjectId 37557 ;
-    myont:hasTheme myont:Flower ;
-    myont:mediumDescription "stoneware painted with cobalt blue under transparent glaze" ;
-    myont:startDate "1400" ;
-    schema:dateCreated "15th century" ;
+    myont:endDate "1333" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 42477 ;
+    myont:hasPeriod "yuan dynasty (1271–1368)" ;
+    myont:hasTheme myont:Lotus ;
+    myont:mediumDescription "porcelain with incised decoration under celadon glaze (jingdezhen qingbai ware)" ;
+    myont:startDate "1267" ;
+    schema:dateCreated "late 13th–early 14th century" ;
     schema:displayLocation myont:New_york ;
-    schema:name "bottle with birds and peony scroll" .
+    schema:name "bottle with lotus scroll" .
+
+myont:Bottle_with_peony_scroll_49216 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1366" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 49216 ;
+    myont:hasPeriod "yuan dynasty (1271–1368)" ;
+    myont:hasTheme myont:Leaves ;
+    myont:mediumDescription "porcelain painted with cobalt blue under a transparent glaze (jingdezhen ware)" ;
+    myont:startDate "1334" ;
+    schema:dateCreated "mid-14th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "bottle with peony scroll" .
 
 myont:Bouquet_of_flowers_in_a_vase_436525 a schema:Painting ;
     myont:createdBy myont:Vincent_van_gogh ;
@@ -2273,6 +1882,19 @@ myont:Bouquet_of_sunflowers_437112 a schema:Painting ;
 myont:Brazil a myont:Country ;
     schema:name "brazil" .
 
+myont:Bridge_over_a_pond_of_water_lilies_437127 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1899" ;
+    myont:hasObjectId 437127 ;
+    myont:hasTheme myont:Lilies ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1899" ;
+    schema:dateCreated "1899" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "bridge over a pond of water lilies" .
+
 myont:Bronze_horse_251050 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Greek_and_roman_art ;
@@ -2287,11 +1909,55 @@ myont:Bronze_horse_251050 a myont:Statue ;
     schema:displayLocation myont:New_york ;
     schema:name "bronze horse" .
 
+myont:Bronze_statue_of_eros_sleeping_254502 a myont:Statue ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Greek_and_roman_art ;
+    myont:endDate "-100" ;
+    myont:hasCulture "greek" ;
+    myont:hasObjectId 254502 ;
+    myont:hasPeriod "hellenistic" ;
+    myont:hasTheme myont:Eros ;
+    myont:mediumDescription "bronze" ;
+    myont:startDate "-299" ;
+    schema:dateCreated "3rd–2nd century BCE" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "bronze statue of eros sleeping" .
+
+myont:Bruno_geyer_austrian_active_late_19th_century_to_early_20th_century a myont:Artist ;
+    myont:hasNationality "austrian" ;
+    schema:name "bruno geyer, austrian, active late 19th century to early 20th century" .
+
 myont:Buffalo a myont:City ;
     schema:name "buffalo" .
 
 myont:Calcutta a myont:City ;
     schema:name "calcutta" .
+
+myont:Camille_monet__in_the_garden_at_argenteuil_438005 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1876" ;
+    myont:hasObjectId 438005 ;
+    myont:hasTheme myont:Garden ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1876" ;
+    schema:dateCreated "1876" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "camille monet (1847–1879) in the garden at argenteuil" .
+
+myont:Camille_monet__on_a_garden_bench_438003 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1873" ;
+    myont:hasObjectId 438003 ;
+    myont:hasTheme myont:Garden ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1873" ;
+    schema:dateCreated "1873" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "camille monet (1847–1879) on a garden bench" .
 
 myont:Cat_199446 a myont:Ceramic ;
     myont:createdBy myont:John_astbury ;
@@ -2429,7 +2095,7 @@ myont:Cat_552028 a myont:Figurine ;
     schema:locationCreated myont:Egypt ;
     schema:name "cat" .
 
-myont:Cat_552045 a myont:Figurine ;
+myont:Cat_552045 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "-30" ;
@@ -2569,14 +2235,12 @@ myont:Cat_statuette_intended_to_contain_a_mummified_cat_544118 a myont:Statue ;
     schema:locationCreated myont:Egypt ;
     schema:name "cat statuette intended to contain a mummified cat" .
 
+myont:Cathedral a myont:ReligiousTheme ;
+    myont:isThemeOf myont:Rouen_cathedral_the_portal_437124 ;
+    schema:name "cathedral" .
+
 myont:Central_highlands a myont:Region ;
     schema:name "central highlands" .
-
-myont:Ceramic_art_company_trenton_new_jersey a myont:Artist ;
-    myont:bornOn "1889" ;
-    myont:diedOn "1896" ;
-    myont:hasNationality "american" ;
-    schema:name "ceramic art company, trenton, new jersey" .
 
 myont:Ceramic_horn_501691 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -2591,18 +2255,6 @@ myont:Ceramic_horn_501691 a myont:Ceramic ;
     schema:displayLocation myont:New_york ;
     schema:locationCreated myont:France ;
     schema:name "ceramic horn" .
-
-myont:Ceremonial_punch_bowl_with_cover_201458 a myont:Ceramic ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1710" ;
-    myont:hasObjectId 201458 ;
-    myont:hasTheme myont:Flower ;
-    myont:mediumDescription "delftware (tin-glazed earthenware)" ;
-    myont:startDate "1700" ;
-    schema:dateCreated "ca. 1705" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "ceremonial punch bowl with cover" .
 
 myont:Chantilly a myont:Artist ;
     myont:hasNationality "french" ;
@@ -2661,19 +2313,6 @@ myont:Chiloango_river a myont:Region ;
 myont:Chim_or_chancay_artist a myont:Artist ;
     schema:name "chimú or chancay artist(s)" .
 
-myont:Chinese_figure_with_bird_207138 a myont:Ceramic ;
-    myont:createdBy myont:Meissen_manufactory ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1755" ;
-    myont:hasObjectId 207138 ;
-    myont:hasTheme myont:Flower ;
-    myont:mediumDescription "hard-paste porcelain with gilt-bronze mounts and soft-paste porcelain flowers" ;
-    myont:startDate "1722" ;
-    schema:dateCreated "ca. 1727, mounts and flowers ca. 1750" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "chinese figure with bird" .
-
 myont:Chokwe_artist a myont:Artist ;
     schema:name "chokwe artist" .
 
@@ -2706,11 +2345,28 @@ myont:Cristoforo_stati a myont:Artist ;
 myont:Cte_divoire_or_burkina_faso a myont:Country ;
     schema:name "côte d'ivoire or burkina faso" .
 
+myont:Cypresses_437980 a schema:Painting ;
+    myont:createdBy myont:Vincent_van_gogh ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1889" ;
+    myont:hasObjectId 437980 ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1889" ;
+    schema:dateCreated "1889" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "cypresses" .
+
 myont:Daniel_marot_the_elder a myont:Artist ;
     myont:bornOn "1661" ;
     myont:diedOn "1752" ;
     myont:hasNationality "french" ;
     schema:name "daniel marot the elder" .
+
+myont:Deities a myont:ReligiousTheme ;
+    myont:isThemeOf myont:Tree_spirit_deity_38379 ;
+    schema:name "deities" .
 
 myont:Delta a myont:Region ;
     schema:name "delta" .
@@ -2728,18 +2384,18 @@ myont:Disk_brooch_with_cameo_468993 a myont:Jewellery ;
     schema:displayLocation myont:New_york ;
     schema:name "disk brooch with cameo" .
 
-myont:Display_dish_with_charles_ii__in_a_tree_195223 a myont:Ceramic ;
-    myont:createdBy myont:Thomas_toft ;
+myont:Display_dish_with_a_cavalier_and_portrait_medallions_671528 a myont:Ceramic ;
+    myont:createdBy myont:Ralph_toft ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1685" ;
-    myont:hasObjectId 195223 ;
-    myont:hasTheme myont:Tree ;
+    myont:endDate "1677" ;
+    myont:hasObjectId 671528 ;
+    myont:hasTheme myont:Lion ;
     myont:mediumDescription "slip-decorated earthenware" ;
-    myont:startDate "1675" ;
-    schema:dateCreated "ca. 1680" ;
+    myont:startDate "1677" ;
+    schema:dateCreated "1677" ;
     schema:displayLocation myont:New_york ;
-    schema:name "display dish with charles ii (1630–1685) in a tree" .
+    schema:name "display dish with a cavalier and portrait medallions" .
 
 myont:Dog_12335 a schema:Painting ;
     myont:createdBy myont:John_singer_sargent ;
@@ -2803,6 +2459,42 @@ myont:Dog_201266 a myont:Ceramic ;
     schema:displayLocation myont:New_york ;
     schema:name "dog" .
 
+myont:Dog_204211 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1799" ;
+    myont:hasObjectId 204211 ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "polychromed terracotta body; glass eyes; leather collar and metal chain" ;
+    myont:startDate "1750" ;
+    schema:dateCreated "second half 18th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
+myont:Dog_204212 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1799" ;
+    myont:hasObjectId 204212 ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "polychromed terracotta body; glass eyes; leather collar and metal chain" ;
+    myont:startDate "1750" ;
+    schema:dateCreated "second half 18th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
+myont:Dog_204213 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1799" ;
+    myont:hasObjectId 204213 ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "polychromed terracotta body; wooden feet" ;
+    myont:startDate "1750" ;
+    schema:dateCreated "second half 18th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
 myont:Dog_323812 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Ancient_west_asian_art ;
@@ -2818,6 +2510,20 @@ myont:Dog_323812 a schema:Sculpture ;
     schema:locationCreated myont:Mesopotamia ;
     schema:name "dog" .
 
+myont:Dog_44337 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "599" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 44337 ;
+    myont:hasPeriod "northern wei dynasty (386–534)" ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "earthenware with traces of pigment" ;
+    myont:startDate "400" ;
+    schema:dateCreated "5th–6th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
 myont:Dog_460571 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Robert_lehman_collection ;
@@ -2831,7 +2537,49 @@ myont:Dog_460571 a schema:Sculpture ;
     schema:displayLocation myont:New_york ;
     schema:name "dog" .
 
-myont:Dog_546785 a myont:Figurine ;
+myont:Dog_50227 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "799" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 50227 ;
+    myont:hasPeriod "tang dynasty (618–907)" ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "earthenware with white and green glazes" ;
+    myont:startDate "600" ;
+    schema:dateCreated "7th–8th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
+myont:Dog_52576 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "899" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 52576 ;
+    myont:hasPeriod "tang dynasty (618–907)" ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "earthenware with brown glaze" ;
+    myont:startDate "618" ;
+    schema:dateCreated "7th–9th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
+myont:Dog_52577 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "899" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 52577 ;
+    myont:hasPeriod "tang dynasty (618–907)" ;
+    myont:hasTheme myont:Dog ;
+    myont:mediumDescription "earthenware with brown glaze" ;
+    myont:startDate "618" ;
+    schema:dateCreated "7th–9th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "dog" .
+
+myont:Dog_546785 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "-1700" ;
@@ -2894,7 +2642,29 @@ myont:Emile_decoeur a myont:Artist ;
     myont:hasNationality "french" ;
     schema:name "emile decoeur" .
 
-myont:Figurine_of_a_dog_555715 a myont:Figurine ;
+myont:Etienne_delaune a myont:Artist ;
+    myont:bornOn "1518" ;
+    myont:diedOn "1583" ;
+    myont:hasNationality "french" ;
+    schema:name "etienne delaune" .
+
+myont:Fayum_entrance_area a myont:Region ;
+    schema:name "fayum entrance area" .
+
+myont:Figurine_43252 a myont:Figurine ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1795" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 43252 ;
+    myont:hasPeriod "qing dynasty (1644–1911), qianlong period (1736–95)" ;
+    myont:hasTheme myont:Frog ;
+    myont:mediumDescription "jade" ;
+    myont:startDate "1736" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "figurine" .
+
+myont:Figurine_of_a_dog_555715 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "-1961" ;
@@ -2914,6 +2684,19 @@ myont:Filippo_parodi a myont:Artist ;
     myont:diedOn "1702" ;
     myont:hasNationality "italian" ;
     schema:name "filippo parodi" .
+
+myont:First_steps_after_millet_436526 a schema:Painting ;
+    myont:createdBy myont:Vincent_van_gogh ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1890" ;
+    myont:hasObjectId 436526 ;
+    myont:hasTheme myont:Garden ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1890" ;
+    schema:dateCreated "1890" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "first steps, after millet" .
 
 myont:Flemington a myont:City ;
     schema:name "flemington" .
@@ -3058,6 +2841,19 @@ myont:Ganagana_316019 a schema:Sculpture ;
         myont:Sumatra ;
     schema:name "ganagana (ancestor figure)" .
 
+myont:Garden_at_sainteadresse_437133 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1867" ;
+    myont:hasObjectId 437133 ;
+    myont:hasTheme myont:Garden ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1867" ;
+    schema:dateCreated "1867" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "garden at sainte-adresse" .
+
 myont:Gilles_demarteau a myont:Artist ;
     myont:bornOn "1722" ;
     myont:diedOn "1776" ;
@@ -3070,6 +2866,12 @@ myont:Giovanni_battista_tiepolo a myont:Artist ;
     myont:hasNationality "italian" ;
     schema:name "giovanni battista tiepolo" .
 
+myont:Giovanni_jacopo_caraglio a myont:Artist ;
+    myont:bornOn "1500" ;
+    myont:diedOn "1565" ;
+    myont:hasNationality "italian" ;
+    schema:name "giovanni jacopo caraglio" .
+
 myont:Giuseppe_bartolomeo_chiari a myont:Artist ;
     myont:bornOn "1654" ;
     myont:diedOn "1727" ;
@@ -3080,6 +2882,10 @@ myont:Gl_barberi a myont:Artist ;
     myont:bornOn "1800" ;
     myont:diedOn "1900" ;
     schema:name "g.l. barberi" .
+
+myont:Goddess a myont:ReligiousTheme ;
+    myont:isThemeOf myont:Statue_of_the_goddess_sakhmet_544484 ;
+    schema:name "goddess" .
 
 myont:Gods_wife_tagerem_daughter_of_the_priest_imhotep_587759 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -3170,6 +2976,20 @@ myont:Horse_338077 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "horse" .
 
+myont:Horse_42189 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "749" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 42189 ;
+    myont:hasPeriod "tang dynasty (618–907)" ;
+    myont:hasTheme myont:Horse ;
+    myont:mediumDescription "earthenware with three-color (sancai) glaze and pigment" ;
+    myont:startDate "667" ;
+    schema:dateCreated "late 7th–first half of the 8th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "horse" .
+
 myont:Horse_481710 a schema:Painting ;
     myont:createdBy myont:Peter_agostini ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -3235,6 +3055,20 @@ myont:Horse_492769 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "horse" .
 
+myont:Horse_49513 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "799" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 49513 ;
+    myont:hasPeriod "tang dynasty (618–907)" ;
+    myont:hasTheme myont:Horse ;
+    myont:mediumDescription "earthenware with brown glazes" ;
+    myont:startDate "700" ;
+    schema:dateCreated "8th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "horse" .
+
 myont:Horse_500417 a schema:Sculpture ;
     myont:createdBy myont:Raymond_duchampvillon ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -3291,11 +3125,39 @@ myont:Horse_828446 a myont:Ceramic ;
     schema:displayLocation myont:New_york ;
     schema:name "horse" .
 
+myont:Hybrid_god_545356 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-664" ;
+    myont:hasObjectId 545356 ;
+    myont:hasPeriod "late period" ;
+    myont:hasTheme myont:God ;
+    myont:mediumDescription "faience" ;
+    myont:startDate "-664" ;
+    schema:dateCreated "664–332 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Memphite_region ;
+    schema:name "hybrid god" .
+
 myont:Ibn_alghaibi_altabrizi a myont:Artist ;
     schema:name "ibn al-ghaibi al-tabrizi" .
 
 myont:Indonesia a myont:Country ;
     schema:name "indonesia" .
+
+myont:Inlay_depicting_the_god_shepsi_551312 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-300" ;
+    myont:hasObjectId 551312 ;
+    myont:hasPeriod "late period–ptolemaic period" ;
+    myont:hasTheme myont:God ;
+    myont:mediumDescription "faience" ;
+    myont:startDate "-400" ;
+    schema:dateCreated "4th century B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Middle_egypt ;
+    schema:name "inlay depicting the god shepsi" .
 
 myont:Iran_or_central_asia a myont:Country ;
     schema:name "iran or central asia" .
@@ -3312,6 +3174,12 @@ myont:Irises_436528 a schema:Painting ;
     schema:dateCreated "1890" ;
     schema:displayLocation myont:New_york ;
     schema:name "irises" .
+
+myont:Israel_schuech a myont:Artist ;
+    myont:bornOn "1565" ;
+    myont:diedOn "1635" ;
+    myont:hasNationality "german" ;
+    schema:name "israel schuech" .
 
 myont:Istanbul a myont:City ;
     schema:name "istanbul" .
@@ -3394,6 +3262,19 @@ myont:La_berceuse_437984 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "la berceuse (woman rocking a cradle; augustine-alix pellicot roulin, 1851–1930)" .
 
+myont:La_grenouillre_437135 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1869" ;
+    myont:hasObjectId 437135 ;
+    myont:hasTheme myont:River ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1869" ;
+    schema:dateCreated "1869" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "la grenouillère" .
+
 myont:Laurent_de_la_hyre a myont:Artist ;
     myont:bornOn "1606" ;
     myont:diedOn "1656" ;
@@ -3412,20 +3293,19 @@ myont:Leonora_carrington a myont:Artist ;
     myont:hasNationality "mexican, born england" ;
     schema:name "leonora carrington" .
 
-myont:Lintel_with_angels_supporting_the_lamb_of_god_471944 a schema:Sculpture ;
+myont:Limestone_statue_of_aphrodite_holding_winged_eros_242017 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_cloisters ;
-    myont:endDate "1175" ;
-    myont:hasCulture "spanish" ;
-    myont:hasObjectId 471944 ;
-    myont:hasTheme myont:God ;
+    myont:displayedInDepartment myont:Greek_and_roman_art ;
+    myont:endDate "-300" ;
+    myont:hasCulture "cypriot" ;
+    myont:hasObjectId 242017 ;
+    myont:hasPeriod "classical" ;
+    myont:hasTheme myont:Eros ;
     myont:mediumDescription "limestone" ;
-    myont:startDate "1150" ;
-    schema:dateCreated "1150–75" ;
+    myont:startDate "-330" ;
+    schema:dateCreated "late 4th century BCE" ;
     schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Spain,
-        myont:Unciti ;
-    schema:name "lintel with angels supporting the lamb of god" .
+    schema:name "limestone statue of aphrodite holding winged eros" .
 
 myont:Lomami_river_region a myont:Region ;
     schema:name "lomami river region" .
@@ -3478,19 +3358,19 @@ myont:Mangaaka_power_figure_320053 a schema:Sculpture ;
         myont:Republic_of_the_congo_or_cabinda_angola ;
     schema:name "mangaaka power figure (nkisi n’kondi)" .
 
-myont:Marble_sarcophagus_with_garlands_and_the_myth_of_theseus_and_ariadne_245585 a schema:Sculpture ;
+myont:Marble_statue_of_a_lion_248140 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Greek_and_roman_art ;
-    myont:endDate "199" ;
-    myont:hasCulture "roman" ;
-    myont:hasObjectId 245585 ;
-    myont:hasPeriod "hadrianic or early antonine" ;
-    myont:hasTheme myont:Myth ;
-    myont:mediumDescription "marble, luni and pentelic" ;
-    myont:startDate "100" ;
-    schema:dateCreated "ca. 130–150 CE" ;
+    myont:endDate "-390" ;
+    myont:hasCulture "greek" ;
+    myont:hasObjectId 248140 ;
+    myont:hasPeriod "classical" ;
+    myont:hasTheme myont:Lion ;
+    myont:mediumDescription "marble, parian 2" ;
+    myont:startDate "-400" ;
+    schema:dateCreated "ca. 400–390 BCE" ;
     schema:displayLocation myont:New_york ;
-    schema:name "marble sarcophagus with garlands and the myth of theseus and ariadne" .
+    schema:name "marble statue of a lion" .
 
 myont:Marble_statue_of_eirene_247173 a schema:Sculpture ;
     myont:createdBy myont:Kephisodotos ;
@@ -3539,17 +3419,11 @@ myont:Meissen_manufactory a myont:Artist ;
     myont:hasNationality "german" ;
     schema:name "meissen manufactory" .
 
-myont:Mesoamerica a myont:Region ;
-    schema:name "mesoamerica" .
-
-myont:Mexico a myont:Country ;
-    schema:name "mexico" .
+myont:Mexica_artist a myont:Artist ;
+    schema:name "mexica artist(s)" .
 
 myont:Midatlantic_united_states a myont:Region ;
     schema:name "mid-atlantic united states" .
-
-myont:Middle_egypt a myont:Region ;
-    schema:name "middle egypt" .
 
 myont:Midwest a myont:Region ;
     schema:name "midwest" .
@@ -3575,6 +3449,19 @@ myont:Miniature_tree_314895 a schema:Sculpture ;
 
 myont:Mixtec__artist a myont:Artist ;
     schema:name "mixtec (ñuu savi) artist(s)" .
+
+myont:Morning_on_the_seine_near_giverny_437125 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1897" ;
+    myont:hasObjectId 437125 ;
+    myont:hasTheme myont:River ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1897" ;
+    schema:dateCreated "1897" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "morning on the seine near giverny" .
 
 myont:Moses_and_aaron_before_pharaoh_an_allegory_of_the_dinteville_family_437217 a schema:Painting ;
     myont:createdBy myont:Master_of_the_dinteville_allegory ;
@@ -3635,6 +3522,37 @@ myont:New_england_glass_company a myont:Artist ;
     myont:hasNationality "american" ;
     schema:name "new england glass company" .
 
+myont:Nkishi_310453 a schema:Sculpture ;
+    myont:createdBy myont:Songye_artist_and_nganga ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate "1950" ;
+    myont:hasCulture "songye peoples" ;
+    myont:hasObjectId 310453 ;
+    myont:hasTheme myont:Snakes ;
+    myont:mediumDescription "wood, copper, brass, iron, fiber, snakeskin, leather, fur, feathers, mud, resin" ;
+    myont:startDate "1800" ;
+    schema:dateCreated "19th–first half of 20th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Democratic_republic_of_the_congo,
+        myont:Lomami_river_region ;
+    schema:name "nkishi (community power figure)" .
+
+myont:Nkisi_312342 a schema:Sculpture ;
+    myont:createdBy myont:Kongo_artist_and_nganga ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate "1950" ;
+    myont:hasCulture "kongo peoples" ;
+    myont:hasObjectId 312342 ;
+    myont:hasTheme myont:Plant ;
+    myont:mediumDescription "wood, pigment, resin, iron, brass, tin, cloth, plant fiber cord, beads, cowrie shells, bone or ivory, arrows, leather, seeds, animal horn" ;
+    myont:startDate "1800" ;
+    schema:dateCreated "19th–first half of 20th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Democratic_republic_of_the_congo ;
+    schema:name "nkisi (power figure)" .
+
 myont:North_or_central_coast a myont:Region ;
     schema:name "north or central coast" .
 
@@ -3646,21 +3564,6 @@ myont:Northwestern_iran a myont:Region ;
 
 myont:Ocucajesouth_coast a myont:Region ;
     schema:name "ocucaje-south coast" .
-
-myont:Old_trees_level_distance_39668 a schema:Painting ;
-    myont:createdBy myont:Guo_xi ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "1090" ;
-    myont:hasCulture "china" ;
-    myont:hasObjectId 39668 ;
-    myont:hasPeriod "northern song dynasty (960–1127)" ;
-    myont:hasTheme myont:Tree ;
-    myont:mediumDescription "handscroll; ink and color on silk" ;
-    myont:startDate "1070" ;
-    schema:dateCreated "ca. 1080" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "old trees, level distance" .
 
 myont:Oleanders_436530 a schema:Painting ;
     myont:createdBy myont:Vincent_van_gogh ;
@@ -3674,19 +3577,6 @@ myont:Oleanders_436530 a schema:Painting ;
     schema:dateCreated "1888" ;
     schema:displayLocation myont:New_york ;
     schema:name "oleanders" .
-
-myont:Olive_trees_437998 a schema:Painting ;
-    myont:createdBy myont:Vincent_van_gogh ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1890" ;
-    myont:hasObjectId 437998 ;
-    myont:hasTheme myont:Tree ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1853" ;
-    schema:dateCreated "1889" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "olive trees" .
 
 myont:Orazio_samacchini a myont:Artist ;
     myont:bornOn "1532" ;
@@ -3754,51 +3644,6 @@ myont:Ostrakon_with_biblical_text_474818 a myont:Ceramic ;
         myont:Thebes ;
     schema:name "ostrakon with biblical text" .
 
-myont:Ostrakon_with_biblical_text_474892 a myont:Ceramic ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Medieval_art ;
-    myont:endDate "640" ;
-    myont:hasCulture "coptic" ;
-    myont:hasObjectId 474892 ;
-    myont:hasTheme myont:Biblical ;
-    myont:mediumDescription "pottery fragment with ink inscription" ;
-    myont:startDate "580" ;
-    schema:dateCreated "580–640" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Byzantine_egypt,
-        myont:Thebes ;
-    schema:name "ostrakon with biblical text" .
-
-myont:Ostrakon_with_biblical_text_474893 a myont:Ceramic ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Medieval_art ;
-    myont:endDate "640" ;
-    myont:hasCulture "coptic" ;
-    myont:hasObjectId 474893 ;
-    myont:hasTheme myont:Biblical ;
-    myont:mediumDescription "pottery fragment with ink inscription" ;
-    myont:startDate "580" ;
-    schema:dateCreated "580–640" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Byzantine_egypt,
-        myont:Thebes ;
-    schema:name "ostrakon with biblical text" .
-
-myont:Ostrakon_with_biblical_text_474897 a myont:Ceramic ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Medieval_art ;
-    myont:endDate "640" ;
-    myont:hasCulture "coptic" ;
-    myont:hasObjectId 474897 ;
-    myont:hasTheme myont:Biblical ;
-    myont:mediumDescription "pottery fragments with ink inscription" ;
-    myont:startDate "580" ;
-    schema:dateCreated "580–640" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Byzantine_egypt,
-        myont:Thebes ;
-    schema:name "ostrakon with biblical text" .
-
 myont:Paiiaa_village a myont:City ;
     schema:name "pai'ia'a village" .
 
@@ -3814,6 +3659,21 @@ myont:Painting_488660 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "painting" .
 
+myont:Painting_57329 a schema:Painting ;
+    myont:createdBy myont:Shibata_zeshin ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1891" ;
+    myont:hasCulture "japan" ;
+    myont:hasObjectId 57329 ;
+    myont:hasPeriod "meiji period (1868–1912)" ;
+    myont:hasTheme myont:Leaves ;
+    myont:mediumDescription "album of seventeen sketches; watercolor on paper; mounted on natural silk" ;
+    myont:startDate "1807" ;
+    schema:dateCreated "19th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "painting" .
+
 myont:Papuan_gulf a myont:Region ;
     schema:name "papuan gulf" .
 
@@ -3822,6 +3682,31 @@ myont:Paul_czanne a myont:Artist ;
     myont:diedOn "1906" ;
     myont:hasNationality "french" ;
     schema:name "paul cézanne" .
+
+myont:Pendant_reliquary_with_depiction_of_the_annunciation_193661 a myont:Jewellery ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1699" ;
+    myont:hasObjectId 193661 ;
+    myont:hasTheme myont:Angels ;
+    myont:mediumDescription "gold, enamel, rubies, crystal, pearl, rock crystal" ;
+    myont:startDate "1600" ;
+    schema:dateCreated "17th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "pendant reliquary with depiction of the annunciation" .
+
+myont:Pendant_with_a_triton_riding_a_unicornlike_sea_creature_207258 a myont:Jewellery ;
+    myont:createdBy myont:Reinhold_vasters ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1900" ;
+    myont:hasObjectId 207258 ;
+    myont:hasTheme myont:Unicorns ;
+    myont:mediumDescription "baroque pearl mounted with enameled gold set with pearls, emeralds and rubies and with pendent pearls" ;
+    myont:startDate "1865" ;
+    schema:dateCreated "ca. 1870–95" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "pendant with a triton riding a unicorn-like sea creature" .
 
 myont:Peter_agostini a myont:Artist ;
     myont:bornOn "1913" ;
@@ -3835,6 +3720,23 @@ myont:Philip_guston a myont:Artist ;
     myont:hasNationality "american, born canada" ;
     schema:name "philip guston" .
 
+myont:Pitcher_20637 a myont:Ceramic ;
+    myont:createdBy myont:Ceramic_art_company_trenton_new_jersey ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1906" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 20637 ;
+    myont:hasTheme myont:Flower ;
+    myont:mediumDescription "belleek porcelain, with overglaze enamel decoration and gilding" ;
+    myont:startDate "1889" ;
+    schema:dateCreated "1889–1906" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Midatlantic,
+        myont:Trenton,
+        myont:United_states ;
+    schema:name "pitcher" .
+
 myont:Planter_with_the_johnson_coat_of_arms_206401 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
@@ -3847,31 +3749,43 @@ myont:Planter_with_the_johnson_coat_of_arms_206401 a myont:Ceramic ;
     schema:displayLocation myont:New_york ;
     schema:name "planter with the johnson coat of arms" .
 
-myont:Presentation_vase_6779 a myont:Vase ;
-    myont:createdBy myont:Thomas_fletcher ;
+myont:Poppy_fields_near_argenteuil_438004 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1825" ;
-    myont:hasCulture "american" ;
-    myont:hasObjectId 6779 ;
-    myont:hasTheme myont:Animal ;
-    myont:mediumDescription "silver" ;
-    myont:startDate "1825" ;
-    schema:dateCreated "1825" ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1875" ;
+    myont:hasObjectId 438004 ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1875" ;
+    schema:dateCreated "1875" ;
     schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Midatlantic,
-        myont:Philadelphia,
-        myont:United_states ;
-    schema:name "presentation vase" .
+    schema:name "poppy fields near argenteuil" .
 
 myont:Probably_calcutta a myont:City ;
     schema:name "probably calcutta" .
+
+myont:Probably_constantinople a myont:City ;
+    schema:name "probably constantinople" .
 
 myont:Probably_egypt_or_syria a myont:Country ;
     schema:name "probably egypt or syria" .
 
 myont:Probably_raqqa a myont:City ;
     schema:name "probably raqqa" .
+
+myont:Prudence_193692 a myont:Jewellery ;
+    myont:createdBy myont:Etienne_delaune ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1565" ;
+    myont:hasObjectId 193692 ;
+    myont:hasTheme myont:Snakes ;
+    myont:mediumDescription "chalcedony, mounted in gold with enamel, rubies, emeralds, diamond, and pearl" ;
+    myont:startDate "1545" ;
+    schema:dateCreated "ca. 1550–60, back: 19th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "prudence" .
 
 myont:Qian_ya a myont:Artist ;
     myont:bornOn "1896" ;
@@ -3895,11 +3809,43 @@ myont:Rain_god_mask_313255 a schema:Sculpture ;
         myont:Mexico ;
     schema:name "rain god mask" .
 
+myont:Rain_god_pendant_313228 a myont:Jewellery ;
+    myont:createdBy myont:Mexica_artist ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate "1521" ;
+    myont:hasCulture "mixtec" ;
+    myont:hasObjectId 313228 ;
+    myont:hasTheme myont:God ;
+    myont:mediumDescription "greenstone" ;
+    myont:startDate "1325" ;
+    schema:dateCreated "1325–1521 CE" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Mesoamerica,
+        myont:Mexico ;
+    schema:name "rain god pendant" .
+
 myont:Ralph_toft a myont:Artist ;
     myont:bornOn "1600" ;
     myont:diedOn "1700" ;
     myont:hasNationality "british" ;
     schema:name "ralph toft" .
+
+myont:Rapier_of_princeelector_christian_ii_of_saxony_24860 a myont:Jewellery ;
+    myont:createdBy myont:Israel_schuech ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Arms_and_armor ;
+    myont:endDate "1606" ;
+    myont:hasCulture "hilt, german, dresden; blade, spanish, toledo" ;
+    myont:hasObjectId 24860 ;
+    myont:hasTheme myont:Christ ;
+    myont:mediumDescription "steel, bronze, gold, enamel, paste jewels, cameos, pearls, wood" ;
+    myont:startDate "1606" ;
+    schema:dateCreated "dated 1606" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Spain,
+        myont:Toledo ;
+    schema:name "rapier of prince-elector christian ii of saxony (1583–1611)" .
 
 myont:Raymond_duchampvillon a myont:Artist ;
     myont:bornOn "1876" ;
@@ -3930,7 +3876,7 @@ myont:Right_corner_of_a_marble_sarcophagus_with_the_myth_of_apollo_and_the_satyr
     schema:displayLocation myont:New_york ;
     schema:name "right corner of a marble sarcophagus with the myth of apollo and the satyr marsyas" .
 
-myont:Ring_god_figure_558074 a myont:Jewellery ;
+myont:Ring_god_figure_558074 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
     myont:endDate "-1295" ;
@@ -3969,18 +3915,18 @@ myont:Rosa_bonheur a myont:Artist ;
     myont:hasNationality "french" ;
     schema:name "rosa bonheur" .
 
-myont:Rouen_cathedral_the_portal_437124 a schema:Painting ;
-    myont:createdBy myont:Claude_monet ;
+myont:Roses_436534 a schema:Painting ;
+    myont:createdBy myont:Vincent_van_gogh ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1894" ;
-    myont:hasObjectId 437124 ;
-    myont:hasTheme myont:Cat ;
+    myont:endDate "1890" ;
+    myont:hasObjectId 436534 ;
+    myont:hasTheme myont:Rose ;
     myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1894" ;
-    schema:dateCreated "1894" ;
+    myont:startDate "1890" ;
+    schema:dateCreated "1890" ;
     schema:displayLocation myont:New_york ;
-    schema:name "rouen cathedral: the portal (sunlight)" .
+    schema:name "roses" .
 
 myont:Roycroft a myont:Artist ;
     myont:bornOn "1895" ;
@@ -4006,29 +3952,20 @@ myont:Sakai_ho a myont:Artist ;
     myont:hasNationality "japanese" ;
     schema:name "sakai ōho" .
 
-myont:Scroll_212813 a myont:Scroll ;
+myont:Scarab_with_plant_motif_557097 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1899" ;
-    myont:hasObjectId 212813 ;
-    myont:hasTheme myont:Flower ;
-    myont:mediumDescription "drawnwork" ;
-    myont:startDate "1700" ;
-    schema:dateCreated "18th–19th century" ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1640" ;
+    myont:hasObjectId 557097 ;
+    myont:hasPeriod "middle kingdom" ;
+    myont:hasTheme myont:Plant ;
+    myont:mediumDescription "blue glazed faience" ;
+    myont:startDate "-1855" ;
+    schema:dateCreated "ca. 1850–1640 B.C." ;
     schema:displayLocation myont:New_york ;
-    schema:name "scroll" .
-
-myont:Scroll_889279 a schema:Painting ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Islamic_art ;
-    myont:endDate "1899" ;
-    myont:hasObjectId 889279 ;
-    myont:hasTheme myont:Animal ;
-    myont:mediumDescription "ink, gold, and opaque watercolor on animal skin, within a leather case" ;
-    myont:startDate "1600" ;
-    schema:dateCreated "17th–19th century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "scroll" .
+    schema:locationCreated myont:Egypt,
+        myont:Memphite_region ;
+    schema:name "scarab with plant motif" .
 
 myont:Shibata_zeshin a myont:Artist ;
     myont:bornOn "1807" ;
@@ -4083,9 +4020,6 @@ myont:Southern_india a myont:Country ;
 myont:Southwestern_anatolia a myont:Region ;
     schema:name "southwestern anatolia" .
 
-myont:Spain a myont:Country ;
-    schema:name "spain" .
-
 myont:Spring_437106 a schema:Painting ;
     myont:createdBy myont:Claude_monet ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -4127,21 +4061,6 @@ myont:Statue_of_the_god_reshef_553738 a myont:Statue ;
     schema:locationCreated myont:Egypt ;
     schema:name "statue of the god reshef" .
 
-myont:Statue_of_the_goddess_sakhmet_544484 a myont:Statue ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Egyptian_art ;
-    myont:endDate "-1352" ;
-    myont:hasObjectId 544484 ;
-    myont:hasPeriod "new kingdom" ;
-    myont:hasTheme myont:God ;
-    myont:mediumDescription "granodiorite" ;
-    myont:startDate "-1390" ;
-    schema:dateCreated "ca. 1390–1352 B.C." ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Egypt,
-        myont:Upper_egypt_thebes ;
-    schema:name "statue of the goddess sakhmet" .
-
 myont:Statuette_of_amun_544874 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
@@ -4178,7 +4097,19 @@ myont:Suzuki_osamu a myont:Artist ;
     myont:hasNationality "japanese" ;
     schema:name "suzuki osamu" .
 
-myont:Terracotta_kylix__with_flower_252906 a myont:Vase ;
+myont:Tankard_205199 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1585" ;
+    myont:hasObjectId 205199 ;
+    myont:hasTheme myont:Bird ;
+    myont:mediumDescription "gilded silver, stoneware" ;
+    myont:startDate "1575" ;
+    schema:dateCreated "ca. 1580" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "tankard (one of a pair)" .
+
+myont:Terracotta_kylix__with_flower_252906 a myont:Ceramic ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Greek_and_roman_art ;
     myont:endDate "-1225" ;
@@ -4192,35 +4123,18 @@ myont:Terracotta_kylix__with_flower_252906 a myont:Vase ;
     schema:displayLocation myont:New_york ;
     schema:name "terracotta kylix (drinking cup) with flower" .
 
-myont:The_bryant_vase_1029 a myont:Vase ;
-    myont:createdBy myont:Tiffany__co ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1876" ;
-    myont:hasCulture "american" ;
-    myont:hasObjectId 1029 ;
-    myont:hasTheme myont:Flower ;
-    myont:mediumDescription "silver and gold" ;
-    myont:startDate "1876" ;
-    schema:dateCreated "1876" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Midatlantic,
-        myont:New_york,
-        myont:United_states ;
-    schema:name "the bryant vase" .
-
-myont:The_four_trees_437121 a schema:Painting ;
+myont:The_bodmer_oak_fontainebleau_forest_437131 a schema:Painting ;
     myont:createdBy myont:Claude_monet ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1891" ;
-    myont:hasObjectId 437121 ;
-    myont:hasTheme myont:Tree ;
+    myont:endDate "1865" ;
+    myont:hasObjectId 437131 ;
+    myont:hasTheme myont:Forest ;
     myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1891" ;
-    schema:dateCreated "1891" ;
+    myont:startDate "1865" ;
+    schema:dateCreated "1865" ;
     schema:displayLocation myont:New_york ;
-    schema:name "the four trees" .
+    schema:name "the bodmer oak, fontainebleau forest" .
 
 myont:The_hand_of_god_191046 a schema:Sculpture ;
     myont:createdBy myont:Auguste_rodin ;
@@ -4248,6 +4162,45 @@ myont:The_horse_fair_435702 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "the horse fair" .
 
+myont:The_monet_family_in_their_garden_at_argenteuil_436965 a schema:Painting ;
+    myont:createdBy myont:Edouard_manet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1874" ;
+    myont:hasObjectId 436965 ;
+    myont:hasTheme myont:Garden ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1874" ;
+    schema:dateCreated "1874" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "the monet family in their garden at argenteuil" .
+
+myont:The_son_of_moses_circumcised_336778 a schema:Painting ;
+    myont:createdBy myont:Anonymous_french_17th_century ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Drawings_and_prints ;
+    myont:endDate "1699" ;
+    myont:hasObjectId 336778 ;
+    myont:hasTheme myont:Angels ;
+    myont:mediumDescription "red chalk, brush and red, brown, and gray wash, heightened with white" ;
+    myont:startDate "1600" ;
+    schema:dateCreated "17th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "the son of moses circumcised" .
+
+myont:The_valley_of_the_nervia_437118 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1884" ;
+    myont:hasObjectId 437118 ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1884" ;
+    schema:dateCreated "1884" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "the valley of the nervia" .
+
 myont:Thomas_fletcher a myont:Artist ;
     myont:bornOn "1787" ;
     myont:diedOn "1866" ;
@@ -4265,8 +4218,41 @@ myont:Thomas_tucker a myont:Artist ;
     myont:hasNationality "american" ;
     schema:name "thomas tucker" .
 
+myont:Tile_with_a_papyrus_plant_549234 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1279" ;
+    myont:hasObjectId 549234 ;
+    myont:hasPeriod "new kingdom, ramesside" ;
+    myont:hasTheme myont:Plant ;
+    myont:mediumDescription "faience" ;
+    myont:startDate "-1279" ;
+    schema:dateCreated "ca. 1279–1213 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Eastern_delta,
+        myont:Egypt ;
+    schema:name "tile with a papyrus plant" .
+
+myont:Tile_with_papyrus_plant_549233 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1279" ;
+    myont:hasObjectId 549233 ;
+    myont:hasPeriod "new kingdom, ramesside" ;
+    myont:hasTheme myont:Plant ;
+    myont:mediumDescription "faience" ;
+    myont:startDate "-1279" ;
+    schema:dateCreated "ca. 1279–1213 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Eastern_delta,
+        myont:Egypt ;
+    schema:name "tile with papyrus plant" .
+
 myont:Toba_batak_artist a myont:Artist ;
     schema:name "toba batak artist" .
+
+myont:Toledo a myont:City ;
+    schema:name "toledo" .
 
 myont:Tree_12839 a schema:Painting ;
     myont:createdBy myont:Allen_tucker ;
@@ -4362,32 +4348,6 @@ myont:Tree_492793 a schema:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "tree" .
 
-myont:Tree_spirit_deity_38379 a schema:Sculpture ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Asian_art ;
-    myont:endDate "199" ;
-    myont:hasCulture "india (uttar pradesh, mathura region)" ;
-    myont:hasObjectId 38379 ;
-    myont:hasTheme myont:Tree ;
-    myont:mediumDescription "red sandstone" ;
-    myont:startDate "1" ;
-    schema:dateCreated "1st–2nd century" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "tree spirit deity (yakshi)" .
-
-myont:Trees_and_houses_near_the_jas_de_bouffan_459092 a schema:Painting ;
-    myont:createdBy myont:Paul_czanne ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Robert_lehman_collection ;
-    myont:endDate "1886" ;
-    myont:hasObjectId 459092 ;
-    myont:hasTheme myont:Tree ;
-    myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1885" ;
-    schema:dateCreated "1885–86" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "trees and houses near the jas de bouffan" .
-
 myont:Trotting_horse_195196 a schema:Sculpture ;
     myont:createdBy myont:Giambologna ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -4425,14 +4385,44 @@ myont:Unkoku_teki a myont:Artist ;
     myont:hasNationality "japanese" ;
     schema:name "unkoku tōeki" .
 
-myont:Vase_16745 a myont:Vase ;
+myont:Van_gogh_632941 a schema:Sculpture ;
+    myont:createdBy myont:Bert_l_long_jr ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Modern_and_contemporary_art ;
+    myont:endDate "1987" ;
+    myont:hasObjectId 632941 ;
+    myont:hasTheme myont:Rose ;
+    myont:mediumDescription "acrylic on canvas, wood, modeling paste, glass, candleholders, bread, preserved brain, stone organizer with brush, silk rose, money, and keys" ;
+    myont:startDate "1987" ;
+    schema:dateCreated "1987" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "van gogh" .
+
+myont:Vase_14318 a myont:Ceramic ;
+    myont:createdBy myont:Thomas_tucker ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1838" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 14318 ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "porcelain" ;
+    myont:startDate "1828" ;
+    schema:dateCreated "1828–38" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Midatlantic,
+        myont:Philadelphia,
+        myont:United_states ;
+    schema:name "vase" .
+
+myont:Vase_16589 a myont:Ceramic ;
     myont:createdBy myont:Marc_schoelcher ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:The_american_wing ;
     myont:endDate "1820" ;
     myont:hasCulture "french" ;
-    myont:hasObjectId 16745 ;
-    myont:hasTheme myont:Animal ;
+    myont:hasObjectId 16589 ;
+    myont:hasTheme myont:Landscape ;
     myont:mediumDescription "porcelain" ;
     myont:startDate "1815" ;
     schema:dateCreated "ca. 1815–20" ;
@@ -4442,24 +4432,24 @@ myont:Vase_16745 a myont:Vase ;
         myont:ledefrance ;
     schema:name "vase" .
 
-myont:Vase_17732 a myont:Vase ;
-    myont:createdBy myont:Greenwood_pottery_company ;
+myont:Vase_16745 a myont:Ceramic ;
+    myont:createdBy myont:Marc_schoelcher ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:The_american_wing ;
-    myont:endDate "1884" ;
-    myont:hasCulture "american" ;
-    myont:hasObjectId 17732 ;
-    myont:hasTheme myont:Flower ;
+    myont:endDate "1820" ;
+    myont:hasCulture "french" ;
+    myont:hasObjectId 16745 ;
+    myont:hasTheme myont:Landscape ;
     myont:mediumDescription "porcelain" ;
-    myont:startDate "1884" ;
-    schema:dateCreated "ca. 1884–93" ;
+    myont:startDate "1815" ;
+    schema:dateCreated "ca. 1815–20" ;
     schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Midatlantic,
-        myont:Trenton,
-        myont:United_states ;
+    schema:locationCreated myont:France,
+        myont:Paris,
+        myont:ledefrance ;
     schema:name "vase" .
 
-myont:Vase_19068 a myont:Vase ;
+myont:Vase_19068 a myont:Ceramic ;
     myont:createdBy myont:Willets_manufacturing_company ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:The_american_wing ;
@@ -4487,6 +4477,23 @@ myont:Vase_208181 a myont:Ceramic ;
     myont:startDate "1685" ;
     schema:dateCreated "ca. 1690" ;
     schema:displayLocation myont:New_york ;
+    schema:name "vase" .
+
+myont:Vase_21355 a myont:Ceramic ;
+    myont:createdBy myont:Tucker_factory ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1836" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 21355 ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "porcelain, brass" ;
+    myont:startDate "1828" ;
+    schema:dateCreated "1828–36" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Midatlantic,
+        myont:Philadelphia,
+        myont:United_states ;
     schema:name "vase" .
 
 myont:Vase_9317 a myont:Vase ;
@@ -4523,7 +4530,7 @@ myont:Vase_9361 a myont:Vase ;
         myont:United_states ;
     schema:name "vase" .
 
-myont:Vase_9386 a myont:Vase ;
+myont:Vase_9386 a myont:Ceramic ;
     myont:createdBy myont:Kate_b_sears ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:The_american_wing ;
@@ -4553,11 +4560,42 @@ myont:Vase_with_plant_motif_208027 a myont:Ceramic ;
     schema:displayLocation myont:New_york ;
     schema:name "vase with plant motif" .
 
+myont:Vincennes_manufactory a myont:Artist ;
+    myont:bornOn "1740" ;
+    myont:diedOn "1756" ;
+    myont:hasNationality "french" ;
+    schema:name "vincennes manufactory" .
+
 myont:Walasse_ting a myont:Artist ;
     myont:bornOn "1929" ;
     myont:diedOn "2010" ;
     myont:hasNationality "american, born china" ;
     schema:name "walasse ting" .
+
+myont:Wall_light_206979 a myont:Ceramic ;
+    myont:createdBy myont:Vincennes_manufactory ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1755" ;
+    myont:hasObjectId 206979 ;
+    myont:hasTheme myont:Flower ;
+    myont:mediumDescription "glazed biscuit chinese porcelain parrots of k'ang hsi period; soft-paste vincennes porcelain flowers; 19th century hard-paste flowers; gilt bronze" ;
+    myont:startDate "1662" ;
+    schema:dateCreated "birds 1662–1722, flowers and mounts ca. 1750" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "wall light (one of a pair)" .
+
+myont:Wall_light_238566 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1755" ;
+    myont:hasObjectId 238566 ;
+    myont:hasTheme myont:Flower ;
+    myont:mediumDescription "glazed biscuit chinese porcelain parrots of k'ang hsi period; soft-paste vincennes porcelain flowers; 19th century hard-paste flowers; gilt-bronze" ;
+    myont:startDate "1662" ;
+    schema:dateCreated "birds 1662–1722, flowers and mounts ca. 1750" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "wall light (one of a pair)" .
 
 myont:Wang_li a myont:Artist ;
     myont:bornOn "1813" ;
@@ -4571,8 +4609,47 @@ myont:Wang_yun a myont:Artist ;
     myont:hasNationality "chinese" ;
     schema:name "wang yun" .
 
+myont:Water_lilies_437137 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1919" ;
+    myont:hasObjectId 437137 ;
+    myont:hasTheme myont:Lilies ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1916" ;
+    schema:dateCreated "1916–19" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "water lilies" .
+
+myont:Water_lilies_438008 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1919" ;
+    myont:hasObjectId 438008 ;
+    myont:hasTheme myont:Lilies ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1919" ;
+    schema:dateCreated "1919" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "water lilies" .
+
 myont:Western_delta a myont:Region ;
     schema:name "western delta" .
+
+myont:Wheat_field_with_cypresses_436535 a schema:Painting ;
+    myont:createdBy myont:Vincent_van_gogh ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1889" ;
+    myont:hasObjectId 436535 ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1889" ;
+    schema:dateCreated "1889" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "wheat field with cypresses" .
 
 myont:Willets_manufacturing_company a myont:Artist ;
     myont:bornOn "1879" ;
@@ -4601,6 +4678,21 @@ myont:Women_picking_olives_436536 a schema:Painting ;
 
 myont:Yombekongo_artist_and_nganga a myont:Artist ;
     schema:name "yombe-kongo artist and nganga (ritual specialist)" .
+
+myont:Zen_master_with_meditation_staff_and_chinesestyle_landscapes_78057 a schema:Painting ;
+    myont:createdBy myont:Unkoku_teki ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1644" ;
+    myont:hasCulture "japan" ;
+    myont:hasObjectId 78057 ;
+    myont:hasPeriod "edo period (1615–1868)" ;
+    myont:hasTheme myont:Landscape ;
+    myont:mediumDescription "set of three hanging scrolls; ink on paper" ;
+    myont:startDate "1626" ;
+    schema:dateCreated "probably late 1620s–1644" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "zen master with meditation staff, and chinese-style landscapes" .
 
 myont:Zhang_yuguang a myont:Artist ;
     myont:bornOn "1885" ;
@@ -4651,6 +4743,20 @@ schema:name a owl:DatatypeProperty ;
 crm:E39_Actor a owl:Class ;
     rdfs:label "Actor" .
 
+myont:Allegory_341160 a schema:Painting ;
+    myont:createdBy myont:Orazio_samacchini ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Drawings_and_prints ;
+    myont:endDate "1577" ;
+    myont:hasObjectId 341160 ;
+    myont:hasTheme myont:Allegory,
+        myont:Lion ;
+    myont:mediumDescription "pen and ink over red chalk" ;
+    myont:startDate "1532" ;
+    schema:dateCreated "1532–77" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "allegory" .
+
 myont:Allegory_459565 a schema:Painting ;
     myont:createdBy myont:Charles_prendergast ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -4658,26 +4764,26 @@ myont:Allegory_459565 a schema:Painting ;
     myont:endDate "1928" ;
     myont:hasObjectId 459565 ;
     myont:hasTheme myont:Allegory,
-        myont:Animal ;
+        myont:Landscape ;
     myont:mediumDescription "watercolor over pencil" ;
     myont:startDate "1927" ;
     schema:dateCreated "ca. 1927–28" ;
     schema:displayLocation myont:New_york ;
     schema:name "allegory" .
 
-myont:Allegory_of_the_catholic_faith_437877 a schema:Painting ;
-    myont:createdBy myont:Johannes_vermeer ;
+myont:Allegory_of_music_436836 a schema:Painting ;
+    myont:createdBy myont:Laurent_de_la_hyre ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:European_paintings ;
-    myont:endDate "1672" ;
-    myont:hasObjectId 437877 ;
+    myont:endDate "1649" ;
+    myont:hasObjectId 436836 ;
     myont:hasTheme myont:Allegory,
-        myont:Cat ;
+        myont:Bird ;
     myont:mediumDescription "oil on canvas" ;
-    myont:startDate "1670" ;
-    schema:dateCreated "ca. 1670–72" ;
+    myont:startDate "1649" ;
+    schema:dateCreated "1649" ;
     schema:displayLocation myont:New_york ;
-    schema:name "allegory of the catholic faith" .
+    schema:name "allegory of music" .
 
 myont:Allegory_of_the_planets_and_continents_437790 a schema:Painting ;
     myont:createdBy myont:Giovanni_battista_tiepolo ;
@@ -4707,6 +4813,21 @@ myont:Allegory_of_virtues_and_vices_at_the_court_of_charles_v_193622 a schema:Sc
     schema:displayLocation myont:New_york ;
     schema:name "allegory of virtues and vices at the court of charles v" .
 
+myont:Amulet_possibly_depicting_a_tree_frog_544107 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1070" ;
+    myont:hasObjectId 544107 ;
+    myont:hasPeriod "new kingdom" ;
+    myont:hasTheme myont:Frog,
+        myont:Tree ;
+    myont:mediumDescription "faience" ;
+    myont:startDate "-1555" ;
+    schema:dateCreated "ca. 1550–1070 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Egypt ;
+    schema:name "amulet possibly depicting a tree frog" .
+
 myont:Arthur_dove a myont:Artist ;
     myont:bornOn "1880" ;
     myont:diedOn "1946" ;
@@ -4716,6 +4837,20 @@ myont:Arthur_dove a myont:Artist ;
 myont:Asiki_ask_mdoka a myont:Artist ;
     myont:hasNationality "malawi" ;
     schema:name "asiki \"ask\" mdoka" .
+
+myont:Bottle_with_birds_and_peony_scroll_37557 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1499" ;
+    myont:hasCulture "vietnam" ;
+    myont:hasObjectId 37557 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower ;
+    myont:mediumDescription "stoneware painted with cobalt blue under transparent glaze" ;
+    myont:startDate "1400" ;
+    schema:dateCreated "15th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "bottle with birds and peony scroll" .
 
 myont:Cactus_plant_in_flower_457788 a schema:Painting ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -4732,23 +4867,49 @@ myont:Cactus_plant_in_flower_457788 a schema:Painting ;
         myont:Probably_calcutta ;
     schema:name "cactus plant in flower" .
 
+myont:Ceramic_art_company_trenton_new_jersey a myont:Artist ;
+    myont:bornOn "1889" ;
+    myont:diedOn "1896" ;
+    myont:hasNationality "american" ;
+    schema:name "ceramic art company, trenton, new jersey" .
+
+myont:Ceremonial_punch_bowl_with_cover_201458 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1710" ;
+    myont:hasObjectId 201458 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower ;
+    myont:mediumDescription "delftware (tin-glazed earthenware)" ;
+    myont:startDate "1700" ;
+    schema:dateCreated "ca. 1705" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "ceremonial punch bowl with cover" .
+
+myont:Chinese_figure_with_bird_207138 a myont:Ceramic ;
+    myont:createdBy myont:Meissen_manufactory ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1755" ;
+    myont:hasObjectId 207138 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower ;
+    myont:mediumDescription "hard-paste porcelain with gilt-bronze mounts and soft-paste porcelain flowers" ;
+    myont:startDate "1722" ;
+    schema:dateCreated "ca. 1727, mounts and flowers ca. 1750" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "chinese figure with bird" .
+
 myont:Democratic_republic_of_the_congo a myont:Country ;
     schema:name "democratic republic of the congo" .
 
-myont:Dish_depicting_two_birds_among_flowering_plants_451490 a myont:Ceramic ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Islamic_art ;
-    myont:endDate "1615" ;
-    myont:hasObjectId 451490 ;
-    myont:hasTheme myont:Flower,
-        myont:Plant ;
-    myont:mediumDescription "stonepaste; polychrome painted under transparent glaze" ;
-    myont:startDate "1550" ;
-    schema:dateCreated "ca. 1575–90" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Iznik,
-        myont:Turkey ;
-    schema:name "dish depicting two birds among flowering plants" .
+myont:Eastern_delta a myont:Region ;
+    schema:name "eastern delta" .
+
+myont:Forest a myont:NatureTheme ;
+    myont:isThemeOf myont:Heart_of_the_andes_10481,
+        myont:The_bodmer_oak_fontainebleau_forest_437131 ;
+    schema:name "forest" .
 
 myont:Francesco_allegrini a myont:Artist ;
     myont:bornOn "1615" ;
@@ -4756,11 +4917,30 @@ myont:Francesco_allegrini a myont:Artist ;
     myont:hasNationality "italian" ;
     schema:name "francesco allegrini" .
 
+myont:Frog a myont:AnimalTheme ;
+    myont:isThemeOf myont:Amulet_possibly_depicting_a_tree_frog_544107,
+        myont:Figurine_43252 ;
+    schema:name "frog" .
+
 myont:Giambologna a myont:Artist ;
     myont:bornOn "1529" ;
     myont:diedOn "1608" ;
     myont:hasNationality "netherlandish" ;
     schema:name "giambologna" .
+
+myont:Houses_on_the_achterzaan_459107 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Robert_lehman_collection ;
+    myont:endDate "1871" ;
+    myont:hasObjectId 459107 ;
+    myont:hasTheme myont:Landscape,
+        myont:River ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1871" ;
+    schema:dateCreated "1871" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "houses on the achterzaan" .
 
 myont:India a myont:Country ;
     schema:name "india" .
@@ -4789,6 +4969,27 @@ myont:John_singer_sargent a myont:Artist ;
     myont:hasNationality "american" ;
     schema:name "john singer sargent" .
 
+myont:Lotus a myont:NatureTheme ;
+    myont:isThemeOf myont:Bottle_with_lotus_scroll_42477,
+        myont:Lotus_flower_inlay_548302 ;
+    schema:name "lotus" .
+
+myont:Lotus_flower_inlay_548302 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1336" ;
+    myont:hasObjectId 548302 ;
+    myont:hasPeriod "new kingdom, amarna period" ;
+    myont:hasTheme myont:Flower,
+        myont:Lotus ;
+    myont:mediumDescription "faience" ;
+    myont:startDate "-1353" ;
+    schema:dateCreated "ca. 1353–1336 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Egypt,
+        myont:Middle_egypt ;
+    schema:name "lotus flower inlay" .
+
 myont:Louis_c_tiffany a myont:Artist ;
     myont:bornOn "1848" ;
     myont:diedOn "1933" ;
@@ -4800,6 +5001,21 @@ myont:Louis_flix_de_la_rue a myont:Artist ;
     myont:diedOn "1765" ;
     myont:hasNationality "french" ;
     schema:name "louis félix de la rue" .
+
+myont:Marble_sarcophagus_with_garlands_and_the_myth_of_theseus_and_ariadne_245585 a schema:Sculpture ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Greek_and_roman_art ;
+    myont:endDate "199" ;
+    myont:hasCulture "roman" ;
+    myont:hasObjectId 245585 ;
+    myont:hasPeriod "hadrianic or early antonine" ;
+    myont:hasTheme myont:Lion,
+        myont:Myth ;
+    myont:mediumDescription "marble, luni and pentelic" ;
+    myont:startDate "100" ;
+    schema:dateCreated "ca. 130–150 CE" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "marble sarcophagus with garlands and the myth of theseus and ariadne" .
 
 myont:Marble_sarcophagus_with_the_myth_of_endymion_251474 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -4816,26 +5032,17 @@ myont:Marble_sarcophagus_with_the_myth_of_endymion_251474 a schema:Sculpture ;
     schema:displayLocation myont:New_york ;
     schema:name "marble sarcophagus with the myth of endymion" .
 
-myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590 a schema:Sculpture ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Greek_and_roman_art ;
-    myont:endDate "249" ;
-    myont:hasCulture "roman" ;
-    myont:hasObjectId 254590 ;
-    myont:hasPeriod "severan" ;
-    myont:hasTheme myont:Horse,
-        myont:Myth ;
-    myont:mediumDescription "marble" ;
-    myont:startDate "200" ;
-    schema:dateCreated "early 3rd century CE" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "marble sarcophagus with the myth of selene and endymion" .
-
 myont:Marc_schoelcher a myont:Artist ;
     myont:bornOn "1798" ;
     myont:diedOn "1834" ;
     myont:hasNationality "french" ;
     schema:name "marc schoelcher" .
+
+myont:Mesoamerica a myont:Region ;
+    schema:name "mesoamerica" .
+
+myont:Mexico a myont:Country ;
+    schema:name "mexico" .
 
 myont:Miki_suizan a myont:Artist ;
     myont:bornOn "1887" ;
@@ -4843,38 +5050,119 @@ myont:Miki_suizan a myont:Artist ;
     myont:hasNationality "japanese" ;
     schema:name "miki suizan" .
 
-myont:MythologicalTheme a owl:Class ;
-    rdfs:label "Mythological theme" ;
-    rdfs:subClassOf myont:Theme .
+myont:Mummy_of_nesmin_with_plant_wreath_mask_and_other_cartonnage_elements_551162 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-30" ;
+    myont:hasObjectId 551162 ;
+    myont:hasPeriod "ptolemaic period" ;
+    myont:hasTheme myont:Cat,
+        myont:Plant ;
+    myont:mediumDescription "mummified human body, linen, mummification material, faience? (amulets), painted and gilded cartonnage, plant remains" ;
+    myont:startDate "-200" ;
+    schema:dateCreated "200–30 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Egypt,
+        myont:Northern_upper_egypt ;
+    schema:name "mummy of nesmin with plant wreath, mask, and other cartonnage elements" .
 
 myont:New_england a myont:Region ;
     schema:name "new england" .
 
-myont:Nkisi_312342 a schema:Sculpture ;
-    myont:createdBy myont:Kongo_artist_and_nganga ;
+myont:Old_trees_level_distance_39668 a schema:Painting ;
+    myont:createdBy myont:Guo_xi ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
-    myont:endDate "1950" ;
-    myont:hasCulture "kongo peoples" ;
-    myont:hasObjectId 312342 ;
-    myont:hasTheme myont:Animal,
-        myont:Plant ;
-    myont:mediumDescription "wood, pigment, resin, iron, brass, tin, cloth, plant fiber cord, beads, cowrie shells, bone or ivory, arrows, leather, seeds, animal horn" ;
-    myont:startDate "1800" ;
-    schema:dateCreated "19th–first half of 20th century" ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1090" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 39668 ;
+    myont:hasPeriod "northern song dynasty (960–1127)" ;
+    myont:hasTheme myont:Landscape,
+        myont:Tree ;
+    myont:mediumDescription "handscroll; ink and color on silk" ;
+    myont:startDate "1070" ;
+    schema:dateCreated "ca. 1080" ;
     schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Democratic_republic_of_the_congo ;
-    schema:name "nkisi (power figure)" .
+    schema:name "old trees, level distance" .
 
-myont:Northern_upper_egypt a myont:Region ;
-    schema:name "northern upper egypt" .
+myont:Olive_trees_437998 a schema:Painting ;
+    myont:createdBy myont:Vincent_van_gogh ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1890" ;
+    myont:hasObjectId 437998 ;
+    myont:hasTheme myont:Landscape,
+        myont:Tree ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1853" ;
+    schema:dateCreated "1889" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "olive trees" .
+
+myont:Ostrakon_with_biblical_text_474892 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Medieval_art ;
+    myont:endDate "640" ;
+    myont:hasCulture "coptic" ;
+    myont:hasObjectId 474892 ;
+    myont:hasTheme myont:Biblical,
+        myont:Greek ;
+    myont:mediumDescription "pottery fragment with ink inscription" ;
+    myont:startDate "580" ;
+    schema:dateCreated "580–640" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Byzantine_egypt,
+        myont:Thebes ;
+    schema:name "ostrakon with biblical text" .
+
+myont:Ostrakon_with_biblical_text_474893 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Medieval_art ;
+    myont:endDate "640" ;
+    myont:hasCulture "coptic" ;
+    myont:hasObjectId 474893 ;
+    myont:hasTheme myont:Biblical,
+        myont:Greek ;
+    myont:mediumDescription "pottery fragment with ink inscription" ;
+    myont:startDate "580" ;
+    schema:dateCreated "580–640" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Byzantine_egypt,
+        myont:Thebes ;
+    schema:name "ostrakon with biblical text" .
+
+myont:Ostrakon_with_biblical_text_474897 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Medieval_art ;
+    myont:endDate "640" ;
+    myont:hasCulture "coptic" ;
+    myont:hasObjectId 474897 ;
+    myont:hasTheme myont:Biblical,
+        myont:Greek ;
+    myont:mediumDescription "pottery fragments with ink inscription" ;
+    myont:startDate "580" ;
+    schema:dateCreated "580–640" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Byzantine_egypt,
+        myont:Thebes ;
+    schema:name "ostrakon with biblical text" .
 
 myont:Paris a myont:City ;
     schema:name "paris" .
 
-myont:ReligiousTheme a owl:Class ;
-    rdfs:label "Religious theme" ;
-    rdfs:subClassOf myont:Theme .
+myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247 a myont:Jewellery ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Medieval_art ;
+    myont:endDate "1399" ;
+    myont:hasCulture "byzantine" ;
+    myont:hasObjectId 477247 ;
+    myont:hasTheme myont:Angels,
+        myont:Christ ;
+    myont:mediumDescription "chalcedony cameo; gold mount with pearls, emeralds, garnets, sapphires, and a sardonyx intaglio" ;
+    myont:startDate "1075" ;
+    schema:dateCreated "late 1000s–1100s (cameo); 1100s–1300s (mount)" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "pendant brooch with cameo of enthroned virgin and child and christ pantokrator" .
 
 myont:Right_corner_of_a_sarcophagus_with_the_myth_of_the_musical_contest_between_the_satyr_marsyas_and_the_god_apollo_252933 a schema:Sculpture ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
@@ -4897,13 +5185,163 @@ myont:Rodolphe_bresdin a myont:Artist ;
     myont:hasNationality "french" ;
     schema:name "rodolphe bresdin" .
 
+myont:Rose a myont:NatureTheme ;
+    myont:isThemeOf myont:Roses_436534,
+        myont:Van_gogh_632941 ;
+    schema:name "rose" .
+
+myont:Rouen_cathedral_the_portal_437124 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1894" ;
+    myont:hasObjectId 437124 ;
+    myont:hasTheme myont:Cat,
+        myont:Cathedral ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1894" ;
+    schema:dateCreated "1894" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "rouen cathedral: the portal (sunlight)" .
+
+myont:Scroll_212813 a myont:Scroll ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1899" ;
+    myont:hasObjectId 212813 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower ;
+    myont:mediumDescription "drawnwork" ;
+    myont:startDate "1700" ;
+    schema:dateCreated "18th–19th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "scroll" .
+
+myont:Six_jewel_rivers_53427 a schema:Painting ;
+    myont:createdBy myont:Sakai_ho ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1849" ;
+    myont:hasCulture "japan" ;
+    myont:hasObjectId 53427 ;
+    myont:hasPeriod "edo period (1615–1868)" ;
+    myont:hasTheme myont:Landscape,
+        myont:River ;
+    myont:mediumDescription "six handscrolls; ink, color, and gold on silk" ;
+    myont:startDate "1829" ;
+    schema:dateCreated "ca. 1839" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "six jewel rivers" .
+
+myont:Spain a myont:Country ;
+    schema:name "spain" .
+
+myont:Statue_of_the_goddess_sakhmet_544484 a myont:Statue ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1352" ;
+    myont:hasObjectId 544484 ;
+    myont:hasPeriod "new kingdom" ;
+    myont:hasTheme myont:God,
+        myont:Goddess ;
+    myont:mediumDescription "granodiorite" ;
+    myont:startDate "-1390" ;
+    schema:dateCreated "ca. 1390–1352 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Egypt,
+        myont:Upper_egypt_thebes ;
+    schema:name "statue of the goddess sakhmet" .
+
+myont:The_bryant_vase_1029 a myont:Vase ;
+    myont:createdBy myont:Tiffany__co ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1876" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 1029 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower ;
+    myont:mediumDescription "silver and gold" ;
+    myont:startDate "1876" ;
+    schema:dateCreated "1876" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Midatlantic,
+        myont:New_york,
+        myont:United_states ;
+    schema:name "the bryant vase" .
+
+myont:The_four_trees_437121 a schema:Painting ;
+    myont:createdBy myont:Claude_monet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1891" ;
+    myont:hasObjectId 437121 ;
+    myont:hasTheme myont:River,
+        myont:Tree ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1891" ;
+    schema:dateCreated "1891" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "the four trees" .
+
 myont:Tiffany__co a myont:Artist ;
     myont:bornOn "1837" ;
     myont:diedOn "9999" ;
     schema:name "tiffany & co." .
 
+myont:Tree_spirit_deity_38379 a schema:Sculpture ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "199" ;
+    myont:hasCulture "india (uttar pradesh, mathura region)" ;
+    myont:hasObjectId 38379 ;
+    myont:hasTheme myont:Deities,
+        myont:Tree ;
+    myont:mediumDescription "red sandstone" ;
+    myont:startDate "1" ;
+    schema:dateCreated "1st–2nd century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "tree spirit deity (yakshi)" .
+
+myont:Trees_and_houses_near_the_jas_de_bouffan_459092 a schema:Painting ;
+    myont:createdBy myont:Paul_czanne ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Robert_lehman_collection ;
+    myont:endDate "1886" ;
+    myont:hasObjectId 459092 ;
+    myont:hasTheme myont:Landscape,
+        myont:Tree ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1885" ;
+    schema:dateCreated "1885–86" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "trees and houses near the jas de bouffan" .
+
 myont:Turkey a myont:Country ;
     schema:name "turkey" .
+
+myont:Unicorns a myont:AnimalTheme ;
+    myont:isThemeOf myont:Display_dish_with_charles_ii__in_a_tree_195223,
+        myont:Pendant_with_a_triton_riding_a_unicornlike_sea_creature_207258 ;
+    schema:name "unicorns" .
+
+myont:Vase_17732 a myont:Ceramic ;
+    myont:createdBy myont:Greenwood_pottery_company ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1884" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 17732 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower ;
+    myont:mediumDescription "porcelain" ;
+    myont:startDate "1884" ;
+    schema:dateCreated "ca. 1884–93" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Midatlantic,
+        myont:Trenton,
+        myont:United_states ;
+    schema:name "vase" .
 
 myont:Vase_with_flowering_plant_871923 a myont:Ceramic ;
     myont:createdBy myont:Rrstrand_factory ;
@@ -4922,20 +5360,133 @@ myont:Vase_with_flowering_plant_871923 a myont:Ceramic ;
 myont:ledefrance a myont:Region ;
     schema:name "île-de-france" .
 
+myont:Dish_depicting_two_birds_among_flowering_plants_451490 a myont:Ceramic ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Islamic_art ;
+    myont:endDate "1615" ;
+    myont:hasObjectId 451490 ;
+    myont:hasTheme myont:Bird,
+        myont:Flower,
+        myont:Plant ;
+    myont:mediumDescription "stonepaste; polychrome painted under transparent glaze" ;
+    myont:startDate "1550" ;
+    schema:dateCreated "ca. 1575–90" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Iznik,
+        myont:Turkey ;
+    schema:name "dish depicting two birds among flowering plants" .
+
+myont:Display_dish_with_charles_ii__in_a_tree_195223 a myont:Ceramic ;
+    myont:createdBy myont:Thomas_toft ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
+    myont:endDate "1685" ;
+    myont:hasObjectId 195223 ;
+    myont:hasTheme myont:Lion,
+        myont:Tree,
+        myont:Unicorns ;
+    myont:mediumDescription "slip-decorated earthenware" ;
+    myont:startDate "1675" ;
+    schema:dateCreated "ca. 1680" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "display dish with charles ii (1630–1685) in a tree" .
+
+myont:Eros a myont:MythologicalTheme ;
+    myont:isThemeOf myont:Bronze_statue_of_eros_sleeping_254502,
+        myont:Limestone_statue_of_aphrodite_holding_winged_eros_242017,
+        myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590 ;
+    schema:name "eros" .
+
 myont:France a myont:Country ;
     schema:name "france" .
+
+myont:Greek a myont:MythologicalTheme ;
+    myont:isThemeOf myont:Ostrakon_with_biblical_text_474892,
+        myont:Ostrakon_with_biblical_text_474893,
+        myont:Ostrakon_with_biblical_text_474897 ;
+    schema:name "greek" .
+
+myont:Heart_of_the_andes_10481 a schema:Painting ;
+    myont:createdBy myont:Frederic_edwin_church ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_american_wing ;
+    myont:endDate "1859" ;
+    myont:hasCulture "american" ;
+    myont:hasObjectId 10481 ;
+    myont:hasTheme myont:Forest,
+        myont:Landscape,
+        myont:River ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1859" ;
+    schema:dateCreated "1859" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "heart of the andes" .
+
+myont:Leaves a myont:NatureTheme ;
+    myont:isThemeOf myont:Bottle_with_peony_scroll_49216,
+        myont:Painting_51776,
+        myont:Painting_57329 ;
+    schema:name "leaves" .
+
+myont:Lilies a myont:NatureTheme ;
+    myont:isThemeOf myont:Bridge_over_a_pond_of_water_lilies_437127,
+        myont:Water_lilies_437137,
+        myont:Water_lilies_438008 ;
+    schema:name "lilies" .
+
+myont:Lintel_with_angels_supporting_the_lamb_of_god_471944 a schema:Sculpture ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_cloisters ;
+    myont:endDate "1175" ;
+    myont:hasCulture "spanish" ;
+    myont:hasObjectId 471944 ;
+    myont:hasTheme myont:Angels,
+        myont:Christ,
+        myont:God ;
+    myont:mediumDescription "limestone" ;
+    myont:startDate "1150" ;
+    schema:dateCreated "1150–75" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Spain,
+        myont:Unciti ;
+    schema:name "lintel with angels supporting the lamb of god" .
+
+myont:Middle_egypt a myont:Region ;
+    schema:name "middle egypt" .
 
 myont:Musical_instruments a myont:Department ;
     myont:hasDepartmentId 18 ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "musical instruments" .
 
-myont:NatureTheme a owl:Class ;
-    rdfs:label "Nature theme" ;
-    rdfs:subClassOf myont:Theme .
+myont:Northern_upper_egypt a myont:Region ;
+    schema:name "northern upper egypt" .
+
+myont:Painting_51776 a schema:Painting ;
+    myont:createdBy myont:Bi_chang ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate "1899" ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 51776 ;
+    myont:hasPeriod "qing dynasty (1644–1911)" ;
+    myont:hasTheme myont:Landscape,
+        myont:Leaves,
+        myont:River ;
+    myont:mediumDescription "album with ten leaves (eight paintings and two title leaves); ink and color on paper" ;
+    myont:startDate "1700" ;
+    schema:dateCreated "18th–19th century" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "painting" .
 
 myont:Philadelphia a myont:City ;
     schema:name "philadelphia" .
+
+myont:Snakes a myont:AnimalTheme ;
+    myont:isThemeOf myont:Allegory_of_the_catholic_faith_437877,
+        myont:Nkishi_310453,
+        myont:Prudence_193692 ;
+    schema:name "snakes" .
 
 myont:The_cloisters a myont:Department ;
     myont:hasDepartmentId 7 ;
@@ -4945,24 +5496,63 @@ myont:The_cloisters a myont:Department ;
 myont:Wari_artist a myont:Artist ;
     schema:name "wari artist(s)" .
 
-myont:AnimalTheme a owl:Class ;
-    rdfs:label "Animal theme" ;
-    rdfs:subClassOf myont:Theme .
+myont:Allegory_of_the_catholic_faith_437877 a schema:Painting ;
+    myont:createdBy myont:Johannes_vermeer ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:European_paintings ;
+    myont:endDate "1672" ;
+    myont:hasObjectId 437877 ;
+    myont:hasTheme myont:Allegory,
+        myont:Cat,
+        myont:Christ,
+        myont:Snakes ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate "1670" ;
+    schema:dateCreated "ca. 1670–72" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "allegory of the catholic faith" .
 
-myont:Arms_and_armor a myont:Department ;
-    myont:hasDepartmentId 4 ;
-    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
-    schema:name "arms and armor" .
+myont:Angels a myont:ReligiousTheme ;
+    myont:isThemeOf myont:Lintel_with_angels_supporting_the_lamb_of_god_471944,
+        myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247,
+        myont:Pendant_reliquary_with_depiction_of_the_annunciation_193661,
+        myont:The_son_of_moses_circumcised_336778 ;
+    schema:name "angels" .
+
+myont:Christ a myont:ReligiousTheme ;
+    myont:isThemeOf myont:Allegory_of_the_catholic_faith_437877,
+        myont:Lintel_with_angels_supporting_the_lamb_of_god_471944,
+        myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247,
+        myont:Rapier_of_princeelector_christian_ii_of_saxony_24860 ;
+    schema:name "christ" .
+
+myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590 a schema:Sculpture ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Greek_and_roman_art ;
+    myont:endDate "249" ;
+    myont:hasCulture "roman" ;
+    myont:hasObjectId 254590 ;
+    myont:hasPeriod "severan" ;
+    myont:hasTheme myont:Eros,
+        myont:Horse,
+        myont:Lion,
+        myont:Myth ;
+    myont:mediumDescription "marble" ;
+    myont:startDate "200" ;
+    schema:dateCreated "early 3rd century CE" ;
+    schema:displayLocation myont:New_york ;
+    schema:name "marble sarcophagus with the myth of selene and endymion" .
 
 myont:Mesopotamia a myont:Region ;
     schema:name "mesopotamia" .
 
+myont:MythologicalTheme a owl:Class ;
+    rdfs:label "Mythological theme" ;
+    rdfs:subClassOf myont:Theme .
+
 myont:Syria a myont:Country,
         myont:Region ;
     schema:name "syria" .
-
-myont:Trenton a myont:City ;
-    schema:name "trenton" .
 
 myont:Xie_zhiliu a myont:Artist ;
     myont:bornOn "1910" ;
@@ -4974,16 +5564,18 @@ crm:E21_Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf crm:E39_Actor .
 
-myont:Animal a myont:AnimalTheme ;
-    myont:isThemeOf myont:Allegory_459565,
-        myont:Nkisi_312342,
-        myont:Presentation_vase_6779,
-        myont:Scroll_889279,
-        myont:Vase_16745 ;
-    schema:name "animal" .
+myont:Arms_and_armor a myont:Department ;
+    myont:hasDepartmentId 4 ;
+    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
+    schema:name "arms and armor" .
 
-myont:Memphite_region a myont:Region ;
-    schema:name "memphite region" .
+myont:Garden a myont:NatureTheme ;
+    myont:isThemeOf myont:Camille_monet__in_the_garden_at_argenteuil_438005,
+        myont:Camille_monet__on_a_garden_bench_438003,
+        myont:First_steps_after_millet_436526,
+        myont:Garden_at_sainteadresse_437133,
+        myont:The_monet_family_in_their_garden_at_argenteuil_436965 ;
+    schema:name "garden" .
 
 myont:Nishapur a myont:City ;
     schema:name "nishapur" .
@@ -5000,11 +5592,23 @@ myont:Zimbabwe a myont:Country ;
 schema:Museum a owl:Class ;
     rdfs:label "Museum" .
 
+myont:Lion a myont:AnimalTheme ;
+    myont:isThemeOf myont:Allegory_341160,
+        myont:Display_dish_with_a_cavalier_and_portrait_medallions_671528,
+        myont:Display_dish_with_charles_ii__in_a_tree_195223,
+        myont:Marble_sarcophagus_with_garlands_and_the_myth_of_theseus_and_ariadne_245585,
+        myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590,
+        myont:Marble_statue_of_a_lion_248140 ;
+    schema:name "lion" .
+
 myont:Peru a myont:Country ;
     schema:name "peru" .
 
 myont:Theme a owl:Class ;
     rdfs:label "Theme" .
+
+myont:Trenton a myont:City ;
+    schema:name "trenton" .
 
 crm:E53_Place a owl:Class ;
     rdfs:label "Place" .
@@ -5016,6 +5620,9 @@ myont:Artifact a owl:Class ;
 myont:Byzantine_egypt a myont:Country ;
     schema:name "byzantine egypt" .
 
+myont:Memphite_region a myont:Region ;
+    schema:name "memphite region" .
+
 myont:Myth a myont:MythologicalTheme ;
     myont:isThemeOf myont:Aidoneus_offering_persephone_the_pomegranate_from_the_myth_of_demeter_and_persephone_929945,
         myont:Marble_sarcophagus_with_garlands_and_the_myth_of_theseus_and_ariadne_245585,
@@ -5026,12 +5633,30 @@ myont:Myth a myont:MythologicalTheme ;
         myont:Right_corner_of_a_sarcophagus_with_the_myth_of_the_musical_contest_between_the_satyr_marsyas_and_the_god_apollo_252933 ;
     schema:name "myth" .
 
+myont:ReligiousTheme a owl:Class ;
+    rdfs:label "Religious theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:River a myont:NatureTheme ;
+    myont:isThemeOf myont:Heart_of_the_andes_10481,
+        myont:Houses_on_the_achterzaan_459107,
+        myont:La_grenouillre_437135,
+        myont:Morning_on_the_seine_near_giverny_437125,
+        myont:Painting_51776,
+        myont:Six_jewel_rivers_53427,
+        myont:The_four_trees_437121 ;
+    schema:name "river" .
+
 myont:Robert_lehman_collection a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "robert lehman collection" .
 
 myont:Thebes a myont:City ;
     schema:name "thebes" .
+
+myont:AnimalTheme a owl:Class ;
+    rdfs:label "Animal theme" ;
+    rdfs:subClassOf myont:Theme .
 
 myont:Papua_new_guinea a myont:Country ;
     schema:name "papua new guinea" .
@@ -5048,40 +5673,33 @@ myont:Biblical a myont:ReligiousTheme ;
         myont:Sketches_for_biblical_scenes_343469 ;
     schema:name "biblical" .
 
+myont:Bird a myont:AnimalTheme ;
+    myont:isThemeOf myont:Allegory_of_music_436836,
+        myont:Bottle_with_birds_and_peony_scroll_37557,
+        myont:Ceremonial_punch_bowl_with_cover_201458,
+        myont:Chinese_figure_with_bird_207138,
+        myont:Dish_depicting_two_birds_among_flowering_plants_451490,
+        myont:Scroll_212813,
+        myont:Tankard_205199,
+        myont:The_bryant_vase_1029,
+        myont:Vase_17732 ;
+    schema:name "bird" .
+
 myont:Iran a myont:Country,
         myont:Region ;
     schema:name "iran" .
-
-myont:Dog a myont:AnimalTheme ;
-    myont:isThemeOf myont:Dog_12335,
-        myont:Dog_197575,
-        myont:Dog_199512,
-        myont:Dog_199528,
-        myont:Dog_201266,
-        myont:Dog_323812,
-        myont:Dog_460571,
-        myont:Dog_546785,
-        myont:Figurine_of_a_dog_555715,
-        myont:Mechanical_dog_544519 ;
-    schema:name "dog" .
 
 myont:Scroll a owl:Class ;
     rdfs:label "Scroll" ;
     rdfs:subClassOf myont:Artifact .
 
-myont:Plant a myont:NatureTheme ;
-    myont:isThemeOf myont:Agiba_311237,
-        myont:Cactus_plant_in_flower_457788,
-        myont:Dish_depicting_two_birds_among_flowering_plants_451490,
-        myont:Gable_mask_313905,
-        myont:Jar__with_flowering_plant_52219,
-        myont:Mangaaka_power_figure_320053,
-        myont:Mwanangana__playing_a_sanza_316173,
-        myont:Nkisi_312342,
-        myont:Planter_with_the_johnson_coat_of_arms_206401,
-        myont:Vase_with_flowering_plant_871923,
-        myont:Vase_with_plant_motif_208027 ;
-    schema:name "plant" .
+myont:NatureTheme a owl:Class ;
+    rdfs:label "Nature theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:Vase a owl:Class ;
+    rdfs:label "Vase" ;
+    rdfs:subClassOf myont:Artifact .
 
 myont:Allegory a myont:MythologicalTheme ;
     myont:isThemeOf myont:Allegory_341160,
@@ -5108,13 +5726,41 @@ myont:Medieval_art a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "medieval art" .
 
+myont:Figurine a owl:Class ;
+    rdfs:label "Figurine" ;
+    rdfs:subClassOf myont:Artifact .
+
+myont:Midatlantic a myont:Region ;
+    schema:name "mid-atlantic" .
+
+myont:Plant a myont:NatureTheme ;
+    myont:isThemeOf myont:Agiba_311237,
+        myont:Cactus_plant_in_flower_457788,
+        myont:Dish_depicting_two_birds_among_flowering_plants_451490,
+        myont:Gable_mask_313905,
+        myont:Jar__with_flowering_plant_52219,
+        myont:Mangaaka_power_figure_320053,
+        myont:Mummy_of_nesmin_with_plant_wreath_mask_and_other_cartonnage_elements_551162,
+        myont:Mwanangana__playing_a_sanza_316173,
+        myont:Nkisi_312342,
+        myont:Planter_with_the_johnson_coat_of_arms_206401,
+        myont:Scarab_with_plant_motif_557097,
+        myont:Tile_with_a_papyrus_plant_549234,
+        myont:Tile_with_papyrus_plant_549233,
+        myont:Vase_with_flowering_plant_871923,
+        myont:Vase_with_plant_motif_208027 ;
+    schema:name "plant" .
+
 myont:God a myont:ReligiousTheme ;
     myont:isThemeOf myont:Child_god_570695,
         myont:Gods_wife_tagerem_daughter_of_the_priest_imhotep_587759,
+        myont:Hybrid_god_545356,
+        myont:Inlay_depicting_the_god_shepsi_551312,
         myont:King_sahure_accompanied_by_a_divine_figure_543882,
         myont:Lintel_with_angels_supporting_the_lamb_of_god_471944,
         myont:Male_god_547777,
         myont:Rain_god_mask_313255,
+        myont:Rain_god_pendant_313228,
         myont:Right_corner_of_a_sarcophagus_with_the_myth_of_the_musical_contest_between_the_satyr_marsyas_and_the_god_apollo_252933,
         myont:Ring_god_figure_558074,
         myont:Statue_of_the_god_ptah_587598,
@@ -5124,20 +5770,50 @@ myont:God a myont:ReligiousTheme ;
         myont:The_hand_of_god_191046 ;
     schema:name "god" .
 
-myont:Midatlantic a myont:Region ;
-    schema:name "mid-atlantic" .
+myont:Dog a myont:AnimalTheme ;
+    myont:isThemeOf myont:Dog_12335,
+        myont:Dog_197575,
+        myont:Dog_199512,
+        myont:Dog_199528,
+        myont:Dog_201266,
+        myont:Dog_204211,
+        myont:Dog_204212,
+        myont:Dog_204213,
+        myont:Dog_323812,
+        myont:Dog_44337,
+        myont:Dog_460571,
+        myont:Dog_50227,
+        myont:Dog_52576,
+        myont:Dog_52577,
+        myont:Dog_546785,
+        myont:Figurine_of_a_dog_555715,
+        myont:Mechanical_dog_544519 ;
+    schema:name "dog" .
 
 myont:Drawings_and_prints a myont:Department ;
     myont:hasDepartmentId 9 ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "drawings and prints" .
 
-myont:United_states a myont:Country ;
-    schema:name "united states" .
-
-myont:Jewellery a owl:Class ;
-    rdfs:label "Jewellery" ;
-    rdfs:subClassOf myont:Artifact .
+myont:Landscape a myont:NatureTheme ;
+    myont:isThemeOf myont:Allegory_459565,
+        myont:Cypresses_437980,
+        myont:Heart_of_the_andes_10481,
+        myont:Houses_on_the_achterzaan_459107,
+        myont:Old_trees_level_distance_39668,
+        myont:Olive_trees_437998,
+        myont:Painting_51776,
+        myont:Poppy_fields_near_argenteuil_438004,
+        myont:Six_jewel_rivers_53427,
+        myont:The_valley_of_the_nervia_437118,
+        myont:Trees_and_houses_near_the_jas_de_bouffan_459092,
+        myont:Vase_14318,
+        myont:Vase_16589,
+        myont:Vase_16745,
+        myont:Vase_21355,
+        myont:Wheat_field_with_cypresses_436535,
+        myont:Zen_master_with_meditation_staff_and_chinesestyle_landscapes_78057 ;
+    schema:name "landscape" .
 
 myont:Claude_monet a myont:Artist ;
     myont:bornOn "1840" ;
@@ -5154,8 +5830,30 @@ myont:Modern_and_contemporary_art a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "modern and contemporary art" .
 
+myont:United_states a myont:Country ;
+    schema:name "united states" .
+
+myont:Vincent_van_gogh a myont:Artist ;
+    myont:bornOn "1853" ;
+    myont:diedOn "1890" ;
+    myont:hasNationality "dutch" ;
+    schema:name "vincent van gogh" .
+
+myont:Department a owl:Class ;
+    rdfs:label "Department" .
+
+myont:Islamic_art a myont:Department ;
+    myont:hasDepartmentId 14 ;
+    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
+    schema:name "islamic art" .
+
+myont:Statue a owl:Class ;
+    rdfs:label "Statue" ;
+    rdfs:subClassOf myont:Artifact .
+
 myont:Tree a myont:NatureTheme ;
-    myont:isThemeOf myont:Covered_vessel__with_plum_tree_901857,
+    myont:isThemeOf myont:Amulet_possibly_depicting_a_tree_frog_544107,
+        myont:Covered_vessel__with_plum_tree_901857,
         myont:Display_dish_with_charles_ii__in_a_tree_195223,
         myont:Drunken_recluse_beneath_an_old_tree_39553,
         myont:Miniature_tree_314895,
@@ -5176,38 +5874,20 @@ myont:Tree a myont:NatureTheme ;
         myont:Women_picking_olives_436536 ;
     schema:name "tree" .
 
-myont:Vincent_van_gogh a myont:Artist ;
-    myont:bornOn "1853" ;
-    myont:diedOn "1890" ;
-    myont:hasNationality "dutch" ;
-    schema:name "vincent van gogh" .
-
-myont:Department a owl:Class ;
-    rdfs:label "Department" .
-
-myont:Figurine a owl:Class ;
-    rdfs:label "Figurine" ;
-    rdfs:subClassOf myont:Artifact .
-
-myont:Islamic_art a myont:Department ;
-    myont:hasDepartmentId 14 ;
-    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
-    schema:name "islamic art" .
-
-myont:Statue a owl:Class ;
-    rdfs:label "Statue" ;
-    rdfs:subClassOf myont:Artifact .
+crm:E22_Human_Made_Object a owl:Class ;
+    rdfs:label "Human Made Object" .
 
 myont:City a owl:Class ;
     rdfs:label "City" ;
     rdfs:subClassOf crm:E53_Place .
 
-myont:Vase a owl:Class ;
-    rdfs:label "Vase" ;
-    rdfs:subClassOf myont:Artifact .
+myont:Country a owl:Class ;
+    rdfs:label "Country" ;
+    rdfs:subClassOf crm:E53_Place .
 
-crm:E22_Human_Made_Object a owl:Class ;
-    rdfs:label "Human Made Object" .
+myont:Jewellery a owl:Class ;
+    rdfs:label "Jewellery" ;
+    rdfs:subClassOf myont:Artifact .
 
 myont:Cat a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_catholic_faith_437877,
@@ -5232,12 +5912,9 @@ myont:Cat a myont:AnimalTheme ;
         myont:Cat_572105,
         myont:Cat_statuette_intended_to_contain_a_mummified_cat_544118,
         myont:Marble_statue_of_eirene_247173,
+        myont:Mummy_of_nesmin_with_plant_wreath_mask_and_other_cartonnage_elements_551162,
         myont:Rouen_cathedral_the_portal_437124 ;
     schema:name "cat" .
-
-myont:Country a owl:Class ;
-    rdfs:label "Country" ;
-    rdfs:subClassOf crm:E53_Place .
 
 myont:Horse a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_planets_and_continents_437790,
@@ -5248,11 +5925,13 @@ myont:Horse a myont:AnimalTheme ;
         myont:Horse_195195,
         myont:Horse_338076,
         myont:Horse_338077,
+        myont:Horse_42189,
         myont:Horse_481710,
         myont:Horse_483493,
         myont:Horse_488716,
         myont:Horse_488857,
         myont:Horse_492769,
+        myont:Horse_49513,
         myont:Horse_500417,
         myont:Horse_57331,
         myont:Horse_57340,
@@ -5269,18 +5948,13 @@ myont:The_american_wing a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "the american wing" .
 
-myont:Region a owl:Class ;
-    rdfs:label "Region" ;
-    rdfs:subClassOf crm:E53_Place .
-
 myont:The_michael_c_rockefeller_wing a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "the michael c. rockefeller wing" .
 
-myont:European_sculpture_and_decorative_arts a myont:Department ;
-    myont:hasDepartmentId 12 ;
-    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
-    schema:name "european sculpture and decorative arts" .
+myont:Region a owl:Class ;
+    rdfs:label "Region" ;
+    rdfs:subClassOf crm:E53_Place .
 
 myont:Flower a myont:NatureTheme ;
     myont:isThemeOf myont:A_woman_seated_beside_a_vase_of_flowers_436121,
@@ -5301,7 +5975,9 @@ myont:Flower a myont:NatureTheme ;
         myont:Irises_436528,
         myont:Jar__with_flowering_plant_52219,
         myont:La_berceuse_437984,
+        myont:Lotus_flower_inlay_548302,
         myont:Oleanders_436530,
+        myont:Pitcher_20637,
         myont:Scroll_212813,
         myont:Sunflowers_436524,
         myont:Terracotta_kylix__with_flower_252906,
@@ -5312,7 +5988,9 @@ myont:Flower a myont:NatureTheme ;
         myont:Vase_9317,
         myont:Vase_9361,
         myont:Vase_9386,
-        myont:Vase_with_flowering_plant_871923 ;
+        myont:Vase_with_flowering_plant_871923,
+        myont:Wall_light_206979,
+        myont:Wall_light_238566 ;
     schema:name "flower" .
 
 myont:Asian_art a myont:Department ;
@@ -5320,26 +5998,31 @@ myont:Asian_art a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "asian art" .
 
+myont:European_sculpture_and_decorative_arts a myont:Department ;
+    myont:hasDepartmentId 12 ;
+    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
+    schema:name "european sculpture and decorative arts" .
+
 myont:Egypt a myont:Country ;
     schema:name "egypt" .
-
-myont:Ceramic a owl:Class ;
-    rdfs:label "Ceramic" ;
-    rdfs:subClassOf myont:Artifact .
-
-myont:Egyptian_art a myont:Department ;
-    myont:hasDepartmentId 10 ;
-    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
-    schema:name "egyptian art" .
 
 myont:European_paintings a myont:Department ;
     myont:hasDepartmentId 11 ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "european paintings" .
 
+myont:Egyptian_art a myont:Department ;
+    myont:hasDepartmentId 10 ;
+    myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
+    schema:name "egyptian art" .
+
 schema:Sculpture a owl:Class ;
     rdfs:label "Sculpture" ;
     rdfs:subClassOf crm:E22_Human_Made_Object .
+
+myont:Ceramic a owl:Class ;
+    rdfs:label "Ceramic" ;
+    rdfs:subClassOf myont:Artifact .
 
 schema:Painting a owl:Class ;
     rdfs:label "Painting" ;
