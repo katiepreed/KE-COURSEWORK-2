@@ -66,16 +66,17 @@ def get_data(query, max_results):
 
 """
 The way the q parameter works is that it does a broad text search across most of an object's metadata fields. 
+
+data = get_data("painting", 20)
+data = get_data("sculpture", 20)
+data = get_data("ceramic", 20)
+data = get_data("figurine", 20)
+data = get_data("jewelry", 20)
+data = get_data("scroll", 20)
+data = get_data("statue", 20)
+data = get_data("vase", 20)
 """
-# data = get_data("painting", 20)
-# data = get_data("flower", 20)
-# data = get_data("vase", 20)
-# data = get_data("cat", 20)
-# data = get_data("monet", 20)
-# data = get_data("clay", 20)
-# data = get_data("terracotta", 20)
-data = get_data("watercolor flowers", 20)
-data = get_data("ink tree", 20)
+data = get_data("flower", 20)
 
 if os.path.exists("data.json") and os.path.getsize("data.json") > 0:
     with open("data.json", "r") as f:

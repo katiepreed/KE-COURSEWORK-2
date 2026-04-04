@@ -1,8 +1,7 @@
 import json
 from rdflib import Graph, Literal, Namespace, URIRef, RDF
 from rdflib import RDFS
-from clean_data import createTitle, cleanString, setTheme, setMedium
-
+from clean_data import createTitle, cleanString, setTheme
 ONT = Namespace("http://ontologeez/")
 
 g = Graph()
@@ -41,8 +40,10 @@ for item in data:
     medium = item.get("medium") or ""
     objectName = item.get("object_name") or ""
 
+    """
     if title in tracker: 
         continue
+    """
 
     tracker.add(title)
 
@@ -57,7 +58,6 @@ for item in data:
             g.add((subject, predicate, Literal(value)))
 
     setTheme(subject, title, medium, objectName, g, ONT)
-    setMedium(subject, title, medium, objectName, g, ONT)
 
 # save as a turtle file 
 g.serialize(destination="data.ttl", format="turtle")
