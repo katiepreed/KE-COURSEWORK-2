@@ -90,9 +90,6 @@ g.add((MYONT.Figurine, RDF.type, OWL.Class))
 g.add((MYONT.Figurine, RDFS.label, Literal("Figurine")))
 g.add((MYONT.Figurine, RDFS.subClassOf, MYONT.Artifact))
 
-g.add((MYONT.Medium, RDF.type, OWL.Class))
-g.add((MYONT.Medium, RDFS.label, Literal("Medium")))
-
 g.add((MYONT.Theme, RDF.type, OWL.Class))
 g.add((MYONT.Theme, RDFS.label, Literal("Theme")))
 
@@ -137,14 +134,9 @@ g.add((SCHEMA.name, RDFS.range, XSD.string))
 # g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
 # g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
 
-g.add((SCHEMA.material, RDF.type, OWL.ObjectProperty))
-g.add((SCHEMA.material, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((SCHEMA.material, RDFS.range, MYONT.Medium))
-g.add((SCHEMA.material, OWL.equivalentProperty, MYONT.inMedium))
-
 g.add((SCHEMA.dateCreated, RDF.type, OWL.DatatypeProperty))
 g.add((SCHEMA.dateCreated, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((SCHEMA.dateCreated, RDFS.range, XSD.date)) # use this format for dates in data preprocessing
+g.add((SCHEMA.dateCreated, RDFS.range, XSD.integer)) # use this format for dates in data preprocessing
 
 #--------------------------------------------------------------------------------
 
@@ -170,11 +162,6 @@ g.add((SCHEMA.creator, RDF.type, OWL.ObjectProperty))
 g.add((CRM.P55_has_current_location, RDF.type, OWL.ObjectProperty))
 g.add((CRM.P55_has_current_location, RDFS.domain, CRM.E22_Human_Made_Object))
 g.add((CRM.P55_has_current_location, RDFS.range, CRM.E53_Place))
-
-g.add((CRM.P45_consists_of, RDF.type, OWL.ObjectProperty))
-g.add((CRM.P45_consists_of, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((CRM.P45_consists_of, RDFS.range, MYONT.Medium))
-g.add((CRM.P45_consists_of, RDFS.subPropertyOf, MYONT.inMedium))
 
 g.add((CRM.P102_has_title, RDF.type, OWL.DatatypeProperty))
 g.add((CRM.P102_has_title, RDFS.domain, CRM.E22_Human_Made_Object))
@@ -209,11 +196,6 @@ g.add((MYONT.isDepartmentOf, RDFS.range, SCHEMA.Museum))
 
 ############################ CUSTOM PROPERTIES ####################################
 
-g.add((MYONT.inMedium, RDF.type, OWL.ObjectProperty))
-g.add((MYONT.inMedium, RDFS.label, Literal("Medium")))
-g.add((MYONT.inMedium, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.inMedium, RDFS.range, MYONT.Medium))
-
 g.add((MYONT.hasTheme, RDF.type, OWL.ObjectProperty))
 g.add((MYONT.hasTheme, RDFS.label, Literal("Theme")))
 g.add((MYONT.hasTheme, RDFS.domain, CRM.E22_Human_Made_Object))
@@ -225,14 +207,8 @@ g.add((MYONT.isThemeOf, RDFS.domain, MYONT.Theme))
 g.add((MYONT.isThemeOf, RDFS.range, CRM.E22_Human_Made_Object))
 g.add((MYONT.hasTheme, OWL.inverseOf, MYONT.isThemeOf))
 
-g.add((MYONT.isMediumOf, RDF.type, OWL.ObjectProperty))
-g.add((MYONT.isMediumOf, RDFS.label, Literal("is medium of")))
-g.add((MYONT.isMediumOf, RDFS.domain, MYONT.Medium))
-g.add((MYONT.isMediumOf, RDFS.range, CRM.E22_Human_Made_Object))
-g.add((MYONT.inMedium, OWL.inverseOf, MYONT.isMediumOf))
-
 g.add((MYONT.createdBy, RDF.type, OWL.ObjectProperty))
-g.add((MYONT.createdBy, RDFS.label, Literal("created by")))
+g.add((MYONT.createdBy, RDFS.label, Literal("created by artist")))
 g.add((MYONT.createdBy, RDFS.domain, CRM.E22_Human_Made_Object))
 g.add((MYONT.createdBy, RDFS.range, MYONT.Artist))
 g.add((MYONT.createdBy, RDFS.subPropertyOf, CRM.P108i_was_produced_by))
@@ -240,14 +216,14 @@ g.add((MYONT.createdBy, RDFS.subPropertyOf, CRM.P108i_was_produced_by))
 g.add((MYONT.createdBy, RDFS.subPropertyOf, SCHEMA.creator))
 g.add((MYONT.createdBy, OWL.inverseOf, MYONT.hasCreated))
 
-g.add((MYONT.displayedIn, RDF.type, OWL.ObjectProperty))
-g.add((MYONT.displayedIn, RDFS.label, Literal("displayed in")))
-g.add((MYONT.displayedIn, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.displayedIn, RDFS.range, MYONT.Department))
-# g.add((MYONT.displayedIn, OWL.inverseOf, MYONT.displays))
+g.add((MYONT.displayedInDepartment, RDF.type, OWL.ObjectProperty))
+g.add((MYONT.displayedInDepartment, RDFS.label, Literal("displayed in department")))
+g.add((MYONT.displayedInDepartment, RDFS.domain, CRM.E22_Human_Made_Object))
+g.add((MYONT.displayedInDepartment, RDFS.range, MYONT.Department))
+# g.add((MYONT.displayedInDepartment, OWL.inverseOf, MYONT.displays))
 
 g.add((MYONT.displayedBy, RDF.type, OWL.ObjectProperty))
-g.add((MYONT.displayedBy, RDFS.label, Literal("displayed by")))
+g.add((MYONT.displayedBy, RDFS.label, Literal("displayed by museum")))
 g.add((MYONT.displayedBy, RDFS.domain, CRM.E22_Human_Made_Object))
 g.add((MYONT.displayedBy, RDFS.range, SCHEMA.Museum))
 g.add((MYONT.displayedBy, OWL.inverseOf, MYONT.displays))
@@ -273,12 +249,12 @@ g.add((MYONT.discoveredIn, RDFS.range, CRM.E53_Place))
 g.add((MYONT.startDate, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.startDate, RDFS.label, Literal("started in")))
 g.add((MYONT.startDate, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.startDate, RDFS.range, XSD.date))
+g.add((MYONT.startDate, RDFS.range, XSD.integer))
 
 g.add((MYONT.endDate, RDF.type, OWL.DatatypeProperty))
-g.add((MYONT.endDate, RDFS.label, Literal("ended in")))
+g.add((MYONT.endDate, RDFS.label, Literal("artwork finished in")))
 g.add((MYONT.endDate, RDFS.domain, CRM.E22_Human_Made_Object))
-g.add((MYONT.endDate, RDFS.range, XSD.date))
+g.add((MYONT.endDate, RDFS.range, XSD.integer))
 
 g.add((MYONT.hasCulture, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.hasCulture, RDFS.label, Literal("culture")))
@@ -287,7 +263,7 @@ g.add((MYONT.hasCulture, RDFS.range, XSD.string))
 
 g.add((MYONT.mediumDescription, RDF.type, OWL.DatatypeProperty))
 g.add((MYONT.mediumDescription, RDFS.label, Literal("Labeled Medium")))
-g.add((MYONT.mediumDescription, RDFS.domain, MYONT.Medium))
+g.add((MYONT.mediumDescription, RDFS.domain, CRM.E22_Human_Made_Object))
 g.add((MYONT.mediumDescription, RDFS.range, XSD.string))
 
 g.add((MYONT.themeDescription, RDF.type, OWL.DatatypeProperty))
@@ -316,14 +292,14 @@ g.add((MYONT.hasDepartmentId, RDFS.domain, MYONT.Department))
 g.add((MYONT.hasDepartmentId, RDFS.range, XSD.integer))
 
 g.add((MYONT.bornOn, RDF.type, OWL.DatatypeProperty))
-g.add((MYONT.bornOn, RDFS.label, Literal("born on")))
+g.add((MYONT.bornOn, RDFS.label, Literal("born in")))
 g.add((MYONT.bornOn, RDFS.domain, CRM.E21_Person))
-g.add((MYONT.bornOn, RDFS.range, XSD.date))
+g.add((MYONT.bornOn, RDFS.range, XSD.integer))
 
 g.add((MYONT.diedOn, RDF.type, OWL.DatatypeProperty))
-g.add((MYONT.diedOn, RDFS.label, Literal("died on")))
+g.add((MYONT.diedOn, RDFS.label, Literal("died in")))
 g.add((MYONT.diedOn, RDFS.domain, CRM.E21_Person))
-g.add((MYONT.diedOn, RDFS.range, XSD.date))
+g.add((MYONT.diedOn, RDFS.range, XSD.integer))
 
 ###############################################################################
 

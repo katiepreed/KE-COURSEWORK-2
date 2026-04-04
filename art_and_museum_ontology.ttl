@@ -10,30 +10,26 @@ crm:P102_has_title a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf schema:name .
 
-crm:P45_consists_of a owl:ObjectProperty ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range myont:Medium ;
-    rdfs:subPropertyOf myont:inMedium .
-
-myont:AnimalTheme a owl:Class ;
-    rdfs:label "Animal theme" ;
-    rdfs:subClassOf myont:Theme .
-
 myont:Ceramic a owl:Class ;
     rdfs:label "Ceramic" ;
     rdfs:subClassOf myont:Artifact .
 
-myont:City a owl:Class ;
-    rdfs:label "City" ;
-    rdfs:subClassOf crm:E53_Place .
-
-myont:Country a owl:Class ;
-    rdfs:label "Country" ;
-    rdfs:subClassOf crm:E53_Place .
-
 myont:Figurine a owl:Class ;
     rdfs:label "Figurine" ;
     rdfs:subClassOf myont:Artifact .
+
+myont:Great_indian_fruit_bat_456949 a schema:Painting ;
+    myont:createdBy myont:Bhawani_das ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Islamic_art ;
+    myont:endDate 1807 ;
+    myont:hasObjectId 456949 ;
+    myont:mediumDescription "pencil, ink, and opaque watercolor on paper" ;
+    myont:startDate 1752 ;
+    schema:dateCreated "ca. 1777–82" ;
+    schema:locationCreated myont:Calcutta,
+        myont:India ;
+    schema:name "great indian fruit bat" .
 
 myont:Jewellery a owl:Class ;
     rdfs:label "Jewellery" ;
@@ -47,9 +43,206 @@ myont:NatureTheme a owl:Class ;
     rdfs:label "Nature theme" ;
     rdfs:subClassOf myont:Theme .
 
-myont:Region a owl:Class ;
-    rdfs:label "Region" ;
-    rdfs:subClassOf crm:E53_Place .
+myont:Painting_313632 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate 2000 ;
+    myont:hasCulture "kambot people" ;
+    myont:hasObjectId 313632 ;
+    myont:mediumDescription "sago palm petiole, paint, bamboo, fiber" ;
+    myont:startDate 1800 ;
+    schema:dateCreated "mid-20th century" ;
+    schema:locationCreated myont:Papua_new_guinea ;
+    schema:name "painting" .
+
+myont:Painting_316757 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate 2000 ;
+    myont:hasCulture "abelam people" ;
+    myont:hasObjectId 316757 ;
+    myont:mediumDescription "paper, paint" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "mid-20th century" ;
+    schema:locationCreated myont:Papua_new_guinea,
+        myont:Prince_alexander_mountains ;
+    schema:name "painting" .
+
+myont:Painting_316758 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate 2000 ;
+    myont:hasCulture "abelam people" ;
+    myont:hasObjectId 316758 ;
+    myont:mediumDescription "paper, paint" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "mid-20th century" ;
+    schema:locationCreated myont:Papua_new_guinea,
+        myont:Prince_alexander_mountains ;
+    schema:name "painting" .
+
+myont:Painting_316759 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate 2000 ;
+    myont:hasCulture "abelam people" ;
+    myont:hasObjectId 316759 ;
+    myont:mediumDescription "paper, paint" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "mid-20th century" ;
+    schema:locationCreated myont:Papua_new_guinea,
+        myont:Prince_alexander_mountains ;
+    schema:name "painting" .
+
+myont:Painting_316760 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate 2000 ;
+    myont:hasCulture "abelam people" ;
+    myont:hasObjectId 316760 ;
+    myont:mediumDescription "paper, paint" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "mid-20th century" ;
+    schema:locationCreated myont:Papua_new_guinea,
+        myont:Prince_alexander_mountains ;
+    schema:name "painting" .
+
+myont:Painting_316761 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:The_michael_c_rockefeller_wing ;
+    myont:endDate 2000 ;
+    myont:hasCulture "abelam people" ;
+    myont:hasObjectId 316761 ;
+    myont:mediumDescription "paper, paint" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "mid-20th century" ;
+    schema:locationCreated myont:Papua_new_guinea,
+        myont:Prince_alexander_mountains ;
+    schema:name "painting" .
+
+myont:Painting_351287 a schema:Painting ;
+    myont:createdBy myont:Gilles_demarteau ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Drawings_and_prints ;
+    myont:endDate 1776 ;
+    myont:hasObjectId 351287 ;
+    myont:mediumDescription "chalk manner etching and engraving printed in brown ink" ;
+    myont:startDate 1722 ;
+    schema:name "painting" .
+
+myont:Painting_394633 a schema:Painting ;
+    myont:createdBy myont:Marie_madeleine_igonet ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Drawings_and_prints ;
+    myont:endDate 1752 ;
+    myont:hasObjectId 394633 ;
+    myont:mediumDescription "etching and engraving" ;
+    myont:startDate 1752 ;
+    schema:dateCreated "1752" ;
+    schema:name "painting" .
+
+myont:Painting_394741 a schema:Painting ;
+    myont:createdBy myont:Louis_flix_de_la_rue ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Drawings_and_prints ;
+    myont:endDate 1765 ;
+    myont:hasObjectId 394741 ;
+    myont:mediumDescription "etching" ;
+    myont:startDate 1731 ;
+    schema:name "painting" .
+
+myont:Painting_483042 a schema:Painting ;
+    myont:createdBy myont:Joan_mir ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Modern_and_contemporary_art ;
+    myont:endDate 1927 ;
+    myont:hasObjectId 483042 ;
+    myont:mediumDescription "tempera and oil on canvas" ;
+    myont:startDate 1927 ;
+    schema:dateCreated "1927" ;
+    schema:name "painting" .
+
+myont:Painting_488660 a schema:Painting ;
+    myont:createdBy myont:Charles_henry_alston ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Modern_and_contemporary_art ;
+    myont:endDate 1950 ;
+    myont:hasObjectId 488660 ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate 1950 ;
+    schema:dateCreated "1950" ;
+    schema:name "painting" .
+
+myont:Painting_490190 a schema:Painting ;
+    myont:createdBy myont:Philip_guston ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Modern_and_contemporary_art ;
+    myont:endDate 1952 ;
+    myont:hasObjectId 490190 ;
+    myont:mediumDescription "oil on canvas" ;
+    myont:startDate 1952 ;
+    schema:dateCreated "1952" ;
+    schema:name "painting" .
+
+myont:Painting_51776 a schema:Painting ;
+    myont:createdBy myont:Bi_chang ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate 1899 ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 51776 ;
+    myont:hasPeriod "qing dynasty (1644–1911)" ;
+    myont:mediumDescription "album with ten leaves (eight paintings and two title leaves); ink and color on paper" ;
+    myont:startDate 1700 ;
+    schema:dateCreated "18th–19th century" ;
+    schema:name "painting" .
+
+myont:Painting_51867 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate 1911 ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 51867 ;
+    myont:hasPeriod "qing dynasty (1644–1911)" ;
+    myont:mediumDescription "leaf from an album; ink on paper" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "20th century" ;
+    schema:name "painting" .
+
+myont:Painting_51868 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate 1911 ;
+    myont:hasCulture "china" ;
+    myont:hasObjectId 51868 ;
+    myont:hasPeriod "qing dynasty (1644–1911)" ;
+    myont:mediumDescription "leaf from an album; ink on paper" ;
+    myont:startDate 1900 ;
+    schema:dateCreated "20th century" ;
+    schema:name "painting" .
+
+myont:Painting_53750 a schema:Painting ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate 1914 ;
+    myont:hasCulture "japan" ;
+    myont:hasObjectId 53750 ;
+    myont:mediumDescription "twelve small paintings; on silk?" ;
+    myont:startDate 1914 ;
+    schema:name "painting" .
+
+myont:Painting_57329 a schema:Painting ;
+    myont:createdBy myont:Shibata_zeshin ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Asian_art ;
+    myont:endDate 1891 ;
+    myont:hasCulture "japan" ;
+    myont:hasObjectId 57329 ;
+    myont:hasPeriod "meiji period (1868–1912)" ;
+    myont:mediumDescription "album of seventeen sketches; watercolor on paper; mounted on natural silk" ;
+    myont:startDate 1807 ;
+    schema:dateCreated "19th century" ;
+    schema:name "painting" .
 
 myont:ReligiousTheme a owl:Class ;
     rdfs:label "Religious theme" ;
@@ -70,10 +263,10 @@ myont:Vase a owl:Class ;
 myont:bornOn a owl:DatatypeProperty ;
     rdfs:label "born on" ;
     rdfs:domain crm:E21_Person ;
-    rdfs:range xsd:date .
+    rdfs:range xsd:integer .
 
 myont:createdBy a owl:ObjectProperty ;
-    rdfs:label "created by" ;
+    rdfs:label "created by artist" ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range myont:Artist ;
     rdfs:subPropertyOf crm:P108i_was_produced_by,
@@ -83,7 +276,7 @@ myont:createdBy a owl:ObjectProperty ;
 myont:diedOn a owl:DatatypeProperty ;
     rdfs:label "died on" ;
     rdfs:domain crm:E21_Person ;
-    rdfs:range xsd:date .
+    rdfs:range xsd:integer .
 
 myont:discoveredIn a owl:ObjectProperty ;
     rdfs:label "discovered in" ;
@@ -91,20 +284,20 @@ myont:discoveredIn a owl:ObjectProperty ;
     rdfs:range crm:E53_Place .
 
 myont:displayedBy a owl:ObjectProperty ;
-    rdfs:label "displayed by" ;
+    rdfs:label "displayed by museum" ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range schema:Museum ;
     owl:inverseOf myont:displays .
 
-myont:displayedIn a owl:ObjectProperty ;
-    rdfs:label "displayed in" ;
+myont:displayedInDepartment a owl:ObjectProperty ;
+    rdfs:label "displayed in department" ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range myont:Department .
 
 myont:endDate a owl:DatatypeProperty ;
-    rdfs:label "ended in" ;
+    rdfs:label "artwork finished in" ;
     rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range xsd:date .
+    rdfs:range xsd:integer .
 
 myont:hasCulture a owl:DatatypeProperty ;
     rdfs:label "culture" ;
@@ -145,24 +338,35 @@ myont:hasTheme a owl:ObjectProperty ;
 
 myont:mediumDescription a owl:DatatypeProperty ;
     rdfs:label "Labeled Medium" ;
-    rdfs:domain myont:Medium ;
+    rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:string .
 
 myont:startDate a owl:DatatypeProperty ;
     rdfs:label "started in" ;
     rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range xsd:date .
+    rdfs:range xsd:integer .
+
+myont:the_angel_gabriel_meets_amr_ibn_zaid__folio_from_a_siyeri_nebi_453351 a schema:Painting ;
+    myont:createdBy myont:Mustafa_ibn_vali ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Islamic_art ;
+    myont:endDate 1620 ;
+    myont:hasObjectId 453351 ;
+    myont:hasTheme myont:Horse ;
+    myont:mediumDescription "ink, opaque watercolor, and gold on paper" ;
+    myont:startDate 1570 ;
+    schema:dateCreated "ca. 1595" ;
+    schema:locationCreated myont:Istanbul,
+        myont:Turkey ;
+    schema:name "\"the angel gabriel meets 'amr ibn zaid (the shepherd)\", folio from a siyer-i nebi (the life of the prophet)" .
 
 myont:themeDescription a owl:DatatypeProperty ;
     rdfs:label "Labeled Theme" ;
     rdfs:domain myont:Theme ;
     rdfs:range xsd:string .
 
-schema:Painting a owl:Class ;
-    rdfs:label "Painting" ;
-    rdfs:subClassOf crm:E22_Human_Made_Object .
-
-schema:Person rdfs:subClassOf crm:E39_Actor ;
+schema:Person a owl:Class ;
+    rdfs:subClassOf crm:E39_Actor ;
     owl:equivalentClass crm:E21_Person .
 
 schema:Sculpture a owl:Class ;
@@ -171,7 +375,7 @@ schema:Sculpture a owl:Class ;
 
 schema:dateCreated a owl:DatatypeProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range xsd:date .
+    rdfs:range xsd:integer .
 
 schema:displayLocation a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
@@ -182,11 +386,6 @@ schema:locationCreated a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
-schema:material a owl:ObjectProperty ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range myont:Medium ;
-    owl:equivalentProperty myont:inMedium .
-
 crm:P108i_was_produced_by a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range myont:Artist .
@@ -194,6 +393,81 @@ crm:P108i_was_produced_by a owl:ObjectProperty ;
 crm:P55_has_current_location a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
+
+myont:AnimalTheme a owl:Class ;
+    rdfs:label "Animal theme" ;
+    rdfs:subClassOf myont:Theme .
+
+myont:Bhawani_das a myont:Artist ;
+    myont:hasNationality "indian" ;
+    schema:name "bhawani das" .
+
+myont:Bi_chang a myont:Artist ;
+    schema:name "bi chang" .
+
+myont:Calcutta a myont:City ;
+    schema:name "calcutta" .
+
+myont:Charles_henry_alston a myont:Artist ;
+    myont:bornOn "1907" ;
+    myont:diedOn "1977" ;
+    myont:hasNationality "american" ;
+    schema:name "charles henry alston" .
+
+myont:Gilles_demarteau a myont:Artist ;
+    myont:bornOn "1722" ;
+    myont:diedOn "1776" ;
+    myont:hasNationality "french" ;
+    schema:name "gilles demarteau" .
+
+myont:Horse a myont:AnimalTheme ;
+    schema:name "horse" .
+
+myont:India a myont:Country ;
+    schema:name "india" .
+
+myont:Istanbul a myont:City ;
+    schema:name "istanbul" .
+
+myont:Joan_mir a myont:Artist ;
+    myont:bornOn "1893" ;
+    myont:diedOn "1983" ;
+    myont:hasNationality "spanish" ;
+    schema:name "joan miró" .
+
+myont:Louis_flix_de_la_rue a myont:Artist ;
+    myont:bornOn "1731" ;
+    myont:diedOn "1765" ;
+    myont:hasNationality "french" ;
+    schema:name "louis félix de la rue" .
+
+myont:Marie_madeleine_igonet a myont:Artist ;
+    myont:bornOn "1744" ;
+    myont:diedOn "1760" ;
+    myont:hasNationality "french" ;
+    schema:name "marie madeleine igonet" .
+
+myont:Mustafa_ibn_vali a myont:Artist ;
+    schema:name "mustafa ibn vali" .
+
+myont:Philip_guston a myont:Artist ;
+    myont:bornOn "1913" ;
+    myont:diedOn "1980" ;
+    myont:hasNationality "american, born canada" ;
+    schema:name "philip guston" .
+
+myont:Region a owl:Class ;
+    rdfs:label "Region" ;
+    rdfs:subClassOf crm:E53_Place .
+
+myont:Shibata_zeshin a myont:Artist ;
+    myont:bornOn "1807" ;
+    myont:diedOn "1891" ;
+    myont:hasNationality "japanese" ;
+    schema:name "shibata zeshin" .
+
+myont:Turkey a myont:Country ;
+    schema:name "turkey" .
 
 myont:displays a owl:ObjectProperty ;
     rdfs:label "displays" ;
@@ -210,11 +484,6 @@ myont:isDepartmentOf a owl:ObjectProperty ;
     rdfs:domain myont:Department ;
     rdfs:range schema:Museum .
 
-myont:isMediumOf a owl:ObjectProperty ;
-    rdfs:label "is medium of" ;
-    rdfs:domain myont:Medium ;
-    rdfs:range crm:E22_Human_Made_Object .
-
 myont:isThemeOf a owl:ObjectProperty ;
     rdfs:label "is theme of" ;
     rdfs:domain myont:Theme ;
@@ -228,28 +497,41 @@ schema:name a owl:DatatypeProperty ;
 crm:E39_Actor a owl:Class ;
     rdfs:label "Actor" .
 
-myont:inMedium a owl:ObjectProperty ;
-    rdfs:label "Medium" ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range myont:Medium ;
-    owl:inverseOf myont:isMediumOf .
+myont:City a owl:Class ;
+    rdfs:label "City" ;
+    rdfs:subClassOf crm:E53_Place .
 
-myont:Artist a owl:Class ;
-    rdfs:label "Artist" ;
-    rdfs:subClassOf crm:E21_Person .
+myont:Country a owl:Class ;
+    rdfs:label "Country" ;
+    rdfs:subClassOf crm:E53_Place .
 
-myont:Department a owl:Class ;
-    rdfs:label "Department" .
+myont:Islamic_art a myont:Department ;
+    myont:hasDepartmentId 14 ;
+    schema:name "islamic art" .
 
-schema:Museum a owl:Class ;
-    rdfs:label "Museum" .
+myont:Drawings_and_prints a myont:Department ;
+    myont:hasDepartmentId 9 ;
+    schema:name "drawings and prints" .
+
+myont:Modern_and_contemporary_art a myont:Department ;
+    schema:name "modern and contemporary art" .
 
 crm:E21_Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf crm:E39_Actor .
 
-myont:Medium a owl:Class ;
-    rdfs:label "Medium" .
+myont:Prince_alexander_mountains a myont:Region ;
+    schema:name "prince alexander mountains" .
+
+schema:Museum a owl:Class ;
+    rdfs:label "Museum" .
+
+myont:Asian_art a myont:Department ;
+    myont:hasDepartmentId 6 ;
+    schema:name "asian art" .
+
+myont:Papua_new_guinea a myont:Country ;
+    schema:name "papua new guinea" .
 
 crm:E53_Place a owl:Class ;
     rdfs:label "Place" .
@@ -258,8 +540,30 @@ myont:Artifact a owl:Class ;
     rdfs:label "Artifact" ;
     rdfs:subClassOf crm:E22_Human_Made_Object .
 
+myont:The_michael_c_rockefeller_wing a myont:Department ;
+    schema:name "the michael c. rockefeller wing" .
+
 myont:Theme a owl:Class ;
     rdfs:label "Theme" .
+
+myont:Department a owl:Class ;
+    rdfs:label "Department" .
+
+myont:Artist a owl:Class ;
+    rdfs:label "Artist" ;
+    rdfs:subClassOf crm:E21_Person .
+
+myont:Metropolitan_museum_of_art_new_york_ny a schema:Museum ;
+    myont:hasDepartment myont:Asian_art,
+        myont:Drawings_and_prints,
+        myont:Islamic_art,
+        myont:Modern_and_contemporary_art,
+        myont:The_michael_c_rockefeller_wing ;
+    schema:name "metropolitan museum of art, new york, ny" .
+
+schema:Painting a owl:Class ;
+    rdfs:label "Painting" ;
+    rdfs:subClassOf crm:E22_Human_Made_Object .
 
 crm:E22_Human_Made_Object a owl:Class ;
     rdfs:label "Human Made Object" .

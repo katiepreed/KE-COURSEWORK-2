@@ -1,10 +1,7 @@
 import re
 from rdflib import Literal
 
-def createTitle(title):
-    clean = re.sub(r"\(.*?\)", "", title).strip()      
-    clean = re.sub(r"[^a-zA-Z0-9 ]", "", clean)  
-    return clean.replace(" ", "_")   
+
 
 def cleanString(word):
     return re.sub(r"[^a-zA-Z0-9 ]", "", word)  
