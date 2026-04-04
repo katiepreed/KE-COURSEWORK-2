@@ -8,7 +8,9 @@ Properties to think about:
 - MYONT.hasCreated
 - MYONT.discoveredIn
 
-Deal with unidentified artist
+Deal with unidentified artist.
+
+Filter by object ID, do not load the same instance twice.
 """
 import json
 import re
@@ -39,11 +41,18 @@ OBJECT_TYPE_MAP = {
     "drawing": SCHEMA.Painting,
     "sculpture": SCHEMA.Sculpture,
     "ceramic": MYONT.Ceramic,
+    "faience": MYONT.Ceramic,
+    "porcelain": MYONT.Ceramic,
+    "terracotta": MYONT.Ceramic,
+    "pottery": MYONT.Ceramic,
+    "stoneware": MYONT.Ceramic,
     "figurine": MYONT.Figurine,
-    "jewelry": MYONT.Jewellery,
+    "jewel": MYONT.Jewellery,
     "brooch": MYONT.Jewellery,
     "necklace": MYONT.Jewellery,
     "locket": MYONT.Jewellery,
+    "pendant": MYONT.Jewellery,
+    "bracelet": MYONT.Jewellery,
     "earring": MYONT.Jewellery,
     "ring": MYONT.Jewellery,
     "scroll": MYONT.Scroll,
@@ -58,16 +67,36 @@ THEME_MAP = {
     "animal": MYONT.AnimalTheme,
     "cat": MYONT.AnimalTheme,
     "dog":  MYONT.AnimalTheme,
+    "bird":  MYONT.AnimalTheme,
+    "lion":  MYONT.AnimalTheme,
+    "frog":  MYONT.AnimalTheme,
     "horse": MYONT.AnimalTheme,
+    "snakes": MYONT.AnimalTheme,
+    "unicorns": MYONT.AnimalTheme,
     "myth": MYONT.MythologicalTheme,
+    "eros": MYONT.MythologicalTheme,
+    "greek": MYONT.MythologicalTheme,
     "allegory": MYONT.MythologicalTheme,
     "nature": MYONT.NatureTheme,
     "flower": MYONT.NatureTheme,
+    "river": MYONT.NatureTheme,
+    "rose": MYONT.NatureTheme,
+    "lilies": MYONT.NatureTheme,
+    "forest": MYONT.NatureTheme,
+    "garden": MYONT.NatureTheme,
+    "landscape": MYONT.NatureTheme,
     "tree": MYONT.NatureTheme,
+    "lotus": MYONT.NatureTheme,
     "plant": MYONT.NatureTheme,
+    "leaves": MYONT.NatureTheme,
     "religion": MYONT.ReligiousTheme,
     "god": MYONT.ReligiousTheme,
     "biblical": MYONT.ReligiousTheme,
+    "angels": MYONT.ReligiousTheme,
+    "christ": MYONT.ReligiousTheme,
+    "goddess": MYONT.ReligiousTheme,
+    "deities": MYONT.ReligiousTheme,
+    "cathedral": MYONT.ReligiousTheme,
 }
 
 def classify_object(object_name, classification, title, medium):
