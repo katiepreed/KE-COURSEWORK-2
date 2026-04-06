@@ -124,12 +124,6 @@ crm:P55_has_current_location a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
-myont:Ahasuerus_i_fromanteel a myont:Artist ;
-    myont:bornOn "1607"^^xsd:gYear ;
-    myont:diedOn "1693"^^xsd:gYear ;
-    myont:hasNationality "british" ;
-    schema:name "ahasuerus i fromanteel" .
-
 myont:Allen_tucker a myont:Artist ;
     myont:bornOn "1866"^^xsd:gYear ;
     myont:diedOn "1939"^^xsd:gYear ;
@@ -847,10 +841,6 @@ myont:Gl_barberi a myont:Artist ;
     myont:diedOn "1900"^^xsd:gYear ;
     schema:name "g.l. barberi" .
 
-myont:Goddess a myont:ReligiousTheme ;
-    myont:isThemeOf myont:Statue_of_the_goddess_sakhmet_544484 ;
-    schema:name "goddess" .
-
 myont:Gold_emerald_carnelian_banded_onyx_and_garnet_necklace_246092 a myont:Jewellery ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Greek_and_roman_art ;
@@ -924,18 +914,6 @@ myont:Henry_munyaradzi a myont:Artist ;
     myont:bornOn "1931"^^xsd:gYear ;
     myont:diedOn "1998"^^xsd:gYear ;
     schema:name "henry munyaradzi" .
-
-myont:Hooded_wall_clock_with_calendar_205602 a myont:Jewellery ;
-    myont:createdBy myont:Ahasuerus_i_fromanteel ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
-    myont:endDate "1670"^^xsd:gYear ;
-    myont:hasObjectId 205602 ;
-    myont:mediumDescription "case: ebony and oak veneered with ebony, ebonized wood, gilded brass; dial: gilded brass with silvered-brass chapter ring; movement: brass, steel" ;
-    myont:startDate "1655"^^xsd:gYear ;
-    schema:dateCreated "ca. 1660–65" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "hooded wall clock with calendar" .
 
 myont:Ibn_alghaibi_altabrizi a myont:Artist ;
     schema:name "ibn al-ghaibi al-tabrizi" .
@@ -1683,12 +1661,6 @@ myont:Reinhold_vasters a myont:Artist ;
 myont:Republic_of_the_congo_or_cabinda_angola a myont:Country ;
     schema:name "republic of the congo or cabinda, angola" .
 
-myont:Roberto_benjamine_rascovich a myont:Artist ;
-    myont:bornOn "1857"^^xsd:gYear ;
-    myont:diedOn "1905"^^xsd:gYear ;
-    myont:hasNationality "american, born spalato, yugoslavia" ;
-    schema:name "roberto benjamine rascovich" .
-
 myont:Rosa_bonheur a myont:Artist ;
     myont:bornOn "1822"^^xsd:gYear ;
     myont:diedOn "1899"^^xsd:gYear ;
@@ -2385,6 +2357,9 @@ myont:isThemeOf a owl:ObjectProperty ;
     rdfs:domain myont:Theme ;
     rdfs:range crm:E22_Human_Made_Object .
 
+schema:Museum a owl:Class ;
+    rdfs:label "Museum" .
+
 schema:Painting a owl:Class ;
     rdfs:label "Painting" .
 
@@ -2425,19 +2400,6 @@ myont:Agiba_311237 a myont:Sculpture ;
         myont:Papua_new_guinea,
         myont:Papuan_gulf ;
     schema:name "agiba (skull hook)" .
-
-myont:Aidoneus_offering_persephone_the_pomegranate_from_the_myth_of_demeter_and_persephone_929945 a myont:Jewellery ;
-    myont:createdBy myont:Roberto_benjamine_rascovich ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Drawings_and_prints ;
-    myont:endDate "1922"^^xsd:gYear ;
-    myont:hasObjectId 929945 ;
-    myont:hasTheme myont:Myth ;
-    myont:mediumDescription "etching" ;
-    myont:startDate "1898"^^xsd:gYear ;
-    schema:dateCreated "ca. 1903, published posthumously 1917" ;
-    schema:displayLocation myont:New_york ;
-    schema:name "aidoneus offering persephone the pomegranate, from \"the myth of demeter and persephone\"" .
 
 myont:Allegory_389989 a myont:Painting ;
     myont:createdBy myont:Anonymous_italian_venetian_18th_century ;
@@ -3906,7 +3868,7 @@ myont:Nkishi_310453 a myont:Sculpture ;
     myont:endDate "1950"^^xsd:gYear ;
     myont:hasCulture "songye peoples" ;
     myont:hasObjectId 310453 ;
-    myont:hasTheme myont:Snakes ;
+    myont:hasTheme myont:Snake ;
     myont:mediumDescription "wood, copper, brass, iron, fiber, snakeskin, leather, fur, feathers, mud, resin" ;
     myont:startDate "1800"^^xsd:gYear ;
     schema:dateCreated "19th–first half of 20th century" ;
@@ -4026,7 +3988,7 @@ myont:Pendant_reliquary_with_depiction_of_the_annunciation_193661 a myont:Jewell
     myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
     myont:endDate "1699"^^xsd:gYear ;
     myont:hasObjectId 193661 ;
-    myont:hasTheme myont:Angels ;
+    myont:hasTheme myont:Angel ;
     myont:mediumDescription "gold, enamel, rubies, crystal, pearl, rock crystal" ;
     myont:startDate "1600"^^xsd:gYear ;
     schema:dateCreated "17th century" ;
@@ -4039,7 +4001,7 @@ myont:Pendant_with_a_triton_riding_a_unicornlike_sea_creature_207258 a myont:Jew
     myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
     myont:endDate "1900"^^xsd:gYear ;
     myont:hasObjectId 207258 ;
-    myont:hasTheme myont:Unicorns ;
+    myont:hasTheme myont:Unicorn ;
     myont:mediumDescription "baroque pearl mounted with enameled gold set with pearls, emeralds and rubies and with pendent pearls" ;
     myont:startDate "1865"^^xsd:gYear ;
     schema:dateCreated "ca. 1870–95" ;
@@ -4094,7 +4056,7 @@ myont:Prudence_193692 a myont:Jewellery ;
     myont:displayedInDepartment myont:European_sculpture_and_decorative_arts ;
     myont:endDate "1565"^^xsd:gYear ;
     myont:hasObjectId 193692 ;
-    myont:hasTheme myont:Snakes ;
+    myont:hasTheme myont:Snake ;
     myont:mediumDescription "chalcedony, mounted in gold with enamel, rubies, emeralds, diamond, and pearl" ;
     myont:startDate "1545"^^xsd:gYear ;
     schema:dateCreated "ca. 1550–60, back: 19th century" ;
@@ -4310,6 +4272,21 @@ myont:Statue_of_the_god_reshef_553738 a myont:Statue ;
     schema:locationCreated myont:Egypt ;
     schema:name "statue of the god reshef" .
 
+myont:Statue_of_the_goddess_sakhmet_544484 a myont:Statue ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Egyptian_art ;
+    myont:endDate "-1352"^^xsd:gYear ;
+    myont:hasObjectId 544484 ;
+    myont:hasPeriod "new kingdom" ;
+    myont:hasTheme myont:God ;
+    myont:mediumDescription "granodiorite" ;
+    myont:startDate "-1390"^^xsd:gYear ;
+    schema:dateCreated "ca. 1390–1352 B.C." ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Egypt,
+        myont:Upper_egypt_thebes ;
+    schema:name "statue of the goddess sakhmet" .
+
 myont:Statuette_of_amun_544874 a myont:Statue ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Egyptian_art ;
@@ -4425,7 +4402,7 @@ myont:The_son_of_moses_circumcised_336778 a myont:Painting ;
     myont:displayedInDepartment myont:Drawings_and_prints ;
     myont:endDate "1699"^^xsd:gYear ;
     myont:hasObjectId 336778 ;
-    myont:hasTheme myont:Angels ;
+    myont:hasTheme myont:Angel ;
     myont:mediumDescription "red chalk, brush and red, brown, and gray wash, heightened with white" ;
     myont:startDate "1600"^^xsd:gYear ;
     schema:dateCreated "17th century" ;
@@ -4590,10 +4567,10 @@ myont:Trotting_horse_195196 a myont:Sculpture ;
 myont:Turkey a myont:Country ;
     schema:name "turkey" .
 
-myont:Unicorns a myont:AnimalTheme ;
+myont:Unicorn a myont:AnimalTheme ;
     myont:isThemeOf myont:Display_dish_with_charles_ii__in_a_tree_195223,
         myont:Pendant_with_a_triton_riding_a_unicornlike_sea_creature_207258 ;
-    schema:name "unicorns" .
+    schema:name "unicorn" .
 
 myont:Van_gogh_632941 a myont:Sculpture ;
     myont:createdBy myont:Bert_l_long_jr ;
@@ -4864,24 +4841,6 @@ myont:Zen_master_with_meditation_staff_and_chinesestyle_landscapes_78057 a myont
 
 myont:ledefrance a myont:Region ;
     schema:name "île-de-france" .
-
-myont:the_angel_gabriel_meets_amr_ibn_zaid__folio_from_a_siyeri_nebi_453351 a myont:Painting ;
-    myont:createdBy myont:Mustafa_ibn_vali ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Islamic_art ;
-    myont:endDate "1620"^^xsd:gYear ;
-    myont:hasObjectId 453351 ;
-    myont:hasTheme myont:Horse ;
-    myont:mediumDescription "ink, opaque watercolor, and gold on paper" ;
-    myont:startDate "1570"^^xsd:gYear ;
-    schema:dateCreated "ca. 1595" ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Istanbul,
-        myont:Turkey ;
-    schema:name "\"the angel gabriel meets 'amr ibn zaid (the shepherd)\", folio from a siyer-i nebi (the life of the prophet)" .
-
-schema:Museum a owl:Class ;
-    rdfs:label "Museum" .
 
 myont:Allegory_341160 a myont:Painting ;
     myont:createdBy myont:Orazio_samacchini ;
@@ -5232,7 +5191,7 @@ myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokr
     myont:endDate "1399"^^xsd:gYear ;
     myont:hasCulture "byzantine" ;
     myont:hasObjectId 477247 ;
-    myont:hasTheme myont:Angels,
+    myont:hasTheme myont:Angel,
         myont:Christ ;
     myont:mediumDescription "chalcedony cameo; gold mount with pearls, emeralds, garnets, sapphires, and a sardonyx intaglio" ;
     myont:startDate "1075"^^xsd:gYear ;
@@ -5301,27 +5260,11 @@ myont:Six_jewel_rivers_53427 a myont:Painting ;
     schema:displayLocation myont:New_york ;
     schema:name "six jewel rivers" .
 
-myont:Snakes a myont:AnimalTheme ;
+myont:Snake a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_catholic_faith_437877,
         myont:Nkishi_310453,
         myont:Prudence_193692 ;
-    schema:name "snakes" .
-
-myont:Statue_of_the_goddess_sakhmet_544484 a myont:Statue ;
-    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
-    myont:displayedInDepartment myont:Egyptian_art ;
-    myont:endDate "-1352"^^xsd:gYear ;
-    myont:hasObjectId 544484 ;
-    myont:hasPeriod "new kingdom" ;
-    myont:hasTheme myont:God,
-        myont:Goddess ;
-    myont:mediumDescription "granodiorite" ;
-    myont:startDate "-1390"^^xsd:gYear ;
-    schema:dateCreated "ca. 1390–1352 B.C." ;
-    schema:displayLocation myont:New_york ;
-    schema:locationCreated myont:Egypt,
-        myont:Upper_egypt_thebes ;
-    schema:name "statue of the goddess sakhmet" .
+    schema:name "snake" .
 
 myont:The_bryant_vase_1029 a myont:Vase ;
     myont:createdBy myont:Tiffany__co ;
@@ -5418,12 +5361,21 @@ myont:Vase_with_flowering_plant_871923 a myont:Ceramic ;
 myont:Wari_artist a myont:Artist ;
     schema:name "wari artist(s)" .
 
-myont:Angels a myont:ReligiousTheme ;
-    myont:isThemeOf myont:Lintel_with_angels_supporting_the_lamb_of_god_471944,
-        myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247,
-        myont:Pendant_reliquary_with_depiction_of_the_annunciation_193661,
-        myont:The_son_of_moses_circumcised_336778 ;
-    schema:name "angels" .
+myont:the_angel_gabriel_meets_amr_ibn_zaid__folio_from_a_siyeri_nebi_453351 a myont:Painting ;
+    myont:createdBy myont:Mustafa_ibn_vali ;
+    myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
+    myont:displayedInDepartment myont:Islamic_art ;
+    myont:endDate "1620"^^xsd:gYear ;
+    myont:hasObjectId 453351 ;
+    myont:hasTheme myont:Angel,
+        myont:Horse ;
+    myont:mediumDescription "ink, opaque watercolor, and gold on paper" ;
+    myont:startDate "1570"^^xsd:gYear ;
+    schema:dateCreated "ca. 1595" ;
+    schema:displayLocation myont:New_york ;
+    schema:locationCreated myont:Istanbul,
+        myont:Turkey ;
+    schema:name "\"the angel gabriel meets 'amr ibn zaid (the shepherd)\", folio from a siyer-i nebi (the life of the prophet)" .
 
 myont:Arms_and_armor a myont:Department ;
     myont:hasDepartmentId 4 ;
@@ -5460,7 +5412,7 @@ myont:Display_dish_with_charles_ii__in_a_tree_195223 a myont:Ceramic ;
     myont:hasObjectId 195223 ;
     myont:hasTheme myont:Lion,
         myont:Tree,
-        myont:Unicorns ;
+        myont:Unicorn ;
     myont:mediumDescription "slip-decorated earthenware" ;
     myont:startDate "1675"^^xsd:gYear ;
     schema:dateCreated "ca. 1680" ;
@@ -5489,7 +5441,7 @@ myont:Lintel_with_angels_supporting_the_lamb_of_god_471944 a myont:Sculpture ;
     myont:endDate "1175"^^xsd:gYear ;
     myont:hasCulture "spanish" ;
     myont:hasObjectId 471944 ;
-    myont:hasTheme myont:Angels,
+    myont:hasTheme myont:Angel,
         myont:Christ,
         myont:God ;
     myont:mediumDescription "limestone" ;
@@ -5502,10 +5454,6 @@ myont:Lintel_with_angels_supporting_the_lamb_of_god_471944 a myont:Sculpture ;
 
 myont:Mesopotamia a myont:Region ;
     schema:name "mesopotamia" .
-
-myont:Museum a owl:Class ;
-    rdfs:label "Museum" ;
-    owl:equivalentClass schema:Museum .
 
 myont:MythologicalTheme a owl:Class ;
     rdfs:label "Mythological theme" ;
@@ -5551,12 +5499,20 @@ myont:Allegory_of_the_catholic_faith_437877 a myont:Painting ;
     myont:hasTheme myont:Allegory,
         myont:Cat,
         myont:Christ,
-        myont:Snakes ;
+        myont:Snake ;
     myont:mediumDescription "oil on canvas" ;
     myont:startDate "1670"^^xsd:gYear ;
     schema:dateCreated "ca. 1670–72" ;
     schema:displayLocation myont:New_york ;
     schema:name "allegory of the catholic faith" .
+
+myont:Angel a myont:ReligiousTheme ;
+    myont:isThemeOf myont:Lintel_with_angels_supporting_the_lamb_of_god_471944,
+        myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247,
+        myont:Pendant_reliquary_with_depiction_of_the_annunciation_193661,
+        myont:The_son_of_moses_circumcised_336778,
+        myont:the_angel_gabriel_meets_amr_ibn_zaid__folio_from_a_siyeri_nebi_453351 ;
+    schema:name "angel" .
 
 myont:Garden a myont:NatureTheme ;
     myont:isThemeOf myont:Camille_monet__in_the_garden_at_argenteuil_438005,
@@ -5583,6 +5539,10 @@ myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590 a myont:Scu
     schema:displayLocation myont:New_york ;
     schema:name "marble sarcophagus with the myth of selene and endymion" .
 
+myont:Museum a owl:Class ;
+    rdfs:label "Museum" ;
+    owl:equivalentClass schema:Museum .
+
 myont:Nishapur a myont:City ;
     schema:name "nishapur" .
 
@@ -5604,8 +5564,21 @@ myont:Lion a myont:AnimalTheme ;
         myont:Marble_statue_of_a_lion_248140 ;
     schema:name "lion" .
 
+myont:Myth a myont:MythologicalTheme ;
+    myont:isThemeOf myont:Marble_sarcophagus_with_garlands_and_the_myth_of_theseus_and_ariadne_245585,
+        myont:Marble_sarcophagus_with_the_myth_of_endymion_251474,
+        myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590,
+        myont:Myth_of_the_spiral_482676,
+        myont:Right_corner_of_a_marble_sarcophagus_with_the_myth_of_apollo_and_the_satyr_marsyas_249061,
+        myont:Right_corner_of_a_sarcophagus_with_the_myth_of_the_musical_contest_between_the_satyr_marsyas_and_the_god_apollo_252933 ;
+    schema:name "myth" .
+
 myont:Peru a myont:Country ;
     schema:name "peru" .
+
+myont:ReligiousTheme a owl:Class ;
+    rdfs:label "Religious theme" ;
+    rdfs:subClassOf myont:Theme .
 
 myont:Robert_lehman_collection a myont:Department ;
     schema:name "robert lehman collection" .
@@ -5628,20 +5601,6 @@ myont:Byzantine_egypt a myont:Country ;
 
 myont:Memphite_region a myont:Region ;
     schema:name "memphite region" .
-
-myont:Myth a myont:MythologicalTheme ;
-    myont:isThemeOf myont:Aidoneus_offering_persephone_the_pomegranate_from_the_myth_of_demeter_and_persephone_929945,
-        myont:Marble_sarcophagus_with_garlands_and_the_myth_of_theseus_and_ariadne_245585,
-        myont:Marble_sarcophagus_with_the_myth_of_endymion_251474,
-        myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590,
-        myont:Myth_of_the_spiral_482676,
-        myont:Right_corner_of_a_marble_sarcophagus_with_the_myth_of_apollo_and_the_satyr_marsyas_249061,
-        myont:Right_corner_of_a_sarcophagus_with_the_myth_of_the_musical_contest_between_the_satyr_marsyas_and_the_god_apollo_252933 ;
-    schema:name "myth" .
-
-myont:ReligiousTheme a owl:Class ;
-    rdfs:label "Religious theme" ;
-    rdfs:subClassOf myont:Theme .
 
 myont:River a myont:NatureTheme ;
     myont:isThemeOf myont:Heart_of_the_andes_10481,
@@ -5726,6 +5685,10 @@ myont:Medieval_art a myont:Department ;
     myont:hasDepartmentId 17 ;
     schema:name "medieval art" .
 
+myont:Drawings_and_prints a myont:Department ;
+    myont:hasDepartmentId 9 ;
+    schema:name "drawings and prints" .
+
 myont:Figurine a owl:Class ;
     rdfs:label "Figurine" ;
     rdfs:subClassOf myont:Artifact .
@@ -5750,10 +5713,6 @@ myont:Plant a myont:NatureTheme ;
         myont:Vase_with_flowering_plant_871923,
         myont:Vase_with_plant_motif_208027 ;
     schema:name "plant" .
-
-myont:Drawings_and_prints a myont:Department ;
-    myont:hasDepartmentId 9 ;
-    schema:name "drawings and prints" .
 
 myont:God a myont:ReligiousTheme ;
     myont:isThemeOf myont:Child_god_570695,
@@ -5870,6 +5829,10 @@ myont:Tree a myont:NatureTheme ;
         myont:Women_picking_olives_436536 ;
     schema:name "tree" .
 
+myont:Jewellery a owl:Class ;
+    rdfs:label "Jewellery" ;
+    rdfs:subClassOf myont:Artifact .
+
 crm:E22_Human_Made_Object a owl:Class ;
     rdfs:label "Human Made Object" .
 
@@ -5880,10 +5843,6 @@ myont:City a owl:Class ;
 myont:Country a owl:Class ;
     rdfs:label "Country" ;
     rdfs:subClassOf crm:E53_Place .
-
-myont:Jewellery a owl:Class ;
-    rdfs:label "Jewellery" ;
-    rdfs:subClassOf myont:Artifact .
 
 myont:Cat a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_catholic_faith_437877,
@@ -6024,10 +5983,9 @@ myont:Artist a owl:Class ;
     rdfs:label "Artist" ;
     rdfs:subClassOf crm:E21_Person .
 
-myont:Metropolitan_museum_of_art_new_york_ny a schema:Museum ;
+myont:Metropolitan_museum_of_art_new_york_ny a myont:Museum ;
     myont:displays myont:A_woman_seated_beside_a_vase_of_flowers_436121,
         myont:Agiba_311237,
-        myont:Aidoneus_offering_persephone_the_pomegranate_from_the_myth_of_demeter_and_persephone_929945,
         myont:Allegory_341160,
         myont:Allegory_389989,
         myont:Allegory_436278,
@@ -6149,7 +6107,6 @@ myont:Metropolitan_museum_of_art_new_york_ny a schema:Museum ;
         myont:Great_indian_fruit_bat_456949,
         myont:Haystacks_437122,
         myont:Heart_of_the_andes_10481,
-        myont:Hooded_wall_clock_with_calendar_205602,
         myont:Horse_195195,
         myont:Horse_338076,
         myont:Horse_338077,
