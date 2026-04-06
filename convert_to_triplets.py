@@ -41,7 +41,6 @@ OBJECT_TYPE_MAP = {
     "pendant": MYONT.Jewellery,
     "bracelet": MYONT.Jewellery,
     "earring": MYONT.Jewellery,
-    "ring": MYONT.Jewellery,
     "scroll": MYONT.Scroll,
     "statue": MYONT.Statue,
     "vase": MYONT.Vase,
@@ -57,8 +56,8 @@ THEME_MAP = {
     "lion":  MYONT.AnimalTheme,
     "frog":  MYONT.AnimalTheme,
     "horse": MYONT.AnimalTheme,
-    "snakes": MYONT.AnimalTheme,
-    "unicorns": MYONT.AnimalTheme,
+    "snake": MYONT.AnimalTheme,
+    "unicorn": MYONT.AnimalTheme,
     "myth": MYONT.MythologicalTheme,
     "eros": MYONT.MythologicalTheme,
     "greek": MYONT.MythologicalTheme,
@@ -78,9 +77,8 @@ THEME_MAP = {
     "religion": MYONT.ReligiousTheme,
     "god": MYONT.ReligiousTheme,
     "biblical": MYONT.ReligiousTheme,
-    "angels": MYONT.ReligiousTheme,
+    "angel": MYONT.ReligiousTheme,
     "christ": MYONT.ReligiousTheme,
-    "goddess": MYONT.ReligiousTheme,
     "deities": MYONT.ReligiousTheme,
     "cathedral": MYONT.ReligiousTheme,
 }
@@ -159,6 +157,7 @@ def populate_instances(g):
     # all artworks in the MET are displayed in new york
     new_york = MYONT["New_york"]
     g.add((new_york, RDF.type, MYONT.City))
+    g.add((new_york, SCHEMA.name, Literal("new york")))
     seen_cities[new_york] = True
         
     for item in data:
@@ -202,7 +201,6 @@ def populate_instances(g):
             continue
 
         g.add((subject, SCHEMA.displayLocation, new_york))
-        g.add((new_york, SCHEMA.name, Literal("new york")))
         
         # assign object to a class
         g.add((subject, RDF.type, rdf_class))
@@ -220,10 +218,14 @@ def populate_instances(g):
             g.add((subject, MYONT.hasPeriod, Literal(period.lower())))
 
         if begin_date:
-            g.add((subject, MYONT.startDate, convert_year(begin_date)))
+            date = convert_year(begin_date)
+            if date is not None:
+                g.add((subject, MYONT.startDate, date))
 
         if end_date:
-            g.add((subject, MYONT.endDate, convert_year(end_date)))
+            date = convert_year(end_date)
+            if date is not None:
+                g.add((subject, MYONT.endDate, date))
 
         if medium:
             g.add((subject, MYONT.mediumDescription, Literal(medium.lower())))
@@ -242,10 +244,14 @@ def populate_instances(g):
                     g.add((artist_uri, MYONT.hasNationality, Literal(artist_nat.lower())))
 
                 if artist_begin:
-                    g.add((artist_uri, MYONT.bornOn, convert_year(artist_begin)))
+                    date = convert_year(artist_begin)
+                    if date is not None:
+                        g.add((artist_uri, MYONT.bornOn, date))
 
                 if artist_end:
-                    g.add((artist_uri, MYONT.diedOn, convert_year(artist_end)))
+                    date = convert_year(artist_end)
+                    if date is not None:
+                        g.add((artist_uri, MYONT.diedOn, date))
 
             g.add((subject, MYONT.createdBy, artist_uri))
 
@@ -272,7 +278,7 @@ def populate_instances(g):
 
             if museum_id not in seen_museums:
                 seen_museums[museum_id] = True
-                g.add((museum_uri, RDF.type, SCHEMA.Museum))
+                g.add((museum_uri, RDF.type, MYONT.Museum))
                 g.add((museum_uri, SCHEMA.name, Literal(repository.lower())))
 
             g.add((museum_uri, MYONT.displays, subject)) 
