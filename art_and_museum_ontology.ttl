@@ -2160,9 +2160,6 @@ myont:Tucker_factory a myont:Artist ;
 myont:Unciti a myont:City ;
     schema:name "unciti" .
 
-myont:Unidentified_artists a myont:Artist ;
-    schema:name "unidentified artists" .
-
 myont:Unkoku_teki a myont:Artist ;
     myont:bornOn "1591"^^xsd:gYear ;
     myont:diedOn "1644"^^xsd:gYear ;
@@ -4233,7 +4230,6 @@ myont:Scarab_with_plant_motif_557097 a myont:Ceramic ;
     schema:name "scarab with plant motif" .
 
 myont:Six_horses_40303 a myont:Painting ;
-    myont:createdBy myont:Unidentified_artists ;
     myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny ;
     myont:displayedInDepartment myont:Asian_art ;
     myont:endDate "1399"^^xsd:gYear ;

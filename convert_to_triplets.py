@@ -8,19 +8,12 @@ Properties to think about:
 - MYONT.hasCreated
 - MYONT.discoveredIn
 
-Deal with unidentified artist.
-
-Filter by object ID, do not load the same instance twice.
-
-Check if everything stored at the met is in new york.
-
 Check the code uses at least two classes and two properties from external schema.
-
 Deal with artifact class, possibly combine statue and sculpture. 
 """
 import json
 import re
-from rdflib import Graph, Literal, Namespace, URIRef, RDF, RDFS, XSD, OWL
+from rdflib import Literal, Namespace, RDF, XSD
 
 MYONT  = Namespace("https://ontologeez/")
 SCHEMA = Namespace("https://schema.org/")
@@ -161,7 +154,7 @@ def populate_instances(g):
     seen_countries = {}
     seen_cities = {}
     seen_regions = {}
-    seen_mediums = {}
+    seen_objects = {}
 
     # all artworks in the MET are displayed in new york
     new_york = MYONT["New_york"]
@@ -192,6 +185,12 @@ def populate_instances(g):
 
         if not title:
             continue
+
+        # filter out any duplicates in the data
+        if obj_id in seen_objects:
+            continue
+
+        seen_objects[obj_id] = True
 
         identifier = createTitle(title)
         subject = MYONT[f"{identifier}_{obj_id}"]
@@ -229,7 +228,7 @@ def populate_instances(g):
         if medium:
             g.add((subject, MYONT.mediumDescription, Literal(medium.lower())))
 
-        if artist_name and artist_name.lower() != "unidentified artist":
+        if artist_name and not artist_name.lower().startswith("unidentified"):
             artist_id = createTitle(artist_name)
             artist_uri = MYONT[artist_id]
 

@@ -1,4 +1,4 @@
-from rdflib import Graph, Namespace, Literal, URIRef, BNode
+from rdflib import Namespace, Literal
 from rdflib.namespace import RDF, RDFS, OWL, XSD
 
 MYONT = Namespace("https://ontologeez/")
