@@ -1,5 +1,6 @@
-from rdflib import Namespace, Literal
+from rdflib import Namespace, Literal, Graph, BNode
 from rdflib.namespace import RDF, RDFS, OWL, XSD
+from rdflib.collection import Collection
 
 MYONT = Namespace("https://ontologeez/")
 SCHEMA = Namespace("https://schema.org/")
@@ -76,33 +77,33 @@ def build_ontology(g):
     g.add((MYONT.Museum, RDFS.label, Literal("Museum")))
     g.add((MYONT.Museum, OWL.equivalentClass, SCHEMA.Museum))
 
-    g.add((MYONT.Artifact, RDF.type, OWL.Class))
-    g.add((MYONT.Artifact, RDFS.label, Literal("Artifact"))) # when artist is not known - the thing is more discovered
-    g.add((MYONT.Artifact, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    # g.add((MYONT.Artifact, RDF.type, OWL.Class))
+    # g.add((MYONT.Artifact, RDFS.label, Literal("Artifact"))) # when artist is not known - the thing is more discovered
+    # g.add((MYONT.Artifact, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((MYONT.Vase, RDF.type, OWL.Class))
     g.add((MYONT.Vase, RDFS.label, Literal("Vase")))
-    g.add((MYONT.Vase, RDFS.subClassOf, MYONT.Artifact))
+    g.add((MYONT.Vase, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((MYONT.Ceramic, RDF.type, OWL.Class))
     g.add((MYONT.Ceramic, RDFS.label, Literal("Ceramic")))
-    g.add((MYONT.Ceramic, RDFS.subClassOf, MYONT.Artifact))
+    g.add((MYONT.Ceramic, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((MYONT.Jewellery, RDF.type, OWL.Class))
     g.add((MYONT.Jewellery, RDFS.label, Literal("Jewellery")))
-    g.add((MYONT.Jewellery, RDFS.subClassOf, MYONT.Artifact))
+    g.add((MYONT.Jewellery, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((MYONT.Scroll, RDF.type, OWL.Class))
     g.add((MYONT.Scroll, RDFS.label, Literal("Scroll")))
-    g.add((MYONT.Scroll, RDFS.subClassOf, MYONT.Artifact))
+    g.add((MYONT.Scroll, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((MYONT.Statue, RDF.type, OWL.Class))
     g.add((MYONT.Statue, RDFS.label, Literal("Statue"))) 
-    g.add((MYONT.Statue, RDFS.subClassOf, MYONT.Artifact))
+    g.add((MYONT.Statue, RDFS.subClassOf, MYONT.Sculpture))
 
     g.add((MYONT.Figurine, RDF.type, OWL.Class))
     g.add((MYONT.Figurine, RDFS.label, Literal("Figurine")))
-    g.add((MYONT.Figurine, RDFS.subClassOf, MYONT.Artifact))
+    g.add((MYONT.Figurine, RDFS.subClassOf, MYONT.Sculpture))
 
     g.add((MYONT.Theme, RDF.type, OWL.Class))
     g.add((MYONT.Theme, RDFS.label, Literal("Theme")))
@@ -138,6 +139,140 @@ def build_ontology(g):
     g.add((MYONT.Country, RDFS.label, Literal("Country")))
     g.add((MYONT.Country, RDFS.subClassOf, CRM.E53_Place))
 
+    ############################### AXIOMS #####################################
+
+    g.add((MYONT.City, OWL.disjointWith, MYONT.Country))
+    g.add((MYONT.City, OWL.disjointWith, MYONT.Region))
+    g.add((MYONT.Country, OWL.disjointWith, MYONT.Region))
+
+    #check if these are correct according to info from structured data source
+
+    g.add((MYONT.Painting, OWL.disjointWith, MYONT.Sculpture))
+    g.add((MYONT.Statue, OWL.disjointWith, MYONT.Figurine))
+    g.add((MYONT.Painting, OWL.disjointWith, MYONT.Sculpture))
+    g.add((MYONT.Painting, OWL.disjointWith, MYONT.Vase))
+    g.add((MYONT.Painting, OWL.disjointWith, MYONT.Ceramic))
+    g.add((MYONT.Painting, OWL.disjointWith, MYONT.Jewellery))
+    g.add((MYONT.Painting, OWL.disjointWith, MYONT.Scroll))
+    g.add((MYONT.Sculpture, OWL.disjointWith, MYONT.Scroll))
+    g.add((MYONT.Sculpture, OWL.disjointWith, MYONT.Jewellery))
+    g.add((MYONT.Vase, OWL.disjointWith, MYONT.Scroll))
+    g.add((MYONT.Vase, OWL.disjointWith, MYONT.Jewellery))
+    g.add((MYONT.Scroll, OWL.disjointWith, MYONT.Jewellery)) 
+
+    g.add((MYONT.bornOn, RDF.type, OWL.FunctionalProperty))
+    g.add((MYONT.diedOn, RDF.type, OWL.FunctionalProperty))
+
+    g.add((MYONT.createdBy, RDF.type, OWL.AsymmetricProperty))
+    g.add((MYONT.displays, RDF.type, OWL.AsymmetricProperty))
+
+    g.add((MYONT.createdBy, RDF.type, OWL.IrreflexiveProperty))
+    g.add((MYONT.displays, RDF.type, OWL.IrreflexiveProperty))
+
+    r1 = BNode()
+    g.add((r1, RDF.type, OWL.Restriction))
+    g.add((r1, OWL.onProperty, MYONT.hasCreated))
+    g.add((r1, OWL.minCardinality, Literal(1, datatype=XSD.integer)))
+    g.add((MYONT.Artist, RDFS.subClassOf, r1))
+
+    ############################# DEFINED CLASSES ##################################
+
+    # painter
+    r_painter = BNode()
+    g.add((r_painter, RDF.type, OWL.Restriction))
+    g.add((r_painter, OWL.onProperty, MYONT.hasCreated))
+    g.add((r_painter, OWL.someValuesFrom, MYONT.Painting))
+    intersection_painter = BNode()
+    g.add((intersection_painter, RDF.type, OWL.Class))
+    col_painter = BNode()
+    Collection(g, col_painter, [MYONT.Artist, r_painter])
+    g.add((intersection_painter, OWL.intersectionOf, col_painter))
+    g.add((MYONT.Painter, RDF.type, OWL.Class))
+    g.add((MYONT.Painter, OWL.equivalentClass, intersection_painter))
+
+    #sculptor
+    r_sculptor = BNode()
+    g.add((r_sculptor, RDF.type, OWL.Restriction))
+    g.add((r_sculptor, OWL.onProperty, MYONT.hasCreated))
+    g.add((r_sculptor, OWL.someValuesFrom, MYONT.Sculpture))
+    intersection_sculptor = BNode()
+    g.add((intersection_sculptor, RDF.type, OWL.Class))
+    col_sculptor = BNode()
+    Collection(g, col_sculptor, [MYONT.Artist, r_sculptor])
+    g.add((intersection_sculptor, OWL.intersectionOf, col_sculptor))
+    g.add((MYONT.Sculptor, RDF.type, OWL.Class))
+    g.add((MYONT.Sculptor, OWL.equivalentClass, intersection_sculptor))
+
+    #nature oil painting
+    r_oil_nature_theme = BNode()
+    g.add((r_oil_nature_theme, RDF.type, OWL.Restriction))
+    g.add((r_oil_nature_theme, OWL.onProperty, MYONT.hasTheme))
+    g.add((r_oil_nature_theme, OWL.someValuesFrom, MYONT.NatureTheme))
+
+    r_oil_nature_medium = BNode()
+    g.add((r_oil_nature_medium, RDF.type, OWL.Restriction))
+    g.add((r_oil_nature_medium, OWL.onProperty, MYONT.mediumDescription))
+    # **********************************
+    # data cleaning required for exact match
+    g.add((r_oil_nature_medium, OWL.hasValue, Literal("oil", datatype=XSD.string)))
+
+    intersection_nop = BNode()
+    g.add((intersection_nop, RDF.type, OWL.Class))
+    col_nop = BNode()
+    Collection(g, col_nop, [MYONT.Painting, r_oil_nature_theme, r_oil_nature_medium])
+    g.add((intersection_nop, OWL.intersectionOf, col_nop))
+
+    g.add((MYONT.NatureOilPainting, RDF.type, OWL.Class))
+    g.add((MYONT.NatureOilPainting, OWL.equivalentClass, intersection_nop))
+
+    #Egyptian animal figurine
+    r_theme_eaf = BNode()
+    g.add((r_theme_eaf, RDF.type, OWL.Restriction))
+    g.add((r_theme_eaf, OWL.onProperty, MYONT.hasTheme))
+    g.add((r_theme_eaf, OWL.someValuesFrom, MYONT.AnimalTheme))
+
+    r_culture_eaf = BNode()
+    g.add((r_culture_eaf, RDF.type, OWL.Restriction))
+    g.add((r_culture_eaf, OWL.onProperty, MYONT.hasCulture))
+    # **********************************
+    # data cleaning required for exact match - which is why it would be preferred as a class but even if its not, cause too complex - we should have a justification in the report for it
+    g.add((r_culture_eaf, OWL.hasValue, Literal("egyptian", datatype=XSD.string)))
+
+    intersection_eaf = BNode()
+    g.add((intersection_eaf, RDF.type, OWL.Class))
+    col_eaf = BNode()
+    Collection(g, col_eaf, [MYONT.Figurine, r_theme_eaf, r_culture_eaf])
+    g.add((intersection_eaf, OWL.intersectionOf, col_eaf))
+
+    g.add((MYONT.EgyptianAnimalFigurine, RDF.type, OWL.Class))
+    g.add((MYONT.EgyptianAnimalFigurine, OWL.equivalentClass, intersection_eaf))
+
+    #3d humanmade object
+
+    union_3d = BNode()
+    g.add((union_3d, RDF.type, OWL.Class))
+    col_3d = BNode()
+    Collection(g, col_3d, [MYONT.Sculpture, MYONT.Vase, MYONT.Ceramic, MYONT.Jewellery])
+    g.add((union_3d, OWL.unionOf, col_3d))
+    g.add((MYONT.ThreeDimensionalWork, RDF.type, OWL.Class))
+    g.add((MYONT.ThreeDimensionalWork, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    g.add((MYONT.ThreeDimensionalWork, OWL.equivalentClass, union_3d))
+
+    # natural world theme
+    union_natural = BNode()
+    g.add((union_natural, RDF.type, OWL.Class))
+    col_natural = BNode()
+    Collection(g, col_natural, [MYONT.NatureTheme, MYONT.AnimalTheme])
+    g.add((union_natural, OWL.unionOf, col_natural))
+    g.add((MYONT.NaturalWorldTheme, RDF.type, OWL.Class))
+    g.add((MYONT.NaturalWorldTheme, RDFS.subClassOf, MYONT.Theme))
+    g.add((MYONT.NaturalWorldTheme, OWL.equivalentClass, union_natural))
+
+    # Scroll department only
+    r_only_scrolls = BNode()
+    g.add((r_only_scrolls, RDF.type, OWL.Restriction))
+    g.add((r_only_scrolls, OWL.onProperty, MYONT.departmentDisplays))
+    g.add((r_only_scrolls, OWL.allValuesFrom, MYONT.Scroll))
 
     ###############################################################################
 
@@ -151,7 +286,7 @@ def build_ontology(g):
 
     g.add((SCHEMA.dateCreated, RDF.type, OWL.DatatypeProperty))
     g.add((SCHEMA.dateCreated, RDFS.domain, CRM.E22_Human_Made_Object))
-    g.add((SCHEMA.dateCreated, RDFS.range, XSD.string)) # use this format for dates in data preprocessing
+    g.add((SCHEMA.dateCreated, RDFS.range, XSD.gYear)) # use this format for dates in data preprocessing
 
     #--------------------------------------------------------------------------------
 
@@ -194,7 +329,7 @@ def build_ontology(g):
     # not an activity for simplification
     g.add((CRM.P108i_was_produced_by, RDF.type, OWL.ObjectProperty))
     g.add((CRM.P108i_was_produced_by, RDFS.domain, CRM.E22_Human_Made_Object))
-    g.add((CRM.P108i_was_produced_by, RDFS.range, MYONT.Artist))
+    g.add((CRM.P108i_was_produced_by, RDFS.range, CRM.E39_Actor))
 
     g.add((MYONT.hasDepartment, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.hasDepartment, RDFS.label, Literal("has department")))
@@ -248,16 +383,23 @@ def build_ontology(g):
     g.add((MYONT.displays, RDFS.domain, MYONT.Museum))
     g.add((MYONT.displays, RDFS.range, CRM.E22_Human_Made_Object))
 
+    g.add((MYONT.departmentDisplays, RDF.type, OWL.ObjectProperty))
+    g.add((MYONT.departmentDisplays, RDFS.label, Literal("department displays")))
+    g.add((MYONT.departmentDisplays, RDFS.domain, MYONT.Department))
+    g.add((MYONT.departmentDisplays, RDFS.range, CRM.E22_Human_Made_Object))
+    g.add((MYONT.departmentDisplays, OWL.inverseOf, MYONT.displayedInDepartment))
+
+
     g.add((MYONT.hasCreated, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.hasCreated, RDFS.label, Literal("has created")))
     g.add((MYONT.hasCreated, RDFS.domain, MYONT.Artist))
     g.add((MYONT.hasCreated, RDFS.range, CRM.E22_Human_Made_Object))
 
     # remove if unstructured text source also doesn't populate it
-    g.add((MYONT.discoveredIn, RDF.type, OWL.ObjectProperty))
-    g.add((MYONT.discoveredIn, RDFS.label, Literal("discovered in")))
-    g.add((MYONT.discoveredIn, RDFS.domain, MYONT.Artifact))
-    g.add((MYONT.discoveredIn, RDFS.range, CRM.E53_Place))
+    # g.add((MYONT.discoveredIn, RDF.type, OWL.ObjectProperty))
+    # g.add((MYONT.discoveredIn, RDFS.label, Literal("discovered in")))
+    # g.add((MYONT.discoveredIn, RDFS.domain, MYONT.Artifact))
+    # g.add((MYONT.discoveredIn, RDFS.range, CRM.E53_Place))
 
     #------------------------------- data properties---------------------------------
 
@@ -292,6 +434,7 @@ def build_ontology(g):
     g.add((MYONT.hasPeriod, RDFS.range, XSD.string))
 
     g.add((MYONT.hasObjectId, RDF.type, OWL.DatatypeProperty))
+    # g.add((MYONT.hasObjectId, RDF.type, OWL.FunctionalProperty)) # issue could be different museums might have overlapping ones, solution: add museum name ahead of id
     g.add((MYONT.hasObjectId, RDFS.label, Literal("object id")))
     g.add((MYONT.hasObjectId, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.hasObjectId, RDFS.range, XSD.integer))
@@ -310,3 +453,9 @@ def build_ontology(g):
     g.add((MYONT.diedOn, RDFS.label, Literal("died in")))
     g.add((MYONT.diedOn, RDFS.domain, CRM.E21_Person))
     g.add((MYONT.diedOn, RDFS.range, XSD.gYear))
+
+    g.serialize(destination="my_ontology1.ttl", format="turtle")
+
+
+g = Graph()
+build_ontology(g)
