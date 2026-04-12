@@ -4,7 +4,10 @@ This is the script responsible for creating the knowledge graph.
 from rdflib import Graph
 from ontology_generation import build_ontology
 from structured_data_mapping import populate_instances
+<<<<<<< HEAD
 from llm_pipeline_knowledge_eng import extract_from_text
+=======
+>>>>>>> 457ea15 (Fixed some files)
 
 def main():
     g = Graph()
