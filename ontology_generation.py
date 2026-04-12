@@ -282,6 +282,7 @@ def build_ontology(g):
     g.add((MYONT.NaturalWorldTheme, RDFS.subClassOf, MYONT.Theme))
     g.add((MYONT.NaturalWorldTheme, OWL.equivalentClass, union_natural))
 
+    # eva check this please
     # Scroll department only
     r_only_scrolls = BNode()
     g.add((r_only_scrolls, RDF.type, OWL.Restriction))
@@ -320,7 +321,7 @@ def build_ontology(g):
     # g.add((SCHEMA.locationCreated, RDFS.subPropertyOf, MYONT.createdIn))
 
     # eva check this please
-    # g.add((SCHEMA.creator, RDF.type, OWL.ObjectProperty))
+    g.add((SCHEMA.creator, RDF.type, OWL.ObjectProperty))
     # g.add((SCHEMA.creator, RDFS.domain, CRM.E22_Human_Made_Object))
     # g.add((SCHEMA.creator, RDFS.range, MYONT.Artist))
     # g.add((SCHEMA.creator, OWL.inverseOf, MYONT.hasCreated))
