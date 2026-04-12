@@ -18,19 +18,31 @@ def build_ontology(g):
 
     g.add((CRM.E22_Human_Made_Object, RDF.type, OWL.Class))
     g.add((CRM.E22_Human_Made_Object, RDFS.label, Literal("Human Made Object")))
+    g.add((CRM.E22_Human_Made_Object, RDFS.comment, Literal(
+        "A physical object intentionally created by humans, such as artworks, tools, or other manufactured items."
+    )))
 
     # g.add((CRM.E52_Time-Span, RDF.type, OWL.Class))
     # g.add((CRM.E52_Time-Span, RDFS.label, Literal("Time span")))
 
     g.add((CRM.E39_Actor, RDF.type, OWL.Class))
     g.add((CRM.E39_Actor, RDFS.label, Literal("Actor")))
+    g.add((CRM.E39_Actor, RDFS.comment, Literal(
+        "An entity capable of performing actions or participating in events, including individuals or groups."
+    )))
 
     g.add((CRM.E21_Person, RDF.type, OWL.Class))
     g.add((CRM.E21_Person, RDFS.label, Literal("Person")))
     g.add((CRM.E21_Person, RDFS.subClassOf, CRM.E39_Actor))
+    g.add((CRM.E21_Person, RDFS.comment, Literal(
+        "A real human individual, considered as an actor capable of creating, owning, or interacting with objects."
+    )))
 
     g.add((CRM.E53_Place, RDF.type, OWL.Class))
     g.add((CRM.E53_Place, RDFS.label, Literal("Place")))
+    g.add((CRM.E53_Place, RDFS.comment, Literal(
+        "An extent in space that can serve as the location of physical objects, events, or activities."
+    )))
 
     ###############################################################################
 
@@ -40,21 +52,31 @@ def build_ontology(g):
 
     g.add((SCHEMA.Painting, RDF.type, OWL.Class))
     g.add((SCHEMA.Painting, RDFS.label, Literal("Painting")))
+    g.add((SCHEMA.Painting, RDFS.comment, Literal(
+        "A work of visual art created by applying paint to a surface such as canvas, wood, or paper."
+    )))
     #  g.add((SCHEMA.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((SCHEMA.Sculpture, RDF.type, OWL.Class))
     # with known artist
     g.add((SCHEMA.Sculpture, RDFS.label, Literal("Sculpture")))
     # g.add((SCHEMA.Sculpture, RDFS.subClassOf, CRM.E22_Human_Made_Object))
-    # g.add((SCHEMA.Sculpture, RDFS.comment, Literal("Any sculpture that has a known artist is included here.")))
+    g.add((SCHEMA.Sculpture, RDFS.comment, Literal(
+        "Any sculpture that has a known artist is included here.")))
 
     g.add((SCHEMA.Museum, RDF.type, OWL.Class))
     g.add((SCHEMA.Museum, RDFS.label, Literal("Museum")))
+    g.add((SCHEMA.Museum, RDFS.comment, Literal(
+        "An institution that collects, preserves, studies, and displays objects of artistic, cultural, or historical significance."
+    )))
 
     # only one equivalence statement is necessary
     g.add((SCHEMA.Person, RDF.type, OWL.Class))
     g.add((SCHEMA.Person, RDFS.label, Literal("Person")))
     g.add((SCHEMA.Person, OWL.equivalentClass, CRM.E21_Person))
+    g.add((SCHEMA.Person, RDFS.comment, Literal(
+        "A human individual."
+    )))
 
     ################################################################################
 
@@ -64,20 +86,32 @@ def build_ontology(g):
     g.add((MYONT.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
     g.add((MYONT.Painting, RDFS.label, Literal("Painting")))
     g.add((MYONT.Painting, OWL.equivalentClass, SCHEMA.Painting))
+    g.add((MYONT.Painting, RDFS.comment, Literal(
+        "A painting in the custom ontology, modeled as a human-made object and aligned with schema.org Painting."
+    )))
 
     g.add((MYONT.Sculpture, RDF.type, OWL.Class))
     g.add((MYONT.Sculpture, RDFS.subClassOf, CRM.E22_Human_Made_Object))
     g.add((MYONT.Sculpture, RDFS.label, Literal("Sculpture")))
     g.add((MYONT.Sculpture, OWL.equivalentClass, SCHEMA.Sculpture))
+    g.add((MYONT.Sculpture, RDFS.comment, Literal(
+        "A sculpture in the custom ontology, modeled as a human-made object and aligned with schema.org Sculpture."
+    )))
 
     g.add((MYONT.Artist, RDF.type, OWL.Class))
     g.add((MYONT.Artist, RDFS.label, Literal("Artist")))
     g.add((MYONT.Artist, RDFS.subClassOf, CRM.E21_Person))
+    g.add((MYONT.Artist, RDFS.comment, Literal(
+        "A person who creates artworks such as paintings, sculptures, or other museum objects."
+    )))
     # g.add((MYONT.Artist, RDFS.subClassOf, SCHEMA.Person))
 
     g.add((MYONT.Museum, RDF.type, OWL.Class))
     g.add((MYONT.Museum, RDFS.label, Literal("Museum")))
     g.add((MYONT.Museum, OWL.equivalentClass, SCHEMA.Museum))
+    g.add((MYONT.Museum, RDFS.comment, Literal(
+        "A museum in the custom ontology, aligned with schema.org Museum."
+    )))
 
     # g.add((MYONT.Artifact, RDF.type, OWL.Class))
     # g.add((MYONT.Artifact, RDFS.label, Literal("Artifact"))) # when artist is not known - the thing is more discovered
@@ -86,60 +120,105 @@ def build_ontology(g):
     g.add((MYONT.Vase, RDF.type, OWL.Class))
     g.add((MYONT.Vase, RDFS.label, Literal("Vase")))
     g.add((MYONT.Vase, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    g.add((MYONT.Vase, RDFS.comment, Literal(
+        "A human-made container, typically used for holding flowers or as decoration."
+    )))
 
     g.add((MYONT.Ceramic, RDF.type, OWL.Class))
     g.add((MYONT.Ceramic, RDFS.label, Literal("Ceramic")))
     g.add((MYONT.Ceramic, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    g.add((MYONT.Ceramic, RDFS.comment, Literal(
+        "A human-made object made from clay or similar material hardened by heat."
+    )))
 
     g.add((MYONT.Jewellery, RDF.type, OWL.Class))
     g.add((MYONT.Jewellery, RDFS.label, Literal("Jewellery")))
     g.add((MYONT.Jewellery, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    g.add((MYONT.Jewellery, RDFS.comment, Literal(
+        "A human-made decorative object worn for personal adornment, such as rings, necklaces, or bracelets."
+    )))
 
     g.add((MYONT.Scroll, RDF.type, OWL.Class))
     g.add((MYONT.Scroll, RDFS.label, Literal("Scroll")))
     g.add((MYONT.Scroll, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    g.add((MYONT.Scroll, RDFS.comment, Literal(
+        "A rolled written or illustrated document, treated here as a human-made museum object."
+    )))
 
     g.add((MYONT.Statue, RDF.type, OWL.Class))
     g.add((MYONT.Statue, RDFS.label, Literal("Statue")))
     g.add((MYONT.Statue, RDFS.subClassOf, MYONT.Sculpture))
+    g.add((MYONT.Statue, RDFS.comment, Literal(
+        "A sculpture representing a person, animal, or other figure, typically free-standing."
+    )))
 
     g.add((MYONT.Figurine, RDF.type, OWL.Class))
     g.add((MYONT.Figurine, RDFS.label, Literal("Figurine")))
     g.add((MYONT.Figurine, RDFS.subClassOf, MYONT.Sculpture))
+    g.add((MYONT.Figurine, RDFS.comment, Literal(
+        "A small sculpted or molded figure representing a human, animal, or mythical being."
+    )))
 
     g.add((MYONT.Theme, RDF.type, OWL.Class))
     g.add((MYONT.Theme, RDFS.label, Literal("Theme")))
+    g.add((MYONT.Theme, RDFS.comment, Literal(
+        "A subject or conceptual category used to describe the content of an artwork."
+    )))
 
     g.add((MYONT.NatureTheme, RDF.type, OWL.Class))
     g.add((MYONT.NatureTheme, RDFS.label, Literal("Nature theme")))
     g.add((MYONT.NatureTheme, RDFS.subClassOf, MYONT.Theme))
+    g.add((MYONT.NatureTheme, RDFS.comment, Literal(
+        "A theme representing elements of the natural world, such as landscapes or plants."
+    )))
 
     g.add((MYONT.AnimalTheme, RDF.type, OWL.Class))
     g.add((MYONT.AnimalTheme, RDFS.label, Literal("Animal theme")))
     g.add((MYONT.AnimalTheme, RDFS.subClassOf, MYONT.Theme))
+    g.add((MYONT.AnimalTheme, RDFS.comment, Literal(
+        "A theme representing animals or animal-related subjects in artworks."
+    )))
 
     g.add((MYONT.ReligiousTheme, RDF.type, OWL.Class))
     g.add((MYONT.ReligiousTheme, RDFS.label, Literal("Religious theme")))
     g.add((MYONT.ReligiousTheme, RDFS.subClassOf, MYONT.Theme))
+    g.add((MYONT.ReligiousTheme, RDFS.comment, Literal(
+        "A theme representing religious subjects, beliefs, figures, or scenes."
+    )))
 
     g.add((MYONT.MythologicalTheme, RDF.type, OWL.Class))
     g.add((MYONT.MythologicalTheme, RDFS.label, Literal("Mythological theme")))
     g.add((MYONT.MythologicalTheme, RDFS.subClassOf, MYONT.Theme))
+    g.add((MYONT.MythologicalTheme, RDFS.comment, Literal(
+        "A theme representing mythological figures, stories, or scenes."
+    )))
 
     g.add((MYONT.Department, RDF.type, OWL.Class))
     g.add((MYONT.Department, RDFS.label, Literal("Department")))
+    g.add((MYONT.Department, RDFS.comment, Literal(
+        "An organizational division within a museum used to group and manage collections or displays."
+    )))
 
     g.add((MYONT.City, RDF.type, OWL.Class))
     g.add((MYONT.City, RDFS.label, Literal("City")))
     g.add((MYONT.City, RDFS.subClassOf, CRM.E53_Place))
+    g.add((MYONT.City, RDFS.comment, Literal(
+        "A type of place representing a city."
+    )))
 
     g.add((MYONT.Region, RDF.type, OWL.Class))
     g.add((MYONT.Region, RDFS.label, Literal("Region")))
     g.add((MYONT.Region, RDFS.subClassOf, CRM.E53_Place))
+    g.add((MYONT.Region, RDFS.comment, Literal(
+        "A type of place representing a region."
+    )))
 
     g.add((MYONT.Country, RDF.type, OWL.Class))
     g.add((MYONT.Country, RDFS.label, Literal("Country")))
     g.add((MYONT.Country, RDFS.subClassOf, CRM.E53_Place))
+    g.add((MYONT.Country, RDFS.comment, Literal(
+        "A type of place representing a country."
+    )))
 
     ############################### AXIOMS #####################################
 
@@ -192,6 +271,9 @@ def build_ontology(g):
     g.add((MYONT.Painter, RDF.type, OWL.Class))
     g.add((MYONT.Painter, RDFS.label, Literal("Painter")))  # label
     g.add((MYONT.Painter, OWL.equivalentClass, intersection_painter))
+    g.add((MYONT.Painter, RDFS.comment, Literal(
+        "An artist defined as a person who has created at least one painting."
+    )))
 
     # sculptor
     r_sculptor = BNode()
@@ -206,6 +288,9 @@ def build_ontology(g):
     g.add((MYONT.Sculptor, RDF.type, OWL.Class))
     g.add((MYONT.Sculptor, RDFS.label, Literal("Sculptor")))  # label
     g.add((MYONT.Sculptor, OWL.equivalentClass, intersection_sculptor))
+    g.add((MYONT.Sculptor, RDFS.comment, Literal(
+        "An artist defined as a person who has created at least one sculpture."
+    )))
 
     # nature oil painting
     r_oil_nature_theme = BNode()
@@ -231,6 +316,9 @@ def build_ontology(g):
     g.add((MYONT.NatureOilPainting, RDFS.label,
           Literal("Nature oil painting")))  # label
     g.add((MYONT.NatureOilPainting, OWL.equivalentClass, intersection_nop))
+    g.add((MYONT.NatureOilPainting, RDFS.comment, Literal(
+        "A painting defined as having a nature theme and the medium description 'oil'."
+    )))
 
     # Egyptian animal figurine
     r_theme_eaf = BNode()
@@ -255,6 +343,9 @@ def build_ontology(g):
     g.add((MYONT.EgyptianAnimalFigurine, RDFS.label,
           Literal("Egyptian animal figurine")))  # label
     g.add((MYONT.EgyptianAnimalFigurine, OWL.equivalentClass, intersection_eaf))
+    g.add((MYONT.EgyptianAnimalFigurine, RDFS.comment, Literal(
+        "A figurine defined as having an animal theme and the culture value 'egyptian'."
+    )))
 
     # 3d humanmade object
 
@@ -269,6 +360,9 @@ def build_ontology(g):
         "Three-dimensional human-made object")))  # label
     g.add((MYONT.ThreeDimensionalWork, RDFS.subClassOf, CRM.E22_Human_Made_Object))
     g.add((MYONT.ThreeDimensionalWork, OWL.equivalentClass, union_3d))
+    g.add((MYONT.ThreeDimensionalWork, RDFS.comment, Literal(
+        "A human-made object defined as being either a sculpture, vase, ceramic, or jewellery item."
+    )))
 
     # natural world theme
     union_natural = BNode()
@@ -281,6 +375,9 @@ def build_ontology(g):
           Literal("Natural world theme")))  # label
     g.add((MYONT.NaturalWorldTheme, RDFS.subClassOf, MYONT.Theme))
     g.add((MYONT.NaturalWorldTheme, OWL.equivalentClass, union_natural))
+    g.add((MYONT.NaturalWorldTheme, RDFS.comment, Literal(
+        "A theme defined as either a nature theme or an animal theme."
+    )))
 
     # eva check this please
     # Scroll department only
