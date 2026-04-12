@@ -5,7 +5,7 @@ import time
 
 BASE_URL = "https://collectionapi.metmuseum.org/public/collection/v1"
 
-def get_department_lookup():
+def get_department_mapping():
     response = requests.get(f"{BASE_URL}/departments", timeout=30)
     response.raise_for_status()
     data = response.json()
@@ -34,7 +34,7 @@ def get_object(object_id):
     return response.json()
 
 
-def get_data(query, max_results, dept_lookup):
+def get_data(query, max_results, deptartments):
     ids = search_database(query, max_results)
     objects = []
 
@@ -46,12 +46,11 @@ def get_data(query, max_results, dept_lookup):
         if obj is None:
             continue
 
-        # extract tag names as a list of strings
         raw_tags = obj.get("tags") or []
         tag_names = [t.get("term") for t in raw_tags if t.get("term")]
 
         dept_name = obj.get("department", "")
-        dept_id = dept_lookup.get(dept_name)
+        dept_id = deptartments.get(dept_name)
 
         if obj.get("title"):
             objects.append({
@@ -84,35 +83,14 @@ def get_data(query, max_results, dept_lookup):
     return objects
 
 
-# fetch department lookup once
-dept_lookup = get_department_lookup()
 
 """
-data = get_data("painting", 20, dept_lookup)
-data = get_data("sculpture", 20, dept_lookup)
-data = get_data("ceramic", 20, dept_lookup)
-data = get_data("figurine", 20, dept_lookup)
-data = get_data("jewelry", 20, dept_lookup)
-data = get_data("scroll", 20, dept_lookup)
-data = get_data("statue", 20, dept_lookup)
-data = get_data("vase", 20, dept_lookup)
+keywords = ["painting", "sculpture", "ceramic", "figurine", "jewelry", "scroll", "statue", "vase", "cat", "dog", "horse", "myth", "allegory", "flower", "tree", "plant", "god", "biblical", "van gogh", "monet"]
 
-data = get_data("cat", 20, dept_lookup)
-data = get_data("dog", 20, dept_lookup)
-data = get_data("horse", 20, dept_lookup)
-data = get_data("myth", 20, dept_lookup)
-data = get_data("allegory", 20, dept_lookup)
-data = get_data("flower", 20, dept_lookup)
-data = get_data("tree", 20, dept_lookup)
-data = get_data("plant", 20, dept_lookup)
-data = get_data("god", 20, dept_lookup)
-data = get_data("biblical", 20, dept_lookup)
+departments = get_department_mapping()
 
-data = get_data("van gogh", 20, dept_lookup)
-data = get_data("monet", 20, dept_lookup)
-"""
-
-data = get_data("monet", 20, dept_lookup)
+# query each of the words in the keywords list 
+data = get_data("monet", 20, departments)
 
 if os.path.exists("data.json") and os.path.getsize("data.json") > 0:
     with open("data.json", "r") as f:
@@ -124,3 +102,4 @@ existing.extend(data)
 
 with open("data.json", "w") as f:
     json.dump(existing, f, indent=2)
+"""

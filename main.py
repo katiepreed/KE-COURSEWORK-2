@@ -3,7 +3,8 @@ This is the script responsible for creating the knowledge graph.
 """
 from rdflib import Graph
 from ontology_generation import build_ontology
-from convert_to_triplets import populate_instances
+from structured_data_mapping import populate_instances
+from llm_pipeline_knowledge_eng import extract_from_text
 
 def main():
     g = Graph()
@@ -11,8 +12,11 @@ def main():
     build_ontology(g)
     print("Ontology built.")
 
-    populate_instances(g)
-    print("Instances added.")
+    # populate_instances(g)
+    print("Instances added from structured data source.")
+
+    extract_from_text(g)
+    print("Instances added from unstructured data source.")
 
     g.serialize(destination="art_and_museum_ontology.ttl", format="turtle")
     print(f"Saved to art_and_museum_ontology.ttl ({len(g)} triples)")
