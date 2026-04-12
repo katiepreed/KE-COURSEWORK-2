@@ -66,6 +66,8 @@ ALL_INSTANCE_CLASSES = {
     MYONT.Figurine,
 }
 
+# Properties where the object should be a literal, not a URI
+LITERAL_PROPERTIES = {SCHEMA.dateCreated, MYONT.hasPeriod}
 
 def make_uri(label):
     """

@@ -5,9 +5,13 @@ from rdflib import Graph
 from ontology_generation import build_ontology
 from structured_data_mapping import populate_instances
 <<<<<<< HEAD
+<<<<<<< HEAD
 from llm_pipeline_knowledge_eng import extract_from_text
 =======
 >>>>>>> 457ea15 (Fixed some files)
+=======
+from llm_pipeline_knowledge_eng import extract_from_text
+>>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 def main():
     g = Graph()
@@ -15,7 +19,11 @@ def main():
     build_ontology(g)
     print("Ontology built.")
 
+<<<<<<< HEAD
     # populate_instances(g)
+=======
+    # populate_instances(g)
+>>>>>>> 4aeb191 (Adding unstructured data to ontology)
     print("Instances added from structured data source.")
 
     extract_from_text(g)
