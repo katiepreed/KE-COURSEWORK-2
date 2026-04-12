@@ -1,16 +1,3 @@
-"""
-TODO: 
-
-Properties to think about: 
-- SCHEMA.creator
-- CRM.P102_has_title
-- MYONT.createdBy
-- MYONT.hasCreated
-- MYONT.discoveredIn
-
-Check the code uses at least two classes and two properties from external schema.
-Deal with artifact class, possibly combine statue and sculpture. 
-"""
 import json
 import re
 from rdflib import Literal, Namespace, RDF, XSD

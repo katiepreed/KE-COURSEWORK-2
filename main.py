@@ -3,7 +3,7 @@ This is the script responsible for creating the knowledge graph.
 """
 from rdflib import Graph
 from ontology_generation import build_ontology
-from convert_to_triplets import populate_instances
+from structured_data_mapping import populate_instances
 
 def main():
     g = Graph()
