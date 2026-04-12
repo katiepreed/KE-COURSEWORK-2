@@ -1,7 +1,3 @@
-"""
-Requirements: python -m spacy download en_core_web_sm
-"""
-
 import requests
 from bs4 import BeautifulSoup
 import spacy
@@ -66,8 +62,6 @@ ALL_INSTANCE_CLASSES = {
     MYONT.Figurine,
 }
 
-# Properties where the object should be a literal, not a URI
-LITERAL_PROPERTIES = {SCHEMA.dateCreated, MYONT.hasPeriod}
 
 def make_uri(label):
     """
