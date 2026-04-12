@@ -392,6 +392,9 @@ def build_ontology(g):
 
     g.add((SCHEMA.name, RDF.type, OWL.DatatypeProperty))
     g.add((SCHEMA.name, RDFS.range, XSD.string))
+    g.add((SCHEMA.name, RDFS.comment, Literal(
+        "The name or title of an entity, represented as a string."
+    )))
     #  g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
     #  g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
 
@@ -400,6 +403,9 @@ def build_ontology(g):
     g.add((SCHEMA.dateCreated, RDFS.domain, CRM.E22_Human_Made_Object))
     # use this format for dates in data preprocessing
     g.add((SCHEMA.dateCreated, RDFS.range, XSD.gYear))
+    g.add((SCHEMA.dateCreated, RDFS.comment, Literal(
+        "The year in which a human-made object was created."
+    )))
 
     # --------------------------------------------------------------------------------
 
@@ -409,12 +415,18 @@ def build_ontology(g):
     g.add((SCHEMA.displayLocation, RDFS.range, CRM.E53_Place))
     g.add((SCHEMA.displayLocation, OWL.equivalentProperty,
           CRM.P55_has_current_location))
+    g.add((SCHEMA.displayLocation, RDFS.comment, Literal(
+        "The place where a human-made object is currently displayed."
+    )))
 
     g.add((SCHEMA.locationCreated, RDF.type, OWL.ObjectProperty))
     g.add((SCHEMA.locationCreated, RDFS.label,
           Literal("location created")))  # label
     g.add((SCHEMA.locationCreated, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((SCHEMA.locationCreated, RDFS.range, CRM.E53_Place))
+    g.add((SCHEMA.locationCreated, RDFS.comment, Literal(
+        "The place where a human-made object was originally created."
+    )))
     # g.add((SCHEMA.locationCreated, RDFS.subPropertyOf, MYONT.createdIn))
 
     # eva check this please
@@ -432,12 +444,18 @@ def build_ontology(g):
           Literal("has current location")))  # label
     g.add((CRM.P55_has_current_location, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((CRM.P55_has_current_location, RDFS.range, CRM.E53_Place))
+    g.add((CRM.P55_has_current_location, RDFS.comment, Literal(
+        "Relates a human-made object to the place where it is currently located."
+    )))
 
     g.add((CRM.P102_has_title, RDF.type, OWL.DatatypeProperty))
     g.add((CRM.P102_has_title, RDFS.label, Literal("has title")))  # label
     g.add((CRM.P102_has_title, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((CRM.P102_has_title, RDFS.range, XSD.string))
     g.add((CRM.P102_has_title, RDFS.subPropertyOf, SCHEMA.name))
+    g.add((CRM.P102_has_title, RDFS.comment, Literal(
+        "Relates a human-made object to its title or name."
+    )))
 
     # g.add((CRM.P62_depicts, RDF.type, OWL.DatatypeProperty))
     # g.add((CRM.P62_depicts, RDFS.domain, CRM.E22_Human_Made_Object))
@@ -453,17 +471,26 @@ def build_ontology(g):
           Literal("was produced by")))  # label
     g.add((CRM.P108i_was_produced_by, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((CRM.P108i_was_produced_by, RDFS.range, CRM.E39_Actor))
+    g.add((CRM.P108i_was_produced_by, RDFS.comment, Literal(
+        "Relates a human-made object to the actor who produced or created it."
+    )))
 
     g.add((MYONT.hasDepartment, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.hasDepartment, RDFS.label, Literal("has department")))
     g.add((MYONT.hasDepartment, RDFS.domain, MYONT.Museum))
     g.add((MYONT.hasDepartment, RDFS.range, MYONT.Department))
     g.add((MYONT.hasDepartment, OWL.inverseOf, MYONT.isDepartmentOf))
+    g.add((MYONT.hasDepartment, RDFS.comment, Literal(
+        "Relates a museum to a department that is part of it."
+    )))
 
     g.add((MYONT.isDepartmentOf, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.isDepartmentOf, RDFS.label, Literal("is department of")))
     g.add((MYONT.isDepartmentOf, RDFS.domain, MYONT.Department))
     g.add((MYONT.isDepartmentOf, RDFS.range, MYONT.Museum))
+    g.add((MYONT.isDepartmentOf, RDFS.comment, Literal(
+        "Relates a department to the museum it belongs to."
+    )))
 
     ###############################################################################
 
@@ -473,12 +500,18 @@ def build_ontology(g):
     g.add((MYONT.hasTheme, RDFS.label, Literal("Theme")))
     g.add((MYONT.hasTheme, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.hasTheme, RDFS.range, MYONT.Theme))
+    g.add((MYONT.hasTheme, RDFS.comment, Literal(
+        "Relates a human-made object to a thematic category describing its subject matter."
+    )))
 
     g.add((MYONT.isThemeOf, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.isThemeOf, RDFS.label, Literal("is theme of")))
     g.add((MYONT.isThemeOf, RDFS.domain, MYONT.Theme))
     g.add((MYONT.isThemeOf, RDFS.range, CRM.E22_Human_Made_Object))
     g.add((MYONT.hasTheme, OWL.inverseOf, MYONT.isThemeOf))
+    g.add((MYONT.isThemeOf, RDFS.comment, Literal(
+        "Relates a theme to the human-made objects that are associated with it."
+    )))
 
     g.add((MYONT.createdBy, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.createdBy, RDFS.label, Literal("created by artist")))
@@ -488,12 +521,18 @@ def build_ontology(g):
     # g.add((MYONT.createdBy, RDFS.subPropertyOf, CRM.P14_carried_out_by))
     g.add((MYONT.createdBy, RDFS.subPropertyOf, SCHEMA.creator))
     g.add((MYONT.createdBy, OWL.inverseOf, MYONT.hasCreated))
+    g.add((MYONT.createdBy, RDFS.comment, Literal(
+        "Relates a human-made object to the artist who created it."
+    )))
 
     g.add((MYONT.displayedInDepartment, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.displayedInDepartment, RDFS.label,
           Literal("displayed in department")))
     g.add((MYONT.displayedInDepartment, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.displayedInDepartment, RDFS.range, MYONT.Department))
+    g.add((MYONT.displayedInDepartment, RDFS.comment, Literal(
+        "Relates a human-made object to the museum department where it is displayed."
+    )))
     # g.add((MYONT.displayedInDepartment, OWL.inverseOf, MYONT.displays))
 
     g.add((MYONT.displayedBy, RDF.type, OWL.ObjectProperty))
@@ -501,22 +540,34 @@ def build_ontology(g):
     g.add((MYONT.displayedBy, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.displayedBy, RDFS.range, MYONT.Museum))
     g.add((MYONT.displayedBy, OWL.inverseOf, MYONT.displays))
+    g.add((MYONT.displayedBy, RDFS.comment, Literal(
+        "Relates a human-made object to the museum that displays it."
+    )))
 
     g.add((MYONT.displays, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.displays, RDFS.label, Literal("displays")))
     g.add((MYONT.displays, RDFS.domain, MYONT.Museum))
     g.add((MYONT.displays, RDFS.range, CRM.E22_Human_Made_Object))
+    g.add((MYONT.displays, RDFS.comment, Literal(
+        "Relates a museum to the human-made objects it displays."
+    )))
 
     g.add((MYONT.departmentDisplays, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.departmentDisplays, RDFS.label, Literal("department displays")))
     g.add((MYONT.departmentDisplays, RDFS.domain, MYONT.Department))
     g.add((MYONT.departmentDisplays, RDFS.range, CRM.E22_Human_Made_Object))
     g.add((MYONT.departmentDisplays, OWL.inverseOf, MYONT.displayedInDepartment))
+    g.add((MYONT.departmentDisplays, RDFS.comment, Literal(
+        "Relates a museum department to the human-made objects it displays."
+    )))
 
     g.add((MYONT.hasCreated, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.hasCreated, RDFS.label, Literal("has created")))
     g.add((MYONT.hasCreated, RDFS.domain, MYONT.Artist))
     g.add((MYONT.hasCreated, RDFS.range, CRM.E22_Human_Made_Object))
+    g.add((MYONT.hasCreated, RDFS.comment, Literal(
+        "Relates an artist to the human-made objects they have created."
+    )))
 
     # remove if unstructured text source also doesn't populate it
     # g.add((MYONT.discoveredIn, RDF.type, OWL.ObjectProperty))
@@ -530,52 +581,82 @@ def build_ontology(g):
     g.add((MYONT.startDate, RDFS.label, Literal("started in")))
     g.add((MYONT.startDate, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.startDate, RDFS.range, XSD.gYear))
+    g.add((MYONT.startDate, RDFS.comment, Literal(
+        "The year in which the creation of a human-made object began."
+    )))
 
     g.add((MYONT.endDate, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.endDate, RDFS.label, Literal("artwork finished in")))
     g.add((MYONT.endDate, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.endDate, RDFS.range, XSD.gYear))
+    g.add((MYONT.endDate, RDFS.comment, Literal(
+        "The year in which the creation of a human-made object was completed."
+    )))
 
     g.add((MYONT.hasCulture, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.hasCulture, RDFS.label, Literal("culture")))
     g.add((MYONT.hasCulture, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.hasCulture, RDFS.range, XSD.string))
+    g.add((MYONT.hasCulture, RDFS.comment, Literal(
+        "A textual value describing the cultural origin or association of a human-made object."
+    )))
 
     g.add((MYONT.mediumDescription, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.mediumDescription, RDFS.label, Literal("Labeled Medium")))
     g.add((MYONT.mediumDescription, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.mediumDescription, RDFS.range, XSD.string))
+    g.add((MYONT.mediumDescription, RDFS.comment, Literal(
+        "A textual description of the material or medium used to create a human-made object."
+    )))
 
     g.add((MYONT.hasNationality, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.hasNationality, RDFS.label, Literal("nationality")))
     g.add((MYONT.hasNationality, RDFS.domain, CRM.E21_Person))
     g.add((MYONT.hasNationality, RDFS.range, XSD.string))
+    g.add((MYONT.hasNationality, RDFS.comment, Literal(
+        "A textual value describing the nationality of a person."
+    )))
 
     g.add((MYONT.hasPeriod, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.hasPeriod, RDFS.label, Literal("period")))
     g.add((MYONT.hasPeriod, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.hasPeriod, RDFS.range, XSD.string))
+    g.add((MYONT.hasPeriod, RDFS.comment, Literal(
+        "A textual value describing the historical or artistic period associated with a human-made object."
+    )))
 
     g.add((MYONT.hasObjectId, RDF.type, OWL.DatatypeProperty))
     # g.add((MYONT.hasObjectId, RDF.type, OWL.FunctionalProperty)) # issue could be different museums might have overlapping ones, solution: add museum name ahead of id
     g.add((MYONT.hasObjectId, RDFS.label, Literal("object id")))
     g.add((MYONT.hasObjectId, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.hasObjectId, RDFS.range, XSD.integer))
+    g.add((MYONT.hasObjectId, RDFS.comment, Literal(
+        "An identifier assigned to a human-made object within a museum collection."
+    )))
 
     g.add((MYONT.hasDepartmentId, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.hasDepartmentId, RDFS.label, Literal("department id")))
     g.add((MYONT.hasDepartmentId, RDFS.domain, MYONT.Department))
     g.add((MYONT.hasDepartmentId, RDFS.range, XSD.integer))
+    g.add((MYONT.hasDepartmentId, RDFS.comment, Literal(
+        "An identifier assigned to a department within a museum."
+    )))
 
     g.add((MYONT.bornOn, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.bornOn, RDFS.label, Literal("born in")))
     g.add((MYONT.bornOn, RDFS.domain, CRM.E21_Person))
     g.add((MYONT.bornOn, RDFS.range, XSD.gYear))
+    g.add((MYONT.bornOn, RDFS.comment, Literal(
+        "The year in which a person was born."
+    )))
 
     g.add((MYONT.diedOn, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.diedOn, RDFS.label, Literal("died in")))
     g.add((MYONT.diedOn, RDFS.domain, CRM.E21_Person))
     g.add((MYONT.diedOn, RDFS.range, XSD.gYear))
+    g.add((MYONT.diedOn, RDFS.comment, Literal(
+        "The year in which a person died."
+    )))
 
     g.serialize(destination="my_ontology1.ttl", format="turtle")
 
