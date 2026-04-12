@@ -8,6 +8,7 @@ import spacy
 import re
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from rdflib import Literal, Namespace
+from rdflib.namespace import RDF
 
 MYONT  = Namespace("https://ontologeez/")
 SCHEMA = Namespace("https://schema.org/")
@@ -33,6 +34,38 @@ RELATION_MAP = {
 # Properties where the object should be a literal, not a URI
 LITERAL_PROPERTIES = {SCHEMA.dateCreated, MYONT.hasPeriod}
 
+# Maps each predicate to (subject rdf:type, object rdf:type).
+# Subject types are always trusted (all predicates have a well-defined domain).
+# Object types are used as fallback when NER does not apply.
+TYPE_MAP = {
+    MYONT.createdBy:    (MYONT.Painting, MYONT.Artist),
+    MYONT.hasTheme:     (MYONT.Painting, MYONT.Theme),
+    MYONT.displayedBy:  (MYONT.Painting, MYONT.Museum),
+    MYONT.hasPeriod:    (MYONT.Painting, None),
+    SCHEMA.dateCreated: (MYONT.Painting, None),
+}
+
+# Predicates where the OBJECT type should also be strictly taken from TYPE_MAP, ignoring NER
+# types are fully determined by the ontology domain/range.
+STRICT_OBJECT_PREDICATES = {MYONT.createdBy, MYONT.displayedBy}
+
+# Maps spaCy NER labels to ontology classes.
+NER_CLASS_MAP = {
+    "PERSON":      MYONT.Artist,
+    "WORK_OF_ART": MYONT.Painting,
+    "ORG":         MYONT.Museum,
+    "GPE":         MYONT.City,
+    "LOC":         MYONT.City,
+}
+
+# All instance classes in the ontology, used to check for conflicts
+ALL_INSTANCE_CLASSES = {
+    MYONT.Painting, MYONT.Artist, MYONT.Museum, MYONT.Theme,
+    MYONT.City, MYONT.Sculpture, MYONT.Artifact, MYONT.Vase,
+    MYONT.Ceramic, MYONT.Jewellery, MYONT.Scroll, MYONT.Statue,
+    MYONT.Figurine,
+}
+
 
 def make_uri(label):
     """
@@ -55,6 +88,55 @@ def resolve_uri(label, g):
             return s
 
     return make_uri(label)
+
+
+def get_existing_type(uri, g):
+    """
+    Check if a URI already has an rdf:type that is one of our
+    instance classes. Returns the first match, or None.
+    """
+    for _, _, o in g.triples((uri, RDF.type, None)):
+        if o in ALL_INSTANCE_CLASSES:
+            return o
+    return None
+
+
+def infer_object_type(label, fallback_type, ner_labels, pred_uri):
+    """
+    Determine the ontology class for a triple's object.
+
+    For strict-object predicates (createdBy, displayedBy), always
+    trust TYPE_MAP because the ontology range is definitive.
+
+    For other predicates (hasTheme), allow NER to override.
+    """
+    if pred_uri in STRICT_OBJECT_PREDICATES:
+        return fallback_type
+
+    ner_label = ner_labels.get(label.lower().strip())
+    if ner_label and ner_label in NER_CLASS_MAP:
+        return NER_CLASS_MAP[ner_label]
+    
+    return fallback_type
+
+
+def safe_add_type(uri, new_type, g):
+    """
+    Add rdf:type to a URI only if it does not conflict with an
+    existing type. If the entity already has a different instance
+    class, keep the existing one (first-assigned wins).
+    """
+    if not new_type:
+        return
+
+    existing = get_existing_type(uri, g)
+
+    if existing is None:
+        g.add((uri, RDF.type, new_type))
+    elif existing == new_type:
+        pass
+    else:
+        pass
 
 
 def parse_generated_text(rebel_output_text):
@@ -174,6 +256,11 @@ def extract_sentence_triples(sentence_text, spacy_entities, tokenizer, model):
 def extract_from_text(g):
     """
     Scrape a webpage, extract triples with REBEL, and add them to the graph.
+
+    Type assignment strategy:
+    - Subject type: always from TYPE_MAP (all predicates have a well-defined domain of E22_Human_Made_Object / Painting).
+    - Object type: from TYPE_MAP for strict-object predicates (createdBy, displayedBy), from NER with TYPE_MAP fallback for others (hasTheme).
+    - Conflict prevention: safe_add_type ensures first-assigned type wins.
     """
     nlp_model = spacy.load("en_core_web_sm")
     tokenizer = AutoTokenizer.from_pretrained("Babelscape/rebel-large")
@@ -194,6 +281,10 @@ def extract_from_text(g):
         if not any(ent.label_ in {"PERSON", "WORK_OF_ART", "ORG", "DATE", "LOC", "GPE"} for ent in sentence.ents):
             continue
 
+        ner_labels = {}
+        for ent in sentence.ents:
+            ner_labels[ent.text.lower().strip()] = ent.label_
+
         triples = extract_sentence_triples(sentence.text, sentence.ents, tokenizer, model)
 
         for t in triples:
@@ -203,10 +294,24 @@ def extract_from_text(g):
             if not subj_uri:
                 continue
 
+            # Look up fallback types from TYPE_MAP
+            subj_type, obj_fallback = TYPE_MAP.get(pred_uri, (None, None))
+
+            # Subject type always comes from TYPE_MAP (domain is definitive)
+            safe_add_type(subj_uri, subj_type, g)
+            g.add((subj_uri, SCHEMA.name, Literal(t["subject"])))
+
             if pred_uri in LITERAL_PROPERTIES:
                 g.add((subj_uri, pred_uri, Literal(t["object"])))
             else:
                 obj_uri = resolve_uri(t["object"], g)
 
                 if obj_uri:
+                    # Object type: strict from TYPE_MAP or NER-assisted
+                    obj_type = infer_object_type(
+                        t["object"], obj_fallback, ner_labels, pred_uri
+                    )
+                    safe_add_type(obj_uri, obj_type, g)
+                    g.add((obj_uri, SCHEMA.name, Literal(t["object"])))
+
                     g.add((subj_uri, pred_uri, obj_uri))

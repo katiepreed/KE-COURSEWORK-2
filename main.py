@@ -12,7 +12,7 @@ def main():
     build_ontology(g)
     print("Ontology built.")
 
-    # populate_instances(g)
+    # populate_instances(g)
     print("Instances added from structured data source.")
 
     extract_from_text(g)

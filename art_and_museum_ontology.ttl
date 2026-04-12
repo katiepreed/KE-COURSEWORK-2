@@ -14,7 +14,9 @@ myont:AnimalTheme a owl:Class ;
     rdfs:label "Animal theme" ;
     rdfs:subClassOf myont:Theme .
 
-myont:Blue_Horses myont:createdBy myont:Franz_Marc .
+myont:Blue_Horses a myont:Painting ;
+    myont:createdBy myont:Franz_Marc ;
+    schema:name "Blue Horses" .
 
 myont:Ceramic a owl:Class ;
     rdfs:label "Ceramic" ;
@@ -28,62 +30,91 @@ myont:Country a owl:Class ;
     rdfs:label "Country" ;
     rdfs:subClassOf crm:E53_Place .
 
-myont:Czanne myont:hasPeriod "beautiful aesthetic" .
+myont:Czanne a myont:Painting ;
+    myont:hasPeriod "beautiful aesthetic" ;
+    schema:name "Cézanne" .
 
-myont:Dal myont:hasPeriod "Surrealists" .
+myont:Dal a myont:Painting ;
+    myont:hasPeriod "Surrealists" ;
+    schema:name "Dalí" .
 
-myont:De_Chirico myont:hasPeriod "Surrealists" ;
-    myont:hasTheme myont:enigmatic_style .
+myont:De_Chirico a myont:Painting ;
+    myont:hasPeriod "Surrealists" ;
+    myont:hasTheme myont:enigmatic_style ;
+    schema:name "De Chirico" .
 
-myont:Death_of_Sardanapalus myont:createdBy myont:Eugene_Delacroix .
+myont:Death_of_Sardanapalus a myont:Painting ;
+    myont:createdBy myont:Eugene_Delacroix ;
+    schema:name "Death of Sardanapalus" .
 
-myont:Delacroix myont:hasTheme myont:violence .
+myont:Delacroix a myont:Painting ;
+    myont:hasTheme myont:violence ;
+    schema:name "Delacroix" .
 
-myont:El_Greco myont:hasTheme myont:divine .
+myont:El_Greco a myont:Painting ;
+    myont:hasTheme myont:divine ;
+    schema:name "El Greco" .
 
 myont:Figurine a owl:Class ;
     rdfs:label "Figurine" ;
     rdfs:subClassOf myont:Artifact .
 
-myont:Fuseli myont:hasTheme myont:surrealism .
+myont:Fuseli a myont:Painting ;
+    myont:hasTheme myont:surrealism ;
+    schema:name "Fuseli" .
 
-myont:Gauguin myont:hasTheme myont:landscape .
+myont:Gauguin a myont:Painting ;
+    myont:hasTheme myont:landscape ;
+    schema:name "Gauguin" .
 
-myont:Giotto myont:hasPeriod "The Renaissance" ;
-    myont:hasTheme myont:fresco .
+myont:Giotto a myont:Painting ;
+    myont:hasPeriod "The Renaissance" ;
+    myont:hasTheme myont:fresco ;
+    schema:name "Giotto" .
 
-myont:Hopper myont:hasTheme myont:realism .
+myont:Hopper a myont:Painting ;
+    myont:hasTheme myont:realism ;
+    schema:name "Hopper" .
 
-myont:Improvisation myont:createdBy myont:Kandinsky .
+myont:Improvisation a myont:Painting ;
+    myont:createdBy myont:Kandinsky ;
+    schema:name "Improvisation" .
 
 myont:Jewellery a owl:Class ;
     rdfs:label "Jewellery" ;
     rdfs:subClassOf myont:Artifact .
 
-myont:MoMA myont:displayedBy myont:New_York .
+myont:MoMA a myont:Painting ;
+    myont:displayedBy myont:New_York ;
+    schema:name "MoMA" .
 
-myont:Monet_scene myont:hasTheme myont:winter_day .
+myont:Monet_scene a myont:Painting ;
+    myont:hasTheme myont:winter_day ;
+    schema:name "Monet scene" .
 
-myont:Montagne_SaintVictoire myont:createdBy myont:Paul_Czanne .
+myont:Montagne_SaintVictoire a myont:Painting ;
+    myont:createdBy myont:Paul_Czanne ;
+    schema:name "Montagne Saint-Victoire" .
 
 myont:MythologicalTheme a owl:Class ;
     rdfs:label "Mythological theme" ;
     rdfs:subClassOf myont:Theme .
 
-myont:Narcissus myont:hasTheme myont:stony_figure .
+myont:Narcissus a myont:Painting ;
+    myont:hasTheme myont:stony_figure ;
+    schema:name "Narcissus" .
 
 myont:NatureTheme a owl:Class ;
     rdfs:label "Nature theme" ;
     rdfs:subClassOf myont:Theme .
 
-myont:Newton myont:createdBy myont:Blake .
+myont:Newton a myont:Painting ;
+    myont:createdBy myont:Blake ;
+    schema:name "Newton" .
 
-myont:Painting a owl:Class ;
-    rdfs:label "Painting" ;
-    rdfs:subClassOf crm:E22_Human_Made_Object ;
-    owl:equivalentClass schema:Painting .
-
-myont:Picasso myont:hasPeriod "naturalism" .
+myont:Picasso a myont:Painting ;
+    myont:hasPeriod "naturalism" ;
+    schema:name "Picasso" .
 
 myont:Region a owl:Class ;
     rdfs:label "Region" ;
@@ -102,29 +133,45 @@ myont:Sculpture a owl:Class ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
     owl:equivalentClass schema:Sculpture .
 
-myont:Separation_by_Edvard_Munch schema:dateCreated "1896" .
+myont:Separation_by_Edvard_Munch a myont:Painting ;
+    schema:dateCreated "1896" ;
+    schema:name "Separation by Edvard Munch" .
 
-myont:Snow_Storm__SteamBoat_off_a_Harbour_Mouth schema:dateCreated "1842" .
+myont:Snow_Storm__SteamBoat_off_a_Harbour_Mouth a myont:Painting ;
+    schema:dateCreated "1842" ;
+    schema:name "Snow Storm – Steam-Boat off a Harbour Mouth" .
 
 myont:Statue a owl:Class ;
     rdfs:label "Statue" ;
     rdfs:subClassOf myont:Artifact .
 
-myont:Tahitian_Landscape myont:createdBy myont:Paul_Gauguin .
+myont:Tahitian_Landscape a myont:Painting ;
+    myont:createdBy myont:Paul_Gauguin ;
+    schema:name "Tahitian Landscape" .
 
-myont:The_Hunters_in_the_Snow myont:createdBy myont:Pieter_Bruegel .
+myont:The_Hunters_in_the_Snow a myont:Painting ;
+    myont:createdBy myont:Pieter_Bruegel ;
+    schema:name "The Hunters in the Snow" .
 
-myont:The_Lane_of_Poplars myont:createdBy myont:Alfred_Sisley .
+myont:The_Lane_of_Poplars a myont:Painting ;
+    myont:createdBy myont:Alfred_Sisley ;
+    schema:name "The Lane of Poplars" .
 
-myont:The_Last_Supper myont:createdBy myont:Tintoretto .
+myont:The_Last_Supper a myont:Painting ;
+    myont:createdBy myont:Tintoretto ;
+    schema:name "The Last Supper" .
 
-myont:Van_Gogh myont:hasPeriod "expressionism" .
+myont:Van_Gogh a myont:Painting ;
+    myont:hasPeriod "expressionism" ;
+    schema:name "Van Gogh" .
 
 myont:Vase a owl:Class ;
     rdfs:label "Vase" ;
     rdfs:subClassOf myont:Artifact .
 
-myont:Velazquez myont:hasTheme myont:contrast .
+myont:Velazquez a myont:Painting ;
+    myont:hasTheme myont:contrast ;
+    schema:name "Velazquez" .
 
 myont:bornOn a owl:DatatypeProperty ;
     rdfs:label "born in" ;
@@ -165,10 +212,14 @@ myont:endDate a owl:DatatypeProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:gYear .
 
-myont:famous_painting myont:createdBy myont:Magritte,
-        myont:Marc .
+myont:famous_painting a myont:Painting ;
+    myont:createdBy myont:Magritte,
+        myont:Marc ;
+    schema:name "famous painting" .
 
-myont:famous_rendering myont:createdBy myont:Leonardo_da_Vinci .
+myont:famous_rendering a myont:Painting ;
+    myont:createdBy myont:Leonardo_da_Vinci ;
+    schema:name "famous rendering" .
 
 myont:hasCulture a owl:DatatypeProperty ;
     rdfs:label "culture" ;
@@ -217,7 +268,9 @@ myont:startDate a owl:DatatypeProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:gYear .
 
-myont:village_in_the_cold_wilderness myont:createdBy myont:Bruegel .
+myont:village_in_the_cold_wilderness a myont:Painting ;
+    myont:createdBy myont:Bruegel ;
+    schema:name "village in the cold wilderness" .
 
 schema:Person a owl:Class ;
     rdfs:label "Person" ;
@@ -247,22 +300,85 @@ crm:P55_has_current_location a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
-myont:Bacchus myont:hasTheme myont:Bacchus .
+myont:Alfred_Sisley a myont:Artist ;
+    schema:name "Alfred Sisley" .
 
-myont:Magritte myont:hasTheme myont:enigma,
-        myont:humorous .
+myont:Bacchus a myont:Painting ;
+    myont:hasTheme myont:Bacchus ;
+    schema:name "Bacchus" .
 
-myont:Sisley myont:hasTheme myont:Sisley .
+myont:Blake a myont:Artist ;
+    schema:name "Blake" .
+
+myont:Bruegel a myont:Artist ;
+    schema:name "Bruegel" .
+
+myont:Eugene_Delacroix a myont:Artist ;
+    schema:name "Eugene Delacroix" .
+
+myont:Franz_Marc a myont:Artist ;
+    schema:name "Franz Marc" .
+
+myont:Kandinsky a myont:Artist ;
+    schema:name "Kandinsky" .
+
+myont:Leonardo_da_Vinci a myont:Artist ;
+    schema:name "Leonardo da Vinci" .
+
+myont:Magritte a myont:Artist ;
+    myont:hasTheme myont:enigma,
+        myont:humorous ;
+    schema:name "Magritte" .
+
+myont:Marc a myont:Artist ;
+    schema:name "Marc" .
+
+myont:New_York a myont:Museum ;
+    schema:name "New York" .
+
+myont:Paul_Czanne a myont:Artist ;
+    schema:name "Paul Cézanne" .
+
+myont:Paul_Gauguin a myont:Artist ;
+    schema:name "Paul Gauguin" .
+
+myont:Pieter_Bruegel a myont:Artist ;
+    schema:name "Pieter Bruegel" .
+
+myont:Sisley a myont:Painting ;
+    myont:hasTheme myont:Sisley ;
+    schema:name "Sisley" .
+
+myont:Tintoretto a myont:Artist ;
+    schema:name "Tintoretto" .
+
+myont:contrast a myont:Theme ;
+    schema:name "contrast" .
 
 myont:displays a owl:ObjectProperty ;
     rdfs:label "displays" ;
     rdfs:domain myont:Museum ;
     rdfs:range crm:E22_Human_Made_Object .
 
+myont:divine a myont:Theme ;
+    schema:name "divine" .
+
+myont:enigma a myont:Theme ;
+    schema:name "enigma" .
+
+myont:enigmatic_style a myont:Theme ;
+    schema:name "enigmatic style" .
+
+myont:fresco a myont:Theme ;
+    schema:name "fresco" .
+
 myont:hasCreated a owl:ObjectProperty ;
     rdfs:label "has created" ;
     rdfs:domain myont:Artist ;
     rdfs:range crm:E22_Human_Made_Object .
+
+myont:humorous a myont:Theme ;
+    schema:name "humorous" .
 
 myont:isDepartmentOf a owl:ObjectProperty ;
     rdfs:label "is department of" ;
@@ -273,6 +389,24 @@ myont:isThemeOf a owl:ObjectProperty ;
     rdfs:label "is theme of" ;
     rdfs:domain myont:Theme ;
     rdfs:range crm:E22_Human_Made_Object .
+
+myont:landscape a myont:Theme ;
+    schema:name "landscape" .
+
+myont:realism a myont:Theme ;
+    schema:name "realism" .
+
+myont:stony_figure a myont:Theme ;
+    schema:name "stony figure" .
+
+myont:surrealism a myont:Theme ;
+    schema:name "surrealism" .
+
+myont:violence a myont:Theme ;
+    schema:name "violence" .
+
+myont:winter_day a myont:Theme ;
+    schema:name "winter day" .
 
 schema:Museum a owl:Class ;
     rdfs:label "Museum" .
@@ -288,23 +422,16 @@ schema:creator a owl:ObjectProperty .
 schema:name a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
-myont:Artist a owl:Class ;
-    rdfs:label "Artist" ;
-    rdfs:subClassOf crm:E21_Person .
-
 myont:Department a owl:Class ;
     rdfs:label "Department" .
-
-myont:Museum a owl:Class ;
-    rdfs:label "Museum" ;
-    owl:equivalentClass schema:Museum .
 
 crm:E21_Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf crm:E39_Actor .
 
-myont:Theme a owl:Class ;
-    rdfs:label "Theme" .
+myont:Museum a owl:Class ;
+    rdfs:label "Museum" ;
+    owl:equivalentClass schema:Museum .
 
 crm:E53_Place a owl:Class ;
     rdfs:label "Place" .
@@ -313,6 +440,18 @@ myont:Artifact a owl:Class ;
     rdfs:label "Artifact" ;
     rdfs:subClassOf crm:E22_Human_Made_Object .
 
+myont:Artist a owl:Class ;
+    rdfs:label "Artist" ;
+    rdfs:subClassOf crm:E21_Person .
+
+myont:Theme a owl:Class ;
+    rdfs:label "Theme" .
+
 crm:E22_Human_Made_Object a owl:Class ;
     rdfs:label "Human Made Object" .
+
+myont:Painting a owl:Class ;
+    rdfs:label "Painting" ;
+    rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:equivalentClass schema:Painting .
 
