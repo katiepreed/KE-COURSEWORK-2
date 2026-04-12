@@ -4,7 +4,8 @@ from rdflib.collection import Collection
 
 MYONT = Namespace("https://ontologeez/")
 SCHEMA = Namespace("https://schema.org/")
-CRM    = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
+CRM = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
+
 
 def build_ontology(g):
     g.bind("myont", MYONT)
@@ -39,10 +40,11 @@ def build_ontology(g):
 
     g.add((SCHEMA.Painting, RDF.type, OWL.Class))
     g.add((SCHEMA.Painting, RDFS.label, Literal("Painting")))
-    # g.add((SCHEMA.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
+    #  g.add((SCHEMA.Painting, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((SCHEMA.Sculpture, RDF.type, OWL.Class))
-    g.add((SCHEMA.Sculpture, RDFS.label, Literal("Sculpture"))) # with known artist
+    # with known artist
+    g.add((SCHEMA.Sculpture, RDFS.label, Literal("Sculpture")))
     # g.add((SCHEMA.Sculpture, RDFS.subClassOf, CRM.E22_Human_Made_Object))
     # g.add((SCHEMA.Sculpture, RDFS.comment, Literal("Any sculpture that has a known artist is included here.")))
 
@@ -72,7 +74,7 @@ def build_ontology(g):
     g.add((MYONT.Artist, RDFS.label, Literal("Artist")))
     g.add((MYONT.Artist, RDFS.subClassOf, CRM.E21_Person))
     # g.add((MYONT.Artist, RDFS.subClassOf, SCHEMA.Person))
-    
+
     g.add((MYONT.Museum, RDF.type, OWL.Class))
     g.add((MYONT.Museum, RDFS.label, Literal("Museum")))
     g.add((MYONT.Museum, OWL.equivalentClass, SCHEMA.Museum))
@@ -98,7 +100,7 @@ def build_ontology(g):
     g.add((MYONT.Scroll, RDFS.subClassOf, CRM.E22_Human_Made_Object))
 
     g.add((MYONT.Statue, RDF.type, OWL.Class))
-    g.add((MYONT.Statue, RDFS.label, Literal("Statue"))) 
+    g.add((MYONT.Statue, RDFS.label, Literal("Statue")))
     g.add((MYONT.Statue, RDFS.subClassOf, MYONT.Sculpture))
 
     g.add((MYONT.Figurine, RDF.type, OWL.Class))
@@ -145,7 +147,7 @@ def build_ontology(g):
     g.add((MYONT.City, OWL.disjointWith, MYONT.Region))
     g.add((MYONT.Country, OWL.disjointWith, MYONT.Region))
 
-    #check if these are correct according to info from structured data source
+    # check if these are correct according to info from structured data source
 
     g.add((MYONT.Painting, OWL.disjointWith, MYONT.Sculpture))
     g.add((MYONT.Statue, OWL.disjointWith, MYONT.Figurine))
@@ -158,7 +160,7 @@ def build_ontology(g):
     g.add((MYONT.Sculpture, OWL.disjointWith, MYONT.Jewellery))
     g.add((MYONT.Vase, OWL.disjointWith, MYONT.Scroll))
     g.add((MYONT.Vase, OWL.disjointWith, MYONT.Jewellery))
-    g.add((MYONT.Scroll, OWL.disjointWith, MYONT.Jewellery)) 
+    g.add((MYONT.Scroll, OWL.disjointWith, MYONT.Jewellery))
 
     g.add((MYONT.bornOn, RDF.type, OWL.FunctionalProperty))
     g.add((MYONT.diedOn, RDF.type, OWL.FunctionalProperty))
@@ -188,9 +190,10 @@ def build_ontology(g):
     Collection(g, col_painter, [MYONT.Artist, r_painter])
     g.add((intersection_painter, OWL.intersectionOf, col_painter))
     g.add((MYONT.Painter, RDF.type, OWL.Class))
+    g.add((MYONT.Painter, RDFS.label, Literal("Painter")))  # label
     g.add((MYONT.Painter, OWL.equivalentClass, intersection_painter))
 
-    #sculptor
+    # sculptor
     r_sculptor = BNode()
     g.add((r_sculptor, RDF.type, OWL.Restriction))
     g.add((r_sculptor, OWL.onProperty, MYONT.hasCreated))
@@ -201,9 +204,10 @@ def build_ontology(g):
     Collection(g, col_sculptor, [MYONT.Artist, r_sculptor])
     g.add((intersection_sculptor, OWL.intersectionOf, col_sculptor))
     g.add((MYONT.Sculptor, RDF.type, OWL.Class))
+    g.add((MYONT.Sculptor, RDFS.label, Literal("Sculptor")))  # label
     g.add((MYONT.Sculptor, OWL.equivalentClass, intersection_sculptor))
 
-    #nature oil painting
+    # nature oil painting
     r_oil_nature_theme = BNode()
     g.add((r_oil_nature_theme, RDF.type, OWL.Restriction))
     g.add((r_oil_nature_theme, OWL.onProperty, MYONT.hasTheme))
@@ -219,13 +223,16 @@ def build_ontology(g):
     intersection_nop = BNode()
     g.add((intersection_nop, RDF.type, OWL.Class))
     col_nop = BNode()
-    Collection(g, col_nop, [MYONT.Painting, r_oil_nature_theme, r_oil_nature_medium])
+    Collection(g, col_nop, [MYONT.Painting,
+               r_oil_nature_theme, r_oil_nature_medium])
     g.add((intersection_nop, OWL.intersectionOf, col_nop))
 
     g.add((MYONT.NatureOilPainting, RDF.type, OWL.Class))
+    g.add((MYONT.NatureOilPainting, RDFS.label,
+          Literal("Nature oil painting")))  # label
     g.add((MYONT.NatureOilPainting, OWL.equivalentClass, intersection_nop))
 
-    #Egyptian animal figurine
+    # Egyptian animal figurine
     r_theme_eaf = BNode()
     g.add((r_theme_eaf, RDF.type, OWL.Restriction))
     g.add((r_theme_eaf, OWL.onProperty, MYONT.hasTheme))
@@ -245,16 +252,21 @@ def build_ontology(g):
     g.add((intersection_eaf, OWL.intersectionOf, col_eaf))
 
     g.add((MYONT.EgyptianAnimalFigurine, RDF.type, OWL.Class))
+    g.add((MYONT.EgyptianAnimalFigurine, RDFS.label,
+          Literal("Egyptian animal figurine")))  # label
     g.add((MYONT.EgyptianAnimalFigurine, OWL.equivalentClass, intersection_eaf))
 
-    #3d humanmade object
+    # 3d humanmade object
 
     union_3d = BNode()
     g.add((union_3d, RDF.type, OWL.Class))
     col_3d = BNode()
-    Collection(g, col_3d, [MYONT.Sculpture, MYONT.Vase, MYONT.Ceramic, MYONT.Jewellery])
+    Collection(g, col_3d, [MYONT.Sculpture, MYONT.Vase,
+               MYONT.Ceramic, MYONT.Jewellery])
     g.add((union_3d, OWL.unionOf, col_3d))
     g.add((MYONT.ThreeDimensionalWork, RDF.type, OWL.Class))
+    g.add((MYONT.ThreeDimensionalWork, RDFS.label, Literal(
+        "Three-dimensional human-made object")))  # label
     g.add((MYONT.ThreeDimensionalWork, RDFS.subClassOf, CRM.E22_Human_Made_Object))
     g.add((MYONT.ThreeDimensionalWork, OWL.equivalentClass, union_3d))
 
@@ -265,6 +277,8 @@ def build_ontology(g):
     Collection(g, col_natural, [MYONT.NatureTheme, MYONT.AnimalTheme])
     g.add((union_natural, OWL.unionOf, col_natural))
     g.add((MYONT.NaturalWorldTheme, RDF.type, OWL.Class))
+    g.add((MYONT.NaturalWorldTheme, RDFS.label,
+          Literal("Natural world theme")))  # label
     g.add((MYONT.NaturalWorldTheme, RDFS.subClassOf, MYONT.Theme))
     g.add((MYONT.NaturalWorldTheme, OWL.equivalentClass, union_natural))
 
@@ -280,27 +294,33 @@ def build_ontology(g):
 
     g.add((SCHEMA.name, RDF.type, OWL.DatatypeProperty))
     g.add((SCHEMA.name, RDFS.range, XSD.string))
-    # g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
-    # g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
-
+    #  g.add((SCHEMA.name, OWL.equivalentProperty, CRM.P102_has_title))
+    #  g.add((SCHEMA.name, RDFS.subPropertyOf, CRM.P102_has_title))
 
     g.add((SCHEMA.dateCreated, RDF.type, OWL.DatatypeProperty))
+    g.add((SCHEMA.dateCreated, RDFS.label, Literal("date created")))  # label
     g.add((SCHEMA.dateCreated, RDFS.domain, CRM.E22_Human_Made_Object))
-    g.add((SCHEMA.dateCreated, RDFS.range, XSD.gYear)) # use this format for dates in data preprocessing
+    # use this format for dates in data preprocessing
+    g.add((SCHEMA.dateCreated, RDFS.range, XSD.gYear))
 
-    #--------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------
 
     g.add((SCHEMA.displayLocation, RDF.type, OWL.ObjectProperty))
+    g.add((SCHEMA.displayLocation, RDFS.label, Literal("display location")))
     g.add((SCHEMA.displayLocation, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((SCHEMA.displayLocation, RDFS.range, CRM.E53_Place))
-    g.add((SCHEMA.displayLocation, OWL.equivalentProperty, CRM.P55_has_current_location))
+    g.add((SCHEMA.displayLocation, OWL.equivalentProperty,
+          CRM.P55_has_current_location))
 
     g.add((SCHEMA.locationCreated, RDF.type, OWL.ObjectProperty))
+    g.add((SCHEMA.locationCreated, RDFS.label,
+          Literal("location created")))  # label
     g.add((SCHEMA.locationCreated, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((SCHEMA.locationCreated, RDFS.range, CRM.E53_Place))
     # g.add((SCHEMA.locationCreated, RDFS.subPropertyOf, MYONT.createdIn))
 
-    g.add((SCHEMA.creator, RDF.type, OWL.ObjectProperty))
+    # eva check this please
+    # g.add((SCHEMA.creator, RDF.type, OWL.ObjectProperty))
     # g.add((SCHEMA.creator, RDFS.domain, CRM.E22_Human_Made_Object))
     # g.add((SCHEMA.creator, RDFS.range, MYONT.Artist))
     # g.add((SCHEMA.creator, OWL.inverseOf, MYONT.hasCreated))
@@ -310,10 +330,13 @@ def build_ontology(g):
     ############################ CIDOC PROPERTIES ####################################
 
     g.add((CRM.P55_has_current_location, RDF.type, OWL.ObjectProperty))
+    g.add((CRM.P55_has_current_location, RDFS.label,
+          Literal("has current location")))  # label
     g.add((CRM.P55_has_current_location, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((CRM.P55_has_current_location, RDFS.range, CRM.E53_Place))
 
     g.add((CRM.P102_has_title, RDF.type, OWL.DatatypeProperty))
+    g.add((CRM.P102_has_title, RDFS.label, Literal("has title")))  # label
     g.add((CRM.P102_has_title, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((CRM.P102_has_title, RDFS.range, XSD.string))
     g.add((CRM.P102_has_title, RDFS.subPropertyOf, SCHEMA.name))
@@ -328,6 +351,8 @@ def build_ontology(g):
 
     # not an activity for simplification
     g.add((CRM.P108i_was_produced_by, RDF.type, OWL.ObjectProperty))
+    g.add((CRM.P108i_was_produced_by, RDFS.label,
+          Literal("was produced by")))  # label
     g.add((CRM.P108i_was_produced_by, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((CRM.P108i_was_produced_by, RDFS.range, CRM.E39_Actor))
 
@@ -367,7 +392,8 @@ def build_ontology(g):
     g.add((MYONT.createdBy, OWL.inverseOf, MYONT.hasCreated))
 
     g.add((MYONT.displayedInDepartment, RDF.type, OWL.ObjectProperty))
-    g.add((MYONT.displayedInDepartment, RDFS.label, Literal("displayed in department")))
+    g.add((MYONT.displayedInDepartment, RDFS.label,
+          Literal("displayed in department")))
     g.add((MYONT.displayedInDepartment, RDFS.domain, CRM.E22_Human_Made_Object))
     g.add((MYONT.displayedInDepartment, RDFS.range, MYONT.Department))
     # g.add((MYONT.displayedInDepartment, OWL.inverseOf, MYONT.displays))
@@ -389,7 +415,6 @@ def build_ontology(g):
     g.add((MYONT.departmentDisplays, RDFS.range, CRM.E22_Human_Made_Object))
     g.add((MYONT.departmentDisplays, OWL.inverseOf, MYONT.displayedInDepartment))
 
-
     g.add((MYONT.hasCreated, RDF.type, OWL.ObjectProperty))
     g.add((MYONT.hasCreated, RDFS.label, Literal("has created")))
     g.add((MYONT.hasCreated, RDFS.domain, MYONT.Artist))
@@ -401,7 +426,7 @@ def build_ontology(g):
     # g.add((MYONT.discoveredIn, RDFS.domain, MYONT.Artifact))
     # g.add((MYONT.discoveredIn, RDFS.range, CRM.E53_Place))
 
-    #------------------------------- data properties---------------------------------
+    # ------------------------------- data properties---------------------------------
 
     g.add((MYONT.startDate, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.startDate, RDFS.label, Literal("started in")))
