@@ -14,13 +14,9 @@ myont:AnimalTheme a owl:Class ;
     rdfs:label "Animal theme" ;
     rdfs:subClassOf myont:Theme .
 
-<<<<<<< HEAD
 myont:Blue_Horses a myont:Painting ;
     myont:createdBy myont:Franz_Marc ;
     schema:name "Blue Horses" .
-=======
-myont:Blue_Horses myont:createdBy myont:Franz_Marc .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:Ceramic a owl:Class ;
     rdfs:label "Ceramic" ;
@@ -34,7 +30,6 @@ myont:Country a owl:Class ;
     rdfs:label "Country" ;
     rdfs:subClassOf crm:E53_Place .
 
-<<<<<<< HEAD
 myont:Czanne a myont:Painting ;
     myont:hasPeriod "beautiful aesthetic" ;
     schema:name "Cézanne" .
@@ -59,26 +54,11 @@ myont:Delacroix a myont:Painting ;
 myont:El_Greco a myont:Painting ;
     myont:hasTheme myont:divine ;
     schema:name "El Greco" .
-=======
-myont:Czanne myont:hasPeriod "beautiful aesthetic" .
-
-myont:Dal myont:hasPeriod "Surrealists" .
-
-myont:De_Chirico myont:hasPeriod "Surrealists" ;
-    myont:hasTheme myont:enigmatic_style .
-
-myont:Death_of_Sardanapalus myont:createdBy myont:Eugene_Delacroix .
-
-myont:Delacroix myont:hasTheme myont:violence .
-
-myont:El_Greco myont:hasTheme myont:divine .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:Figurine a owl:Class ;
     rdfs:label "Figurine" ;
     rdfs:subClassOf myont:Artifact .
 
-<<<<<<< HEAD
 myont:Fuseli a myont:Painting ;
     myont:hasTheme myont:surrealism ;
     schema:name "Fuseli" .
@@ -99,24 +79,11 @@ myont:Hopper a myont:Painting ;
 myont:Improvisation a myont:Painting ;
     myont:createdBy myont:Kandinsky ;
     schema:name "Improvisation" .
-=======
-myont:Fuseli myont:hasTheme myont:surrealism .
-
-myont:Gauguin myont:hasTheme myont:landscape .
-
-myont:Giotto myont:hasPeriod "The Renaissance" ;
-    myont:hasTheme myont:fresco .
-
-myont:Hopper myont:hasTheme myont:realism .
-
-myont:Improvisation myont:createdBy myont:Kandinsky .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:Jewellery a owl:Class ;
     rdfs:label "Jewellery" ;
     rdfs:subClassOf myont:Artifact .
 
-<<<<<<< HEAD
 myont:MoMA a myont:Painting ;
     myont:displayedBy myont:New_York ;
     schema:name "MoMA" .
@@ -128,31 +95,19 @@ myont:Monet_scene a myont:Painting ;
 myont:Montagne_SaintVictoire a myont:Painting ;
     myont:createdBy myont:Paul_Czanne ;
     schema:name "Montagne Saint-Victoire" .
-=======
-myont:MoMA myont:displayedBy myont:New_York .
-
-myont:Monet_scene myont:hasTheme myont:winter_day .
-
-myont:Montagne_SaintVictoire myont:createdBy myont:Paul_Czanne .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:MythologicalTheme a owl:Class ;
     rdfs:label "Mythological theme" ;
     rdfs:subClassOf myont:Theme .
 
-<<<<<<< HEAD
 myont:Narcissus a myont:Painting ;
     myont:hasTheme myont:stony_figure ;
     schema:name "Narcissus" .
-=======
-myont:Narcissus myont:hasTheme myont:stony_figure .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:NatureTheme a owl:Class ;
     rdfs:label "Nature theme" ;
     rdfs:subClassOf myont:Theme .
 
-<<<<<<< HEAD
 myont:Newton a myont:Painting ;
     myont:createdBy myont:Blake ;
     schema:name "Newton" .
@@ -160,16 +115,6 @@ myont:Newton a myont:Painting ;
 myont:Picasso a myont:Painting ;
     myont:hasPeriod "naturalism" ;
     schema:name "Picasso" .
-=======
-myont:Newton myont:createdBy myont:Blake .
-
-myont:Painting a owl:Class ;
-    rdfs:label "Painting" ;
-    rdfs:subClassOf crm:E22_Human_Made_Object ;
-    owl:equivalentClass schema:Painting .
-
-myont:Picasso myont:hasPeriod "naturalism" .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:Region a owl:Class ;
     rdfs:label "Region" ;
@@ -188,7 +133,6 @@ myont:Sculpture a owl:Class ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
     owl:equivalentClass schema:Sculpture .
 
-<<<<<<< HEAD
 myont:Separation_by_Edvard_Munch a myont:Painting ;
     schema:dateCreated "1896" ;
     schema:name "Separation by Edvard Munch" .
@@ -196,17 +140,11 @@ myont:Separation_by_Edvard_Munch a myont:Painting ;
 myont:Snow_Storm__SteamBoat_off_a_Harbour_Mouth a myont:Painting ;
     schema:dateCreated "1842" ;
     schema:name "Snow Storm – Steam-Boat off a Harbour Mouth" .
-=======
-myont:Separation_by_Edvard_Munch schema:dateCreated "1896" .
-
-myont:Snow_Storm__SteamBoat_off_a_Harbour_Mouth schema:dateCreated "1842" .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:Statue a owl:Class ;
     rdfs:label "Statue" ;
     rdfs:subClassOf myont:Artifact .
 
-<<<<<<< HEAD
 myont:Tahitian_Landscape a myont:Painting ;
     myont:createdBy myont:Paul_Gauguin ;
     schema:name "Tahitian Landscape" .
@@ -226,29 +164,14 @@ myont:The_Last_Supper a myont:Painting ;
 myont:Van_Gogh a myont:Painting ;
     myont:hasPeriod "expressionism" ;
     schema:name "Van Gogh" .
-=======
-myont:Tahitian_Landscape myont:createdBy myont:Paul_Gauguin .
-
-myont:The_Hunters_in_the_Snow myont:createdBy myont:Pieter_Bruegel .
-
-myont:The_Lane_of_Poplars myont:createdBy myont:Alfred_Sisley .
-
-myont:The_Last_Supper myont:createdBy myont:Tintoretto .
-
-myont:Van_Gogh myont:hasPeriod "expressionism" .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:Vase a owl:Class ;
     rdfs:label "Vase" ;
     rdfs:subClassOf myont:Artifact .
 
-<<<<<<< HEAD
 myont:Velazquez a myont:Painting ;
     myont:hasTheme myont:contrast ;
     schema:name "Velazquez" .
-=======
-myont:Velazquez myont:hasTheme myont:contrast .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:bornOn a owl:DatatypeProperty ;
     rdfs:label "born in" ;
@@ -289,7 +212,6 @@ myont:endDate a owl:DatatypeProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:gYear .
 
-<<<<<<< HEAD
 myont:famous_painting a myont:Painting ;
     myont:createdBy myont:Magritte,
         myont:Marc ;
@@ -298,12 +220,6 @@ myont:famous_painting a myont:Painting ;
 myont:famous_rendering a myont:Painting ;
     myont:createdBy myont:Leonardo_da_Vinci ;
     schema:name "famous rendering" .
-=======
-myont:famous_painting myont:createdBy myont:Magritte,
-        myont:Marc .
-
-myont:famous_rendering myont:createdBy myont:Leonardo_da_Vinci .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:hasCulture a owl:DatatypeProperty ;
     rdfs:label "culture" ;
@@ -352,13 +268,9 @@ myont:startDate a owl:DatatypeProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:gYear .
 
-<<<<<<< HEAD
 myont:village_in_the_cold_wilderness a myont:Painting ;
     myont:createdBy myont:Bruegel ;
     schema:name "village in the cold wilderness" .
-=======
-myont:village_in_the_cold_wilderness myont:createdBy myont:Bruegel .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 schema:Person a owl:Class ;
     rdfs:label "Person" ;
@@ -388,7 +300,6 @@ crm:P55_has_current_location a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
-<<<<<<< HEAD
 myont:Alfred_Sisley a myont:Artist ;
     schema:name "Alfred Sisley" .
 
@@ -443,14 +354,6 @@ myont:Tintoretto a myont:Artist ;
 
 myont:contrast a myont:Theme ;
     schema:name "contrast" .
-=======
-myont:Bacchus myont:hasTheme myont:Bacchus .
-
-myont:Magritte myont:hasTheme myont:enigma,
-        myont:humorous .
-
-myont:Sisley myont:hasTheme myont:Sisley .
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 
 myont:displays a owl:ObjectProperty ;
     rdfs:label "displays" ;
@@ -519,7 +422,6 @@ schema:creator a owl:ObjectProperty .
 schema:name a owl:DatatypeProperty ;
     rdfs:range xsd:string .
 
-<<<<<<< HEAD
 myont:Department a owl:Class ;
     rdfs:label "Department" .
 
@@ -527,29 +429,10 @@ crm:E21_Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:subClassOf crm:E39_Actor .
 
-=======
-myont:Artist a owl:Class ;
-    rdfs:label "Artist" ;
-    rdfs:subClassOf crm:E21_Person .
-
-myont:Department a owl:Class ;
-    rdfs:label "Department" .
-
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 myont:Museum a owl:Class ;
     rdfs:label "Museum" ;
     owl:equivalentClass schema:Museum .
 
-<<<<<<< HEAD
-=======
-crm:E21_Person a owl:Class ;
-    rdfs:label "Person" ;
-    rdfs:subClassOf crm:E39_Actor .
-
-myont:Theme a owl:Class ;
-    rdfs:label "Theme" .
-
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
 crm:E53_Place a owl:Class ;
     rdfs:label "Place" .
 
@@ -557,7 +440,6 @@ myont:Artifact a owl:Class ;
     rdfs:label "Artifact" ;
     rdfs:subClassOf crm:E22_Human_Made_Object .
 
-<<<<<<< HEAD
 myont:Artist a owl:Class ;
     rdfs:label "Artist" ;
     rdfs:subClassOf crm:E21_Person .
@@ -573,8 +455,3 @@ myont:Painting a owl:Class ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
     owl:equivalentClass schema:Painting .
 
-=======
-crm:E22_Human_Made_Object a owl:Class ;
-    rdfs:label "Human Made Object" .
-
->>>>>>> 4aeb191 (Adding unstructured data to ontology)
