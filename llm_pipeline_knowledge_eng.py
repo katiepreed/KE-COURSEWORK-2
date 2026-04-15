@@ -56,6 +56,15 @@ RELATION_MAP = {
     "collection": "myont:displayedBy"
 }
 
+ENTITY_MAP = {
+    "PERSON": "foaf:Person",
+    "WORK_OF_ART": "myont:Artwork",
+    "ORG": "schema:Organization",
+    "GPE": "schema:Place",
+    "LOC": "schema:Place",
+    "DATE": "schema:Date"
+}
+
 
 def output_length(input_sentence):
     """
@@ -121,6 +130,22 @@ def parse_generated_text(rebel_output_text):
         })
 
     return extracted_triples
+
+def create_entity_triples(spacy_entities):
+
+    type_triples = []
+
+    for entity in spacy_entities:
+        entity_name = entity.text.strip()
+        entity_label = entity.label_
+
+        mapped_type = ENTITY_MAP.get(entity_label)
+
+        if mapped_type:
+            triple = f"({entity_name}, rdf:type, {mapped_type})"
+            type_triples.append(triple)
+
+    return list(set(type_triples))
 
 
 def extract_rdf_triples(sentence_text, spacy_entities):
@@ -199,17 +224,25 @@ def extract_rdf_triples(sentence_text, spacy_entities):
 # Loop through each sentence detected by spaCy
 for sentence in spacy_document.sents:
 
-    # Filter sentences that contain relevant entity types
     if any(entity.label_ in ["PERSON", "WORK_OF_ART", "ORG", "DATE", "LOC", "GPE"]
            for entity in sentence.ents):
 
-        triples_output = extract_rdf_triples(
+        relation_triples = extract_rdf_triples(
             sentence.text,
             sentence.ents
         )
 
-        # Only print if triples were found
-        if triples_output:
+        type_triples = create_entity_triples(sentence.ents)
+
+        if relation_triples:
+
             print(f"Sentence: {sentence.text[:100]}...")
-            print(f"Triples:\n{triples_output}")
+
+            print("Relation Triples:")
+            print(relation_triples)
+
+            print("Type Triples:")
+            for triple in type_triples:
+                print(triple)
+
             print("-" * 50)
