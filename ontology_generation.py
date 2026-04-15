@@ -300,26 +300,22 @@ def build_ontology(g):
     r_oil_nature_medium = BNode()
     g.add((r_oil_nature_medium, RDF.type, OWL.Restriction))
     g.add((r_oil_nature_medium, OWL.onProperty, MYONT.mediumDescription))
-    # **********************************
-    # data cleaning required for exact match
-    g.add((r_oil_nature_medium, OWL.hasValue, Literal("oil on canvas", datatype=XSD.string)))
+    g.add((r_oil_nature_medium, OWL.hasValue, Literal("oil on canvas")))
 
     intersection_nop = BNode()
     g.add((intersection_nop, RDF.type, OWL.Class))
     col_nop = BNode()
-    Collection(g, col_nop, [MYONT.Painting,
-               r_oil_nature_theme, r_oil_nature_medium])
+    Collection(g, col_nop, [MYONT.Painting, r_oil_nature_theme, r_oil_nature_medium])
     g.add((intersection_nop, OWL.intersectionOf, col_nop))
 
     g.add((MYONT.NatureOilPainting, RDF.type, OWL.Class))
-    g.add((MYONT.NatureOilPainting, RDFS.label,
-          Literal("Nature oil painting")))  # label
+    g.add((MYONT.NatureOilPainting, RDFS.label, Literal("Nature oil painting")))
     g.add((MYONT.NatureOilPainting, OWL.equivalentClass, intersection_nop))
     g.add((MYONT.NatureOilPainting, RDFS.comment, Literal(
-        "A painting defined as having a nature theme and the medium description 'oil'."
+        "A painting defined as having a nature theme and the medium description 'oil on canvas'."
     )))
 
-    # Egyptian animal figurine
+    # Chinese animal figurine
     r_theme_eaf = BNode()
     g.add((r_theme_eaf, RDF.type, OWL.Restriction))
     g.add((r_theme_eaf, OWL.onProperty, MYONT.hasTheme))
@@ -328,9 +324,7 @@ def build_ontology(g):
     r_culture_eaf = BNode()
     g.add((r_culture_eaf, RDF.type, OWL.Restriction))
     g.add((r_culture_eaf, OWL.onProperty, MYONT.hasCulture))
-    # **********************************
-    # data cleaning required for exact match - which is why it would be preferred as a class but even if its not, cause too complex - we should have a justification in the report for it
-    g.add((r_culture_eaf, OWL.hasValue, Literal("egyptian", datatype=XSD.string)))
+    g.add((r_culture_eaf, OWL.hasValue, Literal("china")))
 
     intersection_eaf = BNode()
     g.add((intersection_eaf, RDF.type, OWL.Class))
@@ -338,13 +332,9 @@ def build_ontology(g):
     Collection(g, col_eaf, [MYONT.Figurine, r_theme_eaf, r_culture_eaf])
     g.add((intersection_eaf, OWL.intersectionOf, col_eaf))
 
-    g.add((MYONT.EgyptianAnimalFigurine, RDF.type, OWL.Class))
-    g.add((MYONT.EgyptianAnimalFigurine, RDFS.label,
-          Literal("Egyptian animal figurine")))  # label
-    g.add((MYONT.EgyptianAnimalFigurine, OWL.equivalentClass, intersection_eaf))
-    g.add((MYONT.EgyptianAnimalFigurine, RDFS.comment, Literal(
-        "A figurine defined as having an animal theme and the culture value 'egyptian'."
-    )))
+    g.add((MYONT.ChineseAnimalFigurine, RDF.type, OWL.Class))
+    g.add((MYONT.ChineseAnimalFigurine, RDFS.label, Literal("Chinese animal figurine")))
+    g.add((MYONT.ChineseAnimalFigurine, OWL.equivalentClass, intersection_eaf))
 
     # 3d humanmade object
 

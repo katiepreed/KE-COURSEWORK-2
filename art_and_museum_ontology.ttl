@@ -13,14 +13,13 @@ crm:P102_has_title a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf schema:name .
 
-myont:EgyptianAnimalFigurine a owl:Class ;
-    rdfs:label "Egyptian animal figurine" ;
-    rdfs:comment "A figurine defined as having an animal theme and the culture value 'egyptian'." ;
+myont:ChineseAnimalFigurine a owl:Class ;
+    rdfs:label "Chinese animal figurine" ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( myont:Figurine [ a owl:Restriction ;
                         owl:onProperty myont:hasTheme ;
                         owl:someValuesFrom myont:AnimalTheme ] [ a owl:Restriction ;
-                        owl:hasValue "egyptian"^^xsd:string ;
+                        owl:hasValue "china" ;
                         owl:onProperty myont:hasCulture ] ) ] .
 
 myont:NaturalWorldTheme a owl:Class ;
@@ -32,12 +31,12 @@ myont:NaturalWorldTheme a owl:Class ;
 
 myont:NatureOilPainting a owl:Class ;
     rdfs:label "Nature oil painting" ;
-    rdfs:comment "A painting defined as having a nature theme and the medium description 'oil'." ;
+    rdfs:comment "A painting defined as having a nature theme and the medium description 'oil on canvas'." ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( myont:Painting [ a owl:Restriction ;
                         owl:onProperty myont:hasTheme ;
                         owl:someValuesFrom myont:NatureTheme ] [ a owl:Restriction ;
-                        owl:hasValue "oil"^^xsd:string ;
+                        owl:hasValue "oil on canvas" ;
                         owl:onProperty myont:mediumDescription ] ) ] .
 
 myont:Painter a owl:Class ;
