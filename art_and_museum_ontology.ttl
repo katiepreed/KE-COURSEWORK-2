@@ -1,126 +1,176 @@
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix myont: <https://ontologeez/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 crm:P102_has_title a owl:DatatypeProperty ;
+    rdfs:label "has title" ;
+    rdfs:comment "Relates a human-made object to its title or name." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf schema:name .
 
-myont:bornOn a owl:DatatypeProperty ;
+myont:EgyptianAnimalFigurine a owl:Class ;
+    rdfs:label "Egyptian animal figurine" ;
+    rdfs:comment "A figurine defined as having an animal theme and the culture value 'egyptian'." ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( myont:Figurine [ a owl:Restriction ;
+                        owl:onProperty myont:hasTheme ;
+                        owl:someValuesFrom myont:AnimalTheme ] [ a owl:Restriction ;
+                        owl:hasValue "egyptian"^^xsd:string ;
+                        owl:onProperty myont:hasCulture ] ) ] .
+
+myont:NaturalWorldTheme a owl:Class ;
+    rdfs:label "Natural world theme" ;
+    rdfs:comment "A theme defined as either a nature theme or an animal theme." ;
+    rdfs:subClassOf myont:Theme ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( myont:NatureTheme myont:AnimalTheme ) ] .
+
+myont:NatureOilPainting a owl:Class ;
+    rdfs:label "Nature oil painting" ;
+    rdfs:comment "A painting defined as having a nature theme and the medium description 'oil'." ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( myont:Painting [ a owl:Restriction ;
+                        owl:onProperty myont:hasTheme ;
+                        owl:someValuesFrom myont:NatureTheme ] [ a owl:Restriction ;
+                        owl:hasValue "oil"^^xsd:string ;
+                        owl:onProperty myont:mediumDescription ] ) ] .
+
+myont:Painter a owl:Class ;
+    rdfs:label "Painter" ;
+    rdfs:comment "An artist defined as a person who has created at least one painting." ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( myont:Artist [ a owl:Restriction ;
+                        owl:onProperty myont:hasCreated ;
+                        owl:someValuesFrom myont:Painting ] ) ] .
+
+myont:Sculptor a owl:Class ;
+    rdfs:label "Sculptor" ;
+    rdfs:comment "An artist defined as a person who has created at least one sculpture." ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( myont:Artist [ a owl:Restriction ;
+                        owl:onProperty myont:hasCreated ;
+                        owl:someValuesFrom myont:Sculpture ] ) ] .
+
+myont:ThreeDimensionalWork a owl:Class ;
+    rdfs:label "Three-dimensional human-made object" ;
+    rdfs:comment "A human-made object defined as being either a sculpture, vase, ceramic, or jewellery item." ;
+    rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( myont:Sculpture myont:Vase myont:Ceramic myont:Jewellery ) ] .
+
+myont:bornOn a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "born in" ;
+    rdfs:comment "The year in which a person was born." ;
     rdfs:domain crm:E21_Person ;
     rdfs:range xsd:gYear .
 
-myont:createdBy a owl:ObjectProperty ;
+myont:createdBy a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
     rdfs:label "created by artist" ;
+    rdfs:comment "Relates a human-made object to the artist who created it." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range myont:Artist ;
     rdfs:subPropertyOf crm:P108i_was_produced_by,
         schema:creator ;
     owl:inverseOf myont:hasCreated .
 
-myont:diedOn a owl:DatatypeProperty ;
+myont:diedOn a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
     rdfs:label "died in" ;
+    rdfs:comment "The year in which a person died." ;
     rdfs:domain crm:E21_Person ;
     rdfs:range xsd:gYear .
 
-myont:discoveredIn a owl:ObjectProperty ;
-    rdfs:label "discovered in" ;
-    rdfs:domain myont:Artifact ;
-    rdfs:range crm:E53_Place .
-
 myont:displayedBy a owl:ObjectProperty ;
     rdfs:label "displayed by museum" ;
+    rdfs:comment "Relates a human-made object to the museum that displays it." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range myont:Museum ;
     owl:inverseOf myont:displays .
 
-myont:displayedInDepartment a owl:ObjectProperty ;
-    rdfs:label "displayed in department" ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range myont:Department .
-
 myont:endDate a owl:DatatypeProperty ;
     rdfs:label "artwork finished in" ;
+    rdfs:comment "The year in which the creation of a human-made object was completed." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:gYear .
 
-myont:hasCulture a owl:DatatypeProperty ;
-    rdfs:label "culture" ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range xsd:string .
-
 myont:hasDepartment a owl:ObjectProperty ;
     rdfs:label "has department" ;
+    rdfs:comment "Relates a museum to a department that is part of it." ;
     rdfs:domain myont:Museum ;
     rdfs:range myont:Department ;
     owl:inverseOf myont:isDepartmentOf .
 
 myont:hasDepartmentId a owl:DatatypeProperty ;
     rdfs:label "department id" ;
+    rdfs:comment "An identifier assigned to a department within a museum." ;
     rdfs:domain myont:Department ;
     rdfs:range xsd:integer .
 
 myont:hasNationality a owl:DatatypeProperty ;
     rdfs:label "nationality" ;
+    rdfs:comment "A textual value describing the nationality of a person." ;
     rdfs:domain crm:E21_Person ;
     rdfs:range xsd:string .
 
 myont:hasObjectId a owl:DatatypeProperty ;
     rdfs:label "object id" ;
+    rdfs:comment "An identifier assigned to a human-made object within a museum collection." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:integer .
 
 myont:hasPeriod a owl:DatatypeProperty ;
     rdfs:label "period" ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range xsd:string .
-
-myont:hasTheme a owl:ObjectProperty ;
-    rdfs:label "Theme" ;
-    rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range myont:Theme ;
-    owl:inverseOf myont:isThemeOf .
-
-myont:mediumDescription a owl:DatatypeProperty ;
-    rdfs:label "Labeled Medium" ;
+    rdfs:comment "A textual value describing the historical or artistic period associated with a human-made object." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:string .
 
 myont:startDate a owl:DatatypeProperty ;
     rdfs:label "started in" ;
+    rdfs:comment "The year in which the creation of a human-made object began." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:gYear .
 
 schema:Person a owl:Class ;
     rdfs:label "Person" ;
+    rdfs:comment "A human individual." ;
     owl:equivalentClass crm:E21_Person .
 
 schema:dateCreated a owl:DatatypeProperty ;
+    rdfs:label "date created" ;
+    rdfs:comment "The year in which a human-made object was created." ;
     rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:gYear .
 
 schema:displayLocation a owl:ObjectProperty ;
+    rdfs:label "display location" ;
+    rdfs:comment "The place where a human-made object is currently displayed." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place ;
     owl:equivalentProperty crm:P55_has_current_location .
 
 schema:locationCreated a owl:ObjectProperty ;
+    rdfs:label "location created" ;
+    rdfs:comment "The place where a human-made object was originally created." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
-crm:E39_Actor a owl:Class ;
-    rdfs:label "Actor" .
-
 crm:P108i_was_produced_by a owl:ObjectProperty ;
+    rdfs:label "was produced by" ;
+    rdfs:comment "Relates a human-made object to the actor who produced or created it." ;
     rdfs:domain crm:E22_Human_Made_Object ;
-    rdfs:range myont:Artist .
+    rdfs:range crm:E39_Actor .
 
 crm:P55_has_current_location a owl:ObjectProperty ;
+    rdfs:label "has current location" ;
+    rdfs:comment "Relates a human-made object to the place where it is currently located." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
@@ -2337,39 +2387,72 @@ myont:Zhang_yuguang a myont:Artist ;
     myont:hasNationality "chinese" ;
     schema:name "zhang yuguang" .
 
-myont:displays a owl:ObjectProperty ;
+myont:departmentDisplays a owl:ObjectProperty ;
+    rdfs:label "department displays" ;
+    rdfs:comment "Relates a museum department to the human-made objects it displays." ;
+    rdfs:domain myont:Department ;
+    rdfs:range crm:E22_Human_Made_Object ;
+    owl:inverseOf myont:displayedInDepartment .
+
+myont:displayedInDepartment a owl:ObjectProperty ;
+    rdfs:label "displayed in department" ;
+    rdfs:comment "Relates a human-made object to the museum department where it is displayed." ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Department .
+
+myont:displays a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
     rdfs:label "displays" ;
+    rdfs:comment "Relates a museum to the human-made objects it displays." ;
     rdfs:domain myont:Museum ;
     rdfs:range crm:E22_Human_Made_Object .
 
-myont:hasCreated a owl:ObjectProperty ;
-    rdfs:label "has created" ;
-    rdfs:domain myont:Artist ;
-    rdfs:range crm:E22_Human_Made_Object .
+myont:hasCulture a owl:DatatypeProperty ;
+    rdfs:label "culture" ;
+    rdfs:comment "A textual value describing the cultural origin or association of a human-made object." ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:string .
 
 myont:isDepartmentOf a owl:ObjectProperty ;
     rdfs:label "is department of" ;
+    rdfs:comment "Relates a department to the museum it belongs to." ;
     rdfs:domain myont:Department ;
     rdfs:range myont:Museum .
 
 myont:isThemeOf a owl:ObjectProperty ;
     rdfs:label "is theme of" ;
+    rdfs:comment "Relates a theme to the human-made objects that are associated with it." ;
     rdfs:domain myont:Theme ;
     rdfs:range crm:E22_Human_Made_Object .
 
+myont:mediumDescription a owl:DatatypeProperty ;
+    rdfs:label "Labeled Medium" ;
+    rdfs:comment "A textual description of the material or medium used to create a human-made object." ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range xsd:string .
+
 schema:Museum a owl:Class ;
-    rdfs:label "Museum" .
+    rdfs:label "Museum" ;
+    rdfs:comment "An institution that collects, preserves, studies, and displays objects of artistic, cultural, or historical significance." .
 
 schema:Painting a owl:Class ;
-    rdfs:label "Painting" .
+    rdfs:label "Painting" ;
+    rdfs:comment "A work of visual art created by applying paint to a surface such as canvas, wood, or paper." .
 
 schema:Sculpture a owl:Class ;
-    rdfs:label "Sculpture" .
+    rdfs:label "Sculpture" ;
+    rdfs:comment "Any sculpture that has a known artist is included here." .
 
 schema:creator a owl:ObjectProperty .
 
 schema:name a owl:DatatypeProperty ;
+    rdfs:comment "The name or title of an entity, represented as a string." ;
     rdfs:range xsd:string .
+
+crm:E39_Actor a owl:Class ;
+    rdfs:label "Actor" ;
+    rdfs:comment "An entity capable of performing actions or participating in events, including individuals or groups." .
 
 myont:A_woman_seated_beside_a_vase_of_flowers_436121 a myont:Painting ;
     myont:createdBy myont:Edgar_degas ;
@@ -4839,6 +4922,13 @@ myont:Zen_master_with_meditation_staff_and_chinesestyle_landscapes_78057 a myont
     schema:displayLocation myont:New_york ;
     schema:name "zen master with meditation staff, and chinese-style landscapes" .
 
+myont:hasTheme a owl:ObjectProperty ;
+    rdfs:label "Theme" ;
+    rdfs:comment "Relates a human-made object to a thematic category describing its subject matter." ;
+    rdfs:domain crm:E22_Human_Made_Object ;
+    rdfs:range myont:Theme ;
+    owl:inverseOf myont:isThemeOf .
+
 myont:ledefrance a myont:Region ;
     schema:name "île-de-france" .
 
@@ -5457,6 +5547,7 @@ myont:Mesopotamia a myont:Region ;
 
 myont:MythologicalTheme a owl:Class ;
     rdfs:label "Mythological theme" ;
+    rdfs:comment "A theme representing mythological figures, stories, or scenes." ;
     rdfs:subClassOf myont:Theme .
 
 myont:Painting_51776 a myont:Painting ;
@@ -5486,8 +5577,15 @@ myont:Xie_zhiliu a myont:Artist ;
     myont:hasNationality "chinese" ;
     schema:name "xie zhiliu" .
 
+myont:hasCreated a owl:ObjectProperty ;
+    rdfs:label "has created" ;
+    rdfs:comment "Relates an artist to the human-made objects they have created." ;
+    rdfs:domain myont:Artist ;
+    rdfs:range crm:E22_Human_Made_Object .
+
 crm:E21_Person a owl:Class ;
     rdfs:label "Person" ;
+    rdfs:comment "A real human individual, considered as an actor capable of creating, owning, or interacting with objects." ;
     rdfs:subClassOf crm:E39_Actor .
 
 myont:Allegory_of_the_catholic_faith_437877 a myont:Painting ;
@@ -5541,6 +5639,7 @@ myont:Marble_sarcophagus_with_the_myth_of_selene_and_endymion_254590 a myont:Scu
 
 myont:Museum a owl:Class ;
     rdfs:label "Museum" ;
+    rdfs:comment "A museum in the custom ontology, aligned with schema.org Museum." ;
     owl:equivalentClass schema:Museum .
 
 myont:Nishapur a myont:City ;
@@ -5554,6 +5653,10 @@ myont:Upper_egypt_thebes a myont:Region ;
 
 myont:Zimbabwe a myont:Country ;
     schema:name "zimbabwe" .
+
+crm:E53_Place a owl:Class ;
+    rdfs:label "Place" ;
+    rdfs:comment "An extent in space that can serve as the location of physical objects, events, or activities." .
 
 myont:Lion a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_341160,
@@ -5578,23 +5681,14 @@ myont:Peru a myont:Country ;
 
 myont:ReligiousTheme a owl:Class ;
     rdfs:label "Religious theme" ;
+    rdfs:comment "A theme representing religious subjects, beliefs, figures, or scenes." ;
     rdfs:subClassOf myont:Theme .
 
 myont:Robert_lehman_collection a myont:Department ;
     schema:name "robert lehman collection" .
 
-myont:Theme a owl:Class ;
-    rdfs:label "Theme" .
-
 myont:Trenton a myont:City ;
     schema:name "trenton" .
-
-crm:E53_Place a owl:Class ;
-    rdfs:label "Place" .
-
-myont:Artifact a owl:Class ;
-    rdfs:label "Artifact" ;
-    rdfs:subClassOf crm:E22_Human_Made_Object .
 
 myont:Byzantine_egypt a myont:Country ;
     schema:name "byzantine egypt" .
@@ -5615,9 +5709,9 @@ myont:River a myont:NatureTheme ;
 myont:Thebes a myont:City ;
     schema:name "thebes" .
 
-myont:AnimalTheme a owl:Class ;
-    rdfs:label "Animal theme" ;
-    rdfs:subClassOf myont:Theme .
+myont:Theme a owl:Class ;
+    rdfs:label "Theme" ;
+    rdfs:comment "A subject or conceptual category used to describe the content of an artwork." .
 
 myont:Papua_new_guinea a myont:Country ;
     schema:name "papua new guinea" .
@@ -5650,21 +5744,14 @@ myont:Iran a myont:Country,
         myont:Region ;
     schema:name "iran" .
 
-myont:Scroll a owl:Class ;
-    rdfs:label "Scroll" ;
-    rdfs:subClassOf myont:Artifact .
+myont:AnimalTheme a owl:Class ;
+    rdfs:label "Animal theme" ;
+    rdfs:comment "A theme representing animals or animal-related subjects in artworks." ;
+    rdfs:subClassOf myont:Theme .
 
 myont:Ancient_west_asian_art a myont:Department ;
     myont:hasDepartmentId 3 ;
     schema:name "ancient west asian art" .
-
-myont:NatureTheme a owl:Class ;
-    rdfs:label "Nature theme" ;
-    rdfs:subClassOf myont:Theme .
-
-myont:Vase a owl:Class ;
-    rdfs:label "Vase" ;
-    rdfs:subClassOf myont:Artifact .
 
 myont:Allegory a myont:MythologicalTheme ;
     myont:isThemeOf myont:Allegory_341160,
@@ -5685,13 +5772,27 @@ myont:Medieval_art a myont:Department ;
     myont:hasDepartmentId 17 ;
     schema:name "medieval art" .
 
+myont:NatureTheme a owl:Class ;
+    rdfs:label "Nature theme" ;
+    rdfs:comment "A theme representing elements of the natural world, such as landscapes or plants." ;
+    rdfs:subClassOf myont:Theme .
+
+myont:Scroll a owl:Class ;
+    rdfs:label "Scroll" ;
+    rdfs:comment "A rolled written or illustrated document, treated here as a human-made museum object." ;
+    rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:disjointWith myont:Jewellery .
+
+myont:Vase a owl:Class ;
+    rdfs:label "Vase" ;
+    rdfs:comment "A human-made container, typically used for holding flowers or as decoration." ;
+    rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:disjointWith myont:Jewellery,
+        myont:Scroll .
+
 myont:Drawings_and_prints a myont:Department ;
     myont:hasDepartmentId 9 ;
     schema:name "drawings and prints" .
-
-myont:Figurine a owl:Class ;
-    rdfs:label "Figurine" ;
-    rdfs:subClassOf myont:Artifact .
 
 myont:Midatlantic a myont:Region ;
     schema:name "mid-atlantic" .
@@ -5753,6 +5854,11 @@ myont:Dog a myont:AnimalTheme ;
         myont:Mechanical_dog_544519 ;
     schema:name "dog" .
 
+myont:Figurine a owl:Class ;
+    rdfs:label "Figurine" ;
+    rdfs:comment "A small sculpted or molded figure representing a human, animal, or mythical being." ;
+    rdfs:subClassOf myont:Sculpture .
+
 myont:Landscape a myont:NatureTheme ;
     myont:isThemeOf myont:Allegory_459565,
         myont:Cypresses_437980,
@@ -5799,12 +5905,11 @@ myont:Vincent_van_gogh a myont:Artist ;
     myont:hasNationality "dutch" ;
     schema:name "vincent van gogh" .
 
-myont:Department a owl:Class ;
-    rdfs:label "Department" .
-
 myont:Statue a owl:Class ;
     rdfs:label "Statue" ;
-    rdfs:subClassOf myont:Artifact .
+    rdfs:comment "A sculpture representing a person, animal, or other figure, typically free-standing." ;
+    rdfs:subClassOf myont:Sculpture ;
+    owl:disjointWith myont:Figurine .
 
 myont:Tree a myont:NatureTheme ;
     myont:isThemeOf myont:Amulet_possibly_depicting_a_tree_frog_544107,
@@ -5829,20 +5934,16 @@ myont:Tree a myont:NatureTheme ;
         myont:Women_picking_olives_436536 ;
     schema:name "tree" .
 
-myont:Jewellery a owl:Class ;
-    rdfs:label "Jewellery" ;
-    rdfs:subClassOf myont:Artifact .
-
-crm:E22_Human_Made_Object a owl:Class ;
-    rdfs:label "Human Made Object" .
+myont:Department a owl:Class ;
+    rdfs:label "Department" ;
+    rdfs:comment "An organizational division within a museum used to group and manage collections or displays." .
 
 myont:City a owl:Class ;
     rdfs:label "City" ;
-    rdfs:subClassOf crm:E53_Place .
-
-myont:Country a owl:Class ;
-    rdfs:label "Country" ;
-    rdfs:subClassOf crm:E53_Place .
+    rdfs:comment "A type of place representing a city." ;
+    rdfs:subClassOf crm:E53_Place ;
+    owl:disjointWith myont:Country,
+        myont:Region .
 
 myont:Cat a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_catholic_faith_437877,
@@ -5870,6 +5971,11 @@ myont:Cat a myont:AnimalTheme ;
         myont:Mummy_of_nesmin_with_plant_wreath_mask_and_other_cartonnage_elements_551162,
         myont:Rouen_cathedral_the_portal_437124 ;
     schema:name "cat" .
+
+myont:Country a owl:Class ;
+    rdfs:label "Country" ;
+    rdfs:comment "A type of place representing a country." ;
+    rdfs:subClassOf crm:E53_Place .
 
 myont:Horse a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_planets_and_continents_437790,
@@ -5899,14 +6005,24 @@ myont:Horse a myont:AnimalTheme ;
         myont:the_angel_gabriel_meets_amr_ibn_zaid__folio_from_a_siyeri_nebi_453351 ;
     schema:name "horse" .
 
+myont:Jewellery a owl:Class ;
+    rdfs:label "Jewellery" ;
+    rdfs:comment "A human-made decorative object worn for personal adornment, such as rings, necklaces, or bracelets." ;
+    rdfs:subClassOf crm:E22_Human_Made_Object .
+
 myont:The_american_wing a myont:Department ;
     schema:name "the american wing" .
+
+crm:E22_Human_Made_Object a owl:Class ;
+    rdfs:label "Human Made Object" ;
+    rdfs:comment "A physical object intentionally created by humans, such as artworks, tools, or other manufactured items." .
 
 myont:The_michael_c_rockefeller_wing a myont:Department ;
     schema:name "the michael c. rockefeller wing" .
 
 myont:Region a owl:Class ;
     rdfs:label "Region" ;
+    rdfs:comment "A type of place representing a region." ;
     rdfs:subClassOf crm:E53_Place .
 
 myont:Flower a myont:NatureTheme ;
@@ -5967,21 +6083,35 @@ myont:Egyptian_art a myont:Department ;
 
 myont:Sculpture a owl:Class ;
     rdfs:label "Sculpture" ;
+    rdfs:comment "A sculpture in the custom ontology, modeled as a human-made object and aligned with schema.org Sculpture." ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:disjointWith myont:Jewellery,
+        myont:Scroll ;
     owl:equivalentClass schema:Sculpture .
 
 myont:Ceramic a owl:Class ;
     rdfs:label "Ceramic" ;
-    rdfs:subClassOf myont:Artifact .
+    rdfs:comment "A human-made object made from clay or similar material hardened by heat." ;
+    rdfs:subClassOf crm:E22_Human_Made_Object .
 
 myont:Painting a owl:Class ;
     rdfs:label "Painting" ;
+    rdfs:comment "A painting in the custom ontology, modeled as a human-made object and aligned with schema.org Painting." ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:disjointWith myont:Ceramic,
+        myont:Jewellery,
+        myont:Scroll,
+        myont:Sculpture,
+        myont:Vase ;
     owl:equivalentClass schema:Painting .
 
 myont:Artist a owl:Class ;
     rdfs:label "Artist" ;
-    rdfs:subClassOf crm:E21_Person .
+    rdfs:comment "A person who creates artworks such as paintings, sculptures, or other museum objects." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty myont:hasCreated ],
+        crm:E21_Person .
 
 myont:Metropolitan_museum_of_art_new_york_ny a myont:Museum ;
     myont:displays myont:A_woman_seated_beside_a_vase_of_flowers_436121,
@@ -6314,4 +6444,8 @@ myont:Metropolitan_museum_of_art_new_york_ny a myont:Museum ;
 
 myont:New_york a myont:City ;
     schema:name "new york" .
+
+[] a owl:Restriction ;
+    owl:allValuesFrom myont:Scroll ;
+    owl:onProperty myont:departmentDisplays .
 
