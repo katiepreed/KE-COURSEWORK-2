@@ -114,18 +114,14 @@ def assign_themes(subject, title, medium, object_name, tags, g):
 
 def convert_year(year_val):
     """
-    Convert a year to an xsd:gYear Literal.
+    Convert a year to an xsd:integer Literal.
     """
     if year_val == "" or year_val is None:
         return None
     try:
-        year = int(year_val)
+        return Literal(int(year_val), datatype=XSD.integer)
     except (ValueError, TypeError):
         return None
-    if year < 0:
-        return Literal(f"-{abs(year):04d}", datatype=XSD.gYear)
-    
-    return Literal(f"{year:04d}", datatype=XSD.gYear)
 
 def populate_instances(g):
 
@@ -196,7 +192,7 @@ def populate_instances(g):
         g.add((subject, SCHEMA.name, Literal(title.lower())))
 
         if object_date:
-            g.add((subject, SCHEMA.dateCreated, Literal(str(object_date))))
+            g.add((subject, SCHEMA.dateCreated, Literal(str(object_date), datatype=XSD.string)))
 
         if culture:
             g.add((subject, MYONT.hasCulture, Literal(culture.lower())))
@@ -258,6 +254,13 @@ def populate_instances(g):
                     g.add((dept_uri, MYONT.hasDepartmentId, Literal(int(dept_num))))
 
             g.add((subject, MYONT.displayedInDepartment, dept_uri))
+            g.add((dept_uri, MYONT.departmentDisplays, subject))
+
+            if repository:
+                museum_id_for_dept = createTitle(repository)
+                museum_uri_for_dept = MYONT[museum_id_for_dept]
+                g.add((museum_uri_for_dept, MYONT.hasDepartment, dept_uri))
+                g.add((dept_uri, MYONT.isDepartmentOf, museum_uri_for_dept))
 
         if repository:
             museum_id = createTitle(repository)
@@ -267,6 +270,7 @@ def populate_instances(g):
                 seen_museums[museum_id] = True
                 g.add((museum_uri, RDF.type, MYONT.Museum))
                 g.add((museum_uri, SCHEMA.name, Literal(repository.lower())))
+                g.add((museum_uri, SCHEMA.displayLocation, new_york))
 
             g.add((museum_uri, MYONT.displays, subject)) 
             g.add((subject, MYONT.displayedBy, museum_uri))

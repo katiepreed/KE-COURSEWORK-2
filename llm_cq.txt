@@ -131,7 +131,7 @@ WHERE {
   ?artist schema:name ?artistName .
   ?artwork myont:createdBy ?artist .
   ?artwork myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny .
-  FILTER(?birthYear < "1800"^^xsd:gYear)
+  FILTER(?birthYear < 1800)
 }
 
 # -------------------------------------------------------------------------------

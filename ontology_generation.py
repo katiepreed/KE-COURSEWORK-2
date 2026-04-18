@@ -1,4 +1,4 @@
-from rdflib import Namespace, Literal, Graph, BNode
+from rdflib import Namespace, Literal, BNode
 from rdflib.namespace import RDF, RDFS, OWL, XSD
 from rdflib.collection import Collection
 
@@ -397,7 +397,7 @@ def build_ontology(g):
     g.add((SCHEMA.dateCreated, RDFS.label, Literal("date created")))  # label
     g.add((SCHEMA.dateCreated, RDFS.domain, CRM.E22_Human_Made_Object))
     # use this format for dates in data preprocessing
-    g.add((SCHEMA.dateCreated, RDFS.range, XSD.gYear))
+    g.add((SCHEMA.dateCreated, RDFS.range, XSD.string))
     g.add((SCHEMA.dateCreated, RDFS.comment, Literal(
         "The year in which a human-made object was created."
     )))
@@ -575,7 +575,7 @@ def build_ontology(g):
     g.add((MYONT.startDate, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.startDate, RDFS.label, Literal("started in")))
     g.add((MYONT.startDate, RDFS.domain, CRM.E22_Human_Made_Object))
-    g.add((MYONT.startDate, RDFS.range, XSD.gYear))
+    g.add((MYONT.startDate, RDFS.range, XSD.integer))
     g.add((MYONT.startDate, RDFS.comment, Literal(
         "The year in which the creation of a human-made object began."
     )))
@@ -583,7 +583,7 @@ def build_ontology(g):
     g.add((MYONT.endDate, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.endDate, RDFS.label, Literal("artwork finished in")))
     g.add((MYONT.endDate, RDFS.domain, CRM.E22_Human_Made_Object))
-    g.add((MYONT.endDate, RDFS.range, XSD.gYear))
+    g.add((MYONT.endDate, RDFS.range, XSD.integer))
     g.add((MYONT.endDate, RDFS.comment, Literal(
         "The year in which the creation of a human-made object was completed."
     )))
@@ -640,7 +640,7 @@ def build_ontology(g):
     g.add((MYONT.bornOn, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.bornOn, RDFS.label, Literal("born in")))
     g.add((MYONT.bornOn, RDFS.domain, CRM.E21_Person))
-    g.add((MYONT.bornOn, RDFS.range, XSD.gYear))
+    g.add((MYONT.bornOn, RDFS.range, XSD.integer))
     g.add((MYONT.bornOn, RDFS.comment, Literal(
         "The year in which a person was born."
     )))
@@ -648,7 +648,7 @@ def build_ontology(g):
     g.add((MYONT.diedOn, RDF.type, OWL.DatatypeProperty))
     g.add((MYONT.diedOn, RDFS.label, Literal("died in")))
     g.add((MYONT.diedOn, RDFS.domain, CRM.E21_Person))
-    g.add((MYONT.diedOn, RDFS.range, XSD.gYear))
+    g.add((MYONT.diedOn, RDFS.range, XSD.integer))
     g.add((MYONT.diedOn, RDFS.comment, Literal(
         "The year in which a person died."
     )))

@@ -14,8 +14,8 @@ def main():
     populate_instances(g)
     print("Instances added.")
 
-    g.serialize(destination="art_and_museum_ontology.ttl", format="turtle")
-    print(f"Saved to art_and_museum_ontology.ttl ({len(g)} triples)")
+    g.serialize("art_and_museum_ontology.ttl", format="turtle")
+    print(f"Saved to art_and_museum_ontology.ttl")
 
 if __name__ == "__main__":
     main()
