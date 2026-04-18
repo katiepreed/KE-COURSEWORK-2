@@ -368,12 +368,18 @@ def build_ontology(g):
         "A theme defined as either a nature theme or an animal theme."
     )))
 
-    # eva check this please
     # Scroll department only
     r_only_scrolls = BNode()
     g.add((r_only_scrolls, RDF.type, OWL.Restriction))
     g.add((r_only_scrolls, OWL.onProperty, MYONT.departmentDisplays))
     g.add((r_only_scrolls, OWL.allValuesFrom, MYONT.Scroll))
+    g.add((MYONT.ScrollOnlyDepartment, RDF.type, OWL.Class))
+    g.add((MYONT.ScrollOnlyDepartment, RDFS.label, Literal("Scroll only department")))
+    g.add((MYONT.ScrollOnlyDepartment, RDFS.subClassOf, MYONT.Department))
+    g.add((MYONT.ScrollOnlyDepartment, RDFS.subClassOf, r_only_scrolls))
+    g.add((MYONT.ScrollOnlyDepartment, RDFS.comment, Literal(
+        "A museum department that displays only scrolls."
+    )))
 
     ###############################################################################
 
@@ -418,7 +424,7 @@ def build_ontology(g):
     )))
     # g.add((SCHEMA.locationCreated, RDFS.subPropertyOf, MYONT.createdIn))
 
-    # eva check this please
+    # no chnage required here since its a schema property
     g.add((SCHEMA.creator, RDF.type, OWL.ObjectProperty))
     # g.add((SCHEMA.creator, RDFS.domain, CRM.E22_Human_Made_Object))
     # g.add((SCHEMA.creator, RDFS.range, MYONT.Artist))
