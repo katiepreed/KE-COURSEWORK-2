@@ -21,13 +21,23 @@ RAG approach (per completion analysis document):
   3. An LLM is prompted with the enriched context to suggest missing triples.
   4. All RAG-generated triples are annotated with myont:ragGenerated true.
 
-LLM backend: Anthropic API via the anthropic Python SDK.
-Fallback:    A small set of pre-computed answers is used when no API key is set,
-             so the pipeline can be demonstrated offline.
+LLM backends (auto-detected, in priority order):
+  1. Ollama  — free, runs locally. Set OLLAMA_MODEL (e.g. "llama3").
+                Requires `ollama serve` running on http://localhost:11434.
+  2. Groq    — free tier cloud API. Set GROQ_API_KEY.
+  3. Anthropic — paid. Set ANTHROPIC_API_KEY.
+  4. Fallback — pre-computed answer tables (no network needed).
 
 Usage:
-    pip install anthropic rdflib
-    export ANTHROPIC_API_KEY="sk-ant-..."
+    pip install rdflib requests
+    # Pick ONE of the following:
+    #   (a) Free local — install Ollama, then:
+    #         ollama pull llama3
+    #         export OLLAMA_MODEL=llama3
+    #   (b) Free cloud — get a key at https://console.groq.com/ then:
+    #         export GROQ_API_KEY=gsk_...
+    #   (c) Paid — export ANTHROPIC_API_KEY=sk-ant-...
+    #   (d) None  — runs offline using the fallback tables.
     python rag_system.py [--input art_and_museum_ontology.ttl] [--output rag_output.ttl]
 """
 
@@ -126,28 +136,85 @@ FALLBACK_MEDIA = {
 # LLM helper
 # ---------------------------------------------------------------------------
 
+def llm_backend() -> str:
+    """Return the active backend name based on environment variables."""
+    if os.environ.get("OLLAMA_MODEL"):
+        return "ollama"
+    if os.environ.get("GROQ_API_KEY"):
+        return "groq"
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return "anthropic"
+    return "fallback"
+
+
+def _ask_ollama(prompt: str, system: str) -> str:
+    """Query a local Ollama server. Free, no API key required."""
+    import requests
+    model = os.environ.get("OLLAMA_MODEL", "llama3")
+    host  = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+    full_prompt = f"{system}\n\n{prompt}" if system else prompt
+    resp = requests.post(
+        f"{host}/api/generate",
+        json={"model": model, "prompt": full_prompt, "stream": False,
+              "options": {"temperature": 0.0, "num_predict": 256}},
+        timeout=120,
+    )
+    resp.raise_for_status()
+    return resp.json().get("response", "").strip()
+
+
+def _ask_groq(prompt: str, system: str) -> str:
+    """Query Groq's free-tier API (OpenAI-compatible)."""
+    import requests
+    api_key = os.environ["GROQ_API_KEY"]
+    model   = os.environ.get("GROQ_MODEL", "llama-3.1-8b-instant")
+    messages = []
+    if system:
+        messages.append({"role": "system", "content": system})
+    messages.append({"role": "user", "content": prompt})
+    resp = requests.post(
+        "https://api.groq.com/openai/v1/chat/completions",
+        headers={"Authorization": f"Bearer {api_key}",
+                 "Content-Type":  "application/json"},
+        json={"model": model, "messages": messages,
+              "max_tokens": 256, "temperature": 0.0},
+        timeout=60,
+    )
+    resp.raise_for_status()
+    return resp.json()["choices"][0]["message"]["content"].strip()
+
+
+def _ask_anthropic(prompt: str, system: str) -> str:
+    """Query the Anthropic API (paid)."""
+    import anthropic
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    kwargs = {"model": "claude-haiku-4-5-20251001",
+              "max_tokens": 256,
+              "messages": [{"role": "user", "content": prompt}]}
+    if system:
+        kwargs["system"] = system
+    response = client.messages.create(**kwargs)
+    return response.content[0].text.strip()
+
+
 def ask_llm(prompt: str, system: str = "") -> str:
     """
-    Call the language model API and return the text response.
-    Falls back to an empty string if the package or key is unavailable.
+    Dispatch to whichever LLM backend is configured.
+    Returns an empty string on failure so the caller falls back to lookup tables.
     """
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-    if not api_key:
+    backend = llm_backend()
+    if backend == "fallback":
         return ""
     try:
-        import anthropic
-        client = anthropic.Anthropic(api_key=api_key)
-        messages = [{"role": "user", "content": prompt}]
-        kwargs = {"model": "claude-haiku-4-5-20251001",
-                  "max_tokens": 256,
-                  "messages": messages}
-        if system:
-            kwargs["system"] = system
-        response = client.messages.create(**kwargs)
-        return response.content[0].text.strip()
+        if backend == "ollama":
+            return _ask_ollama(prompt, system)
+        if backend == "groq":
+            return _ask_groq(prompt, system)
+        if backend == "anthropic":
+            return _ask_anthropic(prompt, system)
     except Exception as exc:
-        print(f"  [LLM] Warning: {exc}", file=sys.stderr)
-        return ""
+        print(f"  [LLM:{backend}] Warning: {exc}", file=sys.stderr)
+    return ""
 
 
 # ---------------------------------------------------------------------------
@@ -388,7 +455,7 @@ def rag_O2_artistic_movements(g: Graph) -> int:
         artist_titles.setdefault(str(row.name), []).append(str(row.title))
 
     added = 0
-    use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    use_llm = llm_backend() != "fallback"
 
     for row in g.query(sparql):
         artist_uri  = row.artist
@@ -477,7 +544,7 @@ def rag_I1_I2_biographical(g: Graph, data_path: str = "data.json") -> int:
     }
     """
 
-    use_llm = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    use_llm = llm_backend() != "fallback"
     added   = 0
 
     for row in g.query(sparql):
@@ -599,7 +666,7 @@ def rag_O4_medium_structure(g: Graph) -> int:
     }
     """
 
-    use_llm   = bool(os.environ.get("ANTHROPIC_API_KEY"))
+    use_llm   = llm_backend() != "fallback"
     desc_cache: dict[str, str] = {}   # desc → medium label
     added = 0
 
@@ -661,8 +728,14 @@ def run_rag_pipeline(input_ttl: str, output_ttl: str, data_json: str) -> None:
     print(f"Input  : {input_ttl}")
     print(f"Output : {output_ttl}")
     print(f"Data   : {data_json}")
-    api_key_set = bool(os.environ.get("ANTHROPIC_API_KEY"))
-    print(f"LLM    : {'Anthropic API' if api_key_set else 'offline (fallback mode)'}")
+    backend = llm_backend()
+    backend_label = {
+        "ollama":    f"Ollama (local, model={os.environ.get('OLLAMA_MODEL')})",
+        "groq":      f"Groq (free tier, model={os.environ.get('GROQ_MODEL', 'llama-3.1-8b-instant')})",
+        "anthropic": "Anthropic API (paid)",
+        "fallback":  "offline (fallback tables)",
+    }[backend]
+    print(f"LLM    : {backend_label}")
     print()
 
     # 1. Load the existing KG
