@@ -13,6 +13,23 @@ crm:P102_has_title a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf schema:name .
 
+myont:Antibes a myont:Country .
+
+myont:BA a myont:Museum .
+
+myont:Blue_Horses a myont:Museum ;
+    myont:createdBy myont:Franz_Marc .
+
+myont:Boccioni a crm:E21_Person .
+
+myont:Bosch a crm:E21_Person .
+
+myont:Boston_Signac a myont:Museum .
+
+myont:Brighton a myont:Country .
+
+myont:Bruegel a myont:Country .
+
 myont:ChineseAnimalFigurine a owl:Class ;
     rdfs:label "Chinese animal figurine" ;
     owl:equivalentClass [ a owl:Class ;
@@ -21,6 +38,117 @@ myont:ChineseAnimalFigurine a owl:Class ;
                         owl:someValuesFrom myont:AnimalTheme ] [ a owl:Restriction ;
                         owl:hasValue "china" ;
                         owl:onProperty myont:hasCulture ] ) ] .
+
+myont:Crows a myont:Museum .
+
+myont:Cézanne a myont:Museum ;
+    myont:hasPeriod "beautiful aesthetic"^^xsd:string .
+
+myont:Dalí a myont:Museum ;
+    myont:hasPeriod "Surrealists"^^xsd:string .
+
+myont:De_Chirico a myont:Country ;
+    myont:hasPeriod "Surrealists"^^xsd:string ;
+    myont:hasTheme myont:enigmatic_style .
+
+myont:Delacroix a crm:E21_Person ;
+    myont:hasTheme myont:violence .
+
+myont:Detail a crm:E21_Person .
+
+myont:Diego_Velazquez a myont:Country .
+
+myont:Edvard_Munch a myont:Museum .
+
+myont:Edward_Hopper a crm:E21_Person .
+
+myont:El_Greco a myont:Museum ;
+    myont:hasTheme myont:divine .
+
+myont:Eugene_Delacroix a crm:E21_Person .
+
+myont:Fraser_Hibbitt a crm:E21_Person,
+        myont:Museum .
+
+myont:Free_Weekly_Newsletter a myont:Museum .
+
+myont:Fresco a crm:E21_Person .
+
+myont:Fuseli a crm:E21_Person ;
+    myont:hasTheme myont:surrealism .
+
+myont:Fuseli_Nightmare a crm:E21_Person .
+
+myont:Gauguin a crm:E21_Person ;
+    myont:hasTheme myont:landscape .
+
+myont:Giorgio_de_Chirico a crm:E21_Person .
+
+myont:Giotto a crm:E21_Person,
+        myont:Country ;
+    myont:hasPeriod "The Renaissance"^^xsd:string ;
+    myont:hasTheme myont:fresco .
+
+myont:Guernica a crm:E21_Person .
+
+myont:Henry_Fuseli a crm:E21_Person .
+
+myont:Hieronymus_Bosch a crm:E21_Person .
+
+myont:Hopper a myont:Museum ;
+    myont:hasTheme myont:realism .
+
+<https://ontologeez/I.> a myont:Museum .
+
+myont:Italy a myont:Country .
+
+myont:J.M.W._Turner a crm:E21_Person .
+
+myont:Jacopo_Tintoretto a crm:E21_Person .
+
+myont:Jesus_Christ a crm:E21_Person .
+
+myont:Kandinsky a crm:E21_Person .
+
+myont:Kunsthistorisches_Museum_Wien_Bruegel_The_Hunters a myont:Museum .
+
+myont:Leonardo_da_Vinci a crm:E21_Person .
+
+myont:London_Turner a crm:E21_Person .
+
+myont:Louvre a crm:E21_Person .
+
+myont:Lovers a myont:Museum .
+
+myont:Madrid a myont:Country .
+
+myont:Magritte a crm:E21_Person,
+        myont:Museum ;
+    myont:hasTheme myont:enigma,
+        myont:humorous .
+
+myont:Marc a crm:E21_Person .
+
+myont:Minneapolis a myont:Country .
+
+myont:MoMA a myont:Country ;
+    myont:displayedBy myont:New_York .
+
+myont:Montagne_Saint-Victoire a crm:E21_Person .
+
+myont:Mother_Mary a crm:E21_Person .
+
+myont:Munch a myont:Museum .
+
+myont:Musee_DOrsay a crm:E21_Person,
+        myont:Museum .
+
+myont:Museo_Nacional_Centro_de_Arte a myont:Museum .
+
+myont:Museo_del_Prado a crm:E53_Place .
+
+myont:Narcissus a crm:E21_Person ;
+    myont:hasTheme myont:stony_figure .
 
 myont:NaturalWorldTheme a owl:Class ;
     rdfs:label "Natural world theme" ;
@@ -39,6 +167,27 @@ myont:NatureOilPainting a owl:Class ;
                         owl:hasValue "oil on canvas" ;
                         owl:onProperty myont:mediumDescription ] ) ] .
 
+myont:New_York_De_Chirico a myont:Country .
+
+myont:New_York_Magritte a myont:Country .
+
+myont:Newton a myont:Country,
+        myont:Museum .
+
+myont:Nighthawks a crm:E21_Person .
+
+myont:Nightmare a myont:Museum .
+
+myont:Norway a myont:Country .
+
+myont:Oslo_Munch a myont:Museum .
+
+myont:Pablo_Picasso a crm:E21_Person .
+
+myont:Padua a myont:Country .
+
+myont:Padua_Giotto_Lamentation a crm:E21_Person .
+
 myont:Painter a owl:Class ;
     rdfs:label "Painter" ;
     rdfs:comment "An artist defined as a person who has created at least one painting." ;
@@ -46,6 +195,27 @@ myont:Painter a owl:Class ;
             owl:intersectionOf ( myont:Artist [ a owl:Restriction ;
                         owl:onProperty myont:hasCreated ;
                         owl:someValuesFrom myont:Painting ] ) ] .
+
+myont:Paradise a crm:E53_Place .
+
+myont:Paul_Cézanne a crm:E21_Person .
+
+myont:Paul_Gauguin a crm:E21_Person .
+
+myont:Paul_Signac a myont:Museum .
+
+myont:Picasso a myont:Painting ;
+    myont:hasPeriod "naturalism"^^xsd:string .
+
+myont:Pieter_Bruegel a crm:E21_Person .
+
+myont:Reina_Sofía a crm:E21_Person .
+
+myont:Renaissance a myont:Museum .
+
+myont:René_Magritte a crm:E21_Person .
+
+myont:Salvador_Dalí a crm:E21_Person .
 
 myont:Sculptor a owl:Class ;
     rdfs:label "Sculptor" ;
@@ -55,12 +225,63 @@ myont:Sculptor a owl:Class ;
                         owl:onProperty myont:hasCreated ;
                         owl:someValuesFrom myont:Sculpture ] ) ] .
 
+myont:Signac a myont:Museum .
+
+myont:Snow a crm:E21_Person .
+
+myont:Snow_Storm a crm:E21_Person .
+
+myont:Tahiti a myont:Country .
+
+myont:Tate a myont:Museum .
+
+myont:Tate_London_Blake a myont:Museum .
+
+myont:Tate_London_Dalí a myont:Museum .
+
+myont:The_Art_Institute_of_Chicago_Hopper a myont:Museum .
+
+myont:The_Courtauld_Institute_of_Art a myont:Museum .
+
+myont:The_Garden_of_Earthly_Delights a myont:Painting .
+
+myont:The_Guggenheim_Museum a myont:Museum .
+
+myont:The_Lane_of_Poplars a myont:Painting ;
+    myont:createdBy myont:Alfred_Sisley .
+
+myont:The_Large_Blue_Horses a myont:Museum .
+
+myont:The_Last_Supper a myont:Museum,
+        myont:Painting .
+
+myont:The_Pink_Cloud a myont:Painting .
+
 myont:ThreeDimensionalWork a owl:Class ;
     rdfs:label "Three-dimensional human-made object" ;
     rdfs:comment "A human-made object defined as being either a sculpture, vase, ceramic, or jewellery item." ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( myont:Sculpture myont:Vase myont:Ceramic myont:Jewellery ) ] .
+
+myont:Turner a myont:Museum .
+
+myont:UK a myont:Country .
+
+myont:Umberto_Boccioni a crm:E21_Person .
+
+myont:Velazquez a myont:Museum ;
+    myont:hasTheme myont:contrast .
+
+myont:Venice a myont:Country .
+
+myont:Venice_Boccioni_Futurist a myont:Museum .
+
+myont:View a crm:E21_Person .
+
+myont:Wassily_Kandinsky a crm:E21_Person .
+
+myont:William_Blake a crm:E21_Person .
 
 myont:bornOn a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -79,6 +300,15 @@ myont:createdBy a owl:AsymmetricProperty,
     rdfs:subPropertyOf crm:P108i_was_produced_by,
         schema:creator ;
     owl:inverseOf myont:hasCreated .
+
+myont:de_Chirico a myont:Country .
+
+myont:departmentDisplays a owl:ObjectProperty ;
+    rdfs:label "department displays" ;
+    rdfs:comment "Relates a museum department to the human-made objects it displays." ;
+    rdfs:domain myont:Department ;
+    rdfs:range crm:E22_Human_Made_Object ;
+    owl:inverseOf myont:displayedInDepartment .
 
 myont:diedOn a owl:DatatypeProperty,
         owl:FunctionalProperty ;
@@ -99,6 +329,8 @@ myont:endDate a owl:DatatypeProperty ;
     rdfs:comment "The year in which the creation of a human-made object was completed." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:integer .
+
+myont:gore a crm:E21_Person .
 
 myont:hasDepartment a owl:ObjectProperty ;
     rdfs:label "has department" ;
@@ -137,6 +369,20 @@ myont:startDate a owl:DatatypeProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:integer .
 
+myont:the_Church_of_San_Giorgio_Maggiore a myont:Museum .
+
+myont:the_Detroit_Institute_of_Arts a myont:Museum .
+
+myont:the_Minneapolis_Institute_of_Art_Gauguin a myont:Museum .
+
+myont:the_Munch_Museum a myont:Museum .
+
+myont:the_Museum_of_Fine_Arts a myont:Museum .
+
+myont:the_Peggy_Guggenheim_Collection a myont:Museum .
+
+myont:the_Walker_Art_Center a myont:Museum .
+
 schema:Person a owl:Class ;
     rdfs:label "Person" ;
     rdfs:comment "A human individual." ;
@@ -173,6 +419,8 @@ crm:P55_has_current_location a owl:ObjectProperty ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range crm:E53_Place .
 
+myont:Alfred_Sisley a crm:E21_Person .
+
 myont:Allen_tucker a myont:Artist ;
     myont:bornOn 1866 ;
     myont:diedOn 1939 ;
@@ -208,6 +456,10 @@ myont:Auguste_rodin a myont:Artist ;
     myont:diedOn 1917 ;
     myont:hasNationality "french" ;
     schema:name "auguste rodin" .
+
+myont:Bacchus a myont:Museum,
+        myont:Theme ;
+    myont:hasTheme myont:Bacchus .
 
 myont:Bernard_matemera a myont:Artist ;
     myont:bornOn 1946 ;
@@ -392,6 +644,8 @@ myont:Franois_boucher a myont:Artist ;
     myont:diedOn 1770 ;
     myont:hasNationality "french" ;
     schema:name "françois boucher" .
+
+myont:Franz_Marc a crm:E21_Person .
 
 myont:Frederic_edwin_church a myont:Artist ;
     myont:bornOn 1826 ;
@@ -619,6 +873,8 @@ myont:Mount_washington_glass_company a myont:Artist ;
 myont:Mustafa_ibn_vali a myont:Artist ;
     schema:name "mustafa ibn vali" .
 
+myont:New_York a myont:Country .
+
 myont:New_bedford a myont:City ;
     schema:name "new bedford" .
 
@@ -745,6 +1001,10 @@ myont:Shibata_zeshin a myont:Artist ;
     myont:hasNationality "japanese" ;
     schema:name "shibata zeshin" .
 
+myont:Sisley a crm:E21_Person,
+        myont:Theme ;
+    myont:hasTheme myont:Sisley .
+
 myont:Songye_artist_and_nganga a myont:Artist ;
     schema:name "songye artist and nganga (ritual specialist)" .
 
@@ -855,12 +1115,7 @@ myont:Zhang_yuguang a myont:Artist ;
     myont:hasNationality "chinese" ;
     schema:name "zhang yuguang" .
 
-myont:departmentDisplays a owl:ObjectProperty ;
-    rdfs:label "department displays" ;
-    rdfs:comment "Relates a museum department to the human-made objects it displays." ;
-    rdfs:domain myont:Department ;
-    rdfs:range crm:E22_Human_Made_Object ;
-    owl:inverseOf myont:displayedInDepartment .
+myont:contrast a myont:Theme .
 
 myont:displayedInDepartment a owl:ObjectProperty ;
     rdfs:label "displayed in department" ;
@@ -876,11 +1131,21 @@ myont:displays a owl:AsymmetricProperty,
     rdfs:domain myont:Museum ;
     rdfs:range crm:E22_Human_Made_Object .
 
+myont:divine a myont:Theme .
+
+myont:enigma a myont:Theme .
+
+myont:enigmatic_style a myont:Theme .
+
+myont:fresco a myont:Theme .
+
 myont:hasCulture a owl:DatatypeProperty ;
     rdfs:label "culture" ;
     rdfs:comment "A textual value describing the cultural origin or association of a human-made object." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:string .
+
+myont:humorous a myont:Theme .
 
 myont:isDepartmentOf a owl:ObjectProperty ;
     rdfs:label "is department of" ;
@@ -894,11 +1159,21 @@ myont:isThemeOf a owl:ObjectProperty ;
     rdfs:domain myont:Theme ;
     rdfs:range crm:E22_Human_Made_Object .
 
+myont:landscape a myont:NatureTheme .
+
 myont:mediumDescription a owl:DatatypeProperty ;
     rdfs:label "Labeled Medium" ;
     rdfs:comment "A textual description of the material or medium used to create a human-made object." ;
     rdfs:domain crm:E22_Human_Made_Object ;
     rdfs:range xsd:string .
+
+myont:realism a myont:Theme .
+
+myont:stony_figure a myont:Theme .
+
+myont:surrealism a myont:Theme .
+
+myont:violence a myont:Theme .
 
 schema:Museum a owl:Class ;
     rdfs:label "Museum" ;
@@ -5503,11 +5778,6 @@ myont:the_angel_gabriel_meets_amr_ibn_zaid__folio_from_a_siyeri_nebi_453351 a my
         myont:Turkey ;
     schema:name "\"the angel gabriel meets 'amr ibn zaid (the shepherd)\", folio from a siyer-i nebi (the life of the prophet)" .
 
-crm:E21_Person a owl:Class ;
-    rdfs:label "Person" ;
-    rdfs:comment "A real human individual, considered as an actor capable of creating, owning, or interacting with objects." ;
-    rdfs:subClassOf crm:E39_Actor .
-
 myont:Angel a myont:ReligiousTheme ;
     myont:isThemeOf myont:Lintel_with_angels_supporting_the_lamb_of_god_471944,
         myont:Pendant_brooch_with_cameo_of_enthroned_virgin_and_child_and_christ_pantokrator_477247,
@@ -5597,11 +5867,6 @@ myont:Lintel_with_angels_supporting_the_lamb_of_god_471944 a myont:Sculpture ;
         myont:Unciti ;
     schema:name "lintel with angels supporting the lamb of god" .
 
-myont:Museum a owl:Class ;
-    rdfs:label "Museum" ;
-    rdfs:comment "A museum in the custom ontology, aligned with schema.org Museum." ;
-    owl:equivalentClass schema:Museum .
-
 myont:Nishapur a myont:City ;
     schema:name "nishapur" .
 
@@ -5630,10 +5895,6 @@ myont:Upper_egypt_thebes a myont:Region ;
 
 myont:Zimbabwe a myont:Country ;
     schema:name "zimbabwe" .
-
-crm:E53_Place a owl:Class ;
-    rdfs:label "Place" ;
-    rdfs:comment "An extent in space that can serve as the location of physical objects, events, or activities." .
 
 myont:Allegory_of_the_catholic_faith_437877 a myont:Painting ;
     myont:createdBy myont:Johannes_vermeer ;
@@ -5726,9 +5987,9 @@ myont:Robert_lehman_collection a myont:Department ;
 myont:Thebes a myont:City ;
     schema:name "thebes" .
 
-myont:Theme a owl:Class ;
-    rdfs:label "Theme" ;
-    rdfs:comment "A subject or conceptual category used to describe the content of an artwork." .
+crm:E53_Place a owl:Class ;
+    rdfs:label "Place" ;
+    rdfs:comment "An extent in space that can serve as the location of physical objects, events, or activities." .
 
 myont:Papua_new_guinea a myont:Country ;
     schema:name "papua new guinea" .
@@ -5797,6 +6058,12 @@ myont:Ancient_west_asian_art a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "ancient west asian art" .
 
+myont:Scroll a owl:Class ;
+    rdfs:label "Scroll" ;
+    rdfs:comment "A rolled written or illustrated document, treated here as a human-made museum object." ;
+    rdfs:subClassOf crm:E22_Human_Made_Object ;
+    owl:disjointWith myont:Jewellery .
+
 myont:Medieval_art a myont:Department ;
     myont:departmentDisplays myont:Column_statue_of_a_king_466311,
         myont:Disk_brooch_465818,
@@ -5814,23 +6081,17 @@ myont:Medieval_art a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "medieval art" .
 
-myont:NatureTheme a owl:Class ;
-    rdfs:label "Nature theme" ;
-    rdfs:comment "A theme representing elements of the natural world, such as landscapes or plants." ;
-    rdfs:subClassOf myont:Theme .
-
-myont:Scroll a owl:Class ;
-    rdfs:label "Scroll" ;
-    rdfs:comment "A rolled written or illustrated document, treated here as a human-made museum object." ;
-    rdfs:subClassOf crm:E22_Human_Made_Object ;
-    owl:disjointWith myont:Jewellery .
-
 myont:Vase a owl:Class ;
     rdfs:label "Vase" ;
     rdfs:comment "A human-made container, typically used for holding flowers or as decoration." ;
     rdfs:subClassOf crm:E22_Human_Made_Object ;
     owl:disjointWith myont:Jewellery,
         myont:Scroll .
+
+myont:NatureTheme a owl:Class ;
+    rdfs:label "Nature theme" ;
+    rdfs:comment "A theme representing elements of the natural world, such as landscapes or plants." ;
+    rdfs:subClassOf myont:Theme .
 
 myont:Midatlantic a myont:Region ;
     schema:name "mid-atlantic" .
@@ -5988,6 +6249,10 @@ myont:Modern_and_contemporary_art a myont:Department ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "modern and contemporary art" .
 
+myont:Theme a owl:Class ;
+    rdfs:label "Theme" ;
+    rdfs:comment "A subject or conceptual category used to describe the content of an artwork." .
+
 myont:United_states a myont:Country ;
     schema:name "united states" .
 
@@ -6087,11 +6352,6 @@ myont:Cat a myont:AnimalTheme ;
         myont:Mummy_of_nesmin_with_plant_wreath_mask_and_other_cartonnage_elements_551162,
         myont:Rouen_cathedral_the_portal_437124 ;
     schema:name "cat" .
-
-myont:Country a owl:Class ;
-    rdfs:label "Country" ;
-    rdfs:comment "A type of place representing a country." ;
-    rdfs:subClassOf crm:E53_Place .
 
 myont:Horse a myont:AnimalTheme ;
     myont:isThemeOf myont:Allegory_of_the_planets_and_continents_437790,
@@ -6319,6 +6579,11 @@ myont:European_sculpture_and_decorative_arts a myont:Department ;
 myont:Egypt a myont:Country ;
     schema:name "egypt" .
 
+myont:Country a owl:Class ;
+    rdfs:label "Country" ;
+    rdfs:comment "A type of place representing a country." ;
+    rdfs:subClassOf crm:E53_Place .
+
 myont:European_paintings a myont:Department ;
     myont:departmentDisplays myont:A_woman_seated_beside_a_vase_of_flowers_436121,
         myont:Allegory_436278,
@@ -6368,6 +6633,11 @@ myont:European_paintings a myont:Department ;
     myont:hasDepartmentId 11 ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "european paintings" .
+
+myont:Museum a owl:Class ;
+    rdfs:label "Museum" ;
+    rdfs:comment "A museum in the custom ontology, aligned with schema.org Museum." ;
+    owl:equivalentClass schema:Museum .
 
 myont:Egyptian_art a myont:Department ;
     myont:departmentDisplays myont:Amulet_possibly_depicting_a_tree_frog_544107,
@@ -6421,6 +6691,11 @@ myont:Egyptian_art a myont:Department ;
     myont:hasDepartmentId 10 ;
     myont:isDepartmentOf myont:Metropolitan_museum_of_art_new_york_ny ;
     schema:name "egyptian art" .
+
+crm:E21_Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "A real human individual, considered as an actor capable of creating, owning, or interacting with objects." ;
+    rdfs:subClassOf crm:E39_Actor .
 
 myont:Sculpture a owl:Class ;
     rdfs:label "Sculpture" ;
@@ -6802,8 +7077,4 @@ myont:Metropolitan_museum_of_art_new_york_ny a myont:Museum ;
         myont:The_michael_c_rockefeller_wing ;
     schema:displayLocation myont:New_york ;
     schema:name "metropolitan museum of art, new york, ny" .
-
-[] a owl:Restriction ;
-    owl:allValuesFrom myont:Scroll ;
-    owl:onProperty myont:departmentDisplays .
 
