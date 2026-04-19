@@ -19,10 +19,10 @@ Instructions:
 2. Open Ollama or make sure ollama is running with "ollama serve"
 3. Pull llama model in the terminal: ollama pull llama3
 4. Set environment variable: 
-- macOS: export OLLAMA_MODEL=llama3.2
+- macOS: 
     - export OLLAMA_MODEL=llama3
 - windows: 
-    - set OLLAMA_MODEL=llama3.2
+    - set OLLAMA_MODEL=llama3
 4. Run file: python rag_system.py
 """
 import os
@@ -149,10 +149,11 @@ def clean_gender(raw: str) -> str:
 
     return ""
 
-def rag_I1(g: Graph) -> None:
+def rag_I1(g: Graph) -> tuple[int, int]:
     """
     Fill missing artist nationality via RAG.
     """
+    count = 0
 
     sparql = """
     PREFIX myont:  <https://ontologeez/>
@@ -165,7 +166,9 @@ def rag_I1(g: Graph) -> None:
     }
     """
 
-    for row in g.query(sparql):
+    rows = list(g.query(sparql))
+    candidates = len(rows)
+    for row in rows:
         artist_uri = row.artist
         name = str(row.name)
 
@@ -183,13 +186,18 @@ def rag_I1(g: Graph) -> None:
 
         g.add((artist_uri, MYONT.hasNationality, Literal(nat, datatype=XSD.string)))
         g.add((artist_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
 
         print("Added a nationality triple!")
 
-def rag_O5_I5(g: Graph) -> None:
+    return count, candidates
+
+def rag_O5_I5(g: Graph) -> tuple[int, int]:
     """
     Create primaryMedium property and Medium class that is extracted from the medium description. 
     """
+    count = 0
+
     if (MYONT.Medium, RDF.type, OWL.Class) not in g:
         g.add((MYONT.Medium, RDF.type, OWL.Class))
         g.add((MYONT.Medium, RDFS.label, Literal("Medium")))
@@ -210,7 +218,9 @@ def rag_O5_I5(g: Graph) -> None:
 
     desc_cache = {}
 
-    for row in g.query(sparql):
+    rows = list(g.query(sparql))
+    candidates = len(rows)
+    for row in rows:
         artwork_uri = row.artwork
         desc = str(row.desc).strip().lower()
 
@@ -240,13 +250,18 @@ def rag_O5_I5(g: Graph) -> None:
 
         g.add((artwork_uri, MYONT.hasPrimaryMedium, medium_uri))
         g.add((artwork_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
 
         print("Added a medium triple!")
 
-def rag_O3_I3(g: Graph) -> None:
+    return count, candidates
+
+def rag_O3_I3(g: Graph) -> tuple[int, int]:
     """
     Populate locatedIn field for museums.
     """
+    count = 0
+
     if (MYONT.locatedIn, RDF.type, OWL.TransitiveProperty) not in g:
         g.add((MYONT.locatedIn, RDF.type, OWL.ObjectProperty))
         g.add((MYONT.locatedIn, RDF.type, OWL.TransitiveProperty))
@@ -264,7 +279,9 @@ def rag_O3_I3(g: Graph) -> None:
         FILTER NOT EXISTS { ?museum myont:locatedIn ?loc }
     }
     """
-    for row in g.query(sparql):
+    rows = list(g.query(sparql))
+    candidates = len(rows)
+    for row in rows:
         museum_uri = row.museum
 
         if row.name:
@@ -296,13 +313,18 @@ def rag_O3_I3(g: Graph) -> None:
 
         g.add((museum_uri, MYONT.locatedIn, city_uri))
         g.add((museum_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
 
         print("Added a museum location triple!")
 
-def rag_O2_I2(g: Graph) -> None:
+    return count, candidates
+
+def rag_O2_I2(g: Graph) -> tuple[int, int]:
     """
     Create class and field for artistic movement and populate instances / values for fields. 
     """
+    count = 0
+
     if (MYONT.ArtisticMovement, RDF.type, OWL.Class) not in g:
         g.add((MYONT.ArtisticMovement, RDF.type, OWL.Class))
         g.add((MYONT.ArtisticMovement, RDFS.label, Literal("Artistic Movement")))
@@ -341,7 +363,9 @@ def rag_O2_I2(g: Graph) -> None:
     for row in g.query(title_sparql):
         artist_titles.setdefault(str(row.name), []).append(str(row.title))
 
-    for row in g.query(sparql):
+    rows = list(g.query(sparql))
+    candidates = len(rows)
+    for row in rows:
         artist_uri = row.artist
         name = str(row.name)
         nationality = str(row.nationality) if row.nationality else ""
@@ -373,7 +397,11 @@ def rag_O2_I2(g: Graph) -> None:
 
         g.add((artist_uri, MYONT.associatedWithMovement, movement_uri))
         g.add((artist_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
+
         print("Added an artistic movement triple!")
+
+    return count, candidates
 
 def classify_theme(label: str) -> str:
     prompt = (
@@ -413,10 +441,12 @@ def resolve_theme(g: Graph, label: str) -> URIRef:
 
     return instance_uri
 
-def rag_I4(g: Graph) -> None:
+def rag_I4(g: Graph) -> tuple[int, int]:
     """
     Populate hasTheme on artworks that lack one.
     """
+    count = 0
+
     sparql = """
     PREFIX myont:  <https://ontologeez/>
     PREFIX schema: <https://schema.org/>
@@ -439,11 +469,13 @@ def rag_I4(g: Graph) -> None:
     }
     """
 
-    for row in g.query(sparql):
+    rows = list(g.query(sparql))
+    candidates = len(rows)
+    for row in rows:
         artwork_uri = row.artwork
-        title       = str(row.title)      if row.title      else ""
+        title = str(row.title) if row.title else ""
         artist_name = str(row.artistName) if row.artistName else ""
-        medium      = str(row.medium)     if row.medium     else ""
+        medium = str(row.medium) if row.medium else ""
 
         if not title and not artist_name:
             continue
@@ -476,12 +508,17 @@ def rag_I4(g: Graph) -> None:
         theme_uri = resolve_theme(g, theme_label)
         g.add((artwork_uri, MYONT.hasTheme, theme_uri))
         g.add((artwork_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
+
         print("Added a theme triple!")
 
-def rag_O1(g: Graph) -> None:
+    return count, candidates
+
+def rag_O1(g: Graph) -> tuple[int, int]:
     """
     Define gender property and assign via RAG.
     """
+    count = 0
 
     if (MYONT.hasGender, RDF.type, OWL.DatatypeProperty) not in g:
         g.add((MYONT.hasGender, RDF.type, OWL.DatatypeProperty))
@@ -502,7 +539,9 @@ def rag_O1(g: Graph) -> None:
     }
     """
 
-    for row in g.query(sparql):
+    rows = list(g.query(sparql))
+    candidates = len(rows)
+    for row in rows:
         artist_uri  = row.artist
         name = str(row.name)
         nationality = str(row.nationality) if row.nationality else ""
@@ -531,14 +570,18 @@ def rag_O1(g: Graph) -> None:
 
         g.add((artist_uri, MYONT.hasGender, Literal(gender, datatype=XSD.string)))
         g.add((artist_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
-        
+        count += 1
+
         print("Added a gender triple!")
 
-def rag_O4(g: Graph) -> None:
+    return count, candidates
+
+def rag_O4(g: Graph) -> tuple[int, int]:
     """
     Connect cities -> countries -> regions using the locatedIn property. 
     """
-   
+    count = 0
+
     city_sparql = """
     PREFIX myont: <https://ontologeez/>
     PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -553,7 +596,9 @@ def rag_O4(g: Graph) -> None:
     }
     """
 
-    for row in g.query(city_sparql):
+    city_rows = list(g.query(city_sparql))
+    candidates = len(city_rows)
+    for row in city_rows:
         city_uri = row.city
         city_label = str(row.label) if row.label else str(city_uri).split("/")[-1].replace("_", " ")
 
@@ -580,6 +625,8 @@ def rag_O4(g: Graph) -> None:
 
         g.add((city_uri, MYONT.locatedIn, country_uri))
         g.add((city_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
+
         print("Added a triple!")
 
     country_sparql = """
@@ -596,7 +643,9 @@ def rag_O4(g: Graph) -> None:
     }
     """
 
-    for row in g.query(country_sparql):
+    country_rows = list(g.query(country_sparql))
+    candidates += len(country_rows)
+    for row in country_rows:
         country_uri = row.country
         country_label = str(row.label) if row.label else str(country_uri).split("/")[-1].replace("_", " ")
 
@@ -627,7 +676,11 @@ def rag_O4(g: Graph) -> None:
 
         g.add((country_uri, MYONT.locatedIn, region_uri))
         g.add((country_uri, MYONT.ragGenerated, Literal(True, datatype=XSD.boolean)))
+        count += 1
+
         print("Added a triple!")
+
+    return count, candidates
 
 def run_rag_pipeline(input_ttl: str, output_ttl: str) -> None:
     g = Graph()
@@ -641,15 +694,29 @@ def run_rag_pipeline(input_ttl: str, output_ttl: str) -> None:
         g.add((MYONT.ragGenerated, RDFS.label, Literal("RAG generated")))
         g.add((MYONT.ragGenerated, RDFS.comment, Literal("True if this triple was generated by the RAG system rather than from the structured data pipeline.")))
 
-    rag_I1(g)
-    rag_O2_I2(g)
-    rag_O3_I3(g)
-    rag_I4(g)
-    rag_O1(g)
-    rag_O4(g)
-    rag_O5_I5(g)
+    counts = {
+        "I1 (nationality)":         rag_I1(g),
+        "O2/I2 (movement)":         rag_O2_I2(g),
+        "O3/I3 (museum location)":  rag_O3_I3(g),
+        "I4 (theme)":               rag_I4(g),
+        "O1 (gender)":              rag_O1(g),
+        "O4 (city/country/region)": rag_O4(g),
+        "O5/I5 (medium)":           rag_O5_I5(g),
+    }
 
     g.serialize(destination=output_ttl, format="turtle")
+
+    total_filled = total_candidates = 0
+
+    for gap, (filled, candidates) in counts.items():
+        coverage = (filled / candidates * 100) if candidates else 0.0
+        print(f"{gap:<26} {filled:>6}  {candidates:>10}  {coverage:>7.1f}%")
+        total_filled += filled
+        total_candidates += candidates
+
+    total_coverage = (total_filled / total_candidates * 100) if total_candidates else 0.0
+
+    print(f"{'TOTAL':<26} {total_filled:>6}  {total_candidates:>10}  {total_coverage:>7.1f}%")
 
 if __name__ == "__main__":
     run_rag_pipeline("art_and_museum_ontology.ttl", "rag_output.ttl")
