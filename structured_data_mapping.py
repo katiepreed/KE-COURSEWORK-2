@@ -1,10 +1,7 @@
 import json
 import re
-from rdflib import Literal, Namespace, RDF, XSD
-
-MYONT  = Namespace("https://ontologeez/")
-SCHEMA = Namespace("https://schema.org/")
-CRM    = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
+from rdflib import Literal, Namespace, RDF, URIRef, XSD
+from uri_utils import make_uri, MYONT, SCHEMA
 
 """
 Only objects that map to a specific class will exist in our ontology. 
@@ -70,23 +67,24 @@ THEME_MAP = {
     "cathedral": MYONT.ReligiousTheme,
 }
 
-def createTitle(title):
-    title = title.capitalize()
-    clean = re.sub(r"\(.*?\)", "", title).strip()      
-    clean = re.sub(r"[^a-zA-Z0-9 ]", "", clean)  
-    return clean.replace(" ", "_")   
+def cleanLocation(location):
+    location = re.sub(r"^probably[_\s]+", "", location.strip(), flags=re.IGNORECASE)
 
+    if " or " in location.lower():
+        location = re.split(r"\s+or\s+", location, flags=re.IGNORECASE)[0]
+
+    return location.strip()
 
 def classify_object(object_name, classification, title, medium):
     """
     Determine the class of the object based on its metadata.
     """
-    combined = (object_name + " " + classification + " " + title + " "+ medium).lower()
+    combined = (object_name + " " + classification + " " + title + " " + medium).lower()
 
     for keyword, object_class in OBJECT_TYPE_MAP.items():
         if keyword in combined:
             return object_class
-        
+
     return None
 
 
@@ -95,7 +93,7 @@ def assign_themes(subject, title, medium, object_name, tags, g):
     Determine the theme of an object based on its metadata.
     """
     combined = (title + " " + medium + " " + object_name).lower()
-    # Also include tags in theme detection
+    # also include tags in theme detection
     if tags:
         combined += " " + " ".join(t.lower() for t in tags)
 
@@ -128,7 +126,7 @@ def populate_instances(g):
     with open("data.json", "r") as f:
         data = json.load(f)
 
-    # Track entities so we don't re-create duplicate URIs
+    # track entities so we don't re-create duplicate URIs
     seen_artists = {}
     seen_departments = {}
     seen_museums = {}
@@ -137,33 +135,33 @@ def populate_instances(g):
     seen_regions = {}
     seen_objects = {}
 
-    # all artworks in the MET are displayed in new york
-    new_york = MYONT["New_york"]
+    # all artworks in the MET are displayed in New York
+    new_york = make_uri("New York")
     g.add((new_york, RDF.type, MYONT.City))
     g.add((new_york, SCHEMA.name, Literal("new york")))
-    seen_cities[new_york] = True
-        
+    seen_cities[str(new_york)] = True
+
     for item in data:
-        obj_id       = item.get("object_id")
-        title        = item.get("title") or ""
-        object_name  = item.get("object_name") or ""
-        object_date  = item.get("object_date") or ""
+        obj_id = item.get("object_id")
+        title = item.get("title") or ""
+        object_name = item.get("object_name") or ""
+        object_date = item.get("object_date") or ""
         classification = item.get("classification") or ""
-        culture      = item.get("culture") or ""
-        medium       = item.get("medium") or ""
-        period       = item.get("period") or ""
-        begin_date   = item.get("begin_date")
-        end_date     = item.get("end_date")
-        department   = item.get("department") or ""
-        repository   = item.get("repository") or ""
-        artist_name  = item.get("artist") or ""
-        artist_nat   = item.get("artist_nationality") or ""
+        culture = item.get("culture") or ""
+        medium = item.get("medium") or ""
+        period = item.get("period") or ""
+        begin_date = item.get("begin_date")
+        end_date = item.get("end_date")
+        department = item.get("department") or ""
+        repository = item.get("repository") or ""
+        artist_name = item.get("artist") or ""
+        artist_nat = item.get("artist_nationality") or ""
         artist_begin = item.get("artist_begin_date") or ""
-        artist_end   = item.get("artist_end_date") or ""
-        country      = item.get("country") or ""
-        city         = item.get("city") or ""
-        region       = item.get("region") or ""
-        tags         = item.get("tags") or []
+        artist_end = item.get("artist_end_date") or ""
+        country = item.get("country") or ""
+        city = item.get("city") or ""
+        region = item.get("region") or ""
+        tags = item.get("tags") or []
 
         if not title:
             continue
@@ -174,8 +172,8 @@ def populate_instances(g):
 
         seen_objects[obj_id] = True
 
-        identifier = createTitle(title)
-        subject = MYONT[f"{identifier}_{obj_id}"]
+        # ID at the end of the artwork URI
+        subject = URIRef(f"{MYONT}{make_uri(title).split('/')[-1]}_{obj_id}")
 
         rdf_class = classify_object(object_name, classification, title, medium)
 
@@ -184,7 +182,7 @@ def populate_instances(g):
             continue
 
         g.add((subject, SCHEMA.displayLocation, new_york))
-        
+
         # assign object to a class
         g.add((subject, RDF.type, rdf_class))
 
@@ -214,11 +212,10 @@ def populate_instances(g):
             g.add((subject, MYONT.mediumDescription, Literal(medium.lower())))
 
         if artist_name and not artist_name.lower().startswith("unidentified"):
-            artist_id = createTitle(artist_name)
-            artist_uri = MYONT[artist_id]
+            artist_uri = make_uri(artist_name)
 
-            if artist_id not in seen_artists:
-                seen_artists[artist_id] = True
+            if str(artist_uri) not in seen_artists:
+                seen_artists[str(artist_uri)] = True
 
                 g.add((artist_uri, RDF.type, MYONT.Artist))
                 g.add((artist_uri, SCHEMA.name, Literal(artist_name.lower())))
@@ -239,17 +236,14 @@ def populate_instances(g):
             g.add((subject, MYONT.createdBy, artist_uri))
 
         if department:
-            dept_id = createTitle(department)
-            dept_uri = MYONT[dept_id]
+            dept_uri = make_uri(department)
 
-            if dept_id not in seen_departments:
-
-                seen_departments[dept_id] = True
+            if str(dept_uri) not in seen_departments:
+                seen_departments[str(dept_uri)] = True
                 g.add((dept_uri, RDF.type, MYONT.Department))
                 g.add((dept_uri, SCHEMA.name, Literal(department.lower())))
 
                 dept_num = item.get("department_id")
-
                 if dept_num:
                     g.add((dept_uri, MYONT.hasDepartmentId, Literal(int(dept_num))))
 
@@ -257,53 +251,47 @@ def populate_instances(g):
             g.add((dept_uri, MYONT.departmentDisplays, subject))
 
             if repository:
-                museum_id_for_dept = createTitle(repository)
-                museum_uri_for_dept = MYONT[museum_id_for_dept]
+                museum_uri_for_dept = make_uri(repository)
                 g.add((museum_uri_for_dept, MYONT.hasDepartment, dept_uri))
                 g.add((dept_uri, MYONT.isDepartmentOf, museum_uri_for_dept))
 
         if repository:
-            museum_id = createTitle(repository)
-            museum_uri = MYONT[museum_id]
+            museum_uri = make_uri(repository)
 
-            if museum_id not in seen_museums:
-                seen_museums[museum_id] = True
+            if str(museum_uri) not in seen_museums:
+                seen_museums[str(museum_uri)] = True
                 g.add((museum_uri, RDF.type, MYONT.Museum))
                 g.add((museum_uri, SCHEMA.name, Literal(repository.lower())))
                 g.add((museum_uri, SCHEMA.displayLocation, new_york))
 
-            g.add((museum_uri, MYONT.displays, subject)) 
+            g.add((museum_uri, MYONT.displays, subject))
             g.add((subject, MYONT.displayedBy, museum_uri))
 
         if country:
-            country_id = createTitle(country)
-            country_uri = MYONT[country_id]
+            country_uri = make_uri(cleanLocation(country))
 
-            if country_id not in seen_countries:
-                seen_countries[country_id] = True
+            if str(country_uri) not in seen_countries:
+                seen_countries[str(country_uri)] = True
                 g.add((country_uri, RDF.type, MYONT.Country))
                 g.add((country_uri, SCHEMA.name, Literal(country.lower())))
 
             g.add((subject, SCHEMA.locationCreated, country_uri))
 
         if city:
-            city_id = createTitle(city)
-            city_uri = MYONT[city_id]
+            city_uri = make_uri(cleanLocation(city))
 
-            if city_id not in seen_cities:
-                seen_cities[city_id] = True
+            if str(city_uri) not in seen_cities:
+                seen_cities[str(city_uri)] = True
                 g.add((city_uri, RDF.type, MYONT.City))
                 g.add((city_uri, SCHEMA.name, Literal(city.lower())))
 
             g.add((subject, SCHEMA.locationCreated, city_uri))
-            
 
         if region:
-            region_id = createTitle(region)
-            region_uri = MYONT[region_id]
+            region_uri = make_uri(cleanLocation(region))
 
-            if region_id not in seen_regions:
-                seen_regions[region_id] = True
+            if str(region_uri) not in seen_regions:
+                seen_regions[str(region_uri)] = True
                 g.add((region_uri, RDF.type, MYONT.Region))
                 g.add((region_uri, SCHEMA.name, Literal(region.lower())))
 

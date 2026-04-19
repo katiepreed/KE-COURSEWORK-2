@@ -1,21 +1,11 @@
 import re
-import urllib.parse
 import requests
 from bs4 import BeautifulSoup
 import spacy
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-from rdflib import Namespace, URIRef, Literal
+from rdflib import Literal
 from rdflib.namespace import RDF, XSD
-
-MYONT  = Namespace("https://ontologeez/")
-SCHEMA = Namespace("https://schema.org/")
-CRM    = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
-
-PREFIX_MAP = {
-    "myont":  MYONT,
-    "schema": SCHEMA,
-    "crm":    CRM,
-}
+from uri_utils import make_uri, MYONT, PREFIX_MAP, bind_namespaces
 
 RELATION_MAP = {
     "creator": "myont:createdBy",
@@ -50,37 +40,21 @@ ENTITY_MAP = {
 LITERAL_PREDICATES = {"schema:dateCreated", "myont:hasPeriod"}
 
 THEME_SUBCLASS_MAP = {
-    "nature":       MYONT.NatureTheme,
-    "landscape":    MYONT.NatureTheme,
-    "animal":       MYONT.AnimalTheme,
-    "animals":      MYONT.AnimalTheme,
-    "religious":    MYONT.ReligiousTheme,
-    "religion":     MYONT.ReligiousTheme,
-    "biblical":     MYONT.ReligiousTheme,
+    "nature": MYONT.NatureTheme,
+    "landscape": MYONT.NatureTheme,
+    "animal": MYONT.AnimalTheme,
+    "animals": MYONT.AnimalTheme,
+    "religious": MYONT.ReligiousTheme,
+    "religion": MYONT.ReligiousTheme,
+    "biblical": MYONT.ReligiousTheme,
     "mythological": MYONT.MythologicalTheme,
-    "mythology":    MYONT.MythologicalTheme,
-    "myth":         MYONT.MythologicalTheme,
+    "mythology": MYONT.MythologicalTheme,
+    "myth": MYONT.MythologicalTheme,
 }
-
-def make_uri(name, namespace=MYONT):
-    cleaned = urllib.parse.unquote(name)
-    cleaned = cleaned.replace("\\", "")
-    cleaned = cleaned.strip("'")
-    cleaned = cleaned.replace("'s", "").replace("\u2019s", "")
-    cleaned = cleaned.replace("'", "").replace("\u2019", "")
-    cleaned = cleaned.replace('"', "")
-    cleaned = cleaned.replace(",", "")
-    cleaned = re.sub(r"\s+", "_", cleaned.strip())
-    return URIRef(str(namespace) + cleaned)
 
 def resolve_prefixed(prefixed):
     prefix, local = prefixed.split(":", 1)
     return PREFIX_MAP[prefix][local]
-
-def bind_namespaces(g):
-    g.bind("myont",  MYONT)
-    g.bind("schema", SCHEMA)
-    g.bind("crm",    CRM)
 
 def output_length(input_sentence):
     return len(input_sentence.split()) + 128
@@ -136,7 +110,7 @@ def create_entity_triples(spacy_entities, g, known_uris):
             continue
 
         # to reduce duplication
-        if any(word in entity_name.lower() for word in ["met", "gogh", "monet", "paris", "toledo"]):
+        if any(word in entity_name.lower() for word in ["met", "gogh", "monet", "paris", "toledo", "york"]):
             continue
 
         subject_uri = make_uri(entity_name)
