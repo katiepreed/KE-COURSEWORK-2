@@ -1,8 +1,9 @@
 rdflib
-requests
-beautifulsoup4
-spacy
-transformers
-torch
 owlready2 
 owlrl
+spacy
+transformers
+requests
+beautifulsoup4
+psutil
+torch

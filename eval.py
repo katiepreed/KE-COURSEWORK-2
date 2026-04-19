@@ -1,11 +1,13 @@
 import time
 import os
-from owlready2 import (get_ontology, sync_reasoner_hermit, default_world, World)
+from owlready2 import (get_ontology, sync_reasoner_hermit, default_world)
 from rdflib import Graph 
 import owlrl
+import gc
+import psutil
 
-OWL_FILE = "art_and_museum_ontology_eval.owl"
-TTL_FILE = "art_and_museum_ontology.ttl"
+OWL_FILE = "rag_output.owl"
+TTL_FILE = "rag_output.ttl"
 
 g = Graph()
 g.parse(TTL_FILE, format="turtle")
@@ -13,87 +15,109 @@ g.serialize(OWL_FILE, format="xml")
 
 COMPETENCY_QUERIES = [
     (
-        "1. Which artworks were created by a French artist?",
+        "1. Which french artist have lived for more than 70 years?",
         """
         PREFIX myont: <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?artworkName ?artistName
+        SELECT DISTINCT ?artistName ?birth ?death ?lifespan
+
         WHERE {
-            ?artwork myont:createdBy ?artist .
-            ?artist myont:hasNationality ?nat .
-            ?artwork schema:name ?artworkName .
-            ?artist schema:name ?artistName .
-            FILTER(regex(?nat, "french", "i"))
+        ?artist a myont:Artist ;
+            myont:bornOn ?birth ;
+            myont:diedOn ?death ;
+            schema:name  ?artistName ;
+            myont:hasNationality ?nationality .
+
+        FILTER(regex(?nationality, "french", "i"))
+        BIND((?death - ?birth) AS ?lifespan)
+        FILTER(?lifespan > 70)
+        }
+
+        ORDER BY DESC(?lifespan)
+        """
+    ),
+    (
+        "2. Which artworks have bronze as their primary medium and what theme do they have?",
+        """
+        PREFIX myont: <https://ontologeez/>
+        PREFIX schema: <https://schema.org/>
+
+        SELECT DISTINCT ?artwork ?theme
+        WHERE {
+        ?artwork myont:hasPrimaryMedium myont:Bronze ;
+            schema:name ?artworkName ;
+            myont:hasTheme ?theme .
         }
         """
     ),
     (
-        "2. Which artworks were made using bronze?",
+        "3. Which artistic movements include artists of more than one nationality? ",
         """
         PREFIX myont: <https://ontologeez/>
+
+        SELECT ?movement (COUNT(DISTINCT ?nationality) AS ?numNationalities)
+
+        WHERE {
+        ?artist a myont:Artist ;
+            myont:associatedWithMovement ?movement ;
+            myont:hasNationality ?nationality .
+        }
+
+        GROUP BY ?movement
+        HAVING (COUNT(DISTINCT ?nationality) > 1)
+        ORDER BY DESC(?numNationalities)
+        """
+    ),
+    (
+        "4. Which artworks were created in Egypt and displayed in Egyptian Art department?",
+        """
+        PREFIX myont:  <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?artworkName ?medium
+        SELECT DISTINCT ?artwork ?artworkName
         WHERE {
-            ?artwork myont:mediumDescription ?medium .
-            ?artwork schema:name ?artworkName .
-            FILTER(regex(?medium, "bronze", "i"))
+        ?artwork schema:locationCreated myont:Egypt ;
+            myont:displayedInDepartment myont:Egyptian_Art ;
+            schema:name ?artworkName .
         }
         """
     ),
     (
-        "3. Which artworks have a horse theme?",
+        "5. What medium do artworks with horse themes use in different artistic movements ?",
         """
-        PREFIX myont: <https://ontologeez/>
-        PREFIX schema: <https://schema.org/>
+        PREFIX myont:  <https://ontologeez/>
 
-        SELECT Distinct ?artwork ?artworkName
+        SELECT ?movement 
+            (COUNT(DISTINCT ?artwork) AS ?numHorseArtworks)
+            (GROUP_CONCAT(DISTINCT ?medium; SEPARATOR=", ") AS ?mediaUsed)
+
         WHERE {
-            ?artwork myont:hasTheme myont:Horse .
-            ?artwork schema:name ?artworkName .
+        ?artwork myont:hasTheme myont:Horse ;
+            myont:createdBy ?artist ;
+            myont:hasPrimaryMedium ?medium .
+        ?artist  myont:associatedWithMovement ?movement .
         }
+
+        GROUP BY ?movement
         """
     ),
     (
-        "4. Which artworks were created in Egypt?",
+        "6. What is the most recent artwork in the Greek and Roman art department in the MET museum?",
         """
-        PREFIX myont: <https://ontologeez/>
-        PREFIX schema: <https://schema.org/>
+        SELECT ?artwork ?endDate
 
-        SELECT Distinct ?artwork ?artworkName
         WHERE {
-            ?artwork schema:locationCreated myont:Egypt .
-            ?artwork schema:name ?artworkName .
+        ?artwork myont:displayedBy myont:Metropolitan_Museum_Of_Art_New_York_Ny ;
+            myont:displayedInDepartment ?department ;
+            myont:endDate ?endDate ;
+            schema:name ?artworkName .
+        ?department schema:name ?departmentName .
+        FILTER(regex(?departmentName, "greek and roman art", "i"))
         }
-        """
-    ),
-    (
-        "5. Which artists were born after 1800?",
-        """
-        PREFIX myont: <https://ontologeez/>
-        PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?artist ?birthYear
-        WHERE {
-            ?artist a myont:Artist .
-            ?artist myont:bornOn ?birthYear .
-            ?artist schema:name ?artistName .
-            FILTER(?birthYear > 1800)
-        }
-        """
-    ),
-    (
-        "6. Which artworks are displayed in the Egyptian Art?",
-        """
-        PREFIX myont: <https://ontologeez/>
-        PREFIX schema: <https://schema.org/>
-
-        SELECT Distinct ?artwork ?artworkName
-        WHERE {
-            ?artwork myont:displayedInDepartment myont:Egyptian_art .
-            ?artwork schema:name ?artworkName .
-        }
+        ORDER BY DESC(?endDate)
+        LIMIT 1
         """
     ),
     (
@@ -126,54 +150,72 @@ COMPETENCY_QUERIES = [
         """
     ),
     (
-        "9. Which Dutch artists have artworks displayed in the European Paintings department?",
+        "9. What is the most common primary medium used within each type of artwork?",
         """
         PREFIX myont: <https://ontologeez/>
+
+        SELECT ?type ?medium ?n
+
+        WHERE {
+        {
+            SELECT ?type ?medium (COUNT(?artwork) AS ?n)
+            WHERE {
+            ?artwork a ?type ;
+                    myont:hasPrimaryMedium ?medium .
+            FILTER(?type IN (myont:Painting, myont:Sculpture, myont:Ceramic, myont:Jewellery))
+            }
+            GROUP BY ?type ?medium
+        }
+        {
+            SELECT ?type (MAX(?cnt) AS ?maxN)
+            WHERE {
+            SELECT ?type ?medium (COUNT(?artwork) AS ?cnt)
+            WHERE {
+                ?artwork a ?type ;
+                        myont:hasPrimaryMedium ?medium .
+                FILTER(?type IN (myont:Painting, myont:Sculpture, myont:Ceramic, myont:Jewellery))
+            }
+            GROUP BY ?type ?medium
+            }
+            GROUP BY ?type
+        }
+        FILTER(?n = ?maxN)
+        }
+        ORDER BY ?type
+        """
+    ),
+    (
+        "10. Which artworks were created in and displayed in New York?",
+        """
+        PREFIX myont:  <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?artist ?artistName
+        SELECT DISTINCT ?artwork 
         WHERE {
-            ?artwork myont:createdBy ?artist .
-            ?artwork myont:displayedInDepartment myont:European_paintings .
-            ?artist myont:hasNationality ?nat .
-            ?artist schema:name ?artistName .
-            FILTER(regex(?nat, "dutch", "i"))
+        ?artwork schema:locationCreated myont:New_York ;
+            schema:displayLocation myont:New_York ;
+            schema:name ?artworkName .
         }
         """
     ),
     (
-        "10. Which artworks were created in Mesopotamia and have an animal theme?",
+        "11. Which departments belong to the Metropolitan Museum and how many artworks do they each display?",
         """
-        PREFIX myont: <https://ontologeez/>
+        PREFIX myont:  <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?artwork ?theme 
-        WHERE {
-            ?artwork schema:locationCreated myont:Mesopotamia .
-            ?artwork myont:hasTheme ?theme .
-            ?theme a myont:AnimalTheme .
-        }
-        """
-    ),
-    (
-        "11. Which Sculptures made from metal materials (gold, bronze, brass) were created in a specific country or region?",
-        """
-        PREFIX myont: <https://ontologeez/>
-        PREFIX schema: <https://schema.org/>
+        SELECT ?department(COUNT(DISTINCT ?artwork) AS ?numArtworks)
 
-        SELECT Distinct ?object ?objectName ?medium ?locationName
         WHERE {
-            ?object a myont:Sculpture . 
-            ?object myont:mediumDescription ?medium .
-            ?object schema:name ?objectName .
-            ?object schema:locationCreated ?location .
-            ?location schema:name ?locationName .
-            FILTER(
-                regex(?medium, "gold", "i") ||
-                regex(?medium, "bronze", "i") ||
-                regex(?medium, "brass", "i")
-            )
+        ?department myont:isDepartmentOf myont:Metropolitan_Museum_Of_Art_New_York_Ny ;
+            schema:name ?departmentName .
+        OPTIONAL {
+            ?artwork myont:displayedInDepartment ?department .
         }
+        }
+
+        GROUP BY ?department
+        ORDER BY DESC(?numArtworks)
         """
     ),
     (
@@ -183,14 +225,14 @@ COMPETENCY_QUERIES = [
         PREFIX schema: <https://schema.org/>
 
         SELECT Distinct ?ceramic ?ceramicName ?period
-            WHERE {
-            ?ceramic a myont:Ceramic .
-            ?ceramic myont:hasPeriod ?period .
-            ?ceramic schema:name ?ceramicName .
-            FILTER(
-                regex(?period, "tang dynasty", "i") ||
-                regex(?period, "ptolemaic", "i") 
-            )
+        WHERE {
+        ?ceramic a myont:Ceramic .
+        ?ceramic myont:hasPeriod ?period .
+        ?ceramic schema:name ?ceramicName .
+        FILTER(
+            regex(?period, "tang dynasty", "i") ||
+            regex(?period, "ptolemaic", "i") 
+        )
         }
         """
     ),
@@ -202,16 +244,16 @@ COMPETENCY_QUERIES = [
 
         SELECT Distinct ?jewellery ?jewelleryName ?medium
         WHERE {
-            ?jewellery a myont:Jewellery .
-            ?jewellery myont:mediumDescription ?medium .
-            ?jewellery schema:name ?jewelleryName .
-            FILTER(
-                regex(?medium, "gold", "i") ||
-                regex(?medium, "emerald", "i") ||
-                regex(?medium, "ruby", "i") ||
-                regex(?medium, "sapphire", "i") ||
-                regex(?medium, "diamond", "i") 
-            )
+        ?jewellery a myont:Jewellery .
+        ?jewellery myont:mediumDescription ?medium .
+        ?jewellery schema:name ?jewelleryName .
+        FILTER(
+            regex(?medium, "gold", "i") ||
+            regex(?medium, "emerald", "i") ||
+            regex(?medium, "ruby", "i") ||
+            regex(?medium, "sapphire", "i") ||
+            regex(?medium, "diamond", "i") 
+        )
         }
         """
     ),
@@ -223,73 +265,71 @@ COMPETENCY_QUERIES = [
 
         SELECT Distinct ?painting ?paintingName ?medium ?themeName
         WHERE {
-            ?painting a myont:Painting .
-            ?painting myont:mediumDescription ?medium .
-            ?painting myont:hasTheme ?theme .
-            ?theme a myont:AnimalTheme .
-            ?painting schema:name ?paintingName .
-            ?theme schema:name ?themeName .
-            FILTER(
-                regex(?medium, "watercolor", "i") ||
-                regex(?medium, "ink", "i") ||
-                regex(?medium, "oil", "i")
-            )
+        ?painting a myont:Painting .
+        ?painting myont:mediumDescription ?medium .
+        ?painting myont:hasTheme ?theme .
+        ?theme a myont:AnimalTheme .
+        ?painting schema:name ?paintingName .
+        ?theme schema:name ?themeName .
+        FILTER(
+            regex(?medium, "watercolor", "i") ||
+            regex(?medium, "ink", "i") ||
+            regex(?medium, "oil", "i")
+        )
         }
         """
     ),
     (
         "15. Which Human Made Objects were created in a specific country or region (Iran, Iraq, Syria)?",
         """
-        PREFIX myont: <https://ontologeez/>
+        PREFIX myont:  <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?object ?objectName ?locationName
+        SELECT DISTINCT ?artwork ?artworkName ?countryName
         WHERE {
-            ?object schema:locationCreated ?location .
-            ?object schema:name ?objectName .
-            ?location schema:name ?locationName .
-            FILTER(
-                regex(?locationName, "^iran$", "i") ||
-                regex(?locationName, "^iraq$", "i") ||
-                regex(?locationName, "^syria$", "i")
-            )
+        ?artwork schema:locationCreated ?location ;
+            schema:name ?artworkName .
+        ?location myont:locatedIn* ?country .
+        FILTER(?country IN (myont:Iran, myont:Iraq, myont:Syria))
+        OPTIONAL { ?country schema:name ?countryName . }
         }
         """
     ),
     (
-        "16. Which Human Made Objects were created in a specific city (Constantinople, Nishapur, New York)?",
+        "16. Which 10 artists have created the most artworks?",
         """
         PREFIX myont: <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?object ?objectName ?cityName
+        SELECT ?artist (COUNT(?artwork) AS ?numArtworks)
+
         WHERE {
-            ?object schema:locationCreated ?city .
-            ?city a myont:City .
-            ?object schema:name ?objectName .
-            ?city schema:name ?cityName .
-            FILTER(
-                regex(?cityName, "constantinople", "i") ||
-                regex(?cityName, "nishapur", "i") ||
-                regex(?cityName, "new york", "i")
-            )
+        ?artwork myont:createdBy ?artist .
         }
+
+        GROUP BY ?artist
+        ORDER BY DESC(?numArtworks)
+        LIMIT 10
         """
     ),
     (
-        "17. Which artists were born before a 1800 and have Human Made Objects displayed in the MET museum?",
+        "17. Which museums are located anywhere in Europe?",
         """
         PREFIX myont: <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?artist ?artistName ?birthYear
+        SELECT DISTINCT ?museum ?museumName ?place
+
         WHERE {
-            ?artist a myont:Artist .
-            ?artist myont:bornOn ?birthYear .
-            ?artist schema:name ?artistName .
-            ?artwork myont:createdBy ?artist .
-            ?artwork myont:displayedBy myont:Metropolitan_museum_of_art_new_york_ny .
-            FILTER(?birthYear < 1800)
+        ?museum a myont:Museum ;
+            myont:locatedIn+ ?place .
+
+        ?place  a myont:Region .
+
+        FILTER(?place IN (myont:Western_Europe, myont:Eastern_Europe,
+            myont:Northern_Europe, myont:Southern_Europe))
+
+        OPTIONAL { ?museum schema:name ?museumName . }
         }
         """
     ),
@@ -310,37 +350,38 @@ COMPETENCY_QUERIES = [
         """
     ),
     (
-        "19. Which Human Made Objects depict a religious theme?",
+        "19. Which female artists have artwork displayed in the Metropolitan Museum?",
         """
-        PREFIX myont: <https://ontologeez/>
+        PREFIX myont:  <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?object ?objectName ?themeName
+        SELECT ?artist (COUNT(DISTINCT ?artwork) AS ?numArtworks)
         WHERE {
-            ?object myont:hasTheme ?theme .
-            ?theme a myont:ReligiousTheme .
-            ?object schema:name ?objectName .
-            ?theme schema:name ?themeName .
+        ?artist a myont:Artist ;
+                myont:hasGender "female"^^xsd:string .
+        ?artwork myont:createdBy    ?artist ;
+                myont:displayedBy  myont:Metropolitan_Museum_Of_Art_New_York_Ny .
         }
+        GROUP BY ?artist 
+        ORDER BY DESC(?numArtworks)
         """
     ),
     (
-        "20. Which Human Made Objects created by French artists depict a mythological theme and are displayed in the European Paintings department?",
+        "20. Which artworks created by French artists depict a mythological theme and are displayed in the European Paintings department?",
         """
-        PREFIX myont: <https://ontologeez/>
+        PREFIX myont:  <https://ontologeez/>
         PREFIX schema: <https://schema.org/>
 
-        SELECT Distinct ?object ?objectName ?artistName ?themeName
+        SELECT ?artwork
+
         WHERE {
-            ?object myont:createdBy ?artist .
-            ?object myont:hasTheme ?theme .
-            ?object myont:displayedInDepartment myont:European_paintings .
-            ?object schema:name ?objectName .
-            ?artist myont:hasNationality ?nationality .
-            ?artist schema:name ?artistName .
-            ?theme a myont:MythologicalTheme .
-            ?theme schema:name ?themeName .
-            FILTER(regex(?nationality, "french", "i"))
+        ?artwork myont:createdBy ?artist ;
+                myont:hasTheme ?theme ;
+                myont:displayedInDepartment myont:European_Paintings .
+
+        ?artist myont:hasNationality ?nationality .
+        ?theme  a myont:MythologicalTheme .
+        FILTER(regex(?nationality, "french", "i"))
         }
         """
     ),
@@ -422,23 +463,34 @@ def evaluate_competency_questions(path):
     }
 
 def evaluate_pipeline_performance(path):
-    # time to parse
+    process = psutil.Process(os.getpid())
+
+    # time and memory to parse
+    gc.collect()
+    mem_before_parse_mb = process.memory_info().rss / 1024 / 1024
     t0 = time.time()
     g = Graph()
     g.parse(path, format="xml")
     parse_time = time.time() - t0
-  
-    # time to serialise
+    mem_after_parse_mb = process.memory_info().rss / 1024 / 1024
+
+    # time and memory to serialise
+    gc.collect()
+    mem_before_ser_mb = process.memory_info().rss / 1024 / 1024
     t0 = time.time()
     _ = g.serialize(format="turtle")
     serialize_time = time.time() - t0
+    mem_after_ser_mb = process.memory_info().rss / 1024 / 1024
 
     file_size = os.path.getsize(path) / 1024  # KB
 
     return {
-        "file_size_kb": round(file_size, 1),
-        "parse_time_s": round(parse_time, 4),
-        "serialize_time_s": round(serialize_time, 4),
+        "file_size_kb":          round(file_size, 1),
+        "parse_time_s":          round(parse_time, 4),
+        "parse_memory_delta_mb": round(mem_after_parse_mb - mem_before_parse_mb, 3),
+        "serialize_time_s":      round(serialize_time, 4),
+        "serialize_memory_delta_mb": round(mem_after_ser_mb - mem_before_ser_mb, 3),
+        "total_rss_mb":          round(mem_after_ser_mb, 2),
     }
 
 def format_dict(info):

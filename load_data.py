@@ -1,6 +1,4 @@
 import requests
-import os
-import json
 import time
 
 BASE_URL = "https://collectionapi.metmuseum.org/public/collection/v1"
