@@ -26,7 +26,6 @@ LLM backends (auto-detected, in priority order):
                 Requires `ollama serve` running on http://localhost:11434.
   2. Groq    — free tier cloud API. Set GROQ_API_KEY.
   3. Anthropic — paid. Set ANTHROPIC_API_KEY.
-  4. Fallback — pre-computed answer tables (no network needed).
 
 Usage:
     pip install rdflib requests
@@ -37,7 +36,6 @@ Usage:
     #   (b) Free cloud — get a key at https://console.groq.com/ then:
     #         export GROQ_API_KEY=gsk_...
     #   (c) Paid — export ANTHROPIC_API_KEY=sk-ant-...
-    #   (d) None  — runs offline using the fallback tables.
     python rag_system.py [--input art_and_museum_ontology.ttl] [--output rag_output.ttl]
 """
 
@@ -59,80 +57,6 @@ SCHEMA = Namespace("https://schema.org/")
 CRM    = Namespace("http://www.cidoc-crm.org/cidoc-crm/")
 
 # ---------------------------------------------------------------------------
-# Pre-computed fallback answers (used when ANTHROPIC_API_KEY is not set)
-# This allows the pipeline to be demonstrated without network access.
-# ---------------------------------------------------------------------------
-FALLBACK_MOVEMENTS = {
-    "Claude Monet":            "Impressionism",
-    "Pierre-Auguste Renoir":   "Impressionism",
-    "Edgar Degas":             "Impressionism",
-    "Paul Cézanne":            "Post-Impressionism",
-    "Vincent van Gogh":        "Post-Impressionism",
-    "Georges Seurat":          "Pointillism",
-    "Paul Gauguin":            "Post-Impressionism",
-    "Henri Matisse":           "Fauvism",
-    "Pablo Picasso":           "Cubism",
-    "Rembrandt van Rijn":      "Dutch Golden Age",
-    "Johannes Vermeer":        "Dutch Golden Age",
-    "Frans Hals":              "Dutch Golden Age",
-    "Peter Paul Rubens":       "Baroque",
-    "Caravaggio":              "Baroque",
-    "Michelangelo":            "Renaissance",
-    "Leonardo da Vinci":       "Renaissance",
-    "Raphael":                 "Renaissance",
-    "Sandro Botticelli":       "Early Renaissance",
-    "El Greco":                "Mannerism",
-    "Francisco Goya":          "Romanticism",
-    "Eugène Delacroix":        "Romanticism",
-    "Gustave Courbet":         "Realism",
-    "Édouard Manet":           "Realism",
-    "Winslow Homer":           "American Realism",
-    "John Singer Sargent":     "Impressionism",
-    "Mary Cassatt":            "Impressionism",
-    "Camille Pissarro":        "Impressionism",
-    "Alfred Sisley":           "Impressionism",
-    "Berthe Morisot":          "Impressionism",
-    "Charles Henry Alston":    "Harlem Renaissance",
-    "Rosa Bonheur":            "Realism",
-    "Leonora Carrington":      "Surrealism",
-}
-
-FALLBACK_NATIONALITIES = {
-    "Mustafa ibn Vali":        ("Ottoman", None, None),
-    "Bi Chang":                ("Chinese", None, None),
-    "Fly Furayi":              ("Zimbabwean", None, None),
-    "Henry Munyaradzi":        ("Zimbabwean", "1931", "1998"),
-    "Bernard Matemera":        ("Zimbabwean", "1946", "2002"),
-    "Rosario de Velasco":      ("Spanish", "1904", "1991"),
-    "Maija Grotell":           ("Finnish-American", "1899", "1973"),
-    "Kate B. Sears":           ("American", None, None),
-    "Helen West Heller":       ("American", "1885", "1955"),
-}
-
-FALLBACK_MEDIA = {
-    "oil on canvas":                        "Oil Paint",
-    "oil on canvas, gilded":                "Oil Paint",
-    "oil on wood":                          "Oil Paint",
-    "watercolor on paper":                  "Watercolour",
-    "watercolor and gouache on paper":      "Watercolour",
-    "ink on paper":                         "Ink",
-    "bronze":                               "Bronze",
-    "marble":                               "Marble",
-    "terracotta":                           "Terracotta",
-    "porcelain":                            "Porcelain",
-    "gold":                                 "Gold",
-    "silver":                               "Silver",
-    "limestone":                            "Limestone",
-    "wood":                                 "Wood",
-    "ivory":                                "Ivory",
-    "copper alloy":                         "Copper Alloy",
-    "faience":                              "Faience",
-    "linen":                                "Linen",
-    "papyrus":                              "Papyrus",
-}
-
-
-# ---------------------------------------------------------------------------
 # LLM helper
 # ---------------------------------------------------------------------------
 
@@ -144,7 +68,12 @@ def llm_backend() -> str:
         return "groq"
     if os.environ.get("ANTHROPIC_API_KEY"):
         return "anthropic"
-    return "fallback"
+    raise RuntimeError(
+        "No LLM backend configured. Set one of:\n"
+        "  OLLAMA_MODEL (free, local — requires `ollama serve`)\n"
+        "  GROQ_API_KEY (free tier — https://console.groq.com/)\n"
+        "  ANTHROPIC_API_KEY (paid)"
+    )
 
 
 def _ask_ollama(prompt: str, system: str) -> str:
@@ -198,13 +127,8 @@ def _ask_anthropic(prompt: str, system: str) -> str:
 
 
 def ask_llm(prompt: str, system: str = "") -> str:
-    """
-    Dispatch to whichever LLM backend is configured.
-    Returns an empty string on failure so the caller falls back to lookup tables.
-    """
+    """Dispatch to whichever LLM backend is configured."""
     backend = llm_backend()
-    if backend == "fallback":
-        return ""
     try:
         if backend == "ollama":
             return _ask_ollama(prompt, system)
@@ -455,7 +379,6 @@ def rag_O2_artistic_movements(g: Graph) -> int:
         artist_titles.setdefault(str(row.name), []).append(str(row.title))
 
     added = 0
-    use_llm = llm_backend() != "fallback"
 
     for row in g.query(sparql):
         artist_uri  = row.artist
@@ -467,32 +390,21 @@ def rag_O2_artistic_movements(g: Graph) -> int:
         if (artist_uri, MYONT.associatedWithMovement, None) in g:
             continue
 
-        # --- Retrieve answer ---
-        movement = ""
-
-        if use_llm:
-            titles = artist_titles.get(name, [])[:5]
-            titles_text = ", ".join(f'"{t}"' for t in titles) if titles else "unknown"
-            nat_text  = f"nationality {nationality}" if nationality else ""
-            born_text = f"born {born}"               if born        else ""
-            context   = ", ".join(filter(None, [nat_text, born_text]))
-            context   = f" ({context})" if context else ""
-            prompt = (
-                f"Artist: {name}{context}. "
-                f"Representative works: {titles_text}. "
-                f"What single artistic movement or style is this artist most associated with?"
-            )
-            raw = ask_llm(prompt, system=SYSTEM_PROMPT)
-            movement = clean_movement(raw)
-            time.sleep(0.1)   # respect rate limit
-
-        # Fallback (names in KG are lowercase; match case-insensitively)
-        if not movement:
-            name_lower = name.lower()
-            for k, v in FALLBACK_MOVEMENTS.items():
-                if k.lower() == name_lower:
-                    movement = v
-                    break
+        # --- Retrieve answer via RAG ---
+        titles = artist_titles.get(name, [])[:5]
+        titles_text = ", ".join(f'"{t}"' for t in titles) if titles else "unknown"
+        nat_text  = f"nationality {nationality}" if nationality else ""
+        born_text = f"born {born}"               if born        else ""
+        context   = ", ".join(filter(None, [nat_text, born_text]))
+        context   = f" ({context})" if context else ""
+        prompt = (
+            f"Artist: {name}{context}. "
+            f"Representative works: {titles_text}. "
+            f"What single artistic movement or style is this artist most associated with?"
+        )
+        raw = ask_llm(prompt, system=SYSTEM_PROMPT)
+        movement = clean_movement(raw)
+        time.sleep(0.1)   # respect rate limit
 
         if not movement:
             continue
@@ -544,8 +456,7 @@ def rag_I1_I2_biographical(g: Graph, data_path: str = "data.json") -> int:
     }
     """
 
-    use_llm = llm_backend() != "fallback"
-    added   = 0
+    added = 0
 
     for row in g.query(sparql):
         artist_uri  = row.artist
@@ -556,25 +467,13 @@ def rag_I1_I2_biographical(g: Graph, data_path: str = "data.json") -> int:
 
         # ---- Nationality (Gap I1) ----------------------------------------
         if not nationality:
-            nat = ""
-
-            if use_llm:
-                prompt = (
-                    f"What is the nationality of the artist named '{name}'? "
-                    "Reply with a single nationality word or short phrase only."
-                )
-                raw = ask_llm(prompt, system=SYSTEM_PROMPT)
-                nat = clean_nationality(raw)
-                time.sleep(0.1)
-
-            if not nat:
-                name_lower = name.lower()
-                fallback = next(
-                    (v for k, v in FALLBACK_NATIONALITIES.items() if k.lower() == name_lower),
-                    None
-                )
-                if fallback:
-                    nat = fallback[0]
+            prompt = (
+                f"What is the nationality of the artist named '{name}'? "
+                "Reply with a single nationality word or short phrase only."
+            )
+            raw = ask_llm(prompt, system=SYSTEM_PROMPT)
+            nat = clean_nationality(raw)
+            time.sleep(0.1)
 
             if nat:
                 g.add((artist_uri, MYONT.hasNationality,
@@ -586,32 +485,17 @@ def rag_I1_I2_biographical(g: Graph, data_path: str = "data.json") -> int:
 
         # ---- Birth / death dates (Gap I2) -----------------------------------
         if not born or not died:
-            fb = FALLBACK_NATIONALITIES.get(name)
-            llm_born, llm_died = None, None
-
-            if use_llm and (not born or not died):
-                prompt = (
-                    f"For the artist '{name}', provide their birth year and death year "
-                    "in the format BORN:YYYY DIED:YYYY. "
-                    "Use '?' for unknown. Example: BORN:1840 DIED:1926"
-                )
-                raw = ask_llm(prompt, system=SYSTEM_PROMPT)
-                m_born = re.search(r"BORN:(\d{4})", raw)
-                m_died = re.search(r"DIED:(\d{4})", raw)
-                llm_born = m_born.group(1) if m_born else None
-                llm_died = m_died.group(1) if m_died else None
-                time.sleep(0.1)
-
-            # Fallback
-            name_lower = name.lower()
-            fb = next(
-                (v for k, v in FALLBACK_NATIONALITIES.items() if k.lower() == name_lower),
-                None
+            prompt = (
+                f"For the artist '{name}', provide their birth year and death year "
+                "in the format BORN:YYYY DIED:YYYY. "
+                "Use '?' for unknown. Example: BORN:1840 DIED:1926"
             )
-            if not llm_born and fb and fb[1]:
-                llm_born = fb[1]
-            if not llm_died and fb and fb[2]:
-                llm_died = fb[2]
+            raw = ask_llm(prompt, system=SYSTEM_PROMPT)
+            m_born = re.search(r"BORN:(\d{4})", raw)
+            m_died = re.search(r"DIED:(\d{4})", raw)
+            llm_born = m_born.group(1) if m_born else None
+            llm_died = m_died.group(1) if m_died else None
+            time.sleep(0.1)
 
             if not born and llm_born:
                 g.add((artist_uri, MYONT.bornOn,
@@ -666,7 +550,6 @@ def rag_O4_medium_structure(g: Graph) -> int:
     }
     """
 
-    use_llm   = llm_backend() != "fallback"
     desc_cache: dict[str, str] = {}   # desc → medium label
     added = 0
 
@@ -679,25 +562,14 @@ def rag_O4_medium_structure(g: Graph) -> int:
             continue
 
         if desc not in desc_cache:
-            medium_label = ""
-
-            if use_llm:
-                prompt = (
-                    f"Medium description: '{desc}'. "
-                    "What is the single primary medium or material? "
-                    "Reply with a short label only, e.g. 'Oil Paint', 'Bronze', 'Watercolour'."
-                )
-                raw = ask_llm(prompt, system=SYSTEM_PROMPT)
-                medium_label = clean_medium(raw)
-                time.sleep(0.05)
-
-            if not medium_label:
-                # Try exact or prefix match in fallback table
-                for key, val in FALLBACK_MEDIA.items():
-                    if desc.startswith(key) or key in desc:
-                        medium_label = val
-                        break
-
+            prompt = (
+                f"Medium description: '{desc}'. "
+                "What is the single primary medium or material? "
+                "Reply with a short label only, e.g. 'Oil Paint', 'Bronze', 'Watercolour'."
+            )
+            raw = ask_llm(prompt, system=SYSTEM_PROMPT)
+            medium_label = clean_medium(raw)
+            time.sleep(0.05)
             desc_cache[desc] = medium_label
 
         medium_label = desc_cache[desc]
@@ -733,7 +605,6 @@ def run_rag_pipeline(input_ttl: str, output_ttl: str, data_json: str) -> None:
         "ollama":    f"Ollama (local, model={os.environ.get('OLLAMA_MODEL')})",
         "groq":      f"Groq (free tier, model={os.environ.get('GROQ_MODEL', 'llama-3.1-8b-instant')})",
         "anthropic": "Anthropic API (paid)",
-        "fallback":  "offline (fallback tables)",
     }[backend]
     print(f"LLM    : {backend_label}")
     print()
@@ -762,7 +633,7 @@ def run_rag_pipeline(input_ttl: str, output_ttl: str, data_json: str) -> None:
     fix_O3_museum_location(g)
     fix_O5_painter_sculptor_typing(g)
 
-    # 3. RAG gaps (LLM with fallback)
+    # 3. RAG gaps (LLM-driven)
     rag_O2_artistic_movements(g)
     rag_I1_I2_biographical(g, data_json)
     rag_O4_medium_structure(g)
