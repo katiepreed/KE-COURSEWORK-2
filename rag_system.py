@@ -710,13 +710,13 @@ def run_rag_pipeline(input_ttl: str, output_ttl: str) -> None:
 
     for gap, (filled, candidates) in counts.items():
         coverage = (filled / candidates * 100) if candidates else 0.0
-        print(f"{gap:<26} {filled:>6}  {candidates:>10}  {coverage:>7.1f}%")
+        print(f"{gap:<26} {candidates:>10} {filled:>6} {coverage:>7.1f}%")
         total_filled += filled
         total_candidates += candidates
 
     total_coverage = (total_filled / total_candidates * 100) if total_candidates else 0.0
 
-    print(f"{'TOTAL':<26} {total_filled:>6}  {total_candidates:>10}  {total_coverage:>7.1f}%")
+    print(f"{'TOTAL':<26} {total_candidates:>10} {total_filled:>6} {total_coverage:>7.1f}%")
 
 if __name__ == "__main__":
     run_rag_pipeline("art_and_museum_ontology.ttl", "rag_output.ttl")
