@@ -9,12 +9,12 @@
    - macOS: `export OLLAMA_MODEL=llama3`
    - windows: `set OLLAMA_MODEL=llama3`
 
-# Running the Project
+# Running the Project
 
 1. Run the pipeline to generate the knowledge graph (art_and_museum_ontology.ttl): `python main.py`
 1. Run the rag system to generate an updated knowledge graph (rag_output.ttl): `python rag_system.py`
 
-## Files
+# Files
 
 Relevant files in the directory:
 
