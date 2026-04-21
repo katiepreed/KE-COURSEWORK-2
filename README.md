@@ -1,3 +1,18 @@
+# Running the Project
+
+1. Run the pipeline to generate the knowledge graph (art_and_museum_ontology.ttl): `python main.py`
+2. Run the rag system to generate an updated knowledge graph (rag_output.ttl): `python rag_system.py`
+3. To run the evaluation script: `python eval.py`
+
+# Pipeline overview
+
+1. Populate data from structured data source into `data.json` file via `load_data.py`
+2. Construct ontology using `ontology_generation.py`
+3. Populate instances for the knowledge graph from structured and unstructured data sources via `structured_data_mapping.py` and `llm_pipeline_knowledge_eng.py`
+4. Serialise graph into Turtle format via `main.py`
+5. Run RAG system via `rag_system.py` to resolve ontology and instance gaps, producing `rag_output.ttl`
+6. Evaluate knowledge graph using `eval.py`
+
 # Setup Instructions
 
 1. Clone the repository: `git clone https://github.com/katiepreed/KE-COURSEWORK-2.git`
@@ -14,11 +29,6 @@
    - macOS: `export OLLAMA_MODEL=llama3`
    - windows: `set OLLAMA_MODEL=llama3`
 
-# Running the Project
-
-1. Run the pipeline to generate the knowledge graph (art_and_museum_ontology.ttl): `python main.py`
-1. Run the rag system to generate an updated knowledge graph (rag_output.ttl): `python rag_system.py`
-
 # Files
 
 Relevant files in the directory:
@@ -33,3 +43,16 @@ Relevant files in the directory:
 - `cq.txt`: contains competency questions
 - `uri_utils.py`: contains URI construction and API utilities
 - `data.json`: contains data from the MET API
+
+# Tech stack used in the project
+
+- Python 3
+- Requests
+- RDFLib
+- JSON
+- BeautifulSoup
+- spaCy
+- REBEL (Babelscape/rebel-large)
+- Ollama/Llama 3
+- owlready2/HermiT
+- owlrl
