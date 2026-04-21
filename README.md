@@ -1,11 +1,16 @@
 # Setup Instructions
 
 1. Clone the repository: `git clone https://github.com/katiepreed/KE-COURSEWORK-2.git`
-2. Install Python dependencies: `pip install -r requirements.txt`
-3. Download spaCy language model: `python -m spacy download en_core_web_sm`
-4. Download and install Ollama from https://ollama.com/download
-5. Pull the Llama model: `ollama pull llama3`
-6. Set the model environment variable:
+2. Cd into repo: `cd KE-COURSEWORK-2`
+3. Create virtual environment: `python -m venv venv`
+4. Activate virtual environment:
+   - macOS: `source venv/bin/activate`
+   - windows: `venv\Scripts\activate`
+5. Install Python dependencies: `pip install -r requirements.txt`
+6. Download spaCy language model: `python -m spacy download en_core_web_sm`
+7. Download and install Ollama from https://ollama.com/download
+8. Pull the Llama model: `ollama pull llama3`
+9. Set the model environment variable:
    - macOS: `export OLLAMA_MODEL=llama3`
    - windows: `set OLLAMA_MODEL=llama3`
 
