@@ -88,6 +88,7 @@ keywords = ["painting", "sculpture", "ceramic", "figurine", "jewelry", "scroll",
 departments = get_department_mapping()
 
 # query each of the words in the keywords list 
+# due to API rate limiting, each keyword had to be queried individually rather than sequentially
 data = get_data("monet", 20, departments)
 
 if os.path.exists("data.json") and os.path.getsize("data.json") > 0:
