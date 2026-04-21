@@ -145,8 +145,7 @@ def extract_rdf_triples(sentence_text, spacy_entities, tokenizer, model, g, know
         **tokenized_input,
         max_new_tokens=128,
         num_beams=3,
-        early_stopping=True,
-        max_length=output_length(sentence_text),
+        early_stopping=True
     )
 
     decoded_output_text = tokenizer.batch_decode(
