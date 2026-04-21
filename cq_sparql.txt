@@ -1,3 +1,5 @@
+Team members: Ekaterina Polyakova (K21008618), Jasia Fatima (K24031151), Eva Modwel (K24047844), Mariam Hafiz (K23115695), Zainab Alsaleh (K23073170), and Lupupa Chansa (K23006355).
+
 Questions 1-10 are manually generated and 1-20 are LLM generated. 
 
 1. Which french artist have lived for more than 70 years?
@@ -21,7 +23,7 @@ WHERE {
 
 ORDER BY DESC(?lifespan)
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 2. Which artworks have bronze as their primary medium and what theme do they have?
 
@@ -35,7 +37,7 @@ WHERE {
       myont:hasTheme ?theme .
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 3. Which artistic movements include artists of more than one nationality? 
 
@@ -53,7 +55,7 @@ GROUP BY ?movement
 HAVING (COUNT(DISTINCT ?nationality) > 1)
 ORDER BY DESC(?numNationalities)
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 4. Which artworks were created in Egypt and displayed in Egyptian Art department?
 
@@ -67,7 +69,7 @@ WHERE {
       schema:name ?artworkName .
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 5. What medium do artworks with horse themes use in different artistic movements?
 
@@ -86,7 +88,7 @@ WHERE {
 
 GROUP BY ?movement
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 6. What is the most recent artwork in the Greek and Roman art department in the MET museum?
 
@@ -107,7 +109,7 @@ WHERE {
 ORDER BY DESC(?endDate)
 LIMIT 1
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 7. Which artworks were made during the New Kingdom period?
 
@@ -121,7 +123,7 @@ WHERE {
   FILTER(regex(?period, "new kingdom", "i"))
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 8. Which artworks have both a flower theme and were made using oil on canvas?
 
@@ -136,7 +138,7 @@ WHERE {
   FILTER(regex(?medium, "oil on canvas", "i"))
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 9. What is the most common primary medium used within each type of artwork? 
 
@@ -171,7 +173,7 @@ WHERE {
 }
 ORDER BY ?type
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 10. Which artworks were created in and displayed in New York?
 
@@ -185,7 +187,7 @@ WHERE {
       schema:name ?artworkName .
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 11. Which departments belong to the Metropolitan Museum and how many artworks do they each display?
 
@@ -205,7 +207,7 @@ WHERE {
 GROUP BY ?department
 ORDER BY DESC(?numArtworks)
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 12. Which Ceramics were created during a specific creation period (Tang Dynasty, Ptolemaic Period)?
 
@@ -223,7 +225,7 @@ WHERE {
   )
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 13. Which Jewellery objects are made from gemstone materials (gold, emerald, ruby, sapphire, diamond)?
 
@@ -244,7 +246,7 @@ WHERE {
   )
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 14. Which Paintings were created using watercolour, ink, or oil and depict an animal theme?
 
@@ -266,7 +268,7 @@ WHERE {
   )
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 15. Which Human Made Objects were created in a specific country or region (Iran, Iraq, Syria)?
 
@@ -282,7 +284,7 @@ WHERE {
   OPTIONAL { ?country schema:name ?countryName . }
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 16. Which 10 artists have created the most artworks?
 
@@ -299,7 +301,7 @@ GROUP BY ?artist
 ORDER BY DESC(?numArtworks)
 LIMIT 10
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 17. Which museums are located anywhere in Europe? 
 
@@ -320,7 +322,7 @@ WHERE {
   OPTIONAL { ?museum schema:name ?museumName . }
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 18. Which Human Made Objects were created during the imperial period with roman culture?
 
@@ -336,7 +338,7 @@ WHERE {
   FILTER(regex(?period, "imperial", "i"))
 }
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 19. Which female artists have artwork displayed in the Metropolitan Museum?
 
@@ -353,7 +355,7 @@ WHERE {
 GROUP BY ?artist 
 ORDER BY DESC(?numArtworks)
 
-# ------------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 20. Which artworks created by French artists depict a mythological theme and are displayed in the European Paintings department?
 

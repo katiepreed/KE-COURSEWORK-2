@@ -1,3 +1,12 @@
+# Team members
+
+- Ekaterina Polyakova (K21008618)
+- Jasia Fatima (K24031151)
+- Eva Modwel (K24047844)
+- Mariam Hafiz (K23115695)
+- Zainab Alsaleh (K23073170)
+- Lupupa Chansa (K23006355)
+
 # Running the Project
 
 1. Run the pipeline to generate the knowledge graph (art_and_museum_ontology.ttl): `python main.py`
