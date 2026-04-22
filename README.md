@@ -18,7 +18,7 @@
 1. Populate data from structured data source into `data.json` file via `load_data.py`
 2. Construct ontology using `ontology_generation.py`
 3. Populate instances for the knowledge graph from structured and unstructured data sources via `structured_data_mapping.py` and `llm_pipeline_knowledge_eng.py`
-4. Serialise graph into Turtle format via `main.py`
+4. Serialise graph into Turtle format via `main.py` to produce `art_and_museum_ontology.ttl`
 5. Run RAG system via `rag_system.py` to resolve ontology and instance gaps, producing `rag_output.ttl`
 6. Evaluate knowledge graph using `eval.py`
 
