@@ -47,9 +47,9 @@ Relevant files in the directory:
 - `main.py`: this is the file that will build the ontology and populate instances into the knowledge graph.
 - `structured_data_mapping.py`: maps MET API data to RDF triples
 - `llm_pipeline_knowledge_eng.py`: extracts rdf triples from unstructured text
-- `rag_system.py`: this file reads the art_and_museum_ontology.ttl file and fills ontology and instance gaps, writing the new graph to rag_output.ttl
-- `eval.py`: this file runs an evaluation on rag_output.ttl, checking for consistency, inference, sparql and pipeline performance
-- `cq.txt`: contains competency questions
+- `rag_system.py`: this file reads the `art_and_museum_ontology.ttl` file and fills ontology and instance gaps, writing the new graph to `rag_output.ttl`
+- `eval.py`: this file runs an evaluation on `rag_output.ttl`, checking for consistency, inference, sparql and pipeline performance
+- `cq_sparql.txt`: contains competency questions and SPARQL queries
 - `uri_utils.py`: contains URI construction and API utilities
 - `data.json`: contains data from the MET API
 
