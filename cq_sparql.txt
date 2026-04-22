@@ -1,6 +1,6 @@
 Team members: Ekaterina Polyakova (K21008618), Jasia Fatima (K24031151), Eva Modwel (K24047844), Mariam Hafiz (K23115695), Zainab Alsaleh (K23073170), and Lupupa Chansa (K23006355).
 
-Questions 1-10 are manually generated and 1-20 are LLM generated. 
+Questions 1-10 are manually generated and 11-20 are LLM generated. 
 
 1. Which french artist have lived for more than 70 years?
 
